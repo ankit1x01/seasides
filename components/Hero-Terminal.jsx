@@ -11,19 +11,19 @@ const Hero = () => {
   const heroRef = useRef(null);
 
   const bootSequence = [
-    'SEASIDES Cyber Security Framework v2025.1.26',
+    'SEASIDES Cyber Security Framework v2026.1.26',
     'Initializing conference systems...',
     'Loading speaker modules... [████████████████████] 100%',
     'Connecting to cybersecurity network... [OK]',
     'Scanning for security threats... [CLEAN]',
-    'Welcome to SEASIDES 2025 - India\'s Premier CyberSec Conference',
-    'Location: International Centre Goa | Jan 26-27, 2025',
+    'Welcome to SEASIDES 2026 - India\'s Premier CyberSec Conference',
+    'Location: International Centre Goa | Jan 26-27, 2026',
     'Status: READY FOR DEPLOYMENT'
   ];
 
   // Calculate countdown
   useEffect(() => {
-    const eventDate = new Date('2025-01-26T09:00:00').getTime();
+    const eventDate = new Date('2026-01-26T09:00:00').getTime();
     
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -170,7 +170,7 @@ const Hero = () => {
                   <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                   <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="ml-4 text-sm text-gray-400">seasides@cybersec-2025 - Terminal</span>
+                  <span className="ml-4 text-sm text-gray-400">seasides@cybersec-2026 - Terminal</span>
                 </div>
 
                 {/* Boot Sequence */}
@@ -221,10 +221,10 @@ const Hero = () => {
                   </div>
 
                   <div className="ml-4 space-y-2 text-green-300">
-                    <div className="text-2xl font-bold glow-text">SEASIDES 2025</div>
+                    <div className="text-2xl font-bold glow-text">SEASIDES 2026</div>
                     <div>India's Premier Cybersecurity Conference</div>
                     <div className="text-cyan-400">📍 International Centre Goa</div>
-                    <div className="text-yellow-400">📅 January 26-27, 2025</div>
+                    <div className="text-yellow-400">📅 January 26-27, 2026</div>
                   </div>
 
                   <div className="mt-6">

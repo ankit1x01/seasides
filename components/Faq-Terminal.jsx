@@ -12,7 +12,7 @@ const Faq = () => {
     {
       id: 'registration',
       question: 'cat /faq/registration.txt',
-      displayQuestion: 'How do I register for SEASIDES 2025?',
+      displayQuestion: 'How do I register for SEASIDES 2026?',
       answer: [
         '📝 Registration is completely FREE!',
         '🌐 Visit: https://seasides.net/register',
@@ -246,7 +246,7 @@ const Faq = () => {
               {/* Header */}
               <div className="text-center mb-8">
                 <div className="text-2xl font-bold glow-text text-green-400 mb-4">
-                  === SEASIDES 2025 FAQ DATABASE ===
+                  === SEASIDES 2026 FAQ DATABASE ===
                 </div>
                 <div className="text-green-300 text-sm mb-4">
                   Interactive help system - Click on any question for detailed information
@@ -346,7 +346,7 @@ const Faq = () => {
                 <div className="text-xs space-y-1">
                   <div className="text-cyan-400 glow-text">QUICK HELP:</div>
                   <div className="text-green-400">► Registration: FREE!</div>
-                  <div className="text-yellow-400">► Date: Jan 26-27, 2025</div>
+                  <div className="text-yellow-400">► Date: Jan 26-27, 2026</div>
                   <div className="text-purple-400">► Location: Goa, India</div>
                   <div className="text-pink-400">► Contact: info@seasides.net</div>
                 </div>

@@ -14,7 +14,7 @@ const Contact = () => {
     { command: 'ls -la /seasides/contact/', output: 'drwxr-xr-x 3 root cybersec 4096 Jan 26 09:00 .' },
     { command: 'cat venue.txt', output: 'International Centre Goa\nDona Paula, Goa 403004' },
     { command: 'ping seasides.net', output: 'PING seasides.net (192.168.1.100): 56 data bytes\n64 bytes from seasides.net: icmp_seq=0 time=12.345ms' },
-    { command: 'whoami', output: 'cybersec_attendee@seasides2025' }
+    { command: 'whoami', output: 'cybersec_attendee@seasides2026' }
   ];
 
   const contactMethods = [
@@ -162,10 +162,10 @@ const Contact = () => {
                 <div className="text-green-400 terminal-text">
                   <span className="text-blue-400">root@seasides:</span>
                   <span className="text-white">~#</span>
-                  <span className="ml-2">echo "Welcome to SEASIDES 2025 Contact Portal"</span>
+                  <span className="ml-2">echo "Welcome to SEASIDES 2026 Contact Portal"</span>
                 </div>
                 <div className="text-green-300 terminal-text mt-2">
-                  Welcome to SEASIDES 2025 Contact Portal
+                  Welcome to SEASIDES 2026 Contact Portal
                 </div>
               </div>
             </div>

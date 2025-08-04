@@ -29,10 +29,10 @@ const Footer = () => {
       title: 'SOCIAL_NETWORK',
       command: 'ls -la /social/connections/',
       links: [
-        { label: 'Twitter/X', path: 'https://twitter.com/seasides2025', icon: '🐦' },
+        { label: 'Twitter/X', path: 'https://twitter.com/seasides2026', icon: '🐦' },
         { label: 'LinkedIn', path: 'https://linkedin.com/company/seasides', icon: '💼' },
         { label: 'Discord Server', path: 'https://discord.gg/seasides', icon: '💬' },
-        { label: 'GitHub', path: 'https://github.com/seasides2025', icon: '🐙' }
+        { label: 'GitHub', path: 'https://github.com/seasides2026', icon: '🐙' }
       ]
     },
     {
@@ -229,7 +229,7 @@ const Footer = () => {
               <div className="mb-8 p-4 bg-black border border-green-600 rounded">
                 <div className="grid md:grid-cols-4 gap-4 text-xs">
                   <div className="text-green-400">
-                    <span className="text-cyan-400">SYSTEM:</span> SEASIDES-2025
+                    <span className="text-cyan-400">SYSTEM:</span> SEASIDES-2026
                   </div>
                   <div className="text-green-400">
                     <span className="text-cyan-400">UPTIME:</span> {formatUptime(uptime)}
@@ -318,17 +318,17 @@ const Footer = () => {
                     <div className="bg-black p-6 rounded border border-cyan-600">
                       <div className="text-center space-y-4">
                         <div className="text-cyan-400 font-bold text-lg glow-text">
-                          SEASIDES CYBERSECURITY CONFERENCE 2025
+                          SEASIDES CYBERSECURITY CONFERENCE 2026
                         </div>
                         <div className="text-green-300 text-sm space-y-1">
-                          <div>🏖️ Miami Beach Convention Center | April 15-17, 2025</div>
+                          <div>🏖️ Miami Beach Convention Center | April 15-17, 2026</div>
                           <div>🌊 Where Cybersecurity Meets Innovation</div>
                           <div>🔒 Protecting Digital Shores, Building Secure Futures</div>
                         </div>
                         
                         <div className="flex items-center justify-center gap-4 text-xs">
                           <div className="text-purple-400">
-                            💻 conf-support@seasides2025.com
+                            💻 conf-support@seasides2026.com
                           </div>
                           <div className="text-yellow-400">
                             📞 +1 (305) 555-WAVE
@@ -342,13 +342,13 @@ const Footer = () => {
                   <div className="border-t border-green-600 pt-6">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
                       <div className="text-green-400">
-                        <span className="text-cyan-400">root@seasides2025:</span>
+                        <span className="text-cyan-400">root@seasides2026:</span>
                         <span className="text-white">~$</span>
-                        <span className="text-green-400 ml-2">echo "© 2025 Seasides Conference. All systems operational."</span>
+                        <span className="text-green-400 ml-2">echo "© 2026 Seasides Conference. All systems operational."</span>
                       </div>
                       
                       <div className="flex items-center gap-4 text-green-300">
-                        <div>Build: v2025.1.0</div>
+                        <div>Build: v2026.1.0</div>
                         <div>|</div>
                         <div>SSL: Enabled</div>
                         <div>|</div>

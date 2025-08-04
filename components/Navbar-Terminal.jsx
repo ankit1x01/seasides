@@ -19,7 +19,7 @@ const Navbar = () => {
     { label: 'Contact', command: 'ping contact.seasides', path: '/contact', icon: '📧' }
   ];
 
-  const promptText = 'admin@seasides2025:~$ ';
+  const promptText = 'admin@seasides2026:~$ ';
 
   useEffect(() => {
     // Boot sequence
@@ -211,7 +211,7 @@ const Navbar = () => {
                     className="text-cyan-400 font-bold text-lg glow-text hover:text-cyan-300 transition-colors"
                     onClick={() => handleNavClick({ command: 'cd ~/' })}
                   >
-                    SEASIDES_2025
+                    SEASIDES_2026
                   </Link>
                 </div>
 
@@ -247,7 +247,7 @@ const Navbar = () => {
                 <div className="px-4 py-4 space-y-3">
                   {/* Mobile Menu Header */}
                   <div className="text-xs text-cyan-400 mb-4">
-                    admin@seasides2025:~$ ./show-navigation-menu.sh
+                    admin@seasides2026:~$ ./show-navigation-menu.sh
                   </div>
                   
                   {/* Menu Items */}

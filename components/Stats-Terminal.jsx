@@ -211,7 +211,7 @@ const Stats = () => {
                 </div>
                 <div className="text-center mb-6">
                   <div className="text-2xl font-bold glow-text text-green-400">
-                    === SEASIDES 2025 LIVE STATISTICS ===
+                    === SEASIDES 2026 LIVE STATISTICS ===
                   </div>
                 </div>
               </div>

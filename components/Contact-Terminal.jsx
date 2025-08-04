@@ -185,7 +185,7 @@ const Contact = () => {
                 {/* Initial Welcome */}
                 <div className="text-green-300 text-sm mb-6">
                   <div className="glow-text text-lg font-bold text-center mb-4">
-                    === SEASIDES 2025 CONTACT TERMINAL ===
+                    === SEASIDES 2026 CONTACT TERMINAL ===
                   </div>
                   <div className="text-center">Welcome to the venue information system</div>
                 </div>
@@ -275,7 +275,7 @@ const Contact = () => {
                   <div className="text-green-400">► Email: info@seasides.net</div>
                   <div className="text-yellow-400">► Phone: +91-XXX-XXX-XXXX</div>
                   <div className="text-purple-400">► Location: Goa, India</div>
-                  <div className="text-pink-400">► Date: Jan 26-27, 2025</div>
+                  <div className="text-pink-400">► Date: Jan 26-27, 2026</div>
                 </div>
               </div>
             </div>

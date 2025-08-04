@@ -202,7 +202,7 @@ const Sponsors = () => {
               <div className="mb-8">
                 <div className="text-center mb-6">
                   <div className="text-2xl font-bold glow-text text-green-400">
-                    === SEASIDES 2025 CYBER ALLIES ===
+                    === SEASIDES 2026 CYBER ALLIES ===
                   </div>
                   <div className="text-green-300 text-sm mt-2">
                     Connecting with industry leaders and community partners
