@@ -2,211 +2,314 @@
 import { useState, useRef, useEffect } from 'react';
 
 const Contact = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [hoveredButton, setHoveredButton] = useState(null);
+  const [typedText, setTypedText] = useState('');
+  const [currentCommandIndex, setCurrentCommandIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(false);
+  const [showCursor, setShowCursor] = useState(true);
+  const [terminalOutput, setTerminalOutput] = useState([]);
+  const [activeTerminal, setActiveTerminal] = useState(null);
   const contactRef = useRef(null);
+
+  const terminalCommands = [
+    { command: 'ls -la /seasides/contact/', output: 'drwxr-xr-x 3 root cybersec 4096 Jan 26 09:00 .' },
+    { command: 'cat venue.txt', output: 'International Centre Goa\nDona Paula, Goa 403004' },
+    { command: 'ping seasides.net', output: 'PING seasides.net (192.168.1.100): 56 data bytes\n64 bytes from seasides.net: icmp_seq=0 time=12.345ms' },
+    { command: 'whoami', output: 'cybersec_attendee@seasides2025' }
+  ];
 
   const contactMethods = [
     {
-      icon: '📍',
+      command: 'ssh venue@seasides.net',
       title: 'Event Location',
       info: 'International Centre Goa',
       detail: 'Dona Paula, Goa 403004',
-      color: 'from-blue-500 to-cyan-500'
+      prompt: 'venue@seasides:~$ ',
+      color: 'text-green-400',
+      output: ['Connecting to venue server...', 'Connection established.', 'Location: International Centre Goa', 'Address: Dona Paula, Goa 403004']
     },
     {
-      icon: '📧',
-      title: 'Email Us',
+      command: 'mail info@seasides.net',
+      title: 'Email Support',
       info: 'info@seasides.net',
       detail: 'Response within 24 hours',
-      color: 'from-purple-500 to-pink-500'
+      prompt: 'mail@seasides:~$ ',
+      color: 'text-cyan-400',
+      output: ['Opening mail client...', 'To: info@seasides.net', 'Subject: Conference Inquiry', 'Response time: < 24 hours']
     },
     {
-      icon: '📱',
-      title: 'Call Us',
+      command: 'call +91-XXX-XXX-XXXX',
+      title: 'Phone Support',
       info: '+91-XXX-XXX-XXXX',
       detail: 'Mon-Fri 9AM-6PM IST',
-      color: 'from-green-500 to-emerald-500'
+      prompt: 'phone@seasides:~$ ',
+      color: 'text-yellow-400',
+      output: ['Initializing call...', 'Number: +91-XXX-XXX-XXXX', 'Hours: Mon-Fri 9AM-6PM IST', 'Status: Available']
     }
   ];
 
+  // Typing effect
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
+    const typeCommand = async () => {
+      if (currentCommandIndex >= terminalCommands.length) return;
+      
+      setIsTyping(true);
+      const command = terminalCommands[currentCommandIndex].command;
+      
+      for (let i = 0; i <= command.length; i++) {
+        setTypedText(command.slice(0, i));
+        await new Promise(resolve => setTimeout(resolve, 100));
+      }
+      
+      // Show output after typing
+      setTimeout(() => {
+        setTerminalOutput(prev => [...prev, {
+          command: command,
+          output: terminalCommands[currentCommandIndex].output
+        }]);
+        setTypedText('');
+        setCurrentCommandIndex(prev => prev + 1);
+        setIsTyping(false);
+      }, 1000);
+    };
 
-    if (contactRef.current) {
-      observer.observe(contactRef.current);
-    }
+    const timer = setTimeout(typeCommand, 2000);
+    return () => clearTimeout(timer);
+  }, [currentCommandIndex]);
 
-    return () => observer.disconnect();
+  // Cursor blink effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, 500);
+    return () => clearInterval(interval);
   }, []);
+
+  const handleTerminalClick = (index) => {
+    setActiveTerminal(activeTerminal === index ? null : index);
+  };
 
   return (
     <>
       <style jsx>{`
-        @keyframes slide-up {
-          0% { transform: translateY(50px); opacity: 0; }
-          100% { transform: translateY(0); opacity: 1; }
+        @keyframes blink {
+          0%, 50% { opacity: 1; }
+          51%, 100% { opacity: 0; }
         }
         
-        @keyframes pulse-glow {
-          0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-          50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(147, 51, 234, 0.4); }
+        @keyframes typing {
+          from { width: 0; }
+          to { width: 100%; }
         }
         
-        @keyframes float-contact {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
+        @keyframes terminal-glow {
+          0%, 100% { box-shadow: 0 0 5px #00ff00, inset 0 0 5px #00ff00; }
+          50% { box-shadow: 0 0 20px #00ff00, inset 0 0 10px #00ff00; }
         }
         
-        .contact-card {
-          animation: slide-up 0.8s ease-out;
-          transition: all 0.3s ease;
+        @keyframes scan-lines {
+          0% { background-position: 0 0; }
+          100% { background-position: 0 50px; }
         }
         
-        .contact-card:hover {
-          transform: translateY(-15px) scale(1.02);
-          animation: pulse-glow 2s ease-in-out infinite;
+        .terminal-window {
+          background: linear-gradient(180deg, transparent 50%, rgba(0, 255, 0, 0.03) 50%);
+          background-size: 100% 4px;
+          animation: scan-lines 0.1s linear infinite;
         }
         
-        .floating-icon {
-          animation: float-contact 3s ease-in-out infinite;
+        .terminal-cursor {
+          animation: blink 1s infinite;
+        }
+        
+        .terminal-text {
+          font-family: 'Courier New', monospace;
+        }
+        
+        .terminal-glow:hover {
+          animation: terminal-glow 2s ease-in-out infinite;
         }
       `}</style>
       
-      <section ref={contactRef} className="relative py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute top-10 right-10 w-32 h-32 bg-blue-500 rounded-full opacity-20 blur-2xl animate-pulse"></div>
-          <div className="absolute bottom-10 left-10 w-40 h-40 bg-purple-500 rounded-full opacity-20 blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 right-1/3 w-24 h-24 bg-pink-500 rounded-full opacity-20 blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <section ref={contactRef} className="relative py-20 bg-black text-green-400 overflow-hidden">
+        {/* Terminal Background Pattern */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="w-full h-full" 
+               style={{
+                 backgroundImage: `
+                   repeating-linear-gradient(
+                     0deg,
+                     transparent,
+                     transparent 2px,
+                     rgba(0, 255, 0, 0.1) 2px,
+                     rgba(0, 255, 0, 0.1) 4px
+                   )
+                 `
+               }}>
+          </div>
         </div>
         
-        {/* Cyber Grid */}
-        <div 
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: '50px 50px'
-          }}
-        ></div>
-        
         <div className="relative container mx-auto px-6 z-10">
+          {/* Terminal Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent">
-              Reach Us
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-6"></div>
-            <p className="text-lg md:text-xl opacity-80 max-w-3xl mx-auto leading-relaxed">
-              Get directions to the event hall or contact us for any queries. We are excited to see you there!
-            </p>
+            <div className="bg-gray-900 border border-green-400 rounded-t-lg p-4 max-w-4xl mx-auto">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                <span className="ml-4 text-sm text-gray-400">contact@seasides.net - Terminal</span>
+              </div>
+              <div className="text-left">
+                <div className="text-green-400 terminal-text">
+                  <span className="text-blue-400">root@seasides:</span>
+                  <span className="text-white">~#</span>
+                  <span className="ml-2">echo "Welcome to SEASIDES 2025 Contact Portal"</span>
+                </div>
+                <div className="text-green-300 terminal-text mt-2">
+                  Welcome to SEASIDES 2025 Contact Portal
+                </div>
+              </div>
+            </div>
           </div>
           
-          {/* Contact Methods */}
+          {/* Live Terminal Demo */}
+          <div className="bg-gray-900 border border-green-400 rounded-lg p-6 mb-12 max-w-4xl mx-auto terminal-window">
+            <div className="terminal-text">
+              {terminalOutput.map((item, index) => (
+                <div key={index} className="mb-4">
+                  <div className="text-blue-400">
+                    <span className="text-blue-400">cybersec@seasides:</span>
+                    <span className="text-white">~$</span>
+                    <span className="ml-2 text-green-400">{item.command}</span>
+                  </div>
+                  <div className="text-green-300 whitespace-pre-line ml-4">
+                    {item.output}
+                  </div>
+                </div>
+              ))}
+              
+              {currentCommandIndex < terminalCommands.length && (
+                <div className="text-blue-400">
+                  <span className="text-blue-400">cybersec@seasides:</span>
+                  <span className="text-white">~$</span>
+                  <span className="ml-2 text-green-400">{typedText}</span>
+                  <span className={`terminal-cursor text-green-400 ${showCursor ? 'opacity-100' : 'opacity-0'}`}>|</span>
+                </div>
+              )}
+            </div>
+          </div>
+          
+          {/* Interactive Terminal Contact Methods */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {contactMethods.map((method, index) => (
               <div 
                 key={index}
-                className={`contact-card bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 border border-white border-opacity-20 text-center relative overflow-hidden group cursor-pointer`}
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className="bg-gray-900 border border-green-400 rounded-lg p-6 terminal-window terminal-glow cursor-pointer transition-all duration-300 hover:border-green-300"
+                onClick={() => handleTerminalClick(index)}
               >
-                <div className={`floating-icon text-5xl mb-4`} style={{ animationDelay: `${index * 0.3}s` }}>
-                  {method.icon}
+                <div className="terminal-text">
+                  {/* Terminal Header */}
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span className="ml-2 text-xs text-gray-400">{method.title}</span>
+                  </div>
+                  
+                  {/* Command Line */}
+                  <div className="mb-3">
+                    <span className={method.color}>{method.prompt}</span>
+                    <span className="text-green-400">{method.command}</span>
+                  </div>
+                  
+                  {/* Output */}
+                  {activeTerminal === index && (
+                    <div className="text-green-300 text-sm space-y-1">
+                      {method.output.map((line, lineIndex) => (
+                        <div key={lineIndex} className="ml-4">
+                          {line}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  
+                  {/* Info Display */}
+                  <div className="mt-4 p-3 bg-black bg-opacity-50 rounded border border-green-600">
+                    <div className="text-green-400 font-semibold">{method.info}</div>
+                    <div className="text-green-300 text-sm">{method.detail}</div>
+                  </div>
                 </div>
-                
-                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-blue-200 transition-colors">
-                  {method.title}
-                </h3>
-                
-                <p className="text-lg font-semibold mb-2 bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
-                  {method.info}
-                </p>
-                
-                <p className="text-sm opacity-75">
-                  {method.detail}
-                </p>
-                
-                {/* Hover Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${method.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-2xl`}></div>
               </div>
             ))}
           </div>
           
-          {/* Interactive Map Section */}
-          <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 border border-white border-opacity-20 mb-12">
-            <h3 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
-              Event Venue
-            </h3>
-            
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h4 className="text-xl font-semibold mb-4 text-white">International Centre Goa</h4>
-                <p className="text-gray-300 mb-4 leading-relaxed">
-                  A premier conference venue located in the heart of Goa, offering state-of-the-art facilities for our cybersecurity conference.
-                </p>
-                <div className="space-y-2 text-sm text-gray-300">
-                  <p>🏨 On-site accommodation available</p>
-                  <p>🍽️ Multiple dining options</p>
-                  <p>🚗 Ample parking space</p>
-                  <p>✈️ 30 minutes from Goa Airport</p>
-                </div>
+          {/* Terminal Map Section */}
+          <div className="bg-gray-900 border border-green-400 rounded-lg p-8 mb-12 terminal-window">
+            <div className="terminal-text">
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                <span className="ml-4 text-sm text-gray-400">venue-map.sh</span>
               </div>
               
-              <div className="bg-gray-800 bg-opacity-50 rounded-xl p-6 text-center">
-                <div className="text-6xl mb-4">🗺️</div>
-                <p className="text-gray-300 mb-4">Interactive venue map coming soon!</p>
-                <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
-                  View on Maps
-                </button>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <div className="text-green-400 mb-4">
+                    <span className="text-blue-400">root@venue:</span>
+                    <span className="text-white">~#</span>
+                    <span className="ml-2">cat /etc/venue/info.txt</span>
+                  </div>
+                  
+                  <div className="text-green-300 space-y-2 ml-4">
+                    <div>Name: International Centre Goa</div>
+                    <div>Address: Dona Paula, Goa 403004</div>
+                    <div>Capacity: 500+ attendees</div>
+                    <div>Facilities: A/C, WiFi, Parking</div>
+                    <div>Distance from Airport: 30km</div>
+                  </div>
+                </div>
+                
+                <div className="bg-black bg-opacity-50 p-6 rounded border border-green-600">
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">🗺️</div>
+                    <div className="text-green-400 mb-4">ASCII Map Loading...</div>
+                    <div className="text-green-300 text-xs mb-4">
+                      [████████████████████] 100%
+                    </div>
+                    <button className="px-4 py-2 border border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition-colors">
+                      ./open-maps.sh
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           
-          {/* Action Buttons */}
+          {/* Terminal Action Buttons */}
           <div className="text-center">
-            <div className="flex flex-wrap justify-center gap-6">
-              <button 
-                className="group px-10 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-2xl hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 relative overflow-hidden"
-                onMouseEnter={() => setHoveredButton('directions')}
-                onMouseLeave={() => setHoveredButton(null)}
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  <span className="animate-bounce">🧭</span>
-                  Get Directions
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-              </button>
-              
-              <button 
-                className="group px-10 py-4 border-2 border-white text-white font-bold rounded-2xl hover:bg-white hover:text-purple-600 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-white/25 relative overflow-hidden"
-                onMouseEnter={() => setHoveredButton('download')}
-                onMouseLeave={() => setHoveredButton(null)}
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  <span className="animate-pulse">📱</span>
-                  Download Venue App
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
-              </button>
-            </div>
-            
-            {/* Fun Interactive Element */}
-            <div className="mt-12">
-              <div className="inline-flex items-center gap-2 text-sm opacity-75 hover:opacity-100 transition-opacity cursor-pointer">
-                <span className="animate-bounce">🌴</span>
-                <span className="bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
-                  Experience the beauty of Goa while learning cybersecurity
-                </span>
-                <span className="animate-bounce" style={{ animationDelay: '0.5s' }}>🏖️</span>
+            <div className="bg-gray-900 border border-green-400 rounded-lg p-6 terminal-window max-w-2xl mx-auto">
+              <div className="terminal-text">
+                <div className="text-green-400 mb-4">
+                  <span className="text-blue-400">user@seasides:</span>
+                  <span className="text-white">~$</span>
+                  <span className="ml-2">ls /usr/bin/contact-actions/</span>
+                </div>
+                
+                <div className="flex flex-wrap justify-center gap-4 mb-4">
+                  <button className="px-6 py-3 border border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition-all duration-300 terminal-text">
+                    ./get-directions.sh
+                  </button>
+                  <button className="px-6 py-3 border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300 terminal-text">
+                    ./download-app.sh
+                  </button>
+                </div>
+                
+                <div className="text-green-300 text-sm">
+                  <div className="flex items-center justify-center gap-4">
+                    <span>► ./help.sh for more options</span>
+                    <span className="terminal-cursor animate-pulse">|</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
