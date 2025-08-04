@@ -1,8 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import LoadingScreen from "@/components/LoadingScreen";
+import Navbar from "@/components/Navbar-Terminal";
+import Footer from "@/components/Footer-Terminal";
+import LoadingScreen from "@/components/LoadingScreen-Terminal";
 import CustomCursor from "@/components/CustomCursor";
 
 const geistSans = Geist({
@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Seasides 2026 - India's Most Loved Cybersecurity Conference",
-  description: "Join us for the most innovative cybersecurity conference in India. Free workshops, world-class speakers, and hands-on learning experiences.",
+  description: "Join us for the most innovative cybersecurity conference in India. Free workshops, world-class speakers, and hands-on learning experiences. Feb 20-22, 2026.",
 };
 
 export default function RootLayout({ children }) {
