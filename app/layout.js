@@ -28,9 +28,7 @@ export default function RootLayout({ children }) {
       >
         <LoadingScreen />
         <CustomCursor />
-        <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );
