@@ -158,7 +158,7 @@ const Workshops = () => {
         }
       `}</style>
       
-      <section ref={workshopsRef} className="relative py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white overflow-hidden">
+      <section ref={workshopsRef} className="relative py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white overflow-hidden" style={{color: 'white'}}>
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-10 right-10 w-40 h-40 bg-purple-500 rounded-full opacity-15 blur-3xl animate-pulse"></div>
@@ -181,11 +181,11 @@ const Workshops = () => {
         
         <div className="relative container mx-auto px-6 z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-200 via-blue-200 to-cyan-200 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Hands-On Cyber Workshops
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full mb-6"></div>
-            <p className="text-lg md:text-xl opacity-80 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl max-w-4xl mx-auto leading-relaxed text-white/90">
               One of the most important things is choosing the workshop that aligns with your interests. 
               Select the one that matters most to you and dive deep into practical cybersecurity skills.
             </p>
@@ -196,7 +196,7 @@ const Workshops = () => {
             {workshops.map((workshop, index) => (
               <div
                 key={workshop.id}
-                className={`workshop-card bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 border border-white border-opacity-20 relative overflow-hidden group cursor-pointer`}
+                className={`workshop-card bg-gray-800 bg-opacity-90 backdrop-blur-lg rounded-2xl p-8 border border-white border-opacity-20 relative overflow-hidden group cursor-pointer`}
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onMouseEnter={() => setHoveredCard(workshop.id)}
                 onMouseLeave={() => setHoveredCard(null)}
@@ -209,10 +209,10 @@ const Workshops = () => {
                       {workshop.icon}
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-white group-hover:text-blue-200 transition-colors">
+                      <h3 className="text-xl font-bold transition-colors" style={{color: 'white'}}>
                         {workshop.title}
                       </h3>
-                      <p className="text-sm text-gray-300">by {workshop.instructor}</p>
+                      <p className="text-sm text-white">by {workshop.instructor}</p>
                     </div>
                   </div>
                   <div className={`px-3 py-1 rounded-full text-xs font-semibold ${getDifficultyColor(workshop.difficulty)}`}>
@@ -222,33 +222,33 @@ const Workshops = () => {
                 
                 {/* Workshop Info */}
                 <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
-                  <div className="flex items-center gap-2 text-gray-300">
+                  <div className="flex items-center gap-2 text-white/90">
                     <span>⏱️</span>
                     <span>{workshop.duration}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-300">
+                  <div className="flex items-center gap-2 text-white/90">
                     <span>👥</span>
                     <span>{workshop.participants}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-300 col-span-2">
+                  <div className="flex items-center gap-2 col-span-2 text-white/90">
                     <span>📅</span>
                     <span>{workshop.time}</span>
                   </div>
                 </div>
                 
                 {/* Description */}
-                <p className="text-gray-300 leading-relaxed mb-6">
+                <p className="leading-relaxed mb-6 text-white">
                   {workshop.description}
                 </p>
                 
                 {/* Topics */}
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-blue-200 mb-3">Key Topics:</h4>
+                  <h4 className="text-sm font-semibold mb-3" style={{color: '#bfdbfe'}}>Key Topics:</h4>
                   <div className="flex flex-wrap gap-2">
                     {workshop.topics.map((topic, topicIndex) => (
                       <span
                         key={topicIndex}
-                        className="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-200 text-xs rounded-full border border-blue-500/30"
+                        className="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-xs rounded-full border border-blue-500/30" style={{color: '#bfdbfe'}}
                       >
                         {topic}
                       </span>
@@ -256,10 +256,6 @@ const Workshops = () => {
                   </div>
                 </div>
                 
-                {/* Action Button */}
-                <button className={`w-full py-3 bg-gradient-to-r ${workshop.color} text-white font-semibold rounded-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
-                  Register for Workshop
-                </button>
                 
                 {/* Hover Gradient Overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${workshop.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl`}></div>
@@ -282,17 +278,17 @@ const Workshops = () => {
                 <span className="animate-pulse">⚡</span>
                 <span className="animate-bounce" style={{ animationDelay: '0.5s' }}>🚀</span>
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
                 Level Up Your Cybersecurity Skills
               </h3>
-              <p className="text-gray-300 text-lg max-w-3xl mx-auto mb-8 leading-relaxed">
-                Don't miss out on these intensive hands-on workshops led by industry experts. 
-                Limited seats available - secure your spot now!
+              <p className="text-lg max-w-3xl mx-auto mb-8 leading-relaxed text-white">
+                Don’t miss these intensive hands-on workshops led by industry experts.
+                Entry is free and seating is first-come, first-served based on capacity.
               </p>
             </div>
             
             <div className="flex flex-wrap justify-center gap-6">
-              <button className="group px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-2xl hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-cyan-500/25 relative overflow-hidden">
+              <button className="group px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 font-bold rounded-2xl hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-cyan-500/25 relative overflow-hidden" style={{color: 'white'}}>
                 <span className="relative z-10 flex items-center gap-2">
                   <span className="animate-bounce">📋</span>
                   View All Workshops
@@ -300,7 +296,7 @@ const Workshops = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </button>
               
-              <button className="group px-10 py-4 border-2 border-purple-400 text-purple-400 font-bold rounded-2xl hover:bg-purple-400 hover:text-gray-900 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-purple-400/25 relative overflow-hidden">
+              <button className="group px-10 py-4 border-2 border-purple-400 font-bold rounded-2xl hover:bg-purple-400 hover:text-gray-900 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-purple-400/25 relative overflow-hidden" style={{color: '#a855f7'}}>
                 <span className="relative z-10 flex items-center gap-2">
                   <span className="animate-pulse">💬</span>
                   Contact Workshop Team
@@ -311,15 +307,15 @@ const Workshops = () => {
             
             {/* Workshop Stats */}
             <div className="mt-8 grid md:grid-cols-3 gap-6 text-sm">
-              <div className="text-cyan-400 hover:text-cyan-300 transition-colors cursor-pointer">
+              <div className="hover:text-cyan-300 transition-colors cursor-pointer" style={{color: '#22d3ee'}}>
                 <div className="text-2xl font-bold">6</div>
                 <div>Specialized Workshops</div>
               </div>
-              <div className="text-purple-400 hover:text-purple-300 transition-colors cursor-pointer">
+              <div className="hover:text-purple-300 transition-colors cursor-pointer" style={{color: '#a855f7'}}>
                 <div className="text-2xl font-bold">24+</div>
                 <div>Total Hours of Learning</div>
               </div>
-              <div className="text-pink-400 hover:text-pink-300 transition-colors cursor-pointer">
+              <div className="hover:text-pink-300 transition-colors cursor-pointer" style={{color: '#f472b6'}}>
                 <div className="text-2xl font-bold">185</div>
                 <div>Maximum Participants</div>
               </div>
@@ -330,7 +326,5 @@ const Workshops = () => {
     </>
   );
 };
-
-export default Workshops;
 
 export default Workshops;

@@ -1,5 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
+import { EVENT_DATE_SHORT, EVENT_START_ISO } from '@/lib/eventConfig';
 
 const ComingSoon = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -8,7 +10,7 @@ const ComingSoon = () => {
   const heroRef = useRef(null);
 
   useEffect(() => {
-    const eventDate = new Date('2026-02-20T00:00:00');
+    const eventDate = new Date(EVENT_START_ISO);
     
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -164,10 +166,10 @@ const ComingSoon = () => {
         }
         
         .gradient-bg {
-          background: linear-gradient(-45deg, #667eea, #764ba2, #6B73FF, #9A9CE2, #FF6B9D, #C44569);
-          background-size: 400% 400%;
-          animation: gradient-shift 15s ease infinite;
-          -webkit-animation: gradient-shift 15s ease infinite;
+          background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent), #f0abfc);
+          background-size: 200% 100%;
+          animation: gradient-shift 12s ease infinite;
+          -webkit-animation: gradient-shift 12s ease infinite;
         }
         
         .glass-morphism {
@@ -239,10 +241,13 @@ const ComingSoon = () => {
           {/* Animated Logo/Title */}
           <FloatingElement delay={0}>
             <div className="mb-8">
-              <div className="inline-block p-4 glass-morphism rounded-2xl mb-8 neon-glow">
-                <img 
-                  src="http://seasides.net/wp-content/uploads/2024/09/Logo-3-No-BG-White-Website.png"
+              <div className="inline-block p-4 glass rounded-2xl mb-8">
+                <Image
+                  src="https://seasides.net/wp-content/uploads/2024/09/Logo-3-No-BG-White-Website.png"
                   alt="Seasides Logo"
+                  width={160}
+                  height={160}
+                  priority
                   className="w-32 h-32 md:w-40 md:h-40 object-contain"
                 />
               </div>
@@ -250,14 +255,14 @@ const ComingSoon = () => {
           </FloatingElement>
           
           <div className="bounce-in mb-8">
-            <h1 className="text-7xl font-bold leading-tight sm:text-8xl md:text-9xl mb-6 bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
+            <h1 className="text-7xl font-bold leading-tight sm:text-8xl md:text-9xl mb-6 text-white">
               Seasides 2026
             </h1>
           </div>
           
           <FloatingElement delay={0.3}>
-            <div className="glass-morphism rounded-3xl p-8 mb-8 transform hover:scale-102 transition-all duration-500">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 bg-clip-text text-transparent">
+            <div className="glass rounded-3xl p-8 mb-8 transform hover:scale-102 transition-all duration-500">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
                 COMING SOON
               </h2>
               <p className="text-xl md:text-2xl opacity-90 font-light">
@@ -267,15 +272,15 @@ const ComingSoon = () => {
           </FloatingElement>
           
           <FloatingElement delay={0.6}>
-            <p className="text-2xl md:text-3xl mb-8 font-light bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
+            <p className="text-2xl md:text-3xl mb-8 font-light text-white/90">
               India's Most Loved Cybersecurity Conference
             </p>
           </FloatingElement>
           
           {/* Interactive Countdown */}
           <FloatingElement delay={0.9}>
-            <div className="glass-morphism rounded-3xl p-10 mb-12 transform hover:scale-102 transition-all duration-500 neon-glow">
-              <h3 className="text-2xl font-semibold mb-8 bg-gradient-to-r from-yellow-200 to-orange-200 bg-clip-text text-transparent">
+            <div className="glass rounded-3xl p-10 mb-12 transform hover:scale-102 transition-all duration-500">
+              <h3 className="text-2xl font-semibold mb-8 text-white">
                 🚀 Launching In:
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
@@ -302,11 +307,11 @@ const ComingSoon = () => {
 
           {/* Event Details with Animation */}
           <FloatingElement delay={1.2}>
-            <div className="glass-morphism rounded-2xl p-8 mb-12">
+            <div className="glass rounded-2xl p-8 mb-12">
               <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-xl">
                 <div className="flex items-center gap-3 hover:scale-105 transition-all duration-300">
                   <span className="text-3xl opacity-90">📅</span>
-                  <span className="font-semibold">20-22 Feb 2026</span>
+                  <span className="font-semibold">{EVENT_DATE_SHORT.replace('–', '-')}</span>
                 </div>
                 <div className="hidden md:block w-1 h-8 bg-gradient-to-b from-blue-400 to-purple-400 rounded-full"></div>
                 <div className="flex items-center gap-3 hover:scale-105 transition-all duration-300">
@@ -328,7 +333,7 @@ const ComingSoon = () => {
               ].map((item, index) => (
                 <div 
                   key={item.label}
-                  className="glass-morphism rounded-xl p-6 hover:scale-105 transition-all duration-400 cursor-pointer hover:bg-white/20"
+                  className="glass rounded-xl p-6 hover:scale-105 transition-all duration-200 cursor-pointer"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="text-3xl mb-2" style={{ animationDelay: `${index * 0.05}s` }}>
@@ -342,8 +347,8 @@ const ComingSoon = () => {
 
           {/* Call to Action */}
           <FloatingElement delay={1.8}>
-            <div className="glass-morphism rounded-2xl p-8 max-w-2xl">
-              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-green-300 to-blue-300 bg-clip-text text-transparent">
+            <div className="glass rounded-2xl p-8 max-w-2xl">
+              <h3 className="text-2xl font-bold mb-4 text-white">
                 🎯 Be the First to Know!
               </h3>
               <p className="text-lg mb-6 opacity-90">

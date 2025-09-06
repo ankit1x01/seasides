@@ -87,7 +87,7 @@ const Stats = () => {
         }
       `}</style>
       
-      <section ref={statsRef} className="relative py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white overflow-hidden">
+      <section ref={statsRef} className="relative py-20 bg-black text-white overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-32 h-32 bg-blue-500 rounded-full opacity-20 blur-2xl animate-pulse"></div>
@@ -109,7 +109,7 @@ const Stats = () => {
         
         <div className="relative container mx-auto px-6 z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#00FF7F', fontWeight: 'bold', textShadow: '2px 2px 4px rgba(255,255,255,0.3)' }}>
               Conference Statistics
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
@@ -122,7 +122,10 @@ const Stats = () => {
                 className={`stat-card relative group cursor-pointer`}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className={`bg-gradient-to-br ${colors[index]} p-8 rounded-2xl shadow-2xl backdrop-blur-lg border border-white border-opacity-20 text-center relative overflow-hidden`}>
+                <div className="p-8 rounded-2xl shadow-2xl border-2 text-center relative overflow-hidden" style={{ 
+                  backgroundColor: '#000000',
+                  borderColor: ['#00FFFF', '#FF69B4', '#32CD32', '#FFD700'][index]
+                }}>
                   {/* Floating Icon */}
                   <div className="text-5xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
                     <span className="inline-block animate-bounce" style={{ animationDelay: `${index * 0.1}s` }}>
@@ -132,13 +135,21 @@ const Stats = () => {
                   
                   {/* Animated Number */}
                   <div className="number-animation">
-                    <p className="text-4xl lg:text-6xl font-bold leading-none mb-2 text-white">
+                    <p className="text-4xl lg:text-6xl font-bold leading-none mb-2" style={{
+                      color: ['#00FFFF', '#FF69B4', '#32CD32', '#FFD700'][index],
+                      fontWeight: 'bold',
+                      textShadow: '2px 2px 4px rgba(255,255,255,0.3)'
+                    }}>
                       {stat}+
                     </p>
                   </div>
                   
                   {/* Label */}
-                  <p className="text-sm sm:text-base font-medium text-white opacity-90">
+                  <p className="text-sm sm:text-base font-medium" style={{
+                    color: ['#87CEEB', '#DDA0DD', '#98FB98', '#F0E68C'][index],
+                    fontWeight: 'bold',
+                    textShadow: '1px 1px 2px rgba(0,0,0,0.8)'
+                  }}>
                     {labels[index]}
                   </p>
                   
@@ -154,9 +165,9 @@ const Stats = () => {
           
           {/* Bottom Decorative Element */}
           <div className="text-center mt-16">
-            <div className="inline-flex items-center gap-3 text-lg opacity-75 hover:opacity-100 transition-opacity cursor-pointer">
+            <div className="inline-flex items-center gap-3 text-lg hover:text-white transition-colors cursor-pointer">
               <span className="animate-bounce">📊</span>
-              <span className="bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent font-semibold">
+              <span style={{ color: '#40E0D0', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
                 Real-time conference metrics
               </span>
               <span className="animate-bounce" style={{ animationDelay: '0.5s' }}>✨</span>

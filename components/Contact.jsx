@@ -80,7 +80,7 @@ const Contact = () => {
         }
       `}</style>
       
-      <section ref={contactRef} className="relative py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white overflow-hidden">
+      <section ref={contactRef} className="relative py-20 bg-black text-white overflow-hidden" style={{color: 'white'}}>
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-10 right-10 w-32 h-32 bg-blue-500 rounded-full opacity-20 blur-2xl animate-pulse"></div>
@@ -102,11 +102,11 @@ const Contact = () => {
         
         <div className="relative container mx-auto px-6 z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#00FF7F', fontSize: '3rem', fontWeight: 'bold', textShadow: '2px 2px 4px rgba(255,255,255,0.3)' }}>
               Reach Us
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-6"></div>
-            <p className="text-lg md:text-xl opacity-80 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: '#87CEEB', fontSize: '1.2rem', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
               Get directions to the event hall or contact us for any queries. We are excited to see you there!
             </p>
           </div>
@@ -116,22 +116,25 @@ const Contact = () => {
             {contactMethods.map((method, index) => (
               <div 
                 key={index}
-                className={`contact-card bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 border border-white border-opacity-20 text-center relative overflow-hidden group cursor-pointer`}
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className={`contact-card rounded-2xl p-8 border-2 border-cyan-400 text-center relative overflow-hidden group cursor-pointer`}
+                style={{ 
+                  animationDelay: `${index * 0.2}s`,
+                  backgroundColor: '#000000'
+                }}
               >
                 <div className={`floating-icon text-5xl mb-4`} style={{ animationDelay: `${index * 0.3}s` }}>
                   {method.icon}
                 </div>
                 
-                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-blue-200 transition-colors">
+                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-200 transition-colors" style={{ color: '#FFD700', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(255,255,255,0.3)' }}>
                   {method.title}
                 </h3>
                 
-                <p className="text-lg font-semibold mb-2 bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
+                <p className="text-lg font-semibold mb-2" style={{ color: '#00FFFF', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
                   {method.info}
                 </p>
                 
-                <p className="text-sm opacity-75">
+                <p className="text-sm" style={{ color: '#98FB98', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
                   {method.detail}
                 </p>
                 
@@ -142,29 +145,29 @@ const Contact = () => {
           </div>
           
           {/* Interactive Map Section */}
-          <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 border border-white border-opacity-20 mb-12">
-            <h3 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
+          <div className="rounded-2xl p-8 border-2 border-purple-400 mb-12" style={{ backgroundColor: '#000000' }}>
+            <h3 className="text-2xl font-bold text-center mb-6" style={{ color: '#FF69B4', fontWeight: 'bold', textShadow: '2px 2px 4px rgba(255,255,255,0.3)' }}>
               Event Venue
             </h3>
             
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h4 className="text-xl font-semibold mb-4 text-white">International Centre Goa</h4>
-                <p className="text-gray-300 mb-4 leading-relaxed">
+                <h4 className="text-xl font-semibold mb-4" style={{ color: '#40E0D0', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(255,255,255,0.3)' }}>International Centre Goa</h4>
+                <p className="mb-4 leading-relaxed" style={{ color: '#F0E68C', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
                   A premier conference venue located in the heart of Goa, offering state-of-the-art facilities for our cybersecurity conference.
                 </p>
-                <div className="space-y-2 text-sm text-gray-300">
-                  <p>🏨 On-site accommodation available</p>
-                  <p>🍽️ Multiple dining options</p>
-                  <p>🚗 Ample parking space</p>
-                  <p>✈️ 30 minutes from Goa Airport</p>
+                <div className="space-y-2 text-sm">
+                  <p style={{ color: '#98FB98', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>🏨 On-site accommodation available</p>
+                  <p style={{ color: '#DDA0DD', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>🍽️ Multiple dining options</p>
+                  <p style={{ color: '#87CEEB', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>🚗 Ample parking space</p>
+                  <p style={{ color: '#FFB6C1', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>✈️ 30 minutes from Goa Airport</p>
                 </div>
               </div>
               
               <div className="bg-gray-800 bg-opacity-50 rounded-xl p-6 text-center">
                 <div className="text-6xl mb-4">🗺️</div>
-                <p className="text-gray-300 mb-4">Interactive venue map coming soon!</p>
-                <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                <p className="mb-4" style={{ color: '#00FFFF', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Interactive venue map coming soon!</p>
+                <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105" style={{color: 'white'}}>
                   View on Maps
                 </button>
               </div>
@@ -175,7 +178,8 @@ const Contact = () => {
           <div className="text-center">
             <div className="flex flex-wrap justify-center gap-6">
               <button 
-                className="group px-10 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-2xl hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 relative overflow-hidden"
+                className="group px-10 py-4 bg-gradient-to-r from-blue-500 to-purple-600 font-bold rounded-2xl hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 relative overflow-hidden"
+                style={{color: 'white'}}
                 onMouseEnter={() => setHoveredButton('directions')}
                 onMouseLeave={() => setHoveredButton(null)}
               >
@@ -187,7 +191,8 @@ const Contact = () => {
               </button>
               
               <button 
-                className="group px-10 py-4 border-2 border-white text-white font-bold rounded-2xl hover:bg-white hover:text-purple-600 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-white/25 relative overflow-hidden"
+                className="group px-10 py-4 border-2 border-white font-bold rounded-2xl hover:bg-white hover:text-purple-600 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-white/25 relative overflow-hidden"
+                style={{color: 'white'}}
                 onMouseEnter={() => setHoveredButton('download')}
                 onMouseLeave={() => setHoveredButton(null)}
               >
@@ -201,9 +206,9 @@ const Contact = () => {
             
             {/* Fun Interactive Element */}
             <div className="mt-12">
-              <div className="inline-flex items-center gap-2 text-sm opacity-75 hover:opacity-100 transition-opacity cursor-pointer">
+              <div className="inline-flex items-center gap-2 text-sm hover:text-white transition-colors cursor-pointer">
                 <span className="animate-bounce">🌴</span>
-                <span className="bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
+                <span style={{ color: '#32CD32', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
                   Experience the beauty of Goa while learning cybersecurity
                 </span>
                 <span className="animate-bounce" style={{ animationDelay: '0.5s' }}>🏖️</span>

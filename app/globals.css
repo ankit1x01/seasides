@@ -1,26 +1,271 @@
 @import "tailwindcss";
 
 :root {
+  /* Base surface and text */
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Brand tokens */
+  --brand-primary: #60a5fa; /* sky-400 */
+  --brand-accent:  #a78bfa; /* indigo-300/purple-400 mix */
+  --brand-danger:  #f472b6; /* pink-400 */
+
+  /* Light theme surfaces */
+  --surface: #ffffff;
+  --surface-alt: #f8fafc;
+  --border: rgba(255,255,255,0.15);
+  --border-strong: rgba(255,255,255,0.25);
+
+  /* Typography */
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Dark theme - Professional cybersec colors */
+.dark {
+  /* Dark surfaces (slate 950/900) */
+  --background: #0a0a0b; /* slate-950-ish */
+  --foreground: #e5e7eb;
+  --surface: #0b0b0c; /* deep */
+  --surface-alt: #111214; /* raised */
+  --border: rgba(255,255,255,0.10);
+  --border-strong: rgba(255,255,255,0.20);
+
+  /* Brand tokens stay the same but glow subtly on dark */
+  --brand-primary: #60a5fa;
+  --brand-accent:  #a78bfa;
+  --brand-danger:  #f472b6;
+
+  /* Typography */
+  --text-primary: #f3f4f6;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  /* Surfaces for glass */
+  --glass-bg: rgba(0,0,0,0.30);
+  --glass-border: rgba(255,255,255,0.10);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Ensure text is always visible */
+/* Removed global color overrides that could break contrast. Prefer component-level Tailwind classes. */
+
+/* Gradient text styles disabled for better visibility across browsers */
+/*
+.bg-clip-text {
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+.text-transparent {
+  color: transparent !important;
+}
+
+.bg-clip-text.text-transparent {
+  -webkit-text-fill-color: transparent !important;
+}
+
+.gradient-clip {
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.brand-gradient {
+  background-image: linear-gradient(90deg, var(--brand-primary), var(--brand-accent), #f0abfc);
+}
+*/
+
+/* Standardized glass surface */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+/* Safari/iOS specific blur helpers for components using Tailwind backdrop-blur */
+.safari-blur {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.safari-blur-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.safari-blur-lg {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Standardized card with premium top hairline */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  position: relative;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--brand-primary), var(--brand-accent), transparent);
+  opacity: 0.5;
+}
+
+/* Visible focus styles everywhere */
+*:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(56,189,248,0.7), 0 0 0 4px rgba(0,0,0,0.8) !important; /* ring-sky-400/70 + offset */
+}
+
+/* Subtle grain overlay to tame banding */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.025;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after { display: none; }
+}
+
+/* Avoid forcing colors globally; let component classes control contrast */
+
+/* Ensure buttons have proper text color */
+button {
+  color: inherit;
+}
+
+button[class*="bg-gradient"] {
+  color: white !important;
+}
+
+/* Avoid forcing text colors on surfaces; components should control contrast. */
+
+/* Remove overly aggressive heading text-fill override and odd fallbacks */
+
+/* Removed backup overrides that could conflict with intended styles. */
+
+/* Dark Theme Utility Classes */
+.theme-bg {
+  background: var(--background);
+}
+
+.theme-surface {
+  background: var(--surface);
+}
+
+.theme-surface-alt {
+  background: var(--surface-alt);
+}
+
+.theme-text {
+  color: var(--text-primary);
+}
+
+.theme-text-secondary {
+  color: var(--text-secondary);
+}
+
+.theme-text-muted {
+  color: var(--text-muted);
+}
+
+.theme-border {
+  border-color: var(--border);
+}
+
+/* Professional Dark Theme Components */
+.dark .cyber-card {
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-alt) 100%);
+  border: 1px solid var(--border);
+}
+
+.dark .cyber-glow {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+.dark .cyber-glow:hover {
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
+}
+
+/* Dark theme gradients maintaining vibrant accents */
+.dark .hero-bg-dark {
+  background: linear-gradient(135deg, #0a0a0b 0%, #1a1a1b 50%, #0f0f10 100%);
+}
+
+.dark .cyber-gradient {
+  background: linear-gradient(135deg, var(--cyber-blue) 0%, var(--cyber-purple) 100%);
+}
+
+.dark .glass-morphism-dark {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Navbar dark theme */
+.dark .navbar-dark {
+  background: rgba(10, 10, 11, 0.95);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Professional cybersec button styles */
+.dark .cyber-btn {
+  background: linear-gradient(135deg, var(--cyber-blue) 0%, var(--cyber-purple) 100%);
+  color: #000;
+  font-weight: 600;
+}
+
+.dark .cyber-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+}
+
+/* Terminal-style elements for dark theme */
+.dark .terminal {
+  background: #000000;
+  color: var(--cyber-green);
+  font-family: 'Monaco', 'Menlo', monospace;
+  border: 1px solid var(--cyber-green);
+}
+
+/* Ensure proper contrast in dark mode */
+/* Do not override Tailwind text utilities in dark mode globally; use component-level classes for contrast */
+
+/* Maintain vibrant accents in dark theme */
+.dark .accent-blue {
+  color: var(--cyber-blue) !important;
+}
+
+.dark .accent-green {
+  color: var(--cyber-green) !important;
+}
+
+.dark .accent-purple {
+  color: var(--cyber-purple) !important;
+}
+
+.dark .accent-red {
+  color: var(--cyber-red) !important;
+}
+
+.dark .accent-orange {
+  color: var(--cyber-orange) !important;
 }

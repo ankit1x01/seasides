@@ -1,34 +1,12 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
-
+import { useState, useEffect, useMemo, useRef } from 'react';
+import Image from 'next/image';
+import InteractiveCountdown from './InteractiveCountdown';
+import { EVENT_DATE_SHORT } from '@/lib/eventConfig';
 const Hero = () => {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const heroRef = useRef(null);
-
-  useEffect(() => {
-    const eventDate = new Date('2026-02-20T00:00:00');
-    
-    const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = eventDate.getTime() - now;
-      
-      if (distance < 0) {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-        clearInterval(timer);
-      } else {
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
-        setTimeLeft({ days, hours, minutes, seconds });
-      }
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -48,13 +26,27 @@ const Hero = () => {
     }
   }, []);
 
-  const Particle = ({ delay = 0, duration = 3 }) => (
-    <div 
-      className="absolute w-1 h-1 bg-white rounded-full opacity-70"
+  // Precompute particle positions once to avoid layout shift
+  const particles = useMemo(() => (
+    Array.from({ length: 14 }).map((_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      size: Math.random() > 0.8 ? 2 : 1,
+      delay: i * 0.18,
+      duration: 8 + Math.random() * 2,
+    }))
+  ), []);
+
+  const Particle = ({ left, top, size = 1, delay = 0, duration = 3 }) => (
+    <div
+      className={`absolute rounded-full bg-white/90 opacity-70`} 
       style={{
-        left: `${Math.random() * 100}%`,
-        top: `${Math.random() * 100}%`,
-        animation: `float ${duration}s ease-in-out ${delay}s infinite`,
+        width: `${size}px`,
+        height: `${size}px`,
+        left: `${left}%`,
+        top: `${top}%`,
+        animation: `float ${duration}s ease-in-out ${delay}s infinite, twinkle 3s ease-in-out ${delay}s infinite`,
       }}
     />
   );
@@ -88,6 +80,22 @@ const Hero = () => {
           50% { background-position: 100% 50%; }
           100% { background-position: 0% 50%; }
         }
+
+        @keyframes aurora-sway {
+          0% { transform: translateY(-10%) rotate(0deg); opacity: 0.35; }
+          50% { transform: translateY(-12%) rotate(2deg); opacity: 0.5; }
+          100% { transform: translateY(-10%) rotate(0deg); opacity: 0.35; }
+        }
+
+        @keyframes twinkle {
+          0%, 100% { opacity: 0.5; filter: blur(0px); }
+          50% { opacity: 0.9; filter: blur(0.5px); }
+        }
+
+        @keyframes marquee {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
+        }
         
         @keyframes bounce-in {
           0% { transform: scale(0.3) rotate(-15deg); opacity: 0; }
@@ -105,10 +113,10 @@ const Hero = () => {
           50% { border-color: transparent; }
         }
         
-        .gradient-bg {
-          background: linear-gradient(-45deg, #667eea, #764ba2, #6B73FF, #9A9CE2, #FF6B9D, #C44569);
-          background-size: 400% 400%;
-          animation: gradient-shift 15s ease infinite;
+        .gradient-bg { /* use unified brand gradient, subtle motion */
+          background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent), #f0abfc);
+          background-size: 200% 100%;
+          animation: gradient-shift 12s ease infinite;
         }
         
         .glass-morphism {
@@ -131,6 +139,29 @@ const Hero = () => {
             linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
           background-size: 50px 50px;
         }
+
+        /* Ensure gradient text is visible across browsers (WebKit + others) */
+        .gradient-clip {
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .aurora {
+          pointer-events: none;
+          position: absolute;
+          inset: -20% -10% 0 -10%;
+          background: radial-gradient(60% 60% at 20% 20%, rgba(59,130,246,0.25), transparent 70%),
+                      radial-gradient(50% 70% at 80% 10%, rgba(168,85,247,0.25), transparent 70%),
+                      radial-gradient(50% 50% at 50% 0%, rgba(236,72,153,0.2), transparent 70%);
+          filter: blur(60px) saturate(120%);
+          animation: aurora-sway 12s ease-in-out infinite;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .animate-pulse, .neon-glow, .bounce-in { animation: none !important; }
+          .aurora { animation: none !important; }
+        }
       `}</style>
       
       <section 
@@ -140,8 +171,8 @@ const Hero = () => {
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Animated Particles */}
-        {[...Array(20)].map((_, i) => (
-          <Particle key={i} delay={i * 0.2} duration={3 + Math.random() * 2} />
+        {particles.map((p) => (
+          <Particle key={p.id} left={p.left} top={p.top} size={p.size} delay={p.delay} duration={p.duration} />
         ))}
         
         {/* Dynamic Background Elements */}
@@ -167,68 +198,60 @@ const Hero = () => {
         </div>
         
         <div className="relative container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 z-10">
+          {/* Aurora overlay */}
+          <div className="aurora" aria-hidden />
           {/* Animated Logo/Title */}
-          <FloatingElement delay={0}>
-            <div className="mb-8">
-              <div className="inline-block p-4 glass-morphism rounded-full mb-6 neon-glow">
-                <div className="text-6xl">🌊</div>
+      <FloatingElement delay={0}>
+            <div className="mb-12">
+        <div className="inline-block p-6 glass rounded-2xl mb-8">
+                <Image
+                  src="https://seasides.net/wp-content/uploads/2024/09/Logo-3-No-BG-White-Website.png"
+                  alt="Seasides Logo"
+                  width={160}
+                  height={160}
+                  priority
+                  className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 object-contain"
+                />
+              </div>
+              <div className="text-center">
+  <p className="text-lg md:text-xl opacity-90 font-medium text-white">
+                  India's Premier Cybersecurity Conference
+                </p>
               </div>
             </div>
           </FloatingElement>
           
           <div className="bounce-in">
-            <h1 className="text-6xl font-bold leading-tight sm:text-7xl md:text-8xl mb-4 bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
+  <h1 className="font-bold leading-tight mb-4 text-white" style={{fontSize: 'clamp(3rem, 7vw, 7rem)', lineHeight: 1.05}}>
               Seasides 2026
             </h1>
           </div>
           
           <FloatingElement delay={0.5}>
-            <p className="text-2xl md:text-3xl mb-3 font-light bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
+  <p className="text-2xl md:text-3xl mb-3 font-light text-white/90 tracking-wide">
               India's Most Loved Conference
             </p>
           </FloatingElement>
+
+          {/* Info Pills */}
+          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mt-4 mb-10">
+            {[
+              { icon: '📅', text: EVENT_DATE_SHORT },
+              { icon: '📍', text: 'Goa, India' },
+              { icon: '🆓', text: 'Free Workshops' },
+              { icon: '🎤', text: 'Speakers & Villages' },
+            ].map((item, idx) => (
+              <div key={idx} className="glass rounded-full px-4 py-2 text-sm md:text-base flex items-center gap-2 shadow-inner ring-1 ring-white/10 text-white/90">
+                <span className="opacity-90">{item.icon}</span>
+                <span className="opacity-90">{item.text}</span>
+              </div>
+            ))}
+          </div>
           
-          <FloatingElement delay={1}>
-            <div className="flex items-center gap-4 text-lg md:text-xl mb-12 opacity-90">
-              <span className="animate-bounce">🎤</span>
-              <span>Talks</span>
-              <span className="animate-pulse text-blue-300">•</span>
-              <span className="animate-bounce" style={{ animationDelay: '0.2s' }}>🛠️</span>
-              <span>Workshops</span>
-              <span className="animate-pulse text-purple-300">•</span>
-              <span className="animate-bounce" style={{ animationDelay: '0.4s' }}>🏘️</span>
-              <span>Villages</span>
-              <span className="animate-pulse text-pink-300">•</span>
-              <span className="animate-bounce" style={{ animationDelay: '0.6s' }}>🎉</span>
-              <span>Party</span>
-            </div>
-          </FloatingElement>
+          {/* Hero slider removed per request */}
           
           {/* Interactive Countdown */}
-          <div className="glass-morphism rounded-2xl p-8 mb-12 transform hover:scale-105 transition-all duration-300 neon-glow">
-            <h3 className="text-xl font-semibold mb-6 bg-gradient-to-r from-yellow-200 to-orange-200 bg-clip-text text-transparent">
-              🚀 Conference Launches In:
-            </h3>
-            <div className="grid grid-cols-4 gap-6 text-center">
-              {[
-                { value: timeLeft.days, label: 'Days', color: 'from-blue-400 to-blue-600' },
-                { value: timeLeft.hours, label: 'Hours', color: 'from-purple-400 to-purple-600' },
-                { value: timeLeft.minutes, label: 'Minutes', color: 'from-pink-400 to-pink-600' },
-                { value: timeLeft.seconds, label: 'Seconds', color: 'from-orange-400 to-orange-600' }
-              ].map((item, index) => (
-                <div 
-                  key={item.label}
-                  className={`bg-gradient-to-br ${item.color} rounded-xl p-4 transform hover:scale-110 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-2xl`}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="text-3xl md:text-4xl font-bold mb-1 text-white">
-                    {String(item.value).padStart(2, '0')}
-                  </div>
-                  <div className="text-sm text-white opacity-90">{item.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <InteractiveCountdown />
 
           {/* Event Details with Animation */}
           <FloatingElement delay={1.5}>
@@ -236,49 +259,29 @@ const Hero = () => {
               <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-lg">
                 <div className="flex items-center gap-2 hover:scale-105 transition-transform">
                   <span className="text-2xl animate-pulse">📅</span>
-                  <span className="font-semibold">20-22 Feb 2026</span>
+                  <span className="font-semibold">{EVENT_DATE_SHORT.replace('–', '-')}</span>
                 </div>
                 <div className="hidden md:block w-1 h-6 bg-gradient-to-b from-blue-400 to-purple-400 rounded-full"></div>
                 <div className="flex items-center gap-2 hover:scale-105 transition-transform">
-                  <span className="text-2xl animate-bounce">�</span>
+                  <span className="text-2xl animate-bounce">📍</span>
                   <span className="font-semibold">International Centre Goa</span>
                 </div>
               </div>
             </div>
           </FloatingElement>
 
-          {/* Interactive Buttons */}
-          <div className="flex flex-wrap justify-center gap-6">
-            <button 
-              className="group px-10 py-4 text-lg font-bold rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 relative overflow-hidden"
-              onMouseEnter={() => setIsHovered(true)}
-            >
-              <span className="relative z-10 flex items-center gap-2">
-                <span className="animate-bounce">🎯</span>
-                Register Now - FREE!
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-            </button>
-            
-            <button className="group px-10 py-4 text-lg font-bold border-2 border-white rounded-2xl text-white hover:bg-white hover:text-purple-600 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-white/25 relative overflow-hidden">
-              <span className="relative z-10 flex items-center gap-2">
-                <span className="animate-spin">⚡</span>
-                View Schedule
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
-            </button>
-          </div>
+          {/* Interactive Buttons removed per request */}
           
-          {/* Fun Interactive Element */}
-          <FloatingElement delay={2}>
-            <div className="mt-16 text-center">
-              <div className="inline-flex items-center gap-2 text-sm opacity-75 hover:opacity-100 transition-opacity cursor-pointer">
-                <span className="animate-bounce">👇</span>
-                <span>Scroll to explore the cyber universe</span>
-                <span className="animate-bounce" style={{ animationDelay: '0.5s' }}>✨</span>
-              </div>
+          {/* Marquee Highlights (non-CTA) */}
+          <div className="relative w-full overflow-hidden mt-10" aria-label="Highlights ticker">
+            <div className="whitespace-nowrap flex gap-8 will-change-transform md:animate-[marquee_24s_linear_infinite] hover:[animation-play-state:paused]">
+              {[...Array(2)].flatMap((_) => [
+                'Talks', 'Workshops', 'Villages', 'Trainings', 'CTFs', 'Networking', 'Live Demos'
+              ]).map((word, idx) => (
+                <span key={idx} className="text-white/80 text-sm md:text-base">{word} •</span>
+              ))}
             </div>
-          </FloatingElement>
+          </div>
         </div>
         
         {/* Bottom Wave Effect */}

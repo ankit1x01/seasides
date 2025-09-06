@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { FaLinkedin, FaTwitter, FaInstagram, FaFacebook, FaYoutube, FaRocket, FaShieldAlt, FaCode } from 'react-icons/fa';
+import { EVENT_DATE_LONG } from '@/lib/eventConfig';
 
 const Footer = () => {
   const [currentTime, setCurrentTime] = useState('');
@@ -29,10 +30,9 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { icon: '🎯', text: 'Event Schedule', href: '#schedule' },
-    { icon: '🎤', text: 'Speakers', href: '#speakers' },
-    { icon: '🎟️', text: 'Register Now', href: '#register' },
-    { icon: '📍', text: 'Venue Info', href: '#contact' }
+  { icon: '📊', text: 'Stats', href: '#stats' },
+  { icon: '📍', text: 'Venue', href: '#venue' },
+  { icon: '✉️', text: 'Contact', href: '#contact' }
   ];
 
   return (
@@ -78,7 +78,7 @@ const Footer = () => {
         }
       `}</style>
       
-      <footer className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white overflow-hidden">
+      <footer className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white overflow-hidden" style={{color: 'white'}}>
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-32 h-32 bg-blue-500 rounded-full opacity-10 blur-2xl animate-pulse"></div>
@@ -111,15 +111,15 @@ const Footer = () => {
                   <FaShieldAlt className="text-3xl text-cyan-400 animate-pulse" />
                   <div className="absolute inset-0 bg-cyan-400 opacity-20 rounded-full blur-lg"></div>
                 </div>
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                <h3 className="text-2xl font-bold text-white">
                   SEASIDES 2026
                 </h3>
               </div>
-              <p className="text-gray-300 leading-relaxed mb-4">
+              <p className="leading-relaxed mb-4" style={{color: 'white'}}>
                 India's premier cybersecurity conference bringing together experts, enthusiasts, and innovators 
                 to explore the future of digital security in the beautiful coastal setting of Goa.
               </p>
-              <div className="flex items-center gap-2 text-sm text-cyan-400">
+              <div className="flex items-center gap-2 text-sm text-cyan-300">
                 <span className="animate-pulse">🕒</span>
                 <span>IST: {currentTime}</span>
               </div>
@@ -127,7 +127,7 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-lg font-semibold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <h4 className="text-lg font-semibold mb-4 text-white">
                 Quick Links
               </h4>
               <ul className="space-y-3">
@@ -135,7 +135,7 @@ const Footer = () => {
                   <li key={index}>
                     <a 
                       href={link.href}
-                      className="footer-link flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-all duration-300 text-sm"
+                      className="footer-link flex items-center gap-2 hover:text-cyan-400 transition-all duration-300 text-sm text-white"
                     >
                       <span className="text-base">{link.icon}</span>
                       {link.text}
@@ -147,13 +147,13 @@ const Footer = () => {
 
             {/* Event Info */}
             <div>
-              <h4 className="text-lg font-semibold mb-4 bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+              <h4 className="text-lg font-semibold mb-4 text-white">
                 Event Details
               </h4>
-              <div className="space-y-3 text-sm text-gray-300">
+              <div className="space-y-3 text-sm text-white">
                 <div className="flex items-center gap-2">
                   <span>📅</span>
-                  <span>January 26-27, 2026</span>
+                  <span>{EVENT_DATE_LONG}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span>📍</span>
@@ -176,14 +176,14 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               {/* Social Icons */}
               <div className="flex items-center gap-6">
-                <span className="text-sm text-gray-400 mr-2">Connect with us:</span>
+                <span className="text-sm mr-2 text-white">Connect with us:</span>
                 {socialIcons.map(({ Icon, href, color, glow }, index) => (
                   <a
                     key={index}
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`social-icon text-gray-400 ${color} ${glow} transition-all duration-300 relative`}
+                    className={`social-icon ${color} ${glow} transition-all duration-300 relative text-white`}
                     onMouseEnter={() => setHoveredIcon(index)}
                     onMouseLeave={() => setHoveredIcon(null)}
                   >
@@ -197,13 +197,13 @@ const Footer = () => {
 
               {/* Copyright */}
               <div className="text-center md:text-right">
-                <p className="text-sm text-gray-400 mb-1">
+                <p className="text-sm mb-1 text-white">
                   © 2026 Organised by{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent font-semibold">
+                  <span className="text-white font-semibold">
                     Seasides Social Welfare Foundation
                   </span>
                 </p>
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-white">
                   All rights reserved. Built with 💙 for the cybersecurity community.
                 </p>
               </div>
@@ -211,7 +211,7 @@ const Footer = () => {
 
             {/* Tech Credits */}
             <div className="mt-6 text-center">
-              <div className="inline-flex items-center gap-2 text-xs text-gray-500 hover:text-cyan-400 transition-colors cursor-pointer">
+              <div className="inline-flex items-center gap-2 text-xs hover:text-cyan-400 transition-colors cursor-pointer text-white">
                 <FaCode className="animate-pulse" />
                 <span>Powered by Next.js & Modern Web Technologies</span>
                 <FaRocket className="animate-bounce" />

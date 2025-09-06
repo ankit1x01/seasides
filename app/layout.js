@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import LoadingScreen from "@/components/LoadingScreen";
 import CustomCursor from "@/components/CustomCursor";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,9 +27,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased cursor-none`}
       >
-        <LoadingScreen />
-        <CustomCursor />
-        {children}
+        <ThemeProvider>
+          <LoadingScreen />
+          <CustomCursor />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

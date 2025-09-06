@@ -14,14 +14,8 @@ const Faq = () => {
       color: 'from-green-500 to-emerald-500'
     },
     {
-      question: 'Does every one get scholarship ?',
-      answer: 'Information about scholarships will be provided closer to the event date.',
-      icon: '🎓',
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      question: 'Will my seat be secured ?',
-      answer: 'Seats are available on a first-come, first-served basis. We recommend registering early to secure your spot.',
+      question: 'Do I need a paid ticket to attend?',
+      answer: 'No. Seasides is free to attend. Entry is first-come, first-served based on venue capacity. Arrive early for best seating.',
       icon: '🪑',
       color: 'from-purple-500 to-pink-500'
     },
@@ -127,11 +121,11 @@ const Faq = () => {
         
         <div className="relative container mx-auto px-6 z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Frequently Asked Questions
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-4"></div>
-            <p className="text-lg opacity-80 max-w-2xl mx-auto">
+            <p className="text-lg text-white max-w-2xl mx-auto">
               Got questions? We've got answers! Check out the most common queries about Seasides 2026.
             </p>
           </div>
@@ -183,7 +177,7 @@ const Faq = () => {
           {/* Bottom CTA */}
           <div className="text-center mt-16">
             <div className="inline-flex flex-col items-center gap-4">
-              <p className="text-lg opacity-80">Still have questions?</p>
+              <p className="text-lg text-white">Still have questions?</p>
               <button className="group px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-2xl hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 relative overflow-hidden">
                 <span className="relative z-10 flex items-center gap-2">
                   <span className="animate-bounce">📧</span>
