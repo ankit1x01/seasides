@@ -248,8 +248,8 @@ const Footer = () => {
             {/* Tech Credits */}
             <div className="mt-6 text-center">
               <div className="inline-flex items-center gap-2 text-xs hover:text-cyan-400 transition-colors cursor-pointer text-white">
-                <FaCode className="animate-pulse" />
-                <span>Powered by Next.js & Modern Web Technologies</span>
+                <FaShieldAlt className="animate-pulse" />
+                <span>Securing the Digital Future</span>
                 <FaRocket className="animate-bounce" />
               </div>
             </div>
