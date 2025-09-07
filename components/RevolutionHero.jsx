@@ -33,8 +33,7 @@ const RevolutionHero = () => {
       backgroundImage: "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
       animation: "slideInRight",
       particles: true,
-      icon: <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
-      highlights: ["Live Hacking Demos", "Certification Paths", "1-on-1 Mentoring", "Real-world Scenarios"]
+      icon: <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
     },
     {
       id: 3,
@@ -45,8 +44,7 @@ const RevolutionHero = () => {
       backgroundImage: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
       animation: "slideInLeft",
       particles: true,
-      icon: <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>,
-      highlights: ["Build Your Own Labs", "Tool Mastery", "Group Challenges", "Take-home Projects"]
+      icon: <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
     },
     {
       id: 4,
@@ -57,8 +55,7 @@ const RevolutionHero = () => {
       backgroundImage: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
       animation: "zoomIn",
       particles: true,
-      icon: <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>,
-      highlights: ["AI Security Village", "Cloud Security Village", "Hardware Village", "Social Engineering Village"]
+      icon: <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>
     },
     {
       id: 5,
@@ -69,8 +66,7 @@ const RevolutionHero = () => {
       backgroundImage: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
       animation: "bounceIn",
       particles: true,
-      icon: <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>,
-      highlights: ["Sunset Beach Party", "Cultural Showcase", "Music & Dance", "Networking Mixers"]
+      icon: <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
     }
   ];
 
@@ -326,8 +322,9 @@ const RevolutionHero = () => {
               {currentSlideData.type === 'main' && (
                 <>
 
-                  <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 leading-tight text-white">
-                    {currentSlideData.title}
+                  <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-6 leading-tight text-white whitespace-nowrap">
+                    <span>Seasides </span>
+                    <span className="text-cyan-400">2026</span>
                   </h1>
                   
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-light mb-8 text-blue-100">
@@ -459,30 +456,6 @@ const RevolutionHero = () => {
                   <p className="text-lg md:text-xl lg:text-2xl mb-12 text-white/90 leading-relaxed max-w-3xl mx-auto">
                     {currentSlideData.description}
                   </p>
-
-                  {/* Interactive Highlights */}
-                  {currentSlideData.highlights && (
-                    <div className="mb-12">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-                        {currentSlideData.highlights.map((highlight, index) => (
-                          <div 
-                            key={index}
-                            className="group rounded-2xl p-4 transform hover:scale-105 transition-all duration-300 cursor-pointer border border-white/20 backdrop-blur-sm"
-                            style={{ 
-                              backgroundColor: 'rgba(0,0,0,0.4)',
-                              animationDelay: `${index * 0.1}s`,
-                              animation: 'highlightPulse 3s ease-in-out infinite'
-                            }}
-                          >
-                            <div className="flex items-center gap-3">
-                              <div className="w-2 h-2 bg-white/90 rounded-full group-hover:animate-ping"></div>
-                              <span className="text-white font-medium drop-shadow-md">{highlight}</span>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
                 </>
               )}
 

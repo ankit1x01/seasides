@@ -90,19 +90,6 @@ const Navbar = () => {
               </span>
             </Link>
 
-            <Link href="/venue">
-              <span className={`
-                font-medium cursor-pointer transition-all duration-300 hover:scale-105 relative group
-                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
-              `}>
-                Venue
-                <span className={`
-                  absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300
-                  ${isDark ? 'bg-cyan-400' : 'bg-blue-600'}
-                `}></span>
-              </span>
-            </Link>
-
             {/* Theme Toggle */}
             <ThemeToggle />
 
