@@ -7,6 +7,7 @@ import Sponsors from "@/components/Sponsors";
 import Venue from "@/components/Venue";
 import SocialIntegration from "@/components/SocialIntegration";
 import Contact from "@/components/Contact";
+import Faq from "@/components/Faq";
 import StickySubnav from "@/components/StickySubnav";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
   <div id="stats" className="scroll-mt-24"><Stats /></div>
   <div id="venue" className="scroll-mt-24"><Venue /></div>
   <div id="sponsors" className="scroll-mt-24"><Sponsors /></div>
+  <div id="faq" className="scroll-mt-24"><Faq /></div>
   <div id="social" className="scroll-mt-24"><SocialIntegration /></div>
   <div id="contact" className="scroll-mt-24"><Contact /></div>
       <Footer />

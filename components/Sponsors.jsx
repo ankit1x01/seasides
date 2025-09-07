@@ -1,11 +1,13 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
+import { useTheme } from '@/contexts/ThemeContext';
 
 const Sponsors = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredSponsor, setHoveredSponsor] = useState(null);
   const sponsorsRef = useRef(null);
+  const { isDark } = useTheme();
 
   const sponsorTiers = [
     {
@@ -112,7 +114,11 @@ const Sponsors = () => {
         }
       `}</style>
       
-  <section ref={sponsorsRef} className="relative py-20 md:py-28 bg-gradient-to-br from-gray-950 via-slate-950 to-black text-white overflow-hidden">
+  <section ref={sponsorsRef} className={`relative py-20 md:py-28 overflow-hidden transition-colors duration-300 ${
+    isDark 
+      ? 'bg-gradient-to-br from-gray-950 via-slate-950 to-black text-white' 
+      : 'bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 text-gray-900'
+  }`}>
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-40 h-40 bg-blue-500 rounded-full opacity-15 blur-3xl animate-pulse"></div>
@@ -135,11 +141,15 @@ const Sponsors = () => {
         
     <div className="relative container mx-auto px-6 max-w-7xl z-10">
           <div className="text-center mb-16">
-  <h2 className="font-bold mb-6 text-white" style={{fontSize: 'clamp(2rem,4.5vw,3.25rem)'}}>
+  <h2 className={`font-bold mb-6 ${
+              isDark ? 'text-white' : 'text-gray-900'
+            }`} style={{fontSize: 'clamp(2rem,4.5vw,3.25rem)'}}>
               Our Cyber Allies
             </h2>
       <div className="w-32 h-1 brand-gradient mx-auto rounded-full mb-6"></div>
-            <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-white/90">
+            <p className={`text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${
+              isDark ? 'text-white/90' : 'text-gray-700'
+            }`}>
               Partnering with industry leaders to advance cybersecurity innovation and education. 
               Together, we're building a safer digital future.
             </p>
@@ -153,10 +163,14 @@ const Sponsors = () => {
               style={{ animationDelay: `${tierIndex * 0.3}s` }}
             >
               <div className="text-center mb-8">
-                <h3 className={`text-2xl md:text-3xl font-bold mb-3 text-white`}>
+                <h3 className={`text-2xl md:text-3xl font-bold mb-3 ${
+                  isDark ? 'text-white' : 'text-gray-900'
+                }`}>
                   {tier.title}
                 </h3>
-                <p className="text-sm md:text-base text-gray-300">
+                <p className={`text-sm md:text-base ${
+                  isDark ? 'text-gray-300' : 'text-gray-600'
+                }`}>
                   {tier.description}
                 </p>
               </div>
@@ -165,7 +179,11 @@ const Sponsors = () => {
                 {tier.sponsors.map((sponsor, index) => (
                   <div
                     key={index}
-                    className={`sponsor-card glass rounded-2xl p-8 border text-center group cursor-pointer relative overflow-hidden ${tier.glow}`}
+                    className={`sponsor-card rounded-2xl p-8 border text-center group cursor-pointer relative overflow-hidden transition-all duration-300 ${
+                      isDark 
+                        ? `glass ${tier.glow}` 
+                        : 'bg-white hover:bg-gray-50 shadow-lg hover:shadow-xl border-gray-200'
+                    }`}
                     style={{ animationDelay: `${(tierIndex * 0.3) + (index * 0.1)}s` }}
                     onMouseEnter={() => setHoveredSponsor(`${tierIndex}-${index}`)}
                     onMouseLeave={() => setHoveredSponsor(null)}
@@ -186,11 +204,17 @@ const Sponsors = () => {
                       )}
                     </div>
                     
-                    <h4 className="text-lg font-semibold transition-colors mb-2 text-white/90">
+                    <h4 className={`text-lg font-semibold transition-colors mb-2 ${
+                      isDark ? 'text-white/90' : 'text-gray-900'
+                    }`}>
                       {sponsor.name}
                     </h4>
                     
-                    <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold bg-white text-gray-900`}> 
+                    <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
+                      isDark 
+                        ? 'bg-white text-gray-900' 
+                        : 'bg-gray-100 text-gray-700 border border-gray-300'
+                    }`}> 
                       {tier.title.split(' ')[0]} Partner
                     </div>
                     
@@ -203,7 +227,11 @@ const Sponsors = () => {
           ))}
           
           {/* Become a Sponsor Section */}
-          <div className="text-center mt-16 p-12 border border-white border-opacity-20" style={{ backgroundColor: '#000000', borderRadius: '1.5rem' }}>
+          <div className={`text-center mt-16 p-12 border transition-all duration-300 ${
+            isDark 
+              ? 'border-white border-opacity-20 bg-black' 
+              : 'border-gray-300 bg-white shadow-lg'
+          }`} style={{ borderRadius: '1.5rem' }}>
             <div className="mb-6">
               <div className="inline-flex items-center gap-3 text-4xl mb-4">
                 <span className="animate-bounce">🤝</span>
@@ -214,42 +242,37 @@ const Sponsors = () => {
                 Partner with SEASIDES 2026
               </h3>
               <p className="text-lg max-w-2xl mx-auto mb-8 leading-relaxed" style={{ color: '#FF0000 !important', fontSize: '1.5rem !important', fontWeight: 'bold !important', textShadow: '2px 2px 4px black !important' }}>
-                Join the elite network of cybersecurity innovators. Showcase your brand to 1000+ security professionals, 
-                researchers, and industry leaders.
+                Join the elite network of cybersecurity innovators. Showcase your brand to 500+ security professionals, 
+                students, and community members at India's premier FREE conference.
               </p>
             </div>
             
-            <div className="flex flex-wrap justify-center gap-6">
-              <button className="group px-10 py-4 bg-gradient-to-r from-blue-500 to-purple-600 font-bold rounded-2xl hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 relative overflow-hidden" style={{color: 'white'}}>
-                <span className="relative z-10 flex items-center gap-2">
-                  <span className="animate-bounce">🎯</span>
-                  Become a Sponsor
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-              </button>
-              
-              <button className="group px-10 py-4 border-2 border-cyan-400 font-bold rounded-2xl hover:bg-cyan-400 hover:text-gray-900 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-cyan-400/25 relative overflow-hidden" style={{color: '#22d3ee'}}>
-                <span className="relative z-10 flex items-center gap-2">
-                  <span className="animate-pulse">📋</span>
-                  Download Sponsorship Kit
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
-              </button>
-            </div>
             
             {/* Benefits Preview */}
-            <div className="mt-8 grid md:grid-cols-3 gap-4 text-sm">
-              <div className="hover:text-cyan-300 transition-colors cursor-pointer" style={{color: '#22d3ee'}}>
-                <span className="block">🎪</span>
-                <span>Premium Exhibition Space</span>
+            <div className="mt-8 grid md:grid-cols-3 gap-6 text-lg">
+              <div className="hover:text-cyan-300 transition-colors cursor-pointer flex flex-col items-center" style={{color: '#22d3ee'}}>
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 p-4 shadow-lg flex items-center justify-center text-white mb-3">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <span className="font-semibold text-center">Premium Exhibition Space</span>
               </div>
-              <div className="hover:text-purple-300 transition-colors cursor-pointer" style={{color: '#a855f7'}}>
-                <span className="block">🎤</span>
-                <span>Speaking Opportunities</span>
+              <div className="hover:text-purple-300 transition-colors cursor-pointer flex flex-col items-center" style={{color: '#a855f7'}}>
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 p-4 shadow-lg flex items-center justify-center text-white mb-3">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a2 2 0 012-2h2a2 2 0 012 2v6a3 3 0 01-3 3z" />
+                  </svg>
+                </div>
+                <span className="font-semibold text-center">Speaking Opportunities</span>
               </div>
-              <div className="hover:text-pink-300 transition-colors cursor-pointer" style={{color: '#f472b6'}}>
-                <span className="block">🌐</span>
-                <span>Digital Brand Visibility</span>
+              <div className="hover:text-pink-300 transition-colors cursor-pointer flex flex-col items-center" style={{color: '#f472b6'}}>
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500 to-purple-600 p-4 shadow-lg flex items-center justify-center text-white mb-3">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9V3m0 9L9.5 9.5M12 12l2.5 2.5" />
+                  </svg>
+                </div>
+                <span className="font-semibold text-center">Digital Brand Visibility</span>
               </div>
             </div>
           </div>

@@ -1,36 +1,62 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
+import { useTheme } from '@/contexts/ThemeContext';
 
 const Faq = () => {
   const [open, setOpen] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
   const faqRef = useRef(null);
+  const { isDark } = useTheme();
 
   const faqs = [
     {
-      question: 'Is Seasides Free ?',
-      answer: 'Yes, absolutely! The event is completely free of charge. However, attendees are responsible for covering their own travel, accommodation, and meals. While we do our best to provide refreshments and lunch, availability is limited to a certain number of participants.',
-      icon: '💰',
+      question: 'What is Seasides 2026?',
+      answer: "Seasides 2026 is India's premier FREE cybersecurity conference taking place at International Centre Goa from February 19-21, 2026. It's a community-driven event designed to bring together cybersecurity professionals, students, and enthusiasts for learning, networking, and knowledge sharing.",
+      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
+      color: 'from-blue-500 to-indigo-500'
+    },
+    {
+      question: 'Is it really completely free to attend?',
+      answer: 'Yes! Seasides 2026 is 100% FREE for all attendees. This includes access to all sessions, meals, and networking events. Our mission is to make high-quality cybersecurity education accessible to everyone, regardless of their financial situation.',
+      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>,
       color: 'from-green-500 to-emerald-500'
     },
     {
-      question: 'Do I need a paid ticket to attend?',
-      answer: 'No. Seasides is free to attend. Entry is first-come, first-served based on venue capacity. Arrive early for best seating.',
-      icon: '🪑',
+      question: 'Do I need to register in advance?',
+      answer: 'Yes, registration is required and will open soon. Follow our social media channels for updates on when registration opens. Spots are limited, so we recommend registering early once it\'s available.',
+      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>,
       color: 'from-purple-500 to-pink-500'
     },
     {
-      question: 'How I can help Seasides ?',
-      answer: 'You can help by sponsoring us, volunteering, or spreading the word about the conference.',
-      icon: '🤝',
+      question: 'Who can attend Seasides 2026?',
+      answer: 'Everyone! Whether you\'re a cybersecurity professional, student, developer, IT administrator, or simply curious about cybersecurity, you\'re welcome. We cater to all skill levels from beginners to experts.',
+      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>,
       color: 'from-orange-500 to-red-500'
     },
     {
+      question: 'Where exactly is the venue located?',
+      answer: 'The conference takes place at International Centre Goa, a premier conference facility located in the heart of Goa. Detailed address and directions will be provided to registered attendees.',
+      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>,
+      color: 'from-cyan-500 to-blue-500'
+    },
+    {
+      question: 'Is food provided during the conference?',
+      answer: 'Yes! All meals during the conference days are included - breakfast, lunch, dinner, and refreshment breaks. We\'ll accommodate dietary restrictions, so please mention them during registration.',
+      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" /></svg>,
+      color: 'from-pink-500 to-rose-500'
+    },
+    {
       question: 'Can I attend the conference online?',
-      answer: 'This is an in-person event. We do not have plans for online attendance at this time.',
-      icon: '💻',
+      answer: 'The conference is designed as an in-person experience to maximize networking and hands-on learning. However, we may live stream selected sessions - updates will be shared on our social channels.',
+      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>,
       color: 'from-indigo-500 to-purple-500'
     },
+    {
+      question: 'What should I bring to the conference?',
+      answer: 'Bring your laptop, chargers, notebooks, and an eagerness to learn! We\'ll provide WiFi, power outlets, meals, and all conference materials. Don\'t forget comfortable clothes for the Goa weather!',
+      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0H8m8 0v5a2 2 0 01-2 2H10a2 2 0 01-2-2V6m8 0H8" /></svg>,
+      color: 'from-emerald-500 to-teal-500'
+    }
   ];
 
   const toggle = (index) => {
@@ -99,7 +125,7 @@ const Faq = () => {
         }
       `}</style>
       
-      <section ref={faqRef} className="relative py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-pink-900 text-white overflow-hidden">
+      <section ref={faqRef} className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 text-slate-800 overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-20 w-40 h-40 bg-blue-500 rounded-full opacity-10 blur-3xl animate-pulse"></div>
@@ -121,12 +147,17 @@ const Faq = () => {
         
         <div className="relative container mx-auto px-6 z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            <div className="inline-block mb-4">
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-medium text-lg">
+                Have Questions?
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
               Frequently Asked Questions
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-4"></div>
-            <p className="text-lg text-white max-w-2xl mx-auto">
-              Got questions? We've got answers! Check out the most common queries about Seasides 2026.
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Everything you need to know about Seasides 2026
             </p>
           </div>
           
@@ -134,7 +165,11 @@ const Faq = () => {
             {faqs.map((faq, index) => (
               <div 
                 key={index} 
-                className={`faq-item bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl border border-white border-opacity-20 overflow-hidden shadow-2xl hover:shadow-blue-500/20 transition-all duration-300`}
+                className={`faq-item backdrop-blur-sm rounded-2xl border overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 ${
+                  isDark 
+                    ? 'bg-slate-800/80 border-slate-700/50 hover:bg-slate-700/80' 
+                    : 'bg-white/80 border-white/20 hover:bg-white/90'
+                }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <button 
@@ -143,10 +178,10 @@ const Faq = () => {
                 >
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-4">
-                      <div className={`faq-icon text-3xl`} style={{ animationDelay: `${index * 0.2}s` }}>
+                      <div className={`faq-icon text-slate-600`} style={{ animationDelay: `${index * 0.2}s` }}>
                         {faq.icon}
                       </div>
-                      <span className="text-lg md:text-xl font-semibold text-white group-hover:text-blue-200 transition-colors">
+                      <span className="text-lg md:text-xl font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
                         {faq.question}
                       </span>
                     </div>
@@ -165,8 +200,9 @@ const Faq = () => {
                 
                 <div className={`faq-answer ${open === index ? 'open' : ''}`}>
                   <div className="px-6 pb-6">
+                    <div className="w-full h-px bg-gradient-to-r from-blue-200 to-purple-200 mb-4"></div>
                     <div className={`bg-gradient-to-r ${faq.color} p-4 rounded-xl`}>
-                      <p className="text-white leading-relaxed">{faq.answer}</p>
+                      <p className="text-white leading-relaxed text-base md:text-lg">{faq.answer}</p>
                     </div>
                   </div>
                 </div>
@@ -176,15 +212,29 @@ const Faq = () => {
           
           {/* Bottom CTA */}
           <div className="text-center mt-16">
-            <div className="inline-flex flex-col items-center gap-4">
-              <p className="text-lg text-white">Still have questions?</p>
-              <button className="group px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-2xl hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 relative overflow-hidden">
-                <span className="relative z-10 flex items-center gap-2">
-                  <span className="animate-bounce">📧</span>
-                  Contact Support
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-              </button>
+            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-8 text-white">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                Still have questions?
+              </h3>
+              <p className="text-lg text-blue-100 mb-6">
+                We're here to help! Reach out to us through our social channels or contact form.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <a 
+                  href="#contact" 
+                  className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full px-6 py-3 text-sm font-medium transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                  Contact Us
+                </a>
+                <a 
+                  href="#social" 
+                  className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full px-6 py-3 text-sm font-medium transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2v-6a2 2 0 012-2h2m2-4h4a2 2 0 014 2v4a2 2 0 01-4 2H9a2 2 0 01-4-2V6a2 2 0 014-2z" /></svg>
+                  Join Community
+                </a>
+              </div>
             </div>
           </div>
         </div>

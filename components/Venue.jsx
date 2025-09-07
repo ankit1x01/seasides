@@ -1,27 +1,29 @@
 'use client';
 import { useState } from 'react';
+import { useTheme } from '@/contexts/ThemeContext';
 
 const Venue = () => {
   const [activeTab, setActiveTab] = useState('venue');
+  const { isDark } = useTheme();
 
   const venueFeatures = [
     {
-      icon: '🏛️',
+      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>,
       title: 'World-Class Facilities',
-      description: 'State-of-the-art conference halls with cutting-edge AV equipment and comfortable seating for 1000+ attendees.'
+      description: 'State-of-the-art conference halls with cutting-edge AV equipment and comfortable seating for 500+ attendees.'
     },
     {
-      icon: '🌊',
+      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>,
       title: 'Beachside Location',
       description: 'Located just minutes from pristine Goa beaches, offering perfect networking opportunities and stunning views.'
     },
     {
-      icon: '🚗',
+      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-6 0a1 1 0 110 2h6a1 1 0 110-2M9 9h6m-6 4h6m-6 4h6m-6 4h6" /></svg>,
       title: 'Easy Access',
       description: 'Just 30 minutes from Goa International Airport with ample parking and public transport connections.'
     },
     {
-      icon: '🍽️',
+      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" /></svg>,
       title: 'Dining & Catering',
       description: 'Multiple restaurants, cafes, and catering services offering local and international cuisine.'
     }
@@ -55,14 +57,20 @@ const Venue = () => {
   ];
 
   return (
-    <section className="py-20 bg-black">
+    <section className={`py-20 transition-colors duration-300 ${
+      isDark ? 'bg-black' : 'bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50'
+    }`}>
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#00FF7F', fontWeight: 'bold', textShadow: '2px 2px 4px rgba(255,255,255,0.3)' }}>
+          <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${
+            isDark ? 'text-green-400' : 'text-blue-800'
+          }`} style={{ fontWeight: 'bold', textShadow: isDark ? '2px 2px 4px rgba(255,255,255,0.3)' : '2px 2px 4px rgba(0,0,0,0.2)' }}>
             Venue & Location
           </h2>
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: '#87CEEB', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
+          <p className={`text-xl max-w-3xl mx-auto ${
+            isDark ? 'text-sky-300' : 'text-blue-600'
+          }`} style={{ fontWeight: 'bold', textShadow: isDark ? '1px 1px 2px rgba(0,0,0,0.8)' : '1px 1px 2px rgba(255,255,255,0.8)' }}>
             Experience cybersecurity education in one of India's most beautiful destinations - 
             the International Centre Goa offers world-class facilities in a stunning beachside setting.
           </p>
@@ -70,13 +78,21 @@ const Venue = () => {
 
         {/* Tab Navigation */}
         <div className="flex justify-center mb-12">
-          <div className="bg-black border-2 border-cyan-400 rounded-full p-2 shadow-lg">
+          <div className={`rounded-full p-2 shadow-lg transition-all duration-300 ${
+            isDark 
+              ? 'bg-black border-2 border-cyan-400' 
+              : 'bg-white border-2 border-blue-400'
+          }`}>
             <button
               onClick={() => setActiveTab('venue')}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeTab === 'venue'
-                  ? 'bg-cyan-400 text-black shadow-lg font-bold'
-                  : 'text-cyan-400 hover:text-white'
+                  ? isDark 
+                    ? 'bg-cyan-400 text-black shadow-lg font-bold'
+                    : 'bg-blue-500 text-white shadow-lg font-bold'
+                  : isDark 
+                    ? 'text-cyan-400 hover:text-white'
+                    : 'text-blue-600 hover:text-blue-800'
               }`}
             >
               Venue Details
@@ -117,7 +133,7 @@ const Venue = () => {
                       <p className="text-lg opacity-90">Dona Paula, Goa, India</p>
                       <div className="mt-4 flex items-center justify-center gap-4">
                         <div className="text-center">
-                          <div className="text-2xl font-bold">1000+</div>
+                          <div className="text-2xl font-bold">500+</div>
                           <div className="text-sm text-white/90">Capacity</div>
                         </div>
                         <div className="text-center">
@@ -168,7 +184,7 @@ const Venue = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {venueFeatures.map((feature, index) => (
                 <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <div className="text-4xl mb-4">{feature.icon}</div>
+                  <div className="text-blue-600 mb-4 flex justify-center">{feature.icon}</div>
                   <h4 className="text-lg font-bold text-gray-900 mb-3">{feature.title}</h4>
                   <p className="text-gray-700 text-sm">{feature.description}</p>
                 </div>
@@ -184,12 +200,11 @@ const Venue = () => {
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
               <div className="h-96 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center relative">
                 <div className="text-white text-center">
-                  <div className="text-4xl mb-4">🗺️</div>
+                  <div className="flex justify-center mb-4">
+                    <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
+                  </div>
                   <h3 className="text-2xl font-bold mb-2">Interactive Map</h3>
                   <p className="text-lg opacity-90">Location map will be available soon</p>
-                  <button className="mt-4 bg-white text-blue-600 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors">
-                    Get Directions
-                  </button>
                 </div>
               </div>
             </div>

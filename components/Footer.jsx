@@ -2,10 +2,13 @@
 import { useState, useEffect } from 'react';
 import { FaLinkedin, FaTwitter, FaInstagram, FaFacebook, FaYoutube, FaRocket, FaShieldAlt, FaCode } from 'react-icons/fa';
 import { EVENT_DATE_LONG } from '@/lib/eventConfig';
+import Image from 'next/image';
+import { useTheme } from '@/contexts/ThemeContext';
 
 const Footer = () => {
   const [currentTime, setCurrentTime] = useState('');
   const [hoveredIcon, setHoveredIcon] = useState(null);
+  const { isDark } = useTheme();
 
   useEffect(() => {
     const updateTime = () => {
@@ -30,9 +33,21 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-  { icon: '📊', text: 'Stats', href: '#stats' },
-  { icon: '📍', text: 'Venue', href: '#venue' },
-  { icon: '✉️', text: 'Contact', href: '#contact' }
+    { 
+      icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>, 
+      text: 'Stats', 
+      href: '#stats' 
+    },
+    { 
+      icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>, 
+      text: 'Venue', 
+      href: '#venue' 
+    },
+    { 
+      icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>, 
+      text: 'Contact', 
+      href: '#contact' 
+    }
   ];
 
   return (
@@ -78,7 +93,11 @@ const Footer = () => {
         }
       `}</style>
       
-      <footer className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white overflow-hidden" style={{color: 'white'}}>
+      <footer className={`relative overflow-hidden transition-colors duration-300 ${
+        isDark 
+          ? 'bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white' 
+          : 'bg-gradient-to-br from-gray-100 via-blue-100 to-indigo-100 text-gray-900'
+      }`} style={{color: isDark ? 'white' : 'inherit'}}>
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-32 h-32 bg-blue-500 rounded-full opacity-10 blur-2xl animate-pulse"></div>
@@ -108,26 +127,37 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <div className="flex items-center gap-3 mb-4">
                 <div className="relative">
-                  <FaShieldAlt className="text-3xl text-cyan-400 animate-pulse" />
+                  <Image
+                    src="https://seasides.net/wp-content/uploads/2024/09/Logo-3-No-BG-White-Website.png"
+                    alt="Seasides Logo"
+                    width={48}
+                    height={48}
+                    className="w-12 h-12 brightness-100 group-hover:scale-110 transition-transform duration-300"
+                  />
                   <div className="absolute inset-0 bg-cyan-400 opacity-20 rounded-full blur-lg"></div>
                 </div>
-                <h3 className="text-2xl font-bold text-white">
-                  SEASIDES 2026
-                </h3>
               </div>
-              <p className="leading-relaxed mb-4" style={{color: 'white'}}>
+              <p className={`leading-relaxed mb-4 ${
+                isDark ? 'text-white' : 'text-gray-700'
+              }`}>
                 India's premier cybersecurity conference bringing together experts, enthusiasts, and innovators 
                 to explore the future of digital security in the beautiful coastal setting of Goa.
               </p>
-              <div className="flex items-center gap-2 text-sm text-cyan-300">
-                <span className="animate-pulse">🕒</span>
+              <div className={`flex items-center gap-2 text-sm ${
+                isDark ? 'text-cyan-300' : 'text-blue-600'
+              }`}>
+                <svg className="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
                 <span>IST: {currentTime}</span>
               </div>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-lg font-semibold mb-4 text-white">
+              <h4 className={`text-lg font-semibold mb-4 ${
+                isDark ? 'text-white' : 'text-gray-900'
+              }`}>
                 Quick Links
               </h4>
               <ul className="space-y-3">
@@ -137,7 +167,7 @@ const Footer = () => {
                       href={link.href}
                       className="footer-link flex items-center gap-2 hover:text-cyan-400 transition-all duration-300 text-sm text-white"
                     >
-                      <span className="text-base">{link.icon}</span>
+                      <span className="text-cyan-400">{link.icon}</span>
                       {link.text}
                     </a>
                   </li>
@@ -147,24 +177,35 @@ const Footer = () => {
 
             {/* Event Info */}
             <div>
-              <h4 className="text-lg font-semibold mb-4 text-white">
+              <h4 className={`text-lg font-semibold mb-4 ${
+                isDark ? 'text-white' : 'text-gray-900'
+              }`}>
                 Event Details
               </h4>
               <div className="space-y-3 text-sm text-white">
                 <div className="flex items-center gap-2">
-                  <span>📅</span>
+                  <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-6 0a1 1 0 110 2h6a1 1 0 110-2M9 9h6m-6 4h6m-6 4h6m-6 4h6" />
+                  </svg>
                   <span>{EVENT_DATE_LONG}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span>📍</span>
+                  <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
                   <span>International Centre Goa</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span>🎯</span>
+                  <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
                   <span>Cybersecurity & Innovation</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span>🌊</span>
+                  <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
                   <span>Goa, India</span>
                 </div>
               </div>

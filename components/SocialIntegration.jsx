@@ -150,7 +150,7 @@ const SocialIntegration = () => {
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">💬</span>
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2v-6a2 2 0 012-2h2m2-4h4a2 2 0 014 2v4a2 2 0 01-4 2H9a2 2 0 01-4-2V6a2 2 0 014-2z" /></svg>
                 </div>
                 <h4 className="font-semibold mb-2" style={{ color: '#87CEEB', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)', fontSize: '1.2rem' }}>Discord Community</h4>
                 <p className="text-sm" style={{ color: '#98FB98', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Join our Discord server for real-time discussions, Q&A, and networking</p>
@@ -161,7 +161,7 @@ const SocialIntegration = () => {
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">📰</span>
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>
                 </div>
                 <h4 className="font-semibold mb-2" style={{ color: '#DDA0DD', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)', fontSize: '1.2rem' }}>Newsletter</h4>
                 <p className="text-sm" style={{ color: '#F0E68C', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Weekly updates on speakers, agenda, and exclusive content</p>
@@ -172,7 +172,7 @@ const SocialIntegration = () => {
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">📸</span>
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2M7 4h10l1.485 4.456c.071.213.071.445 0 .659L17 14H7l-1.485-4.885a.995.995 0 010-.659L7 4zm6 14a1 1 0 100-2 1 1 0 000 2z" /></svg>
                 </div>
                 <h4 className="font-semibold mb-2" style={{ color: '#FFB6C1', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)', fontSize: '1.2rem' }}>Share Experience</h4>
                 <p className="text-sm" style={{ color: '#AFEEEE', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Tag us in your photos and posts using our official hashtag</p>

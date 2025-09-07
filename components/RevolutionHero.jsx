@@ -18,7 +18,7 @@ const RevolutionHero = () => {
       type: "main",
       title: "Seasides 2026",
   subtitle: `${EVENT_DATE_LONG} • International Centre Goa`,
-      description: "India's Premier Cybersecurity Conference - Join 1000+ security professionals for three days of cutting-edge education",
+      description: "India's Premier FREE Cybersecurity Conference - Join the community for cutting-edge education and networking",
       backgroundImage: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
       animation: "fadeInUp",
       particles: true,
@@ -33,7 +33,7 @@ const RevolutionHero = () => {
       backgroundImage: "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
       animation: "slideInRight",
       particles: true,
-      icon: "🎯",
+      icon: <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
       highlights: ["Live Hacking Demos", "Certification Paths", "1-on-1 Mentoring", "Real-world Scenarios"]
     },
     {
@@ -45,7 +45,7 @@ const RevolutionHero = () => {
       backgroundImage: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
       animation: "slideInLeft",
       particles: true,
-      icon: "🛠️",
+      icon: <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>,
       highlights: ["Build Your Own Labs", "Tool Mastery", "Group Challenges", "Take-home Projects"]
     },
     {
@@ -57,7 +57,7 @@ const RevolutionHero = () => {
       backgroundImage: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
       animation: "zoomIn",
       particles: true,
-      icon: "🏘️",
+      icon: <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>,
       highlights: ["AI Security Village", "Cloud Security Village", "Hardware Village", "Social Engineering Village"]
     },
     {
@@ -69,7 +69,7 @@ const RevolutionHero = () => {
       backgroundImage: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
       animation: "bounceIn",
       particles: true,
-      icon: "🏖️",
+      icon: <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>,
       highlights: ["Sunset Beach Party", "Cultural Showcase", "Music & Dance", "Networking Mixers"]
     }
   ];
@@ -295,17 +295,6 @@ const RevolutionHero = () => {
           </div>
         )}
 
-        {/* Logo */}
-        <div className="absolute top-8 left-8 z-20">
-          <Image
-            src="https://seasides.net/wp-content/uploads/2024/09/Logo-3-No-BG-White-Website.png"
-            alt="Seasides Logo"
-            width={80}
-            height={80}
-            priority
-            className="w-16 h-16 md:w-20 md:h-20 object-contain"
-          />
-        </div>
 
         {/* Navigation Arrows */}
         <button
@@ -336,20 +325,6 @@ const RevolutionHero = () => {
               {/* Main slide (dates, countdown, venue) */}
               {currentSlideData.type === 'main' && (
                 <>
-                  {/* Logo with floating animation */}
-                  <div className="mb-8">
-                    <div className="inline-block transform hover:scale-110 transition-all duration-500 animate-bounce">
-                      <Image
-                        src="https://seasides.net/wp-content/uploads/2024/09/Logo-3-No-BG-White-Website.png"
-                        alt="Seasides Logo"
-                        width={96}
-                        height={96}
-                        priority
-                        className="w-20 h-20 md:w-24 md:h-24 object-contain mx-auto"
-                        style={{ filter: 'drop-shadow(0 0 20px rgba(255,255,255,0.3))' }}
-                      />
-                    </div>
-                  </div>
 
                   <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 leading-tight text-white">
                     {currentSlideData.title}
@@ -366,42 +341,98 @@ const RevolutionHero = () => {
                   {/* Trust Indicators */}
                   <div className="mb-12">
                     <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 text-white">
-                      <div className="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-xl px-4 py-2 border border-white border-opacity-20">
-                        <div className="text-xl md:text-2xl font-bold text-blue-200">1000+</div>
-                        <div className="text-xs md:text-sm text-white/90">Expected Attendees</div>
+                      <div className="text-center bg-black bg-opacity-40 backdrop-blur-sm rounded-xl px-4 py-3 border border-white border-opacity-30 hover:bg-black hover:bg-opacity-50 transition-all duration-300 shadow-lg">
+                        <div className="text-xl md:text-2xl font-bold text-cyan-200 drop-shadow-lg">500+</div>
+                        <div className="text-xs md:text-sm text-white font-medium drop-shadow-md">Expected Attendees</div>
                       </div>
-                      <div className="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-xl px-4 py-2 border border-white border-opacity-20">
-                        <div className="text-xl md:text-2xl font-bold text-green-200">7th</div>
-                        <div className="text-xs md:text-sm text-white/90">Annual Conference</div>
+                      <div className="text-center bg-black bg-opacity-40 backdrop-blur-sm rounded-xl px-4 py-3 border border-white border-opacity-30 hover:bg-black hover:bg-opacity-50 transition-all duration-300 shadow-lg">
+                        <div className="text-xl md:text-2xl font-bold text-green-200 drop-shadow-lg">100%</div>
+                        <div className="text-xs md:text-sm text-white font-medium drop-shadow-md">FREE Conference</div>
                       </div>
-                      <div className="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-xl px-4 py-2 border border-white border-opacity-20">
-                        <div className="text-xl md:text-2xl font-bold text-purple-200">FREE</div>
-                        <div className="text-xs md:text-sm text-white/90">Registration</div>
+                      <div className="text-center bg-black bg-opacity-40 backdrop-blur-sm rounded-xl px-4 py-3 border border-white border-opacity-30 hover:bg-black hover:bg-opacity-50 transition-all duration-300 shadow-lg">
+                        <div className="text-xl md:text-2xl font-bold text-orange-200 drop-shadow-lg">2</div>
+                        <div className="text-xs md:text-sm text-white font-medium drop-shadow-md">Days of Learning</div>
                       </div>
-                      <div className="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-xl px-4 py-2 border border-white border-opacity-20">
-                        <div className="text-xl md:text-2xl font-bold text-orange-200">3 Days</div>
-                        <div className="text-xs md:text-sm text-white/90">Full Experience</div>
+                      <div className="text-center bg-black bg-opacity-40 backdrop-blur-sm rounded-xl px-4 py-3 border border-white border-opacity-30 hover:bg-black hover:bg-opacity-50 transition-all duration-300 shadow-lg">
+                        <div className="text-xl md:text-2xl font-bold text-purple-200 drop-shadow-lg">Community</div>
+                        <div className="text-xs md:text-sm text-white font-medium drop-shadow-md">Driven Event</div>
                       </div>
                     </div>
                   </div>
 
                   {/* Interactive Countdown */}
-                  <div className="mb-12">
-                    <div className="inline-flex items-center gap-4 md:gap-6 glass rounded-3xl px-6 md:px-8 py-6 ring-1 ring-white/10">
+                  <div className="mb-12 w-full max-w-4xl mx-auto">
+                    <div className="flex items-center justify-center gap-6 md:gap-8 lg:gap-12 bg-black/30 backdrop-blur-lg rounded-3xl px-8 md:px-12 py-8 ring-2 ring-white/20 shadow-2xl">
                       {[
-                        { value: timeLeft.days, label: 'Days', color: 'from-blue-400 to-blue-600', icon: '📅' },
-                        { value: timeLeft.hours, label: 'Hours', color: 'from-purple-400 to-purple-600', icon: '⏰' },
-                        { value: timeLeft.minutes, label: 'Min', color: 'from-pink-400 to-pink-600', icon: '⏱️' },
-                        { value: timeLeft.seconds, label: 'Sec', color: 'from-orange-400 to-orange-600', icon: '⚡' }
+                        { 
+                          value: timeLeft.days, 
+                          label: 'Days', 
+                          color: 'from-blue-500 to-cyan-500', 
+                          icon: <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4M9 21h6a2 2 0 002-2v-1a1 1 0 00-1-1H8a1 1 0 00-1 1v1a2 2 0 002 2z" /></svg>
+                        },
+                        { 
+                          value: timeLeft.hours, 
+                          label: 'Hours', 
+                          color: 'from-purple-500 to-indigo-500', 
+                          icon: <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        },
+                        { 
+                          value: timeLeft.minutes, 
+                          label: 'Min', 
+                          color: 'from-pink-500 to-rose-500', 
+                          icon: <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        },
+                        { 
+                          value: timeLeft.seconds, 
+                          label: 'Sec', 
+                          color: 'from-orange-500 to-yellow-500', 
+                          icon: <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                        }
                       ].map((unit, index) => (
-                        <div key={unit.label} className={`text-center transform hover:scale-105 transition-all duration-200 cursor-pointer bg-gradient-to-br ${unit.color} rounded-2xl p-3 md:p-4 shadow-inner ring-1 ring-white/10`}> 
-                          <div className="text-lg mb-1">{unit.icon}</div>
-                          <div className="text-2xl md:text-3xl font-bold text-white">
-                            {String(unit.value).padStart(2, '0')}
+                        <div key={unit.label} className={`text-center transform hover:scale-110 hover:rotate-1 transition-all duration-300 cursor-pointer bg-gradient-to-br ${unit.color} rounded-3xl p-4 md:p-6 lg:p-8 shadow-2xl ring-2 ring-white/20 hover:ring-white/40 min-w-[100px] md:min-w-[120px] lg:min-w-[140px] animate-pulse hover:animate-bounce relative overflow-hidden group`}
+                          style={{ 
+                            animationDelay: `${index * 0.2}s`,
+                            animationDuration: `${2 + index * 0.5}s` 
+                          }}
+                        > 
+                          {/* Animated background overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
+                          
+                          {/* Pulsing border effect */}
+                          <div className="absolute inset-0 rounded-3xl border-2 border-white/30 animate-ping opacity-0 group-hover:opacity-75"></div>
+                          
+                          <div className="relative z-10">
+                            <div className={`flex justify-center mb-2 md:mb-3 text-white animate-spin-slow group-hover:animate-bounce`} style={{ animationDuration: '3s' }}>
+                              {unit.icon}
+                            </div>
+                            <div className={`text-3xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg transition-all duration-300 group-hover:scale-110 ${unit.label === 'Sec' ? 'animate-pulse' : ''}`}>
+                              {String(unit.value).padStart(2, '0')}
+                            </div>
+                            <div className="text-sm md:text-base lg:text-lg text-white/90 font-semibold mt-2 drop-shadow-md">
+                              {unit.label}
+                            </div>
                           </div>
-                          <div className="text-xs md:text-sm text-white/90">{unit.label}</div>
+                          
+                          {/* Floating particles effect */}
+                          <div className="absolute top-2 right-2 w-2 h-2 bg-white/50 rounded-full animate-ping opacity-0 group-hover:opacity-100" style={{ animationDelay: '0.5s' }}></div>
+                          <div className="absolute bottom-2 left-2 w-1 h-1 bg-white/40 rounded-full animate-ping opacity-0 group-hover:opacity-100" style={{ animationDelay: '1s' }}></div>
                         </div>
                       ))}
+                    </div>
+                    
+                    {/* Countdown label */}
+                    <div className="text-center mt-6">
+                      <p className="text-white/80 text-lg md:text-xl font-medium animate-pulse">
+                        <span className="inline-flex items-center gap-2">
+                          <svg className="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          Time until Seasides 2026
+                          <svg className="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                          </svg>
+                        </span>
+                      </p>
                     </div>
                   </div>
                 </>

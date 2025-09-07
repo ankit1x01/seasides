@@ -26,21 +26,13 @@ const Navbar = () => {
               <Image
                 src="https://seasides.net/wp-content/uploads/2024/09/Logo-3-No-BG-White-Website.png"
                 alt="Seasides Logo"
-                width={32}
-                height={32}
+                width={80}
+                height={40}
                 priority
-                className="w-8 h-8 group-hover:scale-110 transition-transform duration-300"
-                style={{ filter: 'invert(1) brightness(0.2)' }}
+                className={`w-20 h-10 group-hover:scale-110 transition-transform duration-300 ${
+                  isDark ? 'brightness-100' : 'invert brightness-0'
+                }`}
               />
-              <span className={`
-                text-xl font-bold md:text-2xl transition-colors duration-300
-                ${isDark 
-                  ? 'text-slate-100 group-hover:text-cyan-400' 
-                  : 'text-blue-800 group-hover:text-blue-600'
-                }
-              `}>
-                Seasides 2026
-              </span>
             </div>
           </Link>
 

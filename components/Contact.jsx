@@ -1,28 +1,30 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
+import { useTheme } from '@/contexts/ThemeContext';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredButton, setHoveredButton] = useState(null);
   const contactRef = useRef(null);
+  const { isDark } = useTheme();
 
   const contactMethods = [
     {
-      icon: '📍',
+      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>,
       title: 'Event Location',
       info: 'International Centre Goa',
       detail: 'Dona Paula, Goa 403004',
       color: 'from-blue-500 to-cyan-500'
     },
     {
-      icon: '📧',
+      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>,
       title: 'Email Us',
       info: 'info@seasides.net',
       detail: 'Response within 24 hours',
       color: 'from-purple-500 to-pink-500'
     },
     {
-      icon: '📱',
+      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>,
       title: 'Call Us',
       info: '+91-XXX-XXX-XXXX',
       detail: 'Mon-Fri 9AM-6PM IST',
@@ -122,7 +124,7 @@ const Contact = () => {
                   backgroundColor: '#000000'
                 }}
               >
-                <div className={`floating-icon text-5xl mb-4`} style={{ animationDelay: `${index * 0.3}s` }}>
+                <div className={`floating-icon mb-4 flex justify-center text-white`} style={{ animationDelay: `${index * 0.3}s` }}>
                   {method.icon}
                 </div>
                 
@@ -165,53 +167,21 @@ const Contact = () => {
               </div>
               
               <div className="bg-gray-800 bg-opacity-50 rounded-xl p-6 text-center">
-                <div className="text-6xl mb-4">🗺️</div>
-                <p className="mb-4" style={{ color: '#00FFFF', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Interactive venue map coming soon!</p>
-                <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105" style={{color: 'white'}}>
-                  View on Maps
-                </button>
+                <div className="flex justify-center mb-4">
+                  <svg className="w-16 h-16 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
+                </div>
+                <p style={{ color: '#00FFFF', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Interactive venue map coming soon!</p>
               </div>
             </div>
-          </div>
-          
-          {/* Action Buttons */}
-          <div className="text-center">
-            <div className="flex flex-wrap justify-center gap-6">
-              <button 
-                className="group px-10 py-4 bg-gradient-to-r from-blue-500 to-purple-600 font-bold rounded-2xl hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 relative overflow-hidden"
-                style={{color: 'white'}}
-                onMouseEnter={() => setHoveredButton('directions')}
-                onMouseLeave={() => setHoveredButton(null)}
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  <span className="animate-bounce">🧭</span>
-                  Get Directions
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-              </button>
-              
-              <button 
-                className="group px-10 py-4 border-2 border-white font-bold rounded-2xl hover:bg-white hover:text-purple-600 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-white/25 relative overflow-hidden"
-                style={{color: 'white'}}
-                onMouseEnter={() => setHoveredButton('download')}
-                onMouseLeave={() => setHoveredButton(null)}
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  <span className="animate-pulse">📱</span>
-                  Download Venue App
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
-              </button>
-            </div>
-            
+
             {/* Fun Interactive Element */}
             <div className="mt-12">
               <div className="inline-flex items-center gap-2 text-sm hover:text-white transition-colors cursor-pointer">
-                <span className="animate-bounce">🌴</span>
+                <svg className="w-5 h-5 animate-bounce text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 <span style={{ color: '#32CD32', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
                   Experience the beauty of Goa while learning cybersecurity
                 </span>
-                <span className="animate-bounce" style={{ animationDelay: '0.5s' }}>🏖️</span>
+                <svg className="w-5 h-5 animate-bounce text-blue-400" style={{ animationDelay: '0.5s' }} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
               </div>
             </div>
           </div>
