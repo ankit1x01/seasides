@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect, useMemo, useRef } from 'react';
-import Image from 'next/image';
 import { useTheme } from '@/contexts/ThemeContext';
 import { EVENT_DATE_LONG, EVENT_START_ISO } from '@/lib/eventConfig';
 
@@ -18,7 +17,7 @@ const RevolutionHero = () => {
       type: "main",
       title: "Seasides 2026",
   subtitle: `${EVENT_DATE_LONG} • International Centre Goa`,
-      description: "India's Premier FREE Cybersecurity Conference - Join the community for cutting-edge education and networking",
+      description: "India's Most Loved Conference - Join the community for free talks, workshops, and training sessions",
       backgroundImage: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
       animation: "fadeInUp",
       particles: true,

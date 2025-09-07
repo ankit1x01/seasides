@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef } from 'react';
 
 const CyberBackground = () => {
   const canvasRef = useRef(null);

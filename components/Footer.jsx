@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { FaLinkedin, FaTwitter, FaInstagram, FaFacebook, FaYoutube, FaRocket, FaShieldAlt, FaCode } from 'react-icons/fa';
+import { FaLinkedin, FaTwitter, FaInstagram, FaFacebook, FaYoutube, FaRocket, FaShieldAlt } from 'react-icons/fa';
 import { EVENT_DATE_LONG } from '@/lib/eventConfig';
 import Image from 'next/image';
 import { useTheme } from '@/contexts/ThemeContext';
