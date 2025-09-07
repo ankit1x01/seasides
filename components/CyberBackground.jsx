@@ -1,19 +1,30 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 
 const CyberBackground = () => {
   const canvasRef = useRef(null);
+  const animationRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    
+    // Performance optimization: Use device pixel ratio for better quality
+    const dpr = window.devicePixelRatio || 1;
+    const rect = canvas.getBoundingClientRect();
+    
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = rect.height + 'px';
+    
+    ctx.scale(dpr, dpr);
 
     const particles = [];
-    const particleCount = 50;
+    // Reduce particle count for better performance
+    const particleCount = window.innerWidth < 768 ? 20 : 35;
 
     class Particle {
       constructor() {
@@ -48,44 +59,64 @@ const CyberBackground = () => {
       particles.push(new Particle());
     }
 
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Performance optimization: Throttle animation to 30fps on mobile
+    let lastTime = 0;
+    const targetFPS = window.innerWidth < 768 ? 30 : 60;
+    const frameInterval = 1000 / targetFPS;
+
+    const animate = (currentTime) => {
+      animationRef.current = requestAnimationFrame(animate);
+      
+      if (currentTime - lastTime < frameInterval) return;
+      lastTime = currentTime;
+
+      ctx.clearRect(0, 0, rect.width, rect.height);
       
       particles.forEach(particle => {
         particle.update();
         particle.draw();
       });
 
-      // Draw connections
-      particles.forEach((particle, i) => {
-        particles.slice(i + 1).forEach(otherParticle => {
-          const dx = particle.x - otherParticle.x;
-          const dy = particle.y - otherParticle.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
+      // Optimize connections: Only draw if less than 30 particles
+      if (particleCount <= 30) {
+        particles.forEach((particle, i) => {
+          particles.slice(i + 1).forEach(otherParticle => {
+            const dx = particle.x - otherParticle.x;
+            const dy = particle.y - otherParticle.y;
+            const distance = dx * dx + dy * dy; // Skip expensive Math.sqrt
 
-          if (distance < 100) {
-            ctx.globalAlpha = 0.1;
-            ctx.beginPath();
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = '#64b5f6';
-            ctx.stroke();
-          }
+            if (distance < 10000) { // 100^2 = 10000
+              ctx.globalAlpha = 0.1;
+              ctx.beginPath();
+              ctx.moveTo(particle.x, particle.y);
+              ctx.lineTo(otherParticle.x, otherParticle.y);
+              ctx.strokeStyle = '#64b5f6';
+              ctx.stroke();
+            }
+          });
         });
-      });
-
-      requestAnimationFrame(animate);
+      }
     };
 
     animate();
 
     const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const newRect = canvas.getBoundingClientRect();
+      canvas.width = newRect.width * dpr;
+      canvas.height = newRect.height * dpr;
+      canvas.style.width = newRect.width + 'px';
+      canvas.style.height = newRect.height + 'px';
+      ctx.scale(dpr, dpr);
     };
 
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
   }, []);
 
   return (

@@ -1,14 +1,40 @@
-import RevolutionHero from "@/components/RevolutionHero";
+import dynamic from 'next/dynamic';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import About from "@/components/About";
-import Stats from "@/components/Stats";
-import Sponsors from "@/components/Sponsors";
-import Venue from "@/components/Venue";
-import SocialIntegration from "@/components/SocialIntegration";
-import Contact from "@/components/Contact";
-import Faq from "@/components/Faq";
 import StickySubnav from "@/components/StickySubnav";
+
+// Lazy load heavy components with loading states
+const RevolutionHero = dynamic(() => import("@/components/RevolutionHero"), {
+  loading: () => <div className="h-screen bg-gradient-to-br from-blue-900 to-purple-900 animate-pulse" />
+});
+
+const About = dynamic(() => import("@/components/About"), {
+  loading: () => <div className="h-96 bg-gray-100 dark:bg-gray-900 animate-pulse" />
+});
+
+const Stats = dynamic(() => import("@/components/Stats"), {
+  loading: () => <div className="h-64 bg-gray-50 dark:bg-gray-800 animate-pulse" />
+});
+
+const Sponsors = dynamic(() => import("@/components/Sponsors"), {
+  loading: () => <div className="h-80 bg-white dark:bg-gray-900 animate-pulse" />
+});
+
+const Venue = dynamic(() => import("@/components/Venue"), {
+  loading: () => <div className="h-96 bg-gray-100 dark:bg-gray-900 animate-pulse" />
+});
+
+const SocialIntegration = dynamic(() => import("@/components/SocialIntegration"), {
+  loading: () => <div className="h-64 bg-blue-50 dark:bg-blue-900 animate-pulse" />
+});
+
+const Contact = dynamic(() => import("@/components/Contact"), {
+  loading: () => <div className="h-80 bg-gray-50 dark:bg-gray-800 animate-pulse" />
+});
+
+const Faq = dynamic(() => import("@/components/Faq"), {
+  loading: () => <div className="h-96 bg-white dark:bg-gray-900 animate-pulse" />
+});
 
 export default function Home() {
   return (
