@@ -273,7 +273,7 @@ const ComingSoon = () => {
           
           <FloatingElement delay={0.6}>
             <p className="text-2xl md:text-3xl mb-8 font-light text-white/90">
-              India's Most Loved Cybersecurity Conference
+              India&apos;s Most Loved Cybersecurity Conference
             </p>
           </FloatingElement>
           
@@ -352,7 +352,7 @@ const ComingSoon = () => {
                 🎯 Be the First to Know!
               </h3>
               <p className="text-lg mb-6 opacity-90">
-                Get notified when registration opens and be part of India's premier cybersecurity gathering.
+                Get notified when registration opens and be part of India&apos;s premier cybersecurity gathering.
               </p>
               <button className="group px-12 py-4 text-xl font-bold rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-blue-500/25 relative overflow-hidden">
                 <span className="relative z-10 flex items-center gap-3">

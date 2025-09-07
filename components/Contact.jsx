@@ -1,12 +1,8 @@
 'use client';
-import { useState, useRef, useEffect } from 'react';
-import { useTheme } from '@/contexts/ThemeContext';
+import { useRef } from 'react';
 
 const Contact = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [hoveredButton, setHoveredButton] = useState(null);
   const contactRef = useRef(null);
-  const { isDark } = useTheme();
 
   const contactMethods = [
     {
@@ -31,23 +27,6 @@ const Contact = () => {
       color: 'from-green-500 to-emerald-500'
     }
   ];
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (contactRef.current) {
-      observer.observe(contactRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <>

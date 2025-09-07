@@ -92,7 +92,7 @@ const Registration = () => {
             Secure Your Spot
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Join 1000+ cybersecurity professionals at India's most loved security conference. 
+            Join 1000+ cybersecurity professionals at India&apos;s most loved security conference. 
             Registration opens soon with limited seats available.
           </p>
           <div className="inline-flex items-center bg-green-50 border border-green-200 rounded-full px-6 py-3">

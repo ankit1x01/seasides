@@ -128,11 +128,11 @@ const Footer = () => {
               <div className="flex items-center gap-3 mb-4">
                 <div className="relative">
                   <Image
-                    src="https://seasides.net/wp-content/uploads/2024/09/Logo-3-No-BG-White-Website.png"
+                    src="/logo white.png"
                     alt="Seasides Logo"
-                    width={48}
+                    width={80}
                     height={48}
-                    className="w-12 h-12 brightness-100 group-hover:scale-110 transition-transform duration-300"
+                    className="w-20 h-12 brightness-100 group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-cyan-400 opacity-20 rounded-full blur-lg"></div>
                 </div>
@@ -140,7 +140,7 @@ const Footer = () => {
               <p className={`leading-relaxed mb-4 ${
                 isDark ? 'text-white' : 'text-gray-700'
               }`}>
-                India's premier cybersecurity conference bringing together experts, enthusiasts, and innovators 
+                India&apos;s premier cybersecurity conference bringing together experts, enthusiasts, and innovators 
                 to explore the future of digital security in the beautiful coastal setting of Goa.
               </p>
               <div className={`flex items-center gap-2 text-sm ${

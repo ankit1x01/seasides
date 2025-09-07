@@ -215,7 +215,7 @@ const Hero = () => {
               </div>
               <div className="text-center">
   <p className="text-lg md:text-xl opacity-90 font-medium text-white">
-                  India's Premier Cybersecurity Conference
+                  India&apos;s Premier Cybersecurity Conference
                 </p>
               </div>
             </div>
@@ -229,7 +229,7 @@ const Hero = () => {
           
           <FloatingElement delay={0.5}>
   <p className="text-2xl md:text-3xl mb-3 font-light text-white/90 tracking-wide">
-              India's Most Loved Conference
+              India&apos;s Most Loved Conference
             </p>
           </FloatingElement>
 

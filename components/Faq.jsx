@@ -125,7 +125,11 @@ const Faq = () => {
         }
       `}</style>
       
-      <section ref={faqRef} className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 text-slate-800 overflow-hidden">
+      <section ref={faqRef} className={`relative py-20 overflow-hidden transition-colors duration-300 ${
+        isDark 
+          ? 'bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white' 
+          : 'bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 text-slate-800'
+      }`}>
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-20 w-40 h-40 bg-blue-500 rounded-full opacity-10 blur-3xl animate-pulse"></div>
@@ -152,11 +156,17 @@ const Faq = () => {
                 Have Questions?
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
+            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${
+              isDark 
+                ? 'bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent' 
+                : 'bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent'
+            }`}>
               Frequently Asked Questions
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-4"></div>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            <p className={`text-lg max-w-2xl mx-auto ${
+              isDark ? 'text-slate-300' : 'text-slate-600'
+            }`}>
               Everything you need to know about Seasides 2026
             </p>
           </div>
@@ -178,10 +188,16 @@ const Faq = () => {
                 >
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-4">
-                      <div className={`faq-icon text-slate-600`} style={{ animationDelay: `${index * 0.2}s` }}>
+                      <div className={`faq-icon ${
+                        isDark ? 'text-slate-300' : 'text-slate-600'
+                      }`} style={{ animationDelay: `${index * 0.2}s` }}>
                         {faq.icon}
                       </div>
-                      <span className="text-lg md:text-xl font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                      <span className={`text-lg md:text-xl font-semibold transition-colors ${
+                        isDark 
+                          ? 'text-white group-hover:text-cyan-400' 
+                          : 'text-slate-800 group-hover:text-blue-600'
+                      }`}>
                         {faq.question}
                       </span>
                     </div>
@@ -195,12 +211,20 @@ const Faq = () => {
                   </div>
                   
                   {/* Hover effect overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                    isDark 
+                      ? 'bg-gradient-to-r from-cyan-500/10 to-purple-500/10' 
+                      : 'bg-gradient-to-r from-blue-500/10 to-purple-500/10'
+                  }`}></div>
                 </button>
                 
                 <div className={`faq-answer ${open === index ? 'open' : ''}`}>
                   <div className="px-6 pb-6">
-                    <div className="w-full h-px bg-gradient-to-r from-blue-200 to-purple-200 mb-4"></div>
+                    <div className={`w-full h-px mb-4 ${
+                      isDark 
+                        ? 'bg-gradient-to-r from-slate-600 to-slate-700' 
+                        : 'bg-gradient-to-r from-blue-200 to-purple-200'
+                    }`}></div>
                     <div className={`bg-gradient-to-r ${faq.color} p-4 rounded-xl`}>
                       <p className="text-white leading-relaxed text-base md:text-lg">{faq.answer}</p>
                     </div>
@@ -217,7 +241,7 @@ const Faq = () => {
                 Still have questions?
               </h3>
               <p className="text-lg text-blue-100 mb-6">
-                We're here to help! Reach out to us through our social channels or contact form.
+                We&apos;re here to help! Reach out to us through our social channels or contact form.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a 

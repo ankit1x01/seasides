@@ -1,190 +1,305 @@
+'use client';
+import { useState, useEffect, useRef } from 'react';
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Image from 'next/image';
+
 const SponsorsPage = () => {
+  const [visibleSections, setVisibleSections] = useState(new Set());
+  const sectionRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = sectionRefs.current.indexOf(entry.target);
+            setVisibleSections(prev => new Set([...prev, index]));
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    sectionRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
   const sponsorTiers = [
     {
-      tier: "Diamond Sponsors",
-      color: "from-blue-400 to-blue-600",
-      amount: "₹5,00,000",
-      benefits: [
-        "Prime booth location",
-        "30-minute keynote slot",
-        "Logo on all conference materials",
-        "5 complimentary passes",
-        "Social media promotion",
-        "Website homepage placement"
+      title: "Diamond Partners",
+      description: "Leading the cybersecurity revolution",
+      sponsors: [
+        { name: "HackerOne", logo: "/sponsors/hackerone.png", tier: "diamond" },
+        { name: "Bugcrowd", logo: "/sponsors/bugcrowd.png", tier: "diamond" },
       ],
-      sponsors: ["HackerOne", "Bugcrowd", "Checkmarx", "DNIF"]
+      gradient: "from-cyan-300 to-blue-200",
+      glow: "shadow-cyan-400/40"
     },
     {
-      tier: "Platinum Sponsors", 
-      color: "from-gray-400 to-gray-600",
-      amount: "₹3,00,000",
-      benefits: [
-        "Premium booth location",
-        "15-minute presentation slot",
-        "Logo on conference materials",
-        "3 complimentary passes",
-        "Social media mentions",
-        "Website placement"
+      title: "Platinum Partners",
+      description: "Pioneering cybersecurity excellence",
+      sponsors: [
+        { name: "Checkmarx", logo: "/sponsors/checkmarx.png", tier: "platinum" },
+        { name: "DNIF", logo: "/sponsors/dnif.png", tier: "platinum" },
+        { name: "ArmorCode", logo: "/sponsors/armorcode.png", tier: "platinum" },
+        { name: "XBiz Ventures", logo: "/sponsors/xbiz.png", tier: "platinum" },
+        { name: "CloudSek", logo: "/sponsors/cloudsek.png", tier: "platinum" },
       ],
-      sponsors: ["ArmorCode", "CloudSEK", "Cobalt.io", "SecureLayer7"]
+      gradient: "from-gray-300 to-gray-100",
+      glow: "shadow-gray-400/30"
     },
     {
-      tier: "Gold Sponsors",
-      color: "from-yellow-400 to-yellow-600", 
-      amount: "₹2,00,000",
-      benefits: [
-        "Standard booth space",
-        "5-minute demo slot",
-        "Logo on select materials",
-        "2 complimentary passes",
-        "Website listing",
-        "LinkedIn promotion"
+      title: "Goodie Bag Sponsor",
+      description: "Making the conference memorable",
+      sponsors: [
+        { name: "RiskProfiler", logo: "/sponsors/riskprofiler.png", tier: "goodie" },
       ],
-      sponsors: ["RiskProfiler", "Enciphers", "ComplianceCow", "Kloudle"]
+      gradient: "from-purple-300 to-indigo-200",
+      glow: "shadow-purple-400/30"
     },
     {
-      tier: "Silver Sponsors",
-      color: "from-gray-300 to-gray-500",
-      amount: "₹1,00,000", 
-      benefits: [
-        "Exhibition space",
-        "Logo on website",
-        "1 complimentary pass",
-        "Digital materials inclusion",
-        "Social media mentions"
+      title: "Gold Supporters",
+      description: "Powering innovation in security",
+      sponsors: [
+        { name: "SecureLayer7", logo: "/sponsors/securelayer7.png", tier: "gold" },
+        { name: "Enciphers", logo: "/sponsors/enciphers.png", tier: "gold" },
+        { name: "ComplianceCow", logo: "/sponsors/compliancecow.png", tier: "gold" },
+        { name: "Network Intelligence", logo: "/sponsors/networkintel.png", tier: "gold" },
+        { name: "Altered Security", logo: "/sponsors/altered.png", tier: "gold" },
+        { name: "HighRadius", logo: "/sponsors/highradius.png", tier: "gold" },
+        { name: "Cobalt", logo: "/sponsors/cobalt.png", tier: "gold" },
       ],
-      sponsors: ["Prowler", "Fortive", "PureID", "Evren"]
+      gradient: "from-yellow-300 to-amber-200",
+      glow: "shadow-yellow-400/30"
     }
   ];
 
-  const communitySponsors = [
-    "High Radius", "X-Biz Ventures", "Altered Security", 
-    "Network Intelligence", "Arch0", "More sponsors..."
-  ];
-
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-6 py-16">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-800 mb-6">Our Sponsors</h1>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We are grateful to our amazing sponsors who make this free conference possible and support the cybersecurity community's growth.
-          </p>
-        </div>
+    <>
+      <style jsx>{`
+        @keyframes fadeInUp {
+          0% { opacity: 0; transform: translateY(30px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes sponsorFloat {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulseGlow {
+          0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+          50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.6); }
+        }
+        
+        @keyframes slideInLeft {
+          0% { opacity: 0; transform: translateX(-50px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInRight {
+          0% { opacity: 0; transform: translateX(50px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes scaleIn {
+          0% { opacity: 0; transform: scale(0.8); }
+          100% { opacity: 1; transform: scale(1); }
+        }
+        
+        .fade-in-up {
+          animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .slide-in-left {
+          animation: slideInLeft 0.8s ease-out forwards;
+        }
+        
+        .slide-in-right {
+          animation: slideInRight 0.8s ease-out forwards;
+        }
+        
+        .scale-in {
+          animation: scaleIn 0.6s ease-out forwards;
+        }
+        
+        .sponsor-card {
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .sponsor-card:hover {
+          animation: sponsorFloat 2s ease-in-out infinite;
+        }
+        
+        .pulse-glow {
+          animation: pulseGlow 2s ease-in-out infinite;
+        }
+        
+        .stagger-animation {
+          opacity: 0;
+        }
+        
+        .stagger-animation.visible {
+          opacity: 1;
+        }
+      `}</style>
+      
+      <main className="relative">
+        <Navbar />
+        <div className="min-h-screen bg-black relative overflow-hidden">
+          {/* Animated Background Effects */}
+          <div className="absolute inset-0">
+            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full opacity-10 blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500 rounded-full opacity-10 blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-3/4 left-1/2 w-48 h-48 bg-cyan-500 rounded-full opacity-10 blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          </div>
+          
+          {/* Cyber Grid Background */}
+          <div 
+            className="absolute inset-0 opacity-5"
+            style={{
+              backgroundImage: `
+                linear-gradient(rgba(0,255,255,0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,255,255,0.3) 1px, transparent 1px)
+              `,
+              backgroundSize: '40px 40px'
+            }}
+          ></div>
+          
+          <div className="container mx-auto px-6 py-16 relative z-10">
+            <div 
+              ref={el => sectionRefs.current[0] = el}
+              className={`text-center mb-16 ${
+                visibleSections.has(0) ? 'fade-in-up' : 'stagger-animation'
+              }`}
+            >
+              <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 mb-6 pulse-glow">
+                Our Sponsors
+              </h1>
+              <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto mb-8 rounded-full"></div>
+              <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                We are grateful to our amazing sponsors who make this free conference possible and support the cybersecurity community&apos;s growth.
+              </p>
+            </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          {sponsorTiers.map((tier, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className={`bg-gradient-to-r ${tier.color} text-white p-6`}>
-                <h2 className="text-2xl font-bold mb-2">{tier.tier}</h2>
-                <p className="text-3xl font-bold">{tier.amount}</p>
+          {sponsorTiers.map((tier, tierIndex) => (
+            <div 
+              key={tierIndex} 
+              ref={el => sectionRefs.current[tierIndex + 1] = el}
+              className={`mb-16 ${
+                visibleSections.has(tierIndex + 1) 
+                  ? (tierIndex % 2 === 0 ? 'slide-in-left' : 'slide-in-right')
+                  : 'stagger-animation'
+              }`}
+            >
+              <div className="text-center mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400 mb-4">
+                  {tier.title}
+                </h2>
+                <p className="text-gray-300 text-lg">{tier.description}</p>
               </div>
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">Benefits Include:</h3>
-                <ul className="text-gray-600 space-y-2 mb-6">
-                  {tier.benefits.map((benefit, benefitIndex) => (
-                    <li key={benefitIndex}>• {benefit}</li>
-                  ))}
-                </ul>
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-2">Current Sponsors:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {tier.sponsors.map((sponsor, sponsorIndex) => (
-                      <span key={sponsorIndex} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
-                        {sponsor}
-                      </span>
-                    ))}
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                {tier.sponsors.map((sponsor, index) => (
+                  <div
+                    key={index}
+                    className={`sponsor-card bg-gray-900/80 backdrop-blur-sm border-2 border-cyan-400/50 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-cyan-400/30 transition-all duration-500 group hover:border-yellow-400 hover:scale-105 ${
+                      visibleSections.has(tierIndex + 1) ? 'scale-in' : 'stagger-animation'
+                    }`}
+                    style={{ 
+                      animationDelay: `${index * 0.1}s`,
+                      transform: visibleSections.has(tierIndex + 1) ? 'none' : 'scale(0.8)'
+                    }}
+                  >
+                    <div className="relative h-24 mb-4 flex items-center justify-center bg-white rounded-lg overflow-hidden group-hover:bg-gray-50 transition-colors duration-300">
+                      <Image
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        fill
+                        className="object-contain p-2 group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    <h3 className="text-lg font-semibold text-center text-gray-300 group-hover:text-cyan-400 transition-colors duration-300">
+                      {sponsor.name}
+                    </h3>
+                    
+                    {/* Hover glow effect */}
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-400/0 via-cyan-400/5 to-purple-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
           ))}
-        </div>
 
-        <div className="bg-white rounded-lg p-8 shadow-md mb-12">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Community Sponsors</h2>
-          <p className="text-center text-gray-600 mb-8">
-            Special thanks to our community sponsors who support specific aspects of the conference.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            {communitySponsors.map((sponsor, index) => (
-              <div key={index} className="bg-gray-100 px-6 py-3 rounded-lg">
-                <span className="text-gray-700 font-medium">{sponsor}</span>
-              </div>
-            ))}
+          <div 
+            ref={el => sectionRefs.current[sponsorTiers.length + 1] = el}
+            className={`bg-gray-900/80 backdrop-blur-sm border-2 border-green-400/50 rounded-xl p-8 text-center hover:border-green-400 transition-all duration-500 hover:shadow-lg hover:shadow-green-400/20 ${
+              visibleSections.has(sponsorTiers.length + 1) ? 'fade-in-up' : 'stagger-animation'
+            }`}
+          >
+            <h2 className="text-2xl md:text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400 mb-6">
+              Why Sponsor Seasides?
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { icon: "🎯", text: "Reach 2,500+ cybersecurity professionals and enthusiasts", color: "text-cyan-400" },
+                { icon: "🌍", text: "Global audience with participants from 30+ countries", color: "text-green-400" },
+                { icon: "💡", text: "Associate your brand with cutting-edge security innovation", color: "text-purple-400" },
+                { icon: "🤝", text: "Support the cybersecurity community's education and growth", color: "text-red-400" },
+                { icon: "📈", text: "Generate leads and build meaningful business relationships", color: "text-yellow-400" },
+                { icon: "🎉", text: "Be part of India's most loved cybersecurity conference", color: "text-pink-400" }
+              ].map((item, index) => (
+                <div 
+                  key={index}
+                  className={`flex items-start space-x-3 p-4 rounded-lg bg-gray-800/50 hover:bg-gray-800/80 transition-all duration-300 hover:scale-105 ${
+                    visibleSections.has(sponsorTiers.length + 1) ? 'slide-in-left' : 'stagger-animation'
+                  }`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <span className="text-xl animate-bounce" style={{ animationDelay: `${index * 0.2}s` }}>
+                    {item.icon}
+                  </span>
+                  <span className="text-gray-300 hover:text-white transition-colors duration-300">
+                    {item.text}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-8">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-6">Why Sponsor Seasides?</h2>
-            <ul className="text-gray-600 space-y-3">
-              <li className="flex items-start">
-                <span className="text-blue-600 mr-2">🎯</span>
-                Reach 2,500+ cybersecurity professionals and enthusiasts
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2">🌍</span>
-                Global audience with participants from 30+ countries
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-600 mr-2">💡</span>
-                Associate your brand with cutting-edge security innovation
-              </li>
-              <li className="flex items-start">
-                <span className="text-red-600 mr-2">🤝</span>
-                Support the cybersecurity community's education and growth
-              </li>
-              <li className="flex items-start">
-                <span className="text-yellow-600 mr-2">📈</span>
-                Generate leads and build meaningful business relationships
-              </li>
-            </ul>
-          </div>
-          <div className="bg-white rounded-lg p-8 shadow-md">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-6">Sponsorship Impact</h2>
-            <div className="space-y-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">2,500+</div>
-                <div className="text-gray-600">Expected Attendees</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-green-600">50+</div>
-                <div className="text-gray-600">Industry Leaders</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-purple-600">100+</div>
-                <div className="text-gray-600">Technical Sessions</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-red-600">3</div>
-                <div className="text-gray-600">Days of Networking</div>
-              </div>
+          <div 
+            ref={el => sectionRefs.current[sponsorTiers.length + 2] = el}
+            className={`bg-gray-900/80 backdrop-blur-sm border-2 border-purple-400/50 rounded-xl p-8 mt-12 text-center hover:border-purple-400 transition-all duration-500 hover:shadow-lg hover:shadow-purple-400/20 ${
+              visibleSections.has(sponsorTiers.length + 2) ? 'scale-in' : 'stagger-animation'
+            }`}
+          >
+            <h2 className="text-2xl md:text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-6">
+              Become a Sponsor
+            </h2>
+            <p className="text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+              Join us in making cybersecurity education accessible to all. Partner with Seasides 2026 and be part of something meaningful.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mb-6">
+              <button className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/30">
+                Contact Sponsorship Team
+              </button>
+              <button className="px-8 py-3 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-400/30">
+                Download Sponsorship Info
+              </button>
+            </div>
+            <div className="mt-6 text-sm text-gray-400">
+              <p className="mb-2">For custom sponsorship packages, please reach out to our team.</p>
+              <p>Email: <span className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300 cursor-pointer">sponsors@seasides.net</span></p>
             </div>
           </div>
         </div>
-
-        <div className="bg-white rounded-lg p-8 shadow-md text-center">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-6">Become a Sponsor</h2>
-          <p className="text-gray-600 mb-8 max-w-3xl mx-auto">
-            Join us in making cybersecurity education accessible to all. Partner with Seasides 2026 and be part of something meaningful.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
-              Download Sponsorship Brochure
-            </button>
-            <button className="px-8 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors">
-              Contact Sponsorship Team
-            </button>
-          </div>
-          <div className="mt-6 text-sm text-gray-500">
-            <p>For custom sponsorship packages, please reach out to our team.</p>
-            <p className="mt-2">Email: sponsors@seasides.net | Phone: +91-XXX-XXX-XXXX</p>
-          </div>
-        </div>
       </div>
-    </div>
+      <Footer />
+    </main>
+    </>
   );
 };
 

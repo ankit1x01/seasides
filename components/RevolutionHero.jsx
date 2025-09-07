@@ -491,27 +491,6 @@ const RevolutionHero = () => {
           </div>
         </div>
 
-        {/* Slide Indicators */}
-  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20" aria-label="Slide indicators">
-          <div className="flex items-center gap-3">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`relative w-12 h-1 rounded-full transition-all duration-300 ${
-                  index === currentSlide ? 'bg-white' : 'bg-white bg-opacity-40'
-                }`}
-    aria-label={`Go to slide ${index + 1}`}
-    aria-current={index === currentSlide}
-              >
-                {index === currentSlide && isAutoPlay && (
-                  <div className="absolute top-0 left-0 h-full bg-white rounded-full progress-bar"></div>
-                )}
-              </button>
-            ))}
-          </div>
-        </div>
-
         {/* Slide Counter */}
         <div className="absolute bottom-8 right-8 z-20 bg-black bg-opacity-30 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm">
           {String(currentSlide + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}

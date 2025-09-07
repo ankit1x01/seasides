@@ -15,7 +15,7 @@ const About = () => {
           </p>
           
           <p className="text-lg text-center mb-12 leading-relaxed" style={{ color: '#1e40af' }}>
-            Join us from <strong className="text-blue-600">February 19th to 21st</strong> for the Seasides InfoSec Conference 2026, where you'll gain valuable insights into cybersecurity. We're proud to offer top-notch courses and sessions for <strong className="text-green-600">free</strong>, bringing a community-driven experience that mirrors major global events like Blackhat and Defcon—ensuring equal learning opportunities for all.
+            Join us from <strong className="text-blue-600">February 19th to 21st</strong> for the Seasides InfoSec Conference 2026, where you&apos;ll gain valuable insights into cybersecurity. We&apos;re proud to offer top-notch courses and sessions for <strong className="text-green-600">free</strong>, bringing a community-driven experience that mirrors major global events like Blackhat and Defcon—ensuring equal learning opportunities for all.
           </p>
 
           <div className="text-center mb-12">
@@ -47,7 +47,7 @@ const About = () => {
 
           <div className="text-center">
             <blockquote className="text-xl italic text-gray-700 mb-8">
-              "Shift your perspective on Security - How do you adapt as a technology enthusiast, security engineer, or developer amidst industry changes? Discover insights from those leading the way"
+              &quot;Shift your perspective on Security - How do you adapt as a technology enthusiast, security engineer, or developer amidst industry changes? Discover insights from those leading the way&quot;
             </blockquote>
             <Link href="/about">
               <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">

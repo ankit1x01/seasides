@@ -94,7 +94,7 @@ const About = () => {
               ? 'text-white' 
               : 'bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent'
           }`}>
-            India's Premier FREE
+            India&apos;s Premier FREE
             <span className={`block ${
               isDark 
                 ? 'text-cyan-400' 
@@ -129,7 +129,7 @@ const About = () => {
               }`}>
                 Join us from <strong className="text-blue-600">February 19-21, 2026</strong> at the beautiful 
                 <strong className="text-indigo-600"> International Centre Goa</strong> for a community-driven experience 
-                that rivals global conferences like Black Hat and DEF CON—with the key difference being it's 
+                that rivals global conferences like Black Hat and DEF CON—with the key difference being it&apos;s 
                 <strong className="text-green-600"> completely FREE</strong>.
               </p>
             </div>
@@ -195,7 +195,7 @@ const About = () => {
             }`}></div>
             <div className="relative">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                Ready to be part of India's cybersecurity community?
+                Ready to be part of India&apos;s cybersecurity community?
               </h3>
               <p className="text-lg text-blue-100 mb-6 max-w-2xl mx-auto">
                 Registration opens soon. Follow our social channels for updates and be among the first to secure your spot!

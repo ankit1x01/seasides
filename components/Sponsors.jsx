@@ -151,7 +151,7 @@ const Sponsors = () => {
               isDark ? 'text-white/90' : 'text-gray-700'
             }`}>
               Partnering with industry leaders to advance cybersecurity innovation and education. 
-              Together, we're building a safer digital future.
+              Together, we&apos;re building a safer digital future.
             </p>
           </div>
           
@@ -243,7 +243,7 @@ const Sponsors = () => {
               </h3>
               <p className="text-lg max-w-2xl mx-auto mb-8 leading-relaxed" style={{ color: '#FF0000 !important', fontSize: '1.5rem !important', fontWeight: 'bold !important', textShadow: '2px 2px 4px black !important' }}>
                 Join the elite network of cybersecurity innovators. Showcase your brand to 500+ security professionals, 
-                students, and community members at India's premier FREE conference.
+                students, and community members at India&apos;s premier FREE conference.
               </p>
             </div>
             
