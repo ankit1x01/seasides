@@ -90,6 +90,115 @@ const AboutPage = () => {
             </div>
           </div>
 
+          {/* Team Members Section */}
+          <div className="mb-12">
+            {/* Team Section Header */}
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-cyan-400 mb-4">Meet Our Team</h2>
+              <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+                The passionate cybersecurity professionals who make Seasides possible
+              </p>
+              <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            {/* Founders Section */}
+            <div className="mb-16">
+              <h3 className="text-2xl font-bold text-center mb-8 text-cyan-400">Founders</h3>
+              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                {/* Prashant KV */}
+                <div className="bg-gray-900 border-2 border-blue-400 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                  <div className="text-center">
+                    <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 p-1">
+                      <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center text-2xl font-bold text-slate-700">
+                        PK
+                      </div>
+                    </div>
+                    <h4 className="text-xl font-bold mb-2 text-white">Prashant KV</h4>
+                    <p className="text-sm font-medium mb-3 text-cyan-400">Co-Founder Seasides</p>
+                    <p className="text-sm leading-relaxed mb-4 text-gray-300">
+                      Over 20 years of experience in security domain, mentored countless cybersecurity enthusiasts
+                    </p>
+                    <div className="flex justify-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white hover:scale-110 transition-transform cursor-pointer">
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                      </div>
+                      <div className="w-8 h-8 rounded-full bg-blue-700 flex items-center justify-center text-white hover:scale-110 transition-transform cursor-pointer">
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Parveen Yadav */}
+                <div className="bg-gray-900 border-2 border-purple-400 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                  <div className="text-center">
+                    <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 p-1">
+                      <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center text-2xl font-bold text-slate-700">
+                        PY
+                      </div>
+                    </div>
+                    <h4 className="text-xl font-bold mb-2 text-white">Parveen Yadav</h4>
+                    <p className="text-sm font-medium mb-3 text-cyan-400">Co-Founder Seasides</p>
+                    <p className="text-sm leading-relaxed mb-4 text-gray-300">
+                      Expertise in cybersecurity, bug hunter on Hackerone & Bugcrowd
+                    </p>
+                    <div className="flex justify-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white hover:scale-110 transition-transform cursor-pointer">
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                      </div>
+                      <div className="w-8 h-8 rounded-full bg-blue-700 flex items-center justify-center text-white hover:scale-110 transition-transform cursor-pointer">
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Core Team Section */}
+            <div>
+              <h3 className="text-2xl font-bold text-center mb-8 text-cyan-400">Core Team Members</h3>
+              <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {[
+                  { name: "Pankaj Upadhyay", initials: "PU", color: "from-green-500 to-emerald-600" },
+                  { name: "Arun Mishra", initials: "AM", color: "from-orange-500 to-red-600" },
+                  { name: "Honey Merrin Sam", initials: "HS", color: "from-pink-500 to-rose-600" },
+                  { name: "Narendra", initials: "N", color: "from-indigo-500 to-blue-600" },
+                  { name: "Abhinav Khanna", initials: "AK", color: "from-teal-500 to-cyan-600", description: "Information Security Professional with 6+ years experience, spoken at BlackHat Asia, BlackHat MEA" },
+                  { name: "Parag Dave", initials: "PD", color: "from-violet-500 to-purple-600" },
+                  { name: "Sunita Sharma", initials: "SS", color: "from-yellow-500 to-orange-600" },
+                  { name: "Ashish Huria", initials: "AH", color: "from-lime-500 to-green-600" },
+                  { name: "Seedon Adlin D'souza", initials: "SD", color: "from-sky-500 to-blue-600" }
+                ].map((member, index) => (
+                  <div 
+                    key={index}
+                    className="bg-gray-900 border-2 border-gray-600 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-cyan-400"
+                  >
+                    <div className="text-center">
+                      <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br ${member.color} p-1`}>
+                        <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center text-lg font-bold text-slate-700">
+                          {member.initials}
+                        </div>
+                      </div>
+                      <h4 className="text-lg font-semibold mb-2 text-white">{member.name}</h4>
+                      {member.description && (
+                        <p className="text-xs leading-relaxed mb-3 text-gray-300">{member.description}</p>
+                      )}
+                      <div className="flex justify-center gap-2">
+                        <div className="w-7 h-7 rounded-full bg-blue-500 flex items-center justify-center text-white hover:scale-110 transition-transform cursor-pointer">
+                          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </div>
+                        <div className="w-7 h-7 rounded-full bg-blue-700 flex items-center justify-center text-white hover:scale-110 transition-transform cursor-pointer">
+                          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <div className="bg-gray-900 border-2 border-cyan-400 rounded-lg p-8 shadow-md">
             <h2 className="text-2xl font-semibold text-cyan-400 mb-6">Organized by Seasides Social Welfare Foundation</h2>
             <p className="text-gray-300 mb-4 leading-relaxed">

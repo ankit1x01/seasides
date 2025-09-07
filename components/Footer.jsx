@@ -127,7 +127,12 @@ const Footer = () => {
                     alt="Seasides Logo"
                     width={80}
                     height={48}
+                    sizes="80px"
                     className="w-20 h-12 brightness-100 group-hover:scale-110 transition-transform duration-300"
+                    style={{
+                      width: '80px',
+                      height: '48px',
+                    }}
                   />
                   <div className="absolute inset-0 bg-cyan-400 opacity-20 rounded-full blur-lg"></div>
                 </div>

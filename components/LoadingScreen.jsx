@@ -38,9 +38,15 @@ const LoadingScreen = () => {
             alt="Seasides Logo"
             width={128}
             height={128}
+            priority
+            sizes="128px"
             className={`w-full h-full object-contain animate-pulse ${
               isDark ? 'brightness-100' : 'brightness-0 invert'
             }`}
+            style={{
+              width: '128px',
+              height: '128px',
+            }}
           />
         </div>
       </div>

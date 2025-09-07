@@ -29,9 +29,14 @@ const Navbar = () => {
                 width={80}
                 height={40}
                 priority
+                sizes="80px"
                 className={`w-20 h-10 group-hover:scale-110 transition-transform duration-300 ${
                   isDark ? 'brightness-100' : 'brightness-0'
                 }`}
+                style={{
+                  width: '80px',
+                  height: '40px',
+                }}
               />
             </div>
           </Link>
