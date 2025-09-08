@@ -53,7 +53,7 @@ const CustomCursor = () => {
     <>
       {/* Main cursor */}
       <div
-        className={`fixed w-4 h-4 bg-blue-400 rounded-full pointer-events-none z-50 transition-all duration-100 ${
+        className={`fixed w-4 h-4 bg-blue-400 rounded-full pointer-events-none z-[9999] transition-all duration-100 ${
           isClicking ? 'scale-75' : 'scale-100'
         }`}
         style={{
@@ -65,7 +65,7 @@ const CustomCursor = () => {
       
       {/* Cursor trail */}
       <div
-        className={`fixed w-8 h-8 border-2 border-purple-400 rounded-full pointer-events-none z-40 transition-all duration-300 ${
+        className={`fixed w-8 h-8 border-2 border-purple-400 rounded-full pointer-events-none z-[9998] transition-all duration-300 ${
           isHovering ? 'scale-150 border-yellow-400' : 'scale-100'
         } ${isClicking ? 'scale-75' : ''}`}
         style={{

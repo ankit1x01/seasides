@@ -249,7 +249,7 @@ const About = () => {
     if (!member) return null;
 
     return (
-      <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 flex items-center justify-center p-4" onClick={onClose}>
         <div className={`max-w-2xl w-full max-h-[80vh] overflow-y-auto rounded-2xl shadow-2xl ${
           isDark ? 'bg-slate-800 border border-slate-700' : 'bg-white border border-gray-200'
         }`} onClick={(e) => e.stopPropagation()}>
