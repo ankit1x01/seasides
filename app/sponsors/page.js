@@ -291,8 +291,7 @@ const SponsorsPage = () => {
               </button>
             </div>
             <div className="mt-6 text-sm text-gray-400">
-              <p className="mb-2">For custom sponsorship packages, please reach out to our team.</p>
-              <p>Email: <span className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300 cursor-pointer">sponsors@seasides.net</span></p>
+              <p>For custom sponsorship packages, please reach out to our team.</p>
             </div>
           </div>
         </div>

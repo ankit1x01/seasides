@@ -19,11 +19,6 @@ const Venue = () => {
       icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-6 0a1 1 0 110 2h6a1 1 0 110-2M9 9h6m-6 4h6m-6 4h6m-6 4h6" /></svg>,
       title: 'Easy Access',
       description: 'Just 30 minutes from Goa International Airport with ample parking and public transport connections.'
-    },
-    {
-      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" /></svg>,
-      title: 'Dining & Catering',
-      description: 'Multiple restaurants, cafes, and catering services offering local and international cuisine.'
     }
   ];
 
@@ -147,17 +142,11 @@ const Venue = () => {
                       </svg>
                       <span style={{ color: '#98FB98', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Dona Paula, Panaji, Goa 403004</span>
                     </div>
-                    <div className="flex items-center">
-                      <svg className="w-5 h-5 mr-3" fill="none" stroke="#00FFFF" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                      <span style={{ color: '#F0E68C', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>+91 832 246 1234</span>
-                    </div>
                     <div className="flex items-center text-gray-700">
                       <svg className="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
                       </svg>
-                      <span>icgoa.org</span>
+                      <a href="https://www.internationalcentregoa.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#87CEEB', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>internationalcentregoa.com</a>
                     </div>
                   </div>
                 </div>

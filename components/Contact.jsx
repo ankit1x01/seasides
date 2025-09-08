@@ -15,16 +15,9 @@ const Contact = () => {
     {
       icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>,
       title: 'Email Us',
-      info: 'info@seasides.net',
+      info: 'support@seasides.net',
       detail: 'Response within 24 hours',
       color: 'from-purple-500 to-pink-500'
-    },
-    {
-      icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>,
-      title: 'Call Us',
-      info: '+91-XXX-XXX-XXXX',
-      detail: 'Mon-Fri 9AM-6PM IST',
-      color: 'from-green-500 to-emerald-500'
     }
   ];
 
@@ -93,7 +86,7 @@ const Contact = () => {
           </div>
           
           {/* Contact Methods */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
             {contactMethods.map((method, index) => (
               <div 
                 key={index}
@@ -138,9 +131,6 @@ const Contact = () => {
                   A premier conference venue located in the heart of Goa, offering state-of-the-art facilities for our cybersecurity conference.
                 </p>
                 <div className="space-y-2 text-sm">
-                  <p style={{ color: '#98FB98', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>🏨 On-site accommodation available</p>
-                  <p style={{ color: '#DDA0DD', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>🍽️ Multiple dining options</p>
-                  <p style={{ color: '#87CEEB', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>🚗 Ample parking space</p>
                   <p style={{ color: '#FFB6C1', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>✈️ 30 minutes from Goa Airport</p>
                 </div>
               </div>

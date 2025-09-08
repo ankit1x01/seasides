@@ -165,9 +165,11 @@ const Footer = () => {
                   <li key={index}>
                     <a 
                       href={link.href}
-                      className="footer-link flex items-center gap-2 hover:text-cyan-400 transition-all duration-300 text-sm text-white"
+                      className={`footer-link flex items-center gap-2 hover:text-cyan-400 transition-all duration-300 text-sm ${
+                        isDark ? 'text-white' : 'text-gray-700'
+                      }`}
                     >
-                      <span className="text-cyan-400">{link.icon}</span>
+                      <span className={`${isDark ? 'text-cyan-400' : 'text-blue-600'}`}>{link.icon}</span>
                       {link.text}
                     </a>
                   </li>
@@ -182,28 +184,30 @@ const Footer = () => {
               }`}>
                 Event Details
               </h4>
-              <div className="space-y-3 text-sm text-white">
+              <div className={`space-y-3 text-sm ${
+                isDark ? 'text-white' : 'text-gray-700'
+              }`}>
                 <div className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={`w-4 h-4 ${isDark ? 'text-cyan-400' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-6 0a1 1 0 110 2h6a1 1 0 110-2M9 9h6m-6 4h6m-6 4h6m-6 4h6" />
                   </svg>
                   <span>{EVENT_DATE_LONG}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={`w-4 h-4 ${isDark ? 'text-cyan-400' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                   <span>International Centre Goa</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={`w-4 h-4 ${isDark ? 'text-cyan-400' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                   <span>Cybersecurity & Innovation</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={`w-4 h-4 ${isDark ? 'text-cyan-400' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                   <span>Goa, India</span>
@@ -213,18 +217,24 @@ const Footer = () => {
           </div>
 
           {/* Social Media & Bottom Section */}
-          <div className="border-t border-gray-700 border-opacity-50 pt-8">
+          <div className={`border-t pt-8 ${
+            isDark ? 'border-gray-700 border-opacity-50' : 'border-gray-300'
+          }`}>
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               {/* Social Icons */}
               <div className="flex items-center gap-6">
-                <span className="text-sm mr-2 text-white">Connect with us:</span>
+                <span className={`text-sm mr-2 ${
+                  isDark ? 'text-white' : 'text-gray-700'
+                }`}>Connect with us:</span>
                 {socialIcons.map(({ Icon, href, color, glow }, index) => (
                   <a
                     key={index}
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`social-icon ${color} ${glow} transition-all duration-300 relative text-white`}
+                    className={`social-icon ${color} ${glow} transition-all duration-300 relative ${
+                      isDark ? 'text-white' : 'text-gray-700'
+                    }`}
                     onMouseEnter={() => setHoveredIcon(index)}
                     onMouseLeave={() => setHoveredIcon(null)}
                   >
@@ -238,13 +248,19 @@ const Footer = () => {
 
               {/* Copyright */}
               <div className="text-center md:text-right">
-                <p className="text-sm mb-1 text-white">
+                <p className={`text-sm mb-1 ${
+                  isDark ? 'text-white' : 'text-gray-700'
+                }`}>
                   © 2026 Organised by{' '}
-                  <span className="text-white font-semibold">
+                  <span className={`font-semibold ${
+                    isDark ? 'text-white' : 'text-gray-900'
+                  }`}>
                     Seasides Social Welfare Foundation
                   </span>
                 </p>
-                <p className="text-xs text-white">
+                <p className={`text-xs ${
+                  isDark ? 'text-white' : 'text-gray-600'
+                }`}>
                   All rights reserved. Built with 💙 for the cybersecurity community.
                 </p>
               </div>
@@ -252,7 +268,9 @@ const Footer = () => {
 
             {/* Tech Credits */}
             <div className="mt-6 text-center">
-              <div className="inline-flex items-center gap-2 text-xs hover:text-cyan-400 transition-colors cursor-pointer text-white">
+              <div className={`inline-flex items-center gap-2 text-xs hover:text-cyan-400 transition-colors cursor-pointer ${
+                isDark ? 'text-white' : 'text-gray-600'
+              }`}>
                 <FaShieldAlt className="animate-pulse" />
                 <span>Securing the Digital Future</span>
                 <FaRocket className="animate-bounce" />
