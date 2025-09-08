@@ -3,34 +3,32 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickySubnav from "@/components/StickySubnav";
 
-// Lazy load heavy components with loading states
-const RevolutionHero = dynamic(() => import("@/components/RevolutionHero"), {
-  loading: () => <div className="h-screen bg-gradient-to-br from-blue-900 to-purple-900 animate-pulse" />
-});
+// Critical components loaded immediately for LCP
+import RevolutionHero from "@/components/RevolutionHero";
 
-
+// Non-critical components lazy loaded with optimized loading states
 const Stats = dynamic(() => import("@/components/Stats"), {
-  loading: () => <div className="h-64 bg-gray-50 dark:bg-gray-800 animate-pulse" />
+  loading: () => <div className="h-64 bg-gradient-to-r from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-700 animate-pulse rounded-lg mx-6" />
 });
 
 const Sponsors = dynamic(() => import("@/components/Sponsors"), {
-  loading: () => <div className="h-80 bg-white dark:bg-gray-900 animate-pulse" />
+  loading: () => <div className="h-80 bg-gradient-to-r from-white to-gray-100 dark:from-gray-900 dark:to-gray-800 animate-pulse rounded-lg mx-6" />
 });
 
 const Venue = dynamic(() => import("@/components/Venue"), {
-  loading: () => <div className="h-96 bg-gray-100 dark:bg-gray-900 animate-pulse" />
+  loading: () => <div className="h-96 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 animate-pulse rounded-lg mx-6" />
 });
 
 const SocialIntegration = dynamic(() => import("@/components/SocialIntegration"), {
-  loading: () => <div className="h-64 bg-blue-50 dark:bg-blue-900 animate-pulse" />
+  loading: () => <div className="h-64 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900 dark:to-indigo-900 animate-pulse rounded-lg mx-6" />
 });
 
 const Contact = dynamic(() => import("@/components/Contact"), {
-  loading: () => <div className="h-80 bg-gray-50 dark:bg-gray-800 animate-pulse" />
+  loading: () => <div className="h-80 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 animate-pulse rounded-lg mx-6" />
 });
 
 const Faq = dynamic(() => import("@/components/Faq"), {
-  loading: () => <div className="h-96 bg-white dark:bg-gray-900 animate-pulse" />
+  loading: () => <div className="h-96 bg-gradient-to-r from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 animate-pulse rounded-lg mx-6" />
 });
 
 export default function Home() {

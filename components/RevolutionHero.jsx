@@ -338,7 +338,7 @@ const RevolutionHero = () => {
                   <div className="mb-12">
                     <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 text-white">
                       <div className="text-center bg-black bg-opacity-40 backdrop-blur-sm rounded-xl px-4 py-3 border border-white border-opacity-30 hover:bg-black hover:bg-opacity-50 transition-all duration-300 shadow-lg">
-                        <div className="text-xl md:text-2xl font-bold text-cyan-200 drop-shadow-lg">500+</div>
+                        <div className="text-xl md:text-2xl font-bold text-cyan-200 drop-shadow-lg">1000+</div>
                         <div className="text-xs md:text-sm text-white font-medium drop-shadow-md">Expected Attendees</div>
                       </div>
                       <div className="text-center bg-black bg-opacity-40 backdrop-blur-sm rounded-xl px-4 py-3 border border-white border-opacity-30 hover:bg-black hover:bg-opacity-50 transition-all duration-300 shadow-lg">
