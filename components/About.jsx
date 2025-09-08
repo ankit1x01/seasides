@@ -30,17 +30,17 @@ const About = () => {
   const sections = {
     story: {
       title: "How are we?",
-      subtitle: "Our Story",
+      subtitle: "What's our Story ?",
       content: "Seasides Information Security Conference is a leading conference dedicated to empowering students and professionals in the field of information security and ethical hacking.\n\nOur conference is designed to provide high-quality educational experiences and hands-on training at no cost, ensuring that everyone, regardless of their financial background, has the opportunity to enhance their skills and knowledge in cybersecurity."
     },
     mission: {
       title: "Democratizing Cybersecurity",
-      subtitle: "Our Mission", 
+      subtitle: "What's our Mission ?", 
       content: "Our mission is to democratize access to top-tier cybersecurity education by offering free workshops and training sessions led by industry experts along with fun and parties.\n\nWe strive to create an inclusive environment where students and aspiring professionals can learn, collaborate, and grow together, equipping them with the tools they need to succeed in the rapidly evolving cybersecurity landscape.\n\nJoin us for three days of insightful keynote speeches, technical sessions, hands-on workshops, and networking opportunities, as we address the most critical challenges in cybersecurity today."
     },
     achievements: {
       title: "Empowering the Future",
-      subtitle: "What We Achieved",
+      subtitle: "What we Achieved ?",
       content: "Since our inception, Seasides's commitment to providing free, high-quality education has made a significant impact on the cybersecurity community, particularly among students.\n\nHere's a look at the key achievements from past conferences:",
       keyAchievements: [
         "Record-breaking Attendance",
@@ -53,7 +53,7 @@ const About = () => {
     },
     attend: {
       title: "Join the Cyber Revolution",
-      subtitle: "Who's In and What's On",
+      subtitle: "Who should Attend ?",
       description: "Whether you're a professional or just starting your journey in cybersecurity, this conference is designed for everyone passionate about protecting the digital world.",
       targetAudience: [
         "IT & Cybersecurity Professionals",
@@ -444,29 +444,57 @@ const About = () => {
         </div>
 
         {/* Section Navigation */}
-        <div className={`flex justify-center mb-12 transform transition-all duration-1000 delay-200 ${
+        <div className={`mb-12 transform transition-all duration-1000 delay-200 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className={`flex flex-wrap gap-2 p-2 rounded-2xl ${
-            isDark ? 'bg-slate-800/60' : 'bg-white/60'
-          } backdrop-blur-sm`}>
-            {Object.entries(sections).map(([key, section]) => (
-              <button
-                key={key}
-                onClick={() => setActiveSection(key)}
-                className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
-                  activeSection === key
-                    ? isDark
-                      ? 'bg-cyan-500 text-black shadow-lg shadow-cyan-500/25'
-                      : 'bg-blue-500 text-white shadow-lg shadow-blue-500/25'
-                    : isDark
-                      ? 'text-slate-300 hover:text-white hover:bg-slate-700/50'
-                      : 'text-slate-600 hover:text-slate-800 hover:bg-white/50'
-                }`}
-              >
-                {section.subtitle}
-              </button>
-            ))}
+          {/* Desktop: centered layout */}
+          <div className="hidden md:flex justify-center">
+            <div className={`flex flex-wrap gap-2 p-2 rounded-2xl ${
+              isDark ? 'bg-slate-800/60' : 'bg-white/60'
+            } backdrop-blur-sm`}>
+              {Object.entries(sections).map(([key, section]) => (
+                <button
+                  key={key}
+                  onClick={() => setActiveSection(key)}
+                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
+                    activeSection === key
+                      ? isDark
+                        ? 'bg-cyan-500 text-black shadow-lg shadow-cyan-500/25'
+                        : 'bg-blue-500 text-white shadow-lg shadow-blue-500/25'
+                      : isDark
+                        ? 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                        : 'text-slate-600 hover:text-slate-800 hover:bg-white/50'
+                  }`}
+                >
+                  {section.subtitle}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile: horizontal scrollable layout */}
+          <div className="md:hidden overflow-x-auto scrollbar-hide">
+            <div className={`flex gap-2 p-2 rounded-2xl min-w-max mx-2 ${
+              isDark ? 'bg-slate-800/60' : 'bg-white/60'
+            } backdrop-blur-sm`}>
+              {Object.entries(sections).map(([key, section]) => (
+                <button
+                  key={key}
+                  onClick={() => setActiveSection(key)}
+                  className={`px-4 py-2.5 rounded-xl font-medium whitespace-nowrap transition-all duration-300 ${
+                    activeSection === key
+                      ? isDark
+                        ? 'bg-cyan-500 text-black shadow-lg shadow-cyan-500/25'
+                        : 'bg-blue-500 text-white shadow-lg shadow-blue-500/25'
+                      : isDark
+                        ? 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                        : 'text-slate-600 hover:text-slate-800 hover:bg-white/50'
+                  }`}
+                >
+                  {section.subtitle}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -490,6 +518,101 @@ const About = () => {
               
               <div className="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto"></div>
               
+              {/* Modern Section Graphics */}
+              <div className="mb-8 flex justify-center relative">
+                {activeSection === 'story' && (
+                  <div className="relative group">
+                    {/* Modern gradient orb */}
+                    <div className={`w-40 h-40 rounded-full relative overflow-hidden ${
+                      isDark ? 'bg-gradient-to-br from-cyan-400/20 via-blue-500/10 to-purple-600/20' : 'bg-gradient-to-br from-blue-200/60 via-indigo-200/40 to-purple-200/60'
+                    }`} style={{ animation: 'modernFloat 6s ease-in-out infinite' }}>
+                      {/* Animated background */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                      
+                      {/* Central icon */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className={`w-16 h-16 rounded-xl ${isDark ? 'bg-cyan-500/30' : 'bg-blue-500/30'} flex items-center justify-center backdrop-blur-sm`}>
+                          <svg className={`w-8 h-8 ${isDark ? 'text-cyan-300' : 'text-blue-700'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                          </svg>
+                        </div>
+                      </div>
+                      
+                      {/* Floating particles */}
+                      <div className="absolute top-4 left-8 w-2 h-2 bg-cyan-400 rounded-full opacity-60" style={{ animation: 'particleFloat 4s ease-in-out infinite' }}></div>
+                      <div className="absolute bottom-6 right-6 w-1.5 h-1.5 bg-blue-500 rounded-full opacity-70" style={{ animation: 'particleFloat 3s ease-in-out infinite 0.5s' }}></div>
+                      <div className="absolute top-12 right-4 w-1 h-1 bg-purple-400 rounded-full opacity-80" style={{ animation: 'particleFloat 5s ease-in-out infinite 1s' }}></div>
+                    </div>
+                  </div>
+                )}
+                
+                {activeSection === 'mission' && (
+                  <div className="relative group">
+                    <div className={`w-40 h-40 rounded-full relative overflow-hidden ${
+                      isDark ? 'bg-gradient-to-br from-purple-500/20 via-pink-500/10 to-red-500/20' : 'bg-gradient-to-br from-purple-200/60 via-pink-200/40 to-red-200/60'
+                    }`} style={{ animation: 'modernFloat 6s ease-in-out infinite 1s' }}>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                      
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className={`w-16 h-16 rounded-xl ${isDark ? 'bg-purple-500/30' : 'bg-purple-500/30'} flex items-center justify-center backdrop-blur-sm`}>
+                          <svg className={`w-8 h-8 ${isDark ? 'text-purple-300' : 'text-purple-700'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          </svg>
+                        </div>
+                      </div>
+                      
+                      <div className="absolute top-3 left-6 w-2 h-2 bg-purple-400 rounded-full opacity-60" style={{ animation: 'particleFloat 3.5s ease-in-out infinite 0.8s' }}></div>
+                      <div className="absolute bottom-8 right-8 w-1.5 h-1.5 bg-pink-500 rounded-full opacity-70" style={{ animation: 'particleFloat 4.5s ease-in-out infinite 0.3s' }}></div>
+                      <div className="absolute top-16 right-3 w-1 h-1 bg-red-400 rounded-full opacity-80" style={{ animation: 'particleFloat 4s ease-in-out infinite 1.2s' }}></div>
+                    </div>
+                  </div>
+                )}
+                
+                {activeSection === 'achievements' && (
+                  <div className="relative group">
+                    <div className={`w-40 h-40 rounded-full relative overflow-hidden ${
+                      isDark ? 'bg-gradient-to-br from-yellow-500/20 via-orange-500/10 to-red-500/20' : 'bg-gradient-to-br from-yellow-200/60 via-orange-200/40 to-red-200/60'
+                    }`} style={{ animation: 'modernFloat 6s ease-in-out infinite 2s' }}>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                      
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className={`w-16 h-16 rounded-xl ${isDark ? 'bg-yellow-500/30' : 'bg-yellow-500/30'} flex items-center justify-center backdrop-blur-sm`}>
+                          <svg className={`w-8 h-8 ${isDark ? 'text-yellow-300' : 'text-yellow-700'}`} fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                          </svg>
+                        </div>
+                      </div>
+                      
+                      <div className="absolute top-5 left-4 w-2 h-2 bg-yellow-400 rounded-full opacity-60" style={{ animation: 'particleFloat 3s ease-in-out infinite 0.4s' }}></div>
+                      <div className="absolute bottom-4 right-5 w-1.5 h-1.5 bg-orange-500 rounded-full opacity-70" style={{ animation: 'particleFloat 4s ease-in-out infinite 0.9s' }}></div>
+                      <div className="absolute top-14 right-6 w-1 h-1 bg-red-400 rounded-full opacity-80" style={{ animation: 'particleFloat 3.5s ease-in-out infinite 0.6s' }}></div>
+                    </div>
+                  </div>
+                )}
+                
+                {activeSection === 'attend' && (
+                  <div className="relative group">
+                    <div className={`w-40 h-40 rounded-full relative overflow-hidden ${
+                      isDark ? 'bg-gradient-to-br from-green-500/20 via-teal-500/10 to-blue-500/20' : 'bg-gradient-to-br from-green-200/60 via-teal-200/40 to-blue-200/60'
+                    }`} style={{ animation: 'modernFloat 6s ease-in-out infinite 0.5s' }}>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                      
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className={`w-16 h-16 rounded-xl ${isDark ? 'bg-green-500/30' : 'bg-green-500/30'} flex items-center justify-center backdrop-blur-sm`}>
+                          <svg className={`w-8 h-8 ${isDark ? 'text-green-300' : 'text-green-700'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                          </svg>
+                        </div>
+                      </div>
+                      
+                      <div className="absolute top-6 left-5 w-2 h-2 bg-green-400 rounded-full opacity-60" style={{ animation: 'particleFloat 4.2s ease-in-out infinite 0.2s' }}></div>
+                      <div className="absolute bottom-5 right-4 w-1.5 h-1.5 bg-teal-500 rounded-full opacity-70" style={{ animation: 'particleFloat 3.8s ease-in-out infinite 0.7s' }}></div>
+                      <div className="absolute top-10 right-7 w-1 h-1 bg-blue-400 rounded-full opacity-80" style={{ animation: 'particleFloat 4.5s ease-in-out infinite 1.1s' }}></div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
               <div className={`text-lg md:text-xl leading-relaxed ${
                 isDark ? 'text-slate-200' : 'text-slate-700'
               }`}>
@@ -622,17 +745,85 @@ const About = () => {
               <div 
                 key={index}
                 onClick={() => setSelectedMember(member)}
-                className={`group text-center transform hover:scale-105 transition-all duration-300 cursor-pointer ${
+                className={`group text-center transform hover:scale-105 transition-all duration-300 cursor-pointer relative ${
                   isDark 
                     ? 'hover:bg-slate-800/50' 
                     : 'hover:bg-white/50'
-                } p-4 rounded-2xl backdrop-blur-sm`}
+                } p-4 rounded-2xl backdrop-blur-sm ${
+                  member.nickname === 'Sardaar Khan' ? 'sardaar-card' : 
+                  member.nickname === 'Munna Bhaiya' ? 'munna-card' : ''
+                }`}
                 style={{
                   animationDelay: `${index * 100}ms`,
                   animation: isVisible ? 'fadeInUp 0.8s ease-out forwards' : ''
                 }}
               >
-                <div className="relative mb-4 mx-auto w-24 h-24 overflow-hidden rounded-full ring-4 ring-blue-500/20 group-hover:ring-blue-500/50 transition-all duration-300">
+                {/* Modern gradient overlays for special members */}
+                {member.nickname === 'Sardaar Khan' && (
+                  <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
+                    {/* Golden gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 via-orange-400/5 to-red-500/10 rounded-2xl"></div>
+                    {/* Floating golden particles */}
+                    <div className="absolute top-2 right-2 w-2 h-2 bg-yellow-400 rounded-full opacity-70" style={{ animation: 'royalFloat 4s ease-in-out infinite' }}></div>
+                    <div className="absolute bottom-3 left-3 w-1.5 h-1.5 bg-orange-500 rounded-full opacity-60" style={{ animation: 'royalFloat 3s ease-in-out infinite 0.5s' }}></div>
+                    <div className="absolute top-4 left-4 w-1 h-1 bg-red-400 rounded-full opacity-80" style={{ animation: 'royalFloat 5s ease-in-out infinite 1s' }}></div>
+                  </div>
+                )}
+
+                {member.nickname === 'Munna Bhaiya' && (
+                  <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
+                    {/* Red gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-pink-400/5 to-purple-500/10 rounded-2xl"></div>
+                    {/* Floating boss particles */}
+                    <div className="absolute top-3 right-3 w-2 h-2 bg-red-400 rounded-full opacity-70" style={{ animation: 'bossFloat 3.5s ease-in-out infinite' }}></div>
+                    <div className="absolute bottom-2 left-2 w-1.5 h-1.5 bg-pink-500 rounded-full opacity-60" style={{ animation: 'bossFloat 4s ease-in-out infinite 0.7s' }}></div>
+                    <div className="absolute top-5 left-5 w-1 h-1 bg-purple-400 rounded-full opacity-80" style={{ animation: 'bossFloat 4.5s ease-in-out infinite 1.2s' }}></div>
+                  </div>
+                )}
+
+                {member.name === 'Abhinav Khanna' && (
+                  <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
+                    {/* Security blue gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-cyan-400/5 to-indigo-500/10 rounded-2xl"></div>
+                    <div className="absolute top-2 right-4 w-2 h-2 bg-blue-400 rounded-full opacity-70" style={{ animation: 'securityPulse 3s ease-in-out infinite' }}></div>
+                    <div className="absolute bottom-4 left-2 w-1.5 h-1.5 bg-cyan-500 rounded-full opacity-60" style={{ animation: 'securityPulse 4s ease-in-out infinite 0.8s' }}></div>
+                  </div>
+                )}
+
+                {member.name === 'Seedon Adlin D\'souza' && (
+                  <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
+                    {/* Hardware green gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-emerald-400/5 to-teal-500/10 rounded-2xl"></div>
+                    <div className="absolute top-3 right-2 w-2 h-2 bg-green-400 rounded-full opacity-70" style={{ animation: 'hardwareGlow 3.5s ease-in-out infinite' }}></div>
+                    <div className="absolute bottom-2 left-4 w-1.5 h-1.5 bg-emerald-500 rounded-full opacity-60" style={{ animation: 'hardwareGlow 4s ease-in-out infinite 0.6s' }}></div>
+                  </div>
+                )}
+
+                {member.name === 'Kartheek Lade' && (
+                  <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
+                    {/* IoV purple gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-violet-400/5 to-indigo-500/10 rounded-2xl"></div>
+                    <div className="absolute top-4 right-3 w-2 h-2 bg-purple-400 rounded-full opacity-70" style={{ animation: 'iovSpark 3s ease-in-out infinite' }}></div>
+                    <div className="absolute bottom-3 left-3 w-1.5 h-1.5 bg-violet-500 rounded-full opacity-60" style={{ animation: 'iovSpark 3.8s ease-in-out infinite 0.9s' }}></div>
+                  </div>
+                )}
+
+                {(member.role === 'Core Team Member' && !member.nickname && !['Abhinav Khanna', 'Seedon Adlin D\'souza', 'Kartheek Lade'].includes(member.name)) && (
+                  <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
+                    {/* Team gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-slate-500/5 via-gray-400/3 to-zinc-500/5 rounded-2xl"></div>
+                    <div className="absolute top-2 right-2 w-1.5 h-1.5 bg-slate-400 rounded-full opacity-50" style={{ animation: 'teamGlow 4s ease-in-out infinite' }}></div>
+                    <div className="absolute bottom-3 left-3 w-1 h-1 bg-gray-500 rounded-full opacity-60" style={{ animation: 'teamGlow 3.5s ease-in-out infinite 0.7s' }}></div>
+                  </div>
+                )}
+
+                <div className={`relative mb-4 mx-auto w-24 h-24 overflow-hidden rounded-full ring-4 transition-all duration-300 ${
+                  member.nickname === 'Sardaar Khan' 
+                    ? 'ring-yellow-500/30 group-hover:ring-yellow-500/70' 
+                    : member.nickname === 'Munna Bhaiya' 
+                    ? 'ring-red-500/30 group-hover:ring-red-500/70'
+                    : 'ring-blue-500/20 group-hover:ring-blue-500/50'
+                }`}>
                   {member.image ? (
                     <Image
                       src={`/team-photos/${member.image}`}
@@ -649,23 +840,33 @@ const About = () => {
                     </div>
                   )}
                 </div>
-                <h4 className={`font-semibold text-sm mb-1 ${
-                  isDark 
+                <h4 className={`font-semibold text-sm mb-1 transition-colors duration-300 ${
+                  member.nickname === 'Sardaar Khan' 
+                    ? isDark ? 'text-yellow-300 group-hover:text-yellow-200' : 'text-yellow-600 group-hover:text-yellow-700'
+                    : member.nickname === 'Munna Bhaiya' 
+                    ? isDark ? 'text-red-300 group-hover:text-red-200' : 'text-red-600 group-hover:text-red-700'
+                    : isDark 
                     ? 'text-white group-hover:text-cyan-400' 
                     : 'text-slate-800 group-hover:text-blue-600'
-                } transition-colors duration-300`}>
+                }`}>
                   {member.name}
                   {member.nickname && (
-                    <span className="block text-xs text-blue-500 font-normal">
+                    <span className={`block text-xs font-normal ${
+                      member.nickname === 'Sardaar Khan' 
+                        ? 'text-yellow-500' 
+                        : member.nickname === 'Munna Bhaiya' 
+                        ? 'text-red-500'
+                        : 'text-blue-500'
+                    }`}>
                       &quot;{member.nickname}&quot;
                     </span>
                   )}
                 </h4>
-                <p className={`text-xs ${
+                <p className={`text-xs transition-colors duration-300 ${
                   isDark 
                     ? 'text-slate-400 group-hover:text-slate-300' 
                     : 'text-slate-500 group-hover:text-slate-700'
-                } transition-colors duration-300`}>
+                }`}>
                   {member.role}
                 </p>
               </div>
@@ -686,6 +887,94 @@ const About = () => {
           to {
             opacity: 1;
             transform: translateY(0);
+          }
+        }
+        
+        /* Modern section graphics animations */
+        @keyframes modernFloat {
+          0%, 100% {
+            transform: translateY(0px) scale(1) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-10px) scale(1.02) rotate(2deg);
+          }
+        }
+        
+        @keyframes particleFloat {
+          0%, 100% {
+            transform: translateY(0px) translateX(0px) scale(1);
+            opacity: 0.6;
+          }
+          50% {
+            transform: translateY(-15px) translateX(5px) scale(1.2);
+            opacity: 0.9;
+          }
+        }
+        
+        /* Modern team member animations */
+        @keyframes royalFloat {
+          0%, 100% {
+            transform: translateY(0px) translateX(0px) scale(1);
+            opacity: 0.7;
+          }
+          50% {
+            transform: translateY(-8px) translateX(3px) scale(1.1);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes bossFloat {
+          0%, 100% {
+            transform: translateY(0px) translateX(0px) scale(1);
+            opacity: 0.7;
+          }
+          50% {
+            transform: translateY(-6px) translateX(-2px) scale(1.15);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes securityPulse {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 0.7;
+          }
+          50% {
+            transform: scale(1.3);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes hardwareGlow {
+          0%, 100% {
+            transform: scale(1) rotate(0deg);
+            opacity: 0.7;
+          }
+          50% {
+            transform: scale(1.2) rotate(5deg);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes iovSpark {
+          0%, 100% {
+            transform: translateY(0px) scale(1);
+            opacity: 0.7;
+          }
+          50% {
+            transform: translateY(-5px) scale(1.25);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes teamGlow {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 0.5;
+          }
+          50% {
+            transform: scale(1.1);
+            opacity: 0.8;
           }
         }
       `}</style>

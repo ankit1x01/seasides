@@ -8,7 +8,7 @@ const Venue = () => {
     {
       icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>,
       title: 'World-Class Facilities',
-      description: 'State-of-the-art conference halls with cutting-edge AV equipment and comfortable seating for 500+ attendees.'
+      description: 'State-of-the-art conference halls with cutting-edge AV equipment and comfortable seating for 1000+ attendees.'
     },
     {
       icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>,
@@ -22,32 +22,6 @@ const Venue = () => {
     }
   ];
 
-  const accommodationOptions = [
-    {
-      type: 'Luxury Hotels',
-      distance: '0-5 km',
-      priceRange: '₹5,000 - ₹15,000',
-      features: ['5-star amenities', 'Spa & wellness', 'Beach access', 'Conference shuttle']
-    },
-    {
-      type: 'Business Hotels',
-      distance: '2-8 km', 
-      priceRange: '₹3,000 - ₹8,000',
-      features: ['Business center', 'WiFi', 'Airport shuttle', 'Meeting rooms']
-    },
-    {
-      type: 'Budget Hotels',
-      distance: '5-15 km',
-      priceRange: '₹1,500 - ₹4,000',
-      features: ['Clean rooms', 'Basic amenities', 'Local transport', 'Safe area']
-    },
-    {
-      type: 'Vacation Rentals',
-      distance: '3-20 km',
-      priceRange: '₹2,000 - ₹10,000',
-      features: ['Private space', 'Kitchen facilities', 'Group bookings', 'Local experience']
-    }
-  ];
 
   return (
     <section className="py-20 bg-black">
@@ -86,16 +60,6 @@ const Venue = () => {
             >
               Location & Travel
             </button>
-            <button
-              onClick={() => setActiveTab('accommodation')}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                activeTab === 'accommodation'
-                  ? 'bg-cyan-400 text-black shadow-lg font-bold'
-                  : 'text-cyan-400 hover:text-white'
-              }`}
-            >
-              Accommodation
-            </button>
           </div>
         </div>
 
@@ -112,7 +76,7 @@ const Venue = () => {
                       <p className="text-lg opacity-90">Dona Paula, Goa, India</p>
                       <div className="mt-4 flex items-center justify-center gap-4">
                         <div className="text-center">
-                          <div className="text-2xl font-bold">500+</div>
+                          <div className="text-2xl font-bold">1000+</div>
                           <div className="text-sm text-white/90">Capacity</div>
                         </div>
                         <div className="text-center">
@@ -247,78 +211,6 @@ const Venue = () => {
           </div>
         )}
 
-        {/* Accommodation Tab */}
-        {activeTab === 'accommodation' && (
-          <div className="space-y-12">
-            {/* Accommodation Options */}
-            <div className="grid md:grid-cols-2 gap-8">
-              {accommodationOptions.map((option, index) => (
-                <div key={index} className="bg-black border-2 border-yellow-400 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-lg font-bold" style={{ color: '#FFD700', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(255,255,255,0.3)' }}>{option.type}</h4>
-                    <span className="text-2xl font-bold" style={{ color: '#00FFFF', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(255,255,255,0.3)' }}>{option.priceRange}</span>
-                  </div>
-                  <div className="mb-4">
-                    <span className="inline-block bg-purple-600 px-3 py-1 rounded-full text-sm" style={{ color: '#FFFFFF', fontWeight: 'bold' }}>
-                      📍 {option.distance} from venue
-                    </span>
-                  </div>
-                  <ul className="space-y-2 mb-6">
-                    {option.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm">
-                        <svg className="w-4 h-4 mr-2" fill="none" stroke="#32CD32" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span style={{ color: '#98FB98', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <button className="w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white py-2 rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 font-bold">
-                    View Options
-                  </button>
-                </div>
-              ))}
-            </div>
-
-            {/* Booking Information */}
-            <div className="bg-black border-2 border-blue-400 rounded-2xl p-8 text-center">
-              <h3 className="text-2xl font-bold mb-4" style={{ color: '#00FF7F', fontWeight: 'bold', textShadow: '2px 2px 4px rgba(255,255,255,0.3)' }}>Need Help with Accommodation?</h3>
-              <p className="mb-6 max-w-2xl mx-auto" style={{ color: '#87CEEB', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
-                We&apos;re partnering with local hotels and travel agencies to offer special rates for conference attendees. 
-                Booking details will be available once registration opens.
-              </p>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                    </svg>
-                  </div>
-                  <h4 className="font-semibold mb-1" style={{ color: '#FFD700', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(255,255,255,0.3)' }}>Special Rates</h4>
-                  <p className="text-sm" style={{ color: '#98FB98', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Discounted rates for conference attendees</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <h4 className="font-semibold mb-1" style={{ color: '#32CD32', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(255,255,255,0.3)' }}>Verified Partners</h4>
-                  <p className="text-sm" style={{ color: '#DDA0DD', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Only trusted and verified accommodation partners</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <h4 className="font-semibold mb-1" style={{ color: '#DA70D6', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(255,255,255,0.3)' }}>24/7 Support</h4>
-                  <p className="text-sm" style={{ color: '#F0E68C', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Assistance with booking and travel queries</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );

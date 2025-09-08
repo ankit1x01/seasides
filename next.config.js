@@ -5,7 +5,7 @@ const nextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   
-  // Image optimization
+  // Image optimization - mobile-first approach
   images: {
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 86400, // 24 hours

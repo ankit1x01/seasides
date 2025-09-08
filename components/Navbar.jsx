@@ -30,10 +30,13 @@ const Navbar = () => {
                 height={40}
                 priority
                 sizes="80px"
+                quality={60}
                 className="w-20 h-10 group-hover:scale-110 transition-transform duration-300"
                 style={{
                   width: '80px',
                   height: '40px',
+                  maxWidth: '100%',
+                  height: 'auto'
                 }}
               />
             </div>
@@ -112,7 +115,13 @@ const Navbar = () => {
           <div className="flex md:hidden">
             <button 
               onClick={() => setIsOpen(!isOpen)} 
-              className="text-gray-800 hover:text-blue-600 focus:outline-none transition-colors duration-300" 
+              className={`
+                focus:outline-none transition-colors duration-300
+                ${isDark 
+                  ? 'text-slate-300 hover:text-cyan-400' 
+                  : 'text-gray-800 hover:text-blue-600'
+                }
+              `} 
               aria-label="toggle menu"
             >
               <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
@@ -126,28 +135,49 @@ const Navbar = () => {
         <div className={`${isOpen ? 'block' : 'hidden'} md:hidden mt-4 pb-4`}>
           <div className="flex flex-col space-y-3">
             <Link href="/">
-              <span className="block text-gray-700 font-medium hover:text-blue-600 cursor-pointer transition-colors duration-300 py-2">
+              <span className={`
+                block font-medium cursor-pointer transition-colors duration-300 py-2
+                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
+              `}>
                 Home
               </span>
             </Link>
             <Link href="/about">
-              <span className="block text-gray-700 font-medium hover:text-blue-600 cursor-pointer transition-colors duration-300 py-2">
+              <span className={`
+                block font-medium cursor-pointer transition-colors duration-300 py-2
+                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
+              `}>
                 About
               </span>
             </Link>
             <Link href="/gallery">
-              <span className="block text-gray-700 font-medium hover:text-blue-600 cursor-pointer transition-colors duration-300 py-2">
+              <span className={`
+                block font-medium cursor-pointer transition-colors duration-300 py-2
+                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
+              `}>
                 Gallery
               </span>
             </Link>
             <Link href="/sponsors">
-              <span className="block text-gray-700 font-medium hover:text-blue-600 cursor-pointer transition-colors duration-300 py-2">
+              <span className={`
+                block font-medium cursor-pointer transition-colors duration-300 py-2
+                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
+              `}>
                 Sponsors
               </span>
             </Link>
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-medium text-left">
+            <button className={`
+              px-6 py-2 rounded-full font-medium text-left transition-all duration-300
+              ${isDark 
+                ? 'bg-gradient-to-r from-cyan-500 to-purple-600 text-black' 
+                : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
+              }
+            `}>
               Coming Soon
             </button>
+            <div className="pt-2">
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>
