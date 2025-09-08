@@ -123,12 +123,12 @@ const Footer = () => {
               <div className="flex items-center gap-3 mb-4">
                 <div className="relative">
                   <Image
-                    src="/logo white.png"
+                    src={isDark ? "/light-logo.png" : "/dark-logo.png"}
                     alt="Seasides Logo"
                     width={80}
                     height={48}
                     sizes="80px"
-                    className="w-20 h-12 brightness-100 group-hover:scale-110 transition-transform duration-300"
+                    className="w-20 h-12 group-hover:scale-110 transition-transform duration-300"
                     style={{
                       width: '80px',
                       height: '48px',

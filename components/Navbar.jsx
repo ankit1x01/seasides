@@ -24,15 +24,13 @@ const Navbar = () => {
           <Link href="/">
             <div className="flex items-center gap-3 cursor-pointer group">
               <Image
-                src="/logo white.png"
+                src={isDark ? "/light-logo.png" : "/dark-logo.png"}
                 alt="Seasides Logo"
                 width={80}
                 height={40}
                 priority
                 sizes="80px"
-                className={`w-20 h-10 group-hover:scale-110 transition-transform duration-300 ${
-                  isDark ? 'brightness-100' : 'brightness-0'
-                }`}
+                className="w-20 h-10 group-hover:scale-110 transition-transform duration-300"
                 style={{
                   width: '80px',
                   height: '40px',

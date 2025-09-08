@@ -98,14 +98,12 @@ const LoadingScreen = () => {
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="relative">
           <Image
-            src="/logo white.png"
+            src={isDark ? "/light-logo.png" : "/dark-logo.png"}
             alt="Seasides"
             width={400}
             height={160}
             priority
-            className={`object-contain drop-shadow-[0_8px_32px_rgba(0,0,0,0.3)] ${
-              isDark ? 'brightness-110 contrast-110' : 'brightness-105'
-            }`}
+            className="object-contain drop-shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
             style={{
               animation: 'gentleBob 4s ease-in-out infinite',
             }}
@@ -114,7 +112,7 @@ const LoadingScreen = () => {
           {/* Logo reflection in water */}
           <div className="absolute top-full left-0 w-full h-full opacity-20 overflow-hidden">
             <Image
-              src="/logo white.png"
+              src={isDark ? "/light-logo.png" : "/dark-logo.png"}
               alt=""
               width={400}
               height={160}
