@@ -1,0 +1,287 @@
+{
+  "teamMembers": [
+    {
+      "name": "Prashant KV",
+      "image": "Prashant_KV.jpeg",
+      "role": "Co-Founder Seasides",
+      "nickname": "Sardaar Khan",
+      "quote": "Guilty as charged—we throw epic parties! 😉",
+      "fullDescription": "He is the Co-Founder of the Seasides Community, known for his passion for helping others and, guilty as charged, for throwing amazing parties. With over 20 years of experience in the security domain, he has mentored countless cybersecurity enthusiasts and is like family to many. The team lovingly calls him the 'Sardaar Khan.'",
+      "experience": "20+ years",
+      "socialMedia": {
+        "twitter": "https://twitter.com/goodbestguy",
+        "linkedin": "https://www.linkedin.com/in/prashant-venkatesh-99018999"
+      },
+      "keyTraits": [
+        "Passionate about helping others",
+        "Amazing party organizer",
+        "Mentor to countless cybersecurity enthusiasts",
+        "Like family to many in the community"
+      ]
+    },
+    {
+      "name": "Parveen Yadav",
+      "image": "Parveen_Yadav.jpeg",
+      "role": "Co-Founder Seasides",
+      "nickname": "Munna Bhaiya",
+      "fullDescription": "As the Co-Founder of Seasides, he embodies the essence of leadership through his genuine care for the team, fostering an environment where every member feels valued and supported—like family. His leadership style is characterized by empathy and accessibility, making him approachable for team members seeking guidance or mentorship. With extensive expertise in cybersecurity, he not only stays at the forefront of industry trends but also actively engages in the community through bug hunting on major platforms like Hackerone & Bugcrowd. This hands-on involvement not only keeps his skills sharp but also serves as an inspiring example for the team, demonstrating the importance of continuous learning and innovation. His commitment to nurturing newcomers in cybersecurity reflects his passion for mentorship. He takes the time to guide them through the complexities of the field, sharing insights and resources that empower them to thrive. This investment in their growth helps cultivate a culture of knowledge-sharing and collaboration within the team. Affectionately referred to as \"Munna Bhaiya,\" he has created an undeniable presence that resonates with the team.",
+      "expertise": ["Bug Hunting", "Vulnerability Research", "Team Leadership", "Mentorship"],
+      "platforms": ["Hackerone", "Bugcrowd"],
+      "socialMedia": {
+        "twitter": "https://twitter.com/parveen1015"
+      },
+      "keyTraits": [
+        "Leadership through genuine care",
+        "Empathy and accessibility",
+        "Active bug hunter",
+        "Passionate mentor for newcomers",
+        "Culture of knowledge-sharing"
+      ]
+    },
+    {
+      "name": "Pankaj Upadhyay",
+      "image": "Pankaj_Upadhyay.jpeg",
+      "role": "Core Team Member",
+      "socialMedia": {
+        "twitter": "https://twitter.com/lazyhack3r",
+        "linkedin": "https://www.linkedin.com/in/p4nk4j/"
+      }
+    },
+    {
+      "name": "Arun Mishra",
+      "image": "Arun_Mishra.jpeg",
+      "role": "Core Team Member",
+      "socialMedia": {
+        "twitter": "https://twitter.com/arun_2512",
+        "linkedin": "https://www.linkedin.com/in/arun-k-mishra-049836163/"
+      }
+    },
+    {
+      "name": "Honey Merrin Sam",
+      "image": "Honey_Merrin_Sam.jpeg",
+      "role": "Core Team Member",
+      "socialMedia": {
+        "twitter": "https://twitter.com/missaug27",
+        "linkedin": "https://www.linkedin.com/in/honey-merrin-sam/"
+      }
+    },
+    {
+      "name": "Narendra",
+      "image": "Narendra_Team.jpeg",
+      "role": "Core Team Member",
+      "socialMedia": {
+        "twitter": "https://twitter.com/0ddhawk",
+        "linkedin": "https://www.linkedin.com/in/narendra-k-0981b7104/"
+      }
+    },
+    {
+      "name": "Abhinav Khanna",
+      "image": "Abhinav_Khanna.jpeg",
+      "role": "Core Team Member",
+      "fullDescription": "Abhinav Khanna is an Information Security Professional with 6+ years of experience. His areas of expertise include web apps, mobile apps, APIs and cloud. He has spoken at conferences like BlackHat Asia, BlackHat MEA, BSides Vancouver etc. He is always eager to help and guide others in the field, sharing his knowledge and experience to support the growth of fellow security enthusiasts. His dedication to both advancing security practices and nurturing the next generation of professionals is widely recognized within the community.",
+      "experience": "6+ years",
+      "expertise": ["Web Applications", "Mobile Applications", "APIs", "Cloud Security"],
+      "conferences": ["BlackHat Asia", "BlackHat MEA", "BSides Vancouver"],
+      "socialMedia": {
+        "website": "https://seasides.net/about-us/",
+        "linkedin": "https://www.linkedin.com/in/abhinav-khanna-a2633b114/"
+      },
+      "keyTraits": [
+        "Eager to help and guide others",
+        "Knowledge sharing advocate",
+        "Supports growth of security enthusiasts",
+        "Recognized community contributor"
+      ]
+    },
+    {
+      "name": "Parag Dave",
+      "image": "Parag_Dave.jpeg",
+      "role": "Core Team Member",
+      "socialMedia": {
+        "twitter": "https://twitter.com/parag_dave",
+        "linkedin": "https://www.linkedin.com/in/daveparag/"
+      }
+    },
+    {
+      "name": "Sunita Sharma",
+      "image": "Sunita_Sharma.jpeg",
+      "role": "Core Team Member",
+      "socialMedia": {
+        "twitter": "https://twitter.com/0ddblade",
+        "linkedin": "https://www.linkedin.com/in/sunita-sharma-681bbba2/"
+      }
+    },
+    {
+      "name": "Ashish Huria",
+      "image": "Ashish_Huria.jpeg",
+      "role": "Core Team Member",
+      "socialMedia": {
+        "twitter": "https://twitter.com/AshishHuria",
+        "linkedin": "https://www.linkedin.com/in/ashish-huria-219b49111/"
+      }
+    },
+    {
+      "name": "Seedon Adlin D'souza",
+      "image": "Seedon_Adlin_Dsouza.jpeg",
+      "role": "Core Team Member",
+      "fullDescription": "He is a distinguished hardware security expert with over seven years of experience in the field of information security. Since 2019, he has been a prominent speaker at various conferences, where he shares his expertise in drone security, RF hacking and hardware exploitation. Currently employed at Sony, Seedon is recognised for his collaborative spirit, having contributed to the design of conference badges and the village at Seasides. His dedication to advancing the cybersecurity community is evident in his continuous effort to share knowledge and foster innovation.",
+      "experience": "7+ years",
+      "currentCompany": "Sony",
+      "expertise": ["Hardware Security", "Drone Security", "RF Hacking", "Hardware Exploitation"],
+      "speakingExperience": "Since 2019",
+      "contributions": ["Conference Badge Design", "Village Design"],
+      "socialMedia": {
+        "twitter": "https://x.com/SeedonD",
+        "linkedin": "https://www.linkedin.com/in/seedon/"
+      },
+      "keyTraits": [
+        "Distinguished hardware security expert",
+        "Prominent conference speaker",
+        "Collaborative spirit",
+        "Continuous knowledge sharing",
+        "Innovation fostering"
+      ]
+    },
+    {
+      "name": "Kartheek Lade",
+      "image": "Kartheek_Lade.webp",
+      "role": "Core Team Member",
+      "fullDescription": "Kartheek Lade is a passionate security researcher with a strong focus on enhancing the security landscape of the Internet of Vehicles (IoV). He actively contributes to the Seasides community and serves as a technical committee member of the ASRG Vulnerability Management team, focusing on fortifying vehicle and embedded security. Kartheek is also a regular speaker and trainer at renowned international security conferences, including Seasides, DEFCON Car Hacking Village, BlackHat Arsenal, Secure Our Streets (SOS), C0c0n, and NullCon. Whether it's breaking down security barriers or sparking insightful discussions, he's always up for the challenge. 😉",
+      "expertise": ["Internet of Vehicles (IoV)", "Vehicle Security", "Embedded Security", "Vulnerability Management"],
+      "roles": ["ASRG Technical Committee Member"],
+      "conferences": ["Seasides", "DEFCON Car Hacking Village", "BlackHat Arsenal", "Secure Our Streets (SOS)", "C0c0n", "NullCon"],
+      "socialMedia": {
+        "twitter": "https://twitter.com/0xh3nry",
+        "linkedin": "https://www.linkedin.com/in/kartheeklade/"
+      },
+      "keyTraits": [
+        "Passionate security researcher",
+        "IoV security focus",
+        "Regular international speaker",
+        "Always up for challenges"
+      ]
+    },
+    {
+      "name": "Devendra Kumar Sinha",
+      "image": "Devendra_Kumar_Sinha.jpeg",
+      "role": "Core Team Member",
+      "socialMedia": {
+        "twitter": "https://twitter.com/Debuhkzr",
+        "linkedin": "https://www.linkedin.com/in/devendrakumarsinha/"
+      }
+    },
+    {
+      "name": "Rahul Kumar",
+      "image": null,
+      "role": "Core Team Member",
+      "socialMedia": {
+        "twitter": "https://twitter.com/aarnav_rahul",
+        "linkedin": "https://www.linkedin.com/in/rahul-kumar-/"
+      }
+    },
+    {
+      "name": "Anurag Mishra",
+      "image": null,
+      "role": "Core Team Member",
+      "fullDescription": "He works in Poshmark as Security Engineer II. He Love to pwn apps and infrastructure. He like to break Internet with memes as Chief meme officer for seasides conference",
+      "currentCompany": "Poshmark",
+      "position": "Security Engineer II",
+      "funRole": "Chief Meme Officer for Seasides Conference",
+      "expertise": ["Application Security", "Infrastructure Security"],
+      "socialMedia": {
+        "twitter": "https://twitter.com/mishr_a_nurag",
+        "linkedin": "https://www.linkedin.com/in/anuragmishra06/"
+      },
+      "keyTraits": [
+        "Loves to pwn apps and infrastructure",
+        "Breaks Internet with memes",
+        "Chief Meme Officer"
+      ]
+    },
+    {
+      "name": "Shivam Goyal",
+      "image": null,
+      "role": "Core Team Member",
+      "description": "World is committed to making participation in the event a harassment free experience for everyone, regardless of level experience gender, gender identity and expression",
+      "socialMedia": {
+        "twitter": "https://twitter.com/g33kyshivam",
+        "linkedin": "https://www.linkedin.com/in/g33kyshivam/"
+      }
+    },
+    {
+      "name": "Pulkit Talwar",
+      "image": null,
+      "role": "Core Team Member",
+      "fullDescription": "He is an accomplished cybersecurity professional, holding certifications like OSCP, CREST CSPA, CREST CRT, and eWPTXv2. He excels in Vulnerability Assessments and Penetration Testing across diverse environments, including web applications, networks, mobile, and cloud, with extensive experience in industries such as fintech, healthcare, manufacturing, retail, and government. Outside his professional life. Pulkit is passionate about fitness, regularly hitting the gym and participating in marathons. A fun fact about him: he has 13 tattoos!",
+      "certifications": ["OSCP", "CREST CSPA", "CREST CRT", "eWPTXv2"],
+      "expertise": ["Vulnerability Assessments", "Penetration Testing", "Web Applications", "Networks", "Mobile Security", "Cloud Security"],
+      "industries": ["Fintech", "Healthcare", "Manufacturing", "Retail", "Government"],
+      "hobbies": ["Fitness", "Gym", "Marathons"],
+      "funFact": "Has 13 tattoos!",
+      "socialMedia": {
+        "twitter": "https://x.com/PulkitTalwar26",
+        "linkedin": "https://www.linkedin.com/in/pulkit-talwar-397636120/"
+      }
+    },
+    {
+      "name": "Hare Krishna Rai",
+      "image": null,
+      "role": "Core Team Member",
+      "fullDescription": "As a Product Security Engineer, his passion for cybersecurity drives me to excel in various areas. He specialize in conducting penetration testing, actively participate in security Capture The Flag (CTF) competitions, and perform code reviews to ensure secure code development. His expertise extends to leveraging Static Application Security Testing (SAST) techniques in languages like Java, Python, JavaScript, JSP, among others.",
+      "position": "Product Security Engineer",
+      "expertise": ["Penetration Testing", "CTF Competitions", "Code Reviews", "SAST", "Java", "Python", "JavaScript", "JSP"],
+      "socialMedia": {
+        "twitter": "https://twitter.com/harekrishna_rai",
+        "linkedin": "https://linkedin.com/in/harekrishnarai"
+      }
+    },
+    {
+      "name": "Vedant Jain",
+      "image": null,
+      "role": "Core Team Member",
+      "fullDescription": "Vedant Jain is a skilled cybersecurity professional with expertise in threat modeling, vulnerability management, and penetration testing, particularly within cloud environments like AWS. With certifications such as OSCP and CRTP, he combines technical proficiency with a passion for creating secure systems and actively collaborates to develop practical security solutions.",
+      "expertise": ["Threat Modeling", "Vulnerability Management", "Penetration Testing", "Cloud Security", "AWS"],
+      "certifications": ["OSCP", "CRTP"],
+      "specialization": "Cloud environments (AWS)",
+      "socialMedia": {
+        "twitter": "https://x.com/Vedant__Jain",
+        "linkedin": "https://www.linkedin.com/in/ved-ant-jain"
+      },
+      "keyTraits": [
+        "Skilled cybersecurity professional",
+        "Passion for creating secure systems",
+        "Actively collaborates on security solutions"
+      ]
+    },
+    {
+      "name": "Gaurav Joshi",
+      "image": null,
+      "role": "Core Team Member",
+      "fullDescription": "He is a Product Security Engineer, specializing in vulnerability management, CSPM, and SAST. He conducts secure code reviews, leverages SAST techniques to identify and mitigate vulnerabilities, and actively safeguards networks from potential threats.",
+      "position": "Product Security Engineer",
+      "expertise": ["Vulnerability Management", "CSPM", "SAST", "Secure Code Reviews", "Network Security"],
+      "socialMedia": {
+        "twitter": "https://twitter.com/gaurav_joshi38"
+      }
+    },
+    {
+      "name": "Fazalu Rahman",
+      "image": null,
+      "role": "Core Team Member",
+      "description": "World is committed to making participation in the event a harassment free experience for everyone, regardless of level experience gender, gender identity and expression",
+      "socialMedia": {
+        "twitter": "https://twitter.com/f4z41u?s=20",
+        "linkedin": "https://www.linkedin.com/in/fazalu-rahman/"
+      }
+    },
+    {
+      "name": "Arif",
+      "image": null,
+      "role": "Core Team Member",
+      "socialMedia": {
+        "twitter": "https://twitter.com/Zero0x00",
+        "linkedin": "https://www.linkedin.com/in/mohd--arif/"
+      }
+    }
+  ]
+}

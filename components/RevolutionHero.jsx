@@ -346,7 +346,7 @@ const RevolutionHero = () => {
                         <div className="text-xs md:text-sm text-white font-medium drop-shadow-md">FREE Conference</div>
                       </div>
                       <div className="text-center bg-black bg-opacity-40 backdrop-blur-sm rounded-xl px-4 py-3 border border-white border-opacity-30 hover:bg-black hover:bg-opacity-50 transition-all duration-300 shadow-lg">
-                        <div className="text-xl md:text-2xl font-bold text-orange-200 drop-shadow-lg">2</div>
+                        <div className="text-xl md:text-2xl font-bold text-orange-200 drop-shadow-lg">3</div>
                         <div className="text-xs md:text-sm text-white font-medium drop-shadow-md">Days of Learning</div>
                       </div>
                       <div className="text-center bg-black bg-opacity-40 backdrop-blur-sm rounded-xl px-4 py-3 border border-white border-opacity-30 hover:bg-black hover:bg-opacity-50 transition-all duration-300 shadow-lg">

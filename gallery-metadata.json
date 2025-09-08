@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "src": "/gallery/seasides-1.jpeg",
+    "alt": "Seasides Conference Image 1",
+    "title": "Conference Moment 1",
+    "description": "Highlights from Seasides cybersecurity conference",
+    "category": "conference"
+  },
+  {
+    "id": 2,
+    "src": "/gallery/seasides-2.jpeg",
+    "alt": "Seasides Conference Image 2",
+    "title": "Conference Moment 2",
+    "description": "Highlights from Seasides cybersecurity conference",
+    "category": "workshops"
+  },
+  {
+    "id": 4,
+    "src": "/gallery/seasides-4.jpeg",
+    "alt": "Seasides Conference Image 4",
+    "title": "Conference Moment 4",
+    "description": "Highlights from Seasides cybersecurity conference",
+    "category": "presentations"
+  },
+  {
+    "id": 6,
+    "src": "/gallery/seasides-6.jpeg",
+    "alt": "Seasides Conference Image 6",
+    "title": "Conference Moment 6",
+    "description": "Highlights from Seasides cybersecurity conference",
+    "category": "workshops"
+  },
+  {
+    "id": 7,
+    "src": "/gallery/seasides-7.jpeg",
+    "alt": "Seasides Conference Image 7",
+    "title": "Conference Moment 7",
+    "description": "Highlights from Seasides cybersecurity conference",
+    "category": "networking"
+  },
+  {
+    "id": 8,
+    "src": "/gallery/seasides-8.jpeg",
+    "alt": "Seasides Conference Image 8",
+    "title": "Conference Moment 8",
+    "description": "Highlights from Seasides cybersecurity conference",
+    "category": "presentations"
+  }
+]

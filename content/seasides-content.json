@@ -1,0 +1,146 @@
+{
+  "sections": {
+    "story": {
+      "title": "What's our Story?",
+      "content": "No specific content was provided for this section on the website.",
+      "placeholder": true
+    },
+    "mission": {
+      "title": "What's our Mission?",
+      "content": "Our mission is to democratize access to top-tier cybersecurity education by offering free workshops and training sessions led by industry experts along with fun and parties. We strive to create an inclusive environment where students and aspiring professionals can learn, collaborate, and grow together, equipping them with the tools they need to succeed in the rapidly evolving cybersecurity landscape."
+    },
+    "achievements": {
+      "title": "What's we Achieved?",
+      "content": "Since our inception, Seasides's commitment to providing free, high-quality education has made a significant impact on the cybersecurity community, particularly among students.",
+      "keyAchievements": [
+        "Record-breaking Attendance",
+        "Cutting-edge Workshops and Training",
+        "Advancing Cybersecurity Education",
+        "Scholarships and Awards",
+        "Community Building and Networking"
+      ]
+    },
+    "whoShouldAttend": {
+      "title": "Who should Attend?",
+      "targetAudience": [
+        "IT & Cybersecurity Professionals",
+        "Government officials & policy makers",
+        "Business leaders & entrepreneurs",
+        "Students & researchers interested in cybersecurity"
+      ],
+      "eventHighlights": [
+        "Free Workshops",
+        "Networking",
+        "Career Growth",
+        "Community",
+        "Trends & Threats",
+        "After Party"
+      ]
+    }
+  },
+  "teamMembers": [
+    {
+      "name": "Prashant KV",
+      "image": "Prashant_KV.jpeg",
+      "role": "Co-Founder",
+      "nickname": "Sardaar Khan",
+      "description": "Over 20 years of experience in security. Known for helping others and 'throwing amazing parties'.",
+      "expertise": ["Security Leadership", "Community Building", "Cybersecurity Strategy"],
+      "experience": "20+ years"
+    },
+    {
+      "name": "Parveen Yadav",
+      "image": "Parveen_Yadav.jpeg",
+      "role": "Co-Founder",
+      "nickname": "Munna Bhaiya",
+      "description": "Leads with empathy and accessibility. Active bug hunter on Hackerone & Bugcrowd with extensive cybersecurity expertise.",
+      "expertise": ["Bug Hunting", "Vulnerability Research", "Team Leadership"],
+      "platforms": ["Hackerone", "Bugcrowd"],
+      "experience": "Extensive cybersecurity expertise"
+    },
+    {
+      "name": "Pankaj Upadhyay",
+      "image": "Pankaj_Upadhyay.jpeg",
+      "role": "Technical Lead",
+      "description": "Technical expert contributing to the conference organization and cybersecurity education.",
+      "expertise": ["Technical Leadership", "Security Architecture"]
+    },
+    {
+      "name": "Arun Mishra",
+      "image": "Arun_Mishra.jpeg",
+      "role": "Cybersecurity Specialist",
+      "description": "Cybersecurity specialist focused on advancing security education and practices.",
+      "expertise": ["Cybersecurity", "Security Analysis"]
+    },
+    {
+      "name": "Honey Merrin Sam",
+      "image": "Honey_Merrin_Sam.jpeg",
+      "role": "Program Manager",
+      "description": "Program manager ensuring smooth execution of conference activities and workshops.",
+      "expertise": ["Program Management", "Event Coordination"]
+    },
+    {
+      "name": "Narendra",
+      "image": "Narendra_Team.jpeg",
+      "role": "Operations Head",
+      "description": "Operations leader managing the logistical aspects of the conference.",
+      "expertise": ["Operations Management", "Event Logistics"]
+    },
+    {
+      "name": "Abhinav Khanna",
+      "image": "Abhinav_Khanna.jpeg",
+      "role": "Information Security Professional",
+      "description": "Information Security Professional with 6+ years experience. Expertise in web apps, mobile apps, APIs, and cloud. Spoken at conferences like BlackHat Asia and BlackHat MEA.",
+      "expertise": ["Web Application Security", "Mobile Security", "API Security", "Cloud Security"],
+      "experience": "6+ years",
+      "conferences": ["BlackHat Asia", "BlackHat MEA"]
+    },
+    {
+      "name": "Parag Dave",
+      "image": "Parag_Dave.jpeg",
+      "role": "Technology Advisor",
+      "description": "Technology advisor providing strategic guidance on cybersecurity trends and technologies.",
+      "expertise": ["Technology Strategy", "Security Advisory"]
+    },
+    {
+      "name": "Sunita Sharma",
+      "image": "Sunita_Sharma.jpeg",
+      "role": "Community Manager",
+      "description": "Community manager fostering engagement and building connections within the cybersecurity community.",
+      "expertise": ["Community Building", "Engagement Management"]
+    },
+    {
+      "name": "Ashish Huria",
+      "image": "Ashish_Huria.jpeg",
+      "role": "Security Consultant",
+      "description": "Security consultant providing expert advice on cybersecurity implementations and best practices.",
+      "expertise": ["Security Consulting", "Best Practices"]
+    },
+    {
+      "name": "Seedon Adlin D'souza",
+      "image": "Seedon_Adlin_Dsouza.jpeg",
+      "role": "Hardware Security Expert",
+      "description": "Hardware security expert with 7+ years experience. Speaks at conferences on drone security, RF hacking, and hardware exploitation. Currently works at Sony and contributes to conference badge and village design.",
+      "expertise": ["Hardware Security", "Drone Security", "RF Hacking", "Hardware Exploitation"],
+      "experience": "7+ years",
+      "currentCompany": "Sony",
+      "contributions": ["Conference Badge Design", "Village Design"]
+    },
+    {
+      "name": "Kartheek Lade",
+      "image": "Kartheek_Lade.webp",
+      "role": "Security Researcher",
+      "description": "Security researcher focusing on Internet of Vehicles (IoV). Technical committee member for ASRG Vulnerability Management and regular speaker at international security conferences.",
+      "expertise": ["Internet of Vehicles (IoV)", "Vulnerability Management", "Security Research"],
+      "roles": ["ASRG Technical Committee Member"],
+      "speakingExperience": "International security conferences"
+    },
+    {
+      "name": "Devendra Kumar Sinha",
+      "image": "Devendra_Kumar_Sinha.jpeg",
+      "role": "Security Architect",
+      "description": "Security architect designing robust security frameworks and architectures for the cybersecurity community.",
+      "expertise": ["Security Architecture", "Framework Design"]
+    }
+  ]
+}

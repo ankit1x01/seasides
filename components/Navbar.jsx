@@ -7,7 +7,7 @@ import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [hoveredItem, setHoveredItem] = useState(null);
+  const [, setHoveredItem] = useState(null);
   const { isDark } = useTheme();
 
   return (

@@ -15,13 +15,21 @@ const CustomCursor = () => {
     const handleMouseUp = () => setIsClicking(false);
 
     const handleMouseEnter = (e) => {
-      if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A' || e.target.classList.contains('interactive')) {
+      if (e.target && e.target.tagName && (
+        e.target.tagName === 'BUTTON' || 
+        e.target.tagName === 'A' || 
+        (e.target.classList && e.target.classList.contains && e.target.classList.contains('interactive'))
+      )) {
         setIsHovering(true);
       }
     };
 
     const handleMouseLeave = (e) => {
-      if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A' || e.target.classList.contains('interactive')) {
+      if (e.target && e.target.tagName && (
+        e.target.tagName === 'BUTTON' || 
+        e.target.tagName === 'A' || 
+        (e.target.classList && e.target.classList.contains && e.target.classList.contains('interactive'))
+      )) {
         setIsHovering(false);
       }
     };

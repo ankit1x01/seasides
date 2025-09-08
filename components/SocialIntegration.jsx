@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 const SocialIntegration = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [hoveredSocial, setHoveredSocial] = useState(null);
+  const [, setHoveredSocial] = useState(null);
 
   useEffect(() => {
     setIsVisible(true);

@@ -4,7 +4,7 @@ import { useTheme } from '@/contexts/ThemeContext';
 
 const Faq = () => {
   const [open, setOpen] = useState(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [, setIsVisible] = useState(false);
   const faqRef = useRef(null);
   const { isDark } = useTheme();
 

@@ -13,6 +13,14 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'seasides.net',
+        port: '',
+        pathname: '/wp-content/uploads/**',
+      },
+    ],
   },
   
   // Experimental features for better performance

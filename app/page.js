@@ -8,9 +8,6 @@ const RevolutionHero = dynamic(() => import("@/components/RevolutionHero"), {
   loading: () => <div className="h-screen bg-gradient-to-br from-blue-900 to-purple-900 animate-pulse" />
 });
 
-const About = dynamic(() => import("@/components/About"), {
-  loading: () => <div className="h-96 bg-gray-100 dark:bg-gray-900 animate-pulse" />
-});
 
 const Stats = dynamic(() => import("@/components/Stats"), {
   loading: () => <div className="h-64 bg-gray-50 dark:bg-gray-800 animate-pulse" />
@@ -42,7 +39,6 @@ export default function Home() {
       <Navbar />
   <div id="overview" className="scroll-mt-24"><RevolutionHero /></div>
   <StickySubnav />
-  <div className="scroll-mt-24"><About /></div>
   <div id="stats" className="scroll-mt-24"><Stats /></div>
   <div id="venue" className="scroll-mt-24"><Venue /></div>
   <div id="sponsors" className="scroll-mt-24"><Sponsors /></div>
