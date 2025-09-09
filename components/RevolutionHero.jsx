@@ -140,30 +140,81 @@ const RevolutionHero = () => {
     <>
       <style jsx>{`
         @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(50px); }
-          to { opacity: 1; transform: translateY(0); }
+          from { 
+            opacity: 0; 
+            transform: translateY(50px) scale(0.95); 
+            filter: blur(2px);
+          }
+          to { 
+            opacity: 1; 
+            transform: translateY(0) scale(1); 
+            filter: blur(0);
+          }
         }
         
         @keyframes slideInRight {
-          from { opacity: 0; transform: translateX(100px) rotate(5deg); }
-          to { opacity: 1; transform: translateX(0) rotate(0deg); }
+          from { 
+            opacity: 0; 
+            transform: translateX(100px) rotate(5deg) scaleX(0.8); 
+            clip-path: polygon(100% 0%, 100% 100%, 100% 100%, 100% 0%);
+          }
+          to { 
+            opacity: 1; 
+            transform: translateX(0) rotate(0deg) scaleX(1); 
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+          }
         }
         
         @keyframes slideInLeft {
-          from { opacity: 0; transform: translateX(-100px) rotate(-5deg); }
-          to { opacity: 1; transform: translateX(0) rotate(0deg); }
+          from { 
+            opacity: 0; 
+            transform: translateX(-100px) rotate(-5deg) scaleX(0.8); 
+            clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+          }
+          to { 
+            opacity: 1; 
+            transform: translateX(0) rotate(0deg) scaleX(1); 
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+          }
         }
         
         @keyframes zoomIn {
-          from { opacity: 0; transform: scale(0.7) rotate(10deg); }
-          to { opacity: 1; transform: scale(1) rotate(0deg); }
+          from { 
+            opacity: 0; 
+            transform: scale(0.7) rotate(10deg); 
+            filter: blur(3px);
+          }
+          50% {
+            transform: scale(1.05) rotate(5deg); 
+            filter: blur(1px);
+          }
+          to { 
+            opacity: 1; 
+            transform: scale(1) rotate(0deg); 
+            filter: blur(0);
+          }
         }
         
         @keyframes bounceIn {
-          0% { opacity: 0; transform: scale(0.3) translateY(100px); }
-          50% { opacity: 0.9; transform: scale(1.1) translateY(-20px); }
-          70% { transform: scale(0.9) translateY(10px); }
-          100% { opacity: 1; transform: scale(1) translateY(0); }
+          0% { 
+            opacity: 0; 
+            transform: scale(0.3) translateY(100px) rotate(-10deg); 
+            filter: blur(4px);
+          }
+          50% { 
+            opacity: 0.9; 
+            transform: scale(1.1) translateY(-20px) rotate(5deg); 
+            filter: blur(1px);
+          }
+          70% { 
+            transform: scale(0.95) translateY(10px) rotate(-2deg); 
+            filter: blur(0.5px);
+          }
+          100% { 
+            opacity: 1; 
+            transform: scale(1) translateY(0) rotate(0deg); 
+            filter: blur(0);
+          }
         }
         
         @keyframes highlightPulse {
@@ -189,22 +240,129 @@ const RevolutionHero = () => {
           0% { width: 0%; }
           100% { width: 100%; }
         }
+
+        /* Enhanced wave animations */
+        @keyframes waveFlow {
+          0% { transform: translateX(-100%) scaleY(1) scaleX(1.2); }
+          25% { transform: translateX(-75%) scaleY(1.3) scaleX(1); }
+          50% { transform: translateX(-50%) scaleY(0.8) scaleX(1.1); }
+          75% { transform: translateX(-25%) scaleY(1.2) scaleX(0.9); }
+          100% { transform: translateX(0%) scaleY(1) scaleX(1); }
+        }
+        
+        @keyframes waveFlow2 {
+          0% { transform: translateX(-100%) scaleY(0.9) scaleX(0.8); }
+          30% { transform: translateX(-70%) scaleY(1.4) scaleX(1.2); }
+          60% { transform: translateX(-40%) scaleY(0.7) scaleX(1); }
+          90% { transform: translateX(-10%) scaleY(1.1) scaleX(0.9); }
+          100% { transform: translateX(0%) scaleY(0.9) scaleX(1); }
+        }
+
+        @keyframes waveFlow3 {
+          0% { transform: translateX(100%) scaleY(1.1) rotate(0deg); }
+          33% { transform: translateX(66%) scaleY(0.9) rotate(1deg); }
+          66% { transform: translateX(33%) scaleY(1.3) rotate(-1deg); }
+          100% { transform: translateX(0%) scaleY(1) rotate(0deg); }
+        }
+
+        @keyframes waveUndulation {
+          0%, 100% { 
+            clip-path: polygon(0 100%, 100% 100%, 100% 60%, 85% 55%, 70% 60%, 55% 50%, 40% 55%, 25% 45%, 10% 50%, 0 45%);
+          }
+          25% { 
+            clip-path: polygon(0 100%, 100% 100%, 100% 55%, 85% 60%, 70% 45%, 55% 55%, 40% 40%, 25% 50%, 10% 45%, 0 50%);
+          }
+          50% { 
+            clip-path: polygon(0 100%, 100% 100%, 100% 65%, 85% 50%, 70% 65%, 55% 45%, 40% 60%, 25% 40%, 10% 55%, 0 40%);
+          }
+          75% { 
+            clip-path: polygon(0 100%, 100% 100%, 100% 50%, 85% 65%, 70% 50%, 55% 60%, 40% 45%, 25% 55%, 10% 40%, 0 55%);
+          }
+        }
+
+        @keyframes waveCrest {
+          0%, 100% { transform: translateY(0) skewX(0deg); }
+          25% { transform: translateY(-5px) skewX(2deg); }
+          50% { transform: translateY(-10px) skewX(0deg); }
+          75% { transform: translateY(-3px) skewX(-1deg); }
+        }
+        
+        @keyframes sunGlow {
+          0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+          50% { transform: scale(1.05) rotate(180deg); opacity: 1; }
+        }
+        
+        @keyframes palmSway {
+          0%, 100% { transform: rotate(-2deg); }
+          50% { transform: rotate(2deg); }
+        }
+        
+        @keyframes ripple {
+          0% { transform: scale(0) rotate(0deg); opacity: 1; }
+          50% { transform: scale(1) rotate(180deg); opacity: 0.6; }
+          100% { transform: scale(2) rotate(360deg); opacity: 0; }
+        }
         
         .slide-content {
           animation: ${currentSlideData.animation} 1s ease-out;
+          will-change: transform, opacity;
         }
         
         .float-particle {
           animation: float 6s ease-in-out infinite;
+          will-change: transform;
+          backface-visibility: hidden;
         }
         
         .progress-bar {
           animation: slideProgress 6s linear infinite;
+          will-change: width;
         }
         
         .hero-bg {
           background: ${currentSlideData.backgroundImage};
-          transition: all 1s ease-in-out;
+          transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+          position: relative;
+        }
+
+        .hero-bg::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(45deg, 
+            rgba(59, 130, 246, 0.1) 0%, 
+            transparent 25%, 
+            rgba(14, 165, 233, 0.05) 50%, 
+            transparent 75%, 
+            rgba(6, 182, 212, 0.1) 100%);
+          animation: waveFlow 20s linear infinite;
+          opacity: 0.3;
+        }
+
+        /* Performance optimizations */
+        .wave-element {
+          will-change: transform;
+          backface-visibility: hidden;
+          transform: translateZ(0);
+        }
+        
+        .logo-element {
+          will-change: transform, opacity;
+          backface-visibility: hidden;
+          transform: translateZ(0);
+        }
+
+        /* Reduce animations on low-powered devices */
+        @media (prefers-reduced-motion: reduce) {
+          .wave-element,
+          .logo-element,
+          .float-particle {
+            animation-duration: 20s;
+            animation-iteration-count: 1;
+          }
         }
 
         /* Ensure gradient text is visible across browsers (WebKit + others) */
@@ -228,25 +386,218 @@ const RevolutionHero = () => {
       >
         {/* Background Elements */}
   <div className={`absolute inset-0 transition-opacity duration-700 ${isDark ? 'bg-black/60' : 'bg-black/40'}`}></div>
+
+        {/* Logo-inspired elements - Sun and Palm Trees (only on main slide) */}
+        {currentSlideData.type === 'main' && (
+          <>
+            {/* Animated Sun */}
+            <div className="absolute top-8 left-8 md:top-16 md:left-16">
+              <div className="relative">
+                <svg 
+                  width="120" 
+                  height="120" 
+                  viewBox="0 0 120 120" 
+                  className="opacity-80 logo-element"
+                  style={{ animation: 'sunGlow 8s ease-in-out infinite' }}
+                >
+                  <defs>
+                    <radialGradient id="sunGradient" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stopColor="#FFD700" />
+                      <stop offset="50%" stopColor="#FF8C00" />
+                      <stop offset="100%" stopColor="#FF6B35" />
+                    </radialGradient>
+                  </defs>
+                  <circle cx="60" cy="60" r="40" fill="url(#sunGradient)" opacity="0.9" />
+                  <circle cx="60" cy="60" r="50" fill="none" stroke="#FFD700" strokeWidth="2" opacity="0.4" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Palm Trees */}
+            <div className="absolute bottom-0 left-4 md:left-12">
+              <svg 
+                width="80" 
+                height="200" 
+                viewBox="0 0 80 200" 
+                className="opacity-70 logo-element"
+                style={{ animation: 'palmSway 4s ease-in-out infinite' }}
+              >
+                {/* Trunk */}
+                <path 
+                  d="M35 200 Q40 150 38 100 Q36 50 40 0" 
+                  stroke="#8B4513" 
+                  strokeWidth="8" 
+                  fill="none"
+                />
+                {/* Palm Fronds */}
+                <path d="M40 20 Q20 10 5 15 Q10 25 40 20" fill="#228B22" opacity="0.8" />
+                <path d="M40 20 Q60 5 75 10 Q70 25 40 20" fill="#32CD32" opacity="0.8" />
+                <path d="M40 20 Q25 35 15 45 Q25 40 40 20" fill="#228B22" opacity="0.7" />
+                <path d="M40 20 Q55 30 65 40 Q55 35 40 20" fill="#32CD32" opacity="0.7" />
+                <path d="M40 20 Q35 0 30 -5 Q45 5 40 20" fill="#228B22" opacity="0.9" />
+              </svg>
+            </div>
+
+            <div className="absolute bottom-0 left-16 md:left-32">
+              <svg 
+                width="60" 
+                height="150" 
+                viewBox="0 0 60 150" 
+                className="opacity-60 logo-element"
+                style={{ animation: 'palmSway 5s ease-in-out infinite reverse' }}
+              >
+                {/* Trunk */}
+                <path 
+                  d="M25 150 Q30 110 28 70 Q26 30 30 0" 
+                  stroke="#8B4513" 
+                  strokeWidth="6" 
+                  fill="none"
+                />
+                {/* Palm Fronds */}
+                <path d="M30 15 Q15 8 5 12 Q10 20 30 15" fill="#228B22" opacity="0.8" />
+                <path d="M30 15 Q45 5 55 8 Q50 20 30 15" fill="#32CD32" opacity="0.8" />
+                <path d="M30 15 Q20 25 12 35 Q20 30 30 15" fill="#228B22" opacity="0.7" />
+                <path d="M30 15 Q40 22 48 30 Q40 25 30 15" fill="#32CD32" opacity="0.7" />
+              </svg>
+            </div>
+          </>
+        )}
+
+        {/* Enhanced Dynamic Wave Overlay */}
+        <div className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none">
+          {/* Primary Animated Wave with Undulation */}
+          <div 
+            className="absolute bottom-0 left-0 right-0 h-40 opacity-90 wave-element"
+            style={{
+              background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(14, 165, 233, 0.7) 30%, rgba(6, 182, 212, 0.9) 60%, rgba(34, 211, 238, 0.8) 100%)',
+              animation: 'waveFlow 15s ease-in-out infinite, waveUndulation 8s ease-in-out infinite'
+            }}
+          />
+          
+          {/* Secondary Flowing Wave */}
+          <div 
+            className="absolute bottom-0 left-0 right-0 h-28 opacity-75 wave-element"
+            style={{
+              background: 'linear-gradient(90deg, rgba(14, 165, 233, 0.7) 0%, rgba(6, 182, 212, 0.5) 25%, rgba(56, 189, 248, 0.8) 50%, rgba(125, 211, 252, 0.6) 75%, rgba(186, 230, 253, 0.7) 100%)',
+              clipPath: 'polygon(0 100%, 100% 100%, 100% 70%, 90% 65%, 75% 70%, 60% 60%, 45% 65%, 30% 55%, 15% 60%, 0 55%)',
+              animation: 'waveFlow2 10s ease-in-out infinite reverse'
+            }}
+          />
+
+          {/* Tertiary Counter Wave */}
+          <div 
+            className="absolute bottom-0 left-0 right-0 h-20 opacity-60 wave-element"
+            style={{
+              background: 'linear-gradient(90deg, rgba(125, 211, 252, 0.6) 0%, rgba(56, 189, 248, 0.4) 50%, rgba(14, 165, 233, 0.6) 100%)',
+              clipPath: 'polygon(0 100%, 100% 100%, 100% 80%, 85% 75%, 70% 80%, 55% 70%, 40% 75%, 25% 65%, 10% 70%, 0 65%)',
+              animation: 'waveFlow3 14s ease-in-out infinite'
+            }}
+          />
+
+          {/* Wave Foam/Crest Effects */}
+          <div 
+            className="absolute bottom-0 left-0 right-0 h-16 opacity-40 wave-element"
+            style={{
+              background: 'linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(186, 230, 253, 0.4) 50%, rgba(255, 255, 255, 0.3) 100%)',
+              clipPath: 'polygon(0 100%, 100% 100%, 100% 85%, 90% 80%, 80% 85%, 70% 75%, 60% 80%, 50% 70%, 40% 75%, 30% 65%, 20% 70%, 10% 60%, 0 65%)',
+              animation: 'waveCrest 6s ease-in-out infinite, waveFlow 20s linear infinite reverse'
+            }}
+          />
+
+          {/* Enhanced Wave Ripples and Foam */}
+          {currentSlideData.type === 'main' && (
+            <>
+              {/* Large ripples */}
+              <div 
+                className="absolute bottom-20 left-1/4 w-6 h-6 rounded-full bg-white/20 wave-element"
+                style={{ animation: 'ripple 4s ease-out infinite' }}
+              />
+              <div 
+                className="absolute bottom-24 right-1/3 w-4 h-4 rounded-full bg-cyan-300/30 wave-element"
+                style={{ animation: 'ripple 5s ease-out infinite 1.5s' }}
+              />
+              <div 
+                className="absolute bottom-16 left-2/3 w-8 h-8 rounded-full bg-blue-200/25 wave-element"
+                style={{ animation: 'ripple 6s ease-out infinite 3s' }}
+              />
+
+              {/* Medium ripples */}
+              <div 
+                className="absolute bottom-28 left-1/6 w-3 h-3 rounded-full bg-white/40 wave-element"
+                style={{ animation: 'ripple 3s ease-out infinite 0.5s' }}
+              />
+              <div 
+                className="absolute bottom-14 right-1/4 w-5 h-5 rounded-full bg-cyan-400/20 wave-element"
+                style={{ animation: 'ripple 7s ease-out infinite 2.5s' }}
+              />
+              <div 
+                className="absolute bottom-32 left-3/4 w-4 h-4 rounded-full bg-blue-300/35 wave-element"
+                style={{ animation: 'ripple 4.5s ease-out infinite 4s' }}
+              />
+
+              {/* Small foam bubbles */}
+              <div 
+                className="absolute bottom-18 left-1/8 w-2 h-2 rounded-full bg-white/60 wave-element"
+                style={{ animation: 'ripple 2s ease-out infinite 1s' }}
+              />
+              <div 
+                className="absolute bottom-22 right-1/8 w-2 h-2 rounded-full bg-cyan-200/50 wave-element"
+                style={{ animation: 'ripple 2.5s ease-out infinite 2s' }}
+              />
+              <div 
+                className="absolute bottom-26 left-5/6 w-2 h-2 rounded-full bg-white/45 wave-element"
+                style={{ animation: 'ripple 3s ease-out infinite 0.8s' }}
+              />
+            </>
+          )}
+        </div>
         
-        {/* Animated Particles */}
+        {/* Enhanced Wave Particles */}
         {currentSlideData.particles && (
           <div className="absolute inset-0">
             {particles.map((p) => (
               <div
                 key={p.id}
                 className={`
-                  float-particle absolute w-2 h-2 rounded-full transition-all duration-500
+                  float-particle absolute transition-all duration-500 wave-element
                   ${isDark 
-                    ? 'bg-cyan-400 opacity-30 shadow-sm shadow-cyan-400/50' 
-                    : 'bg-white opacity-20'
+                    ? 'opacity-40 shadow-lg shadow-cyan-400/30' 
+                    : 'opacity-30'
                   }
                 `}
                 style={{
                   left: `${p.left}%`,
                   top: `${p.top}%`,
                   animationDelay: `${p.delay}s`,
-                  animationDuration: `${p.duration}s`
+                  animationDuration: `${p.duration}s`,
+                  width: p.id % 3 === 0 ? '4px' : p.id % 2 === 0 ? '6px' : '3px',
+                  height: p.id % 3 === 0 ? '4px' : p.id % 2 === 0 ? '6px' : '3px',
+                  borderRadius: p.id % 4 === 0 ? '50%' : '2px',
+                  background: p.id % 5 === 0 
+                    ? 'linear-gradient(45deg, rgba(34, 211, 238, 0.6), rgba(59, 130, 246, 0.4))'
+                    : p.id % 3 === 0
+                    ? 'linear-gradient(135deg, rgba(125, 211, 252, 0.5), rgba(186, 230, 253, 0.3))'
+                    : isDark 
+                    ? 'radial-gradient(circle, rgba(6, 182, 212, 0.7), rgba(14, 165, 233, 0.4))'
+                    : 'radial-gradient(circle, rgba(255, 255, 255, 0.6), rgba(186, 230, 253, 0.3))'
+                }}
+              />
+            ))}
+            
+            {/* Additional wave-themed particles */}
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div
+                key={`wave-${i}`}
+                className="absolute wave-element"
+                style={{
+                  left: `${15 + i * 15}%`,
+                  top: `${20 + Math.sin(i) * 20}%`,
+                  width: `${3 + i}px`,
+                  height: '2px',
+                  background: 'linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.4), transparent)',
+                  borderRadius: '2px',
+                  animation: `waveFlow ${8 + i * 2}s ease-in-out infinite ${i * 0.5}s`,
+                  transform: `rotate(${i * 15}deg)`
                 }}
               />
             ))}
@@ -297,18 +648,45 @@ const RevolutionHero = () => {
               {currentSlideData.type === 'main' && (
                 <>
 
-                  <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-6 leading-tight text-white whitespace-nowrap">
-                    <span>Seasides </span>
-                    <span className="text-cyan-400">2026</span>
-                  </h1>
+                  {/* Enhanced Title with Logo-style Effects */}
+                  <div className="relative">
+                    <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-6 leading-tight text-white whitespace-nowrap relative z-10">
+                      <span className="relative inline-block" style={{ animation: 'fadeInUp 1.2s ease-out 0.5s both' }}>
+                        Seasides 
+                        {/* Text shadow effect */}
+                        <span className="absolute inset-0 text-blue-300/30 blur-sm">Seasides</span>
+                      </span>
+                      <span className="relative inline-block text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-teal-300 bg-clip-text ml-4" style={{ animation: 'zoomIn 1.2s ease-out 0.8s both' }}>
+                        2026
+                        {/* Glowing effect for year */}
+                        <span className="absolute inset-0 text-cyan-400/40 blur-md">2026</span>
+                      </span>
+                    </h1>
+                    
+                    {/* Decorative wave under title */}
+                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-64 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-70" 
+                         style={{ animation: 'waveFlow 3s ease-in-out infinite' }}>
+                    </div>
+                  </div>
                   
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-light mb-8 text-blue-100">
-                    {currentSlideData.subtitle}
+                  {/* Enhanced Subtitle */}
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-light mb-8 text-blue-100 relative" style={{ animation: 'slideInLeft 1.2s ease-out 1.2s both' }}>
+                    <span className="relative z-10">{currentSlideData.subtitle}</span>
+                    <div className="absolute inset-0 text-cyan-200/20 blur-sm">{currentSlideData.subtitle}</div>
                   </h2>
                   
-                  <p className="text-lg md:text-xl lg:text-2xl mb-8 opacity-90 leading-relaxed max-w-3xl mx-auto text-white">
-                    {currentSlideData.description}
-                  </p>
+                  {/* Enhanced Description with Beach Theme */}
+                  <div className="relative mb-8" style={{ animation: 'fadeInUp 1.2s ease-out 1.5s both' }}>
+                    <p className="text-lg md:text-xl lg:text-2xl opacity-90 leading-relaxed max-w-3xl mx-auto text-white relative z-10 p-4 rounded-lg backdrop-blur-sm bg-white/5 border border-white/10">
+                      <span className="inline-block mr-2">🏖️</span>
+                      {currentSlideData.description}
+                      <span className="inline-block ml-2">🌊</span>
+                    </p>
+                    
+                    {/* Floating quote decoration */}
+                    <div className="absolute -top-4 -left-4 text-6xl text-cyan-400/30 font-serif" style={{ animation: 'float 6s ease-in-out infinite' }}>"</div>
+                    <div className="absolute -bottom-4 -right-4 text-6xl text-cyan-400/30 font-serif rotate-180" style={{ animation: 'float 6s ease-in-out infinite 3s' }}>"</div>
+                  </div>
 
 
                 </>
