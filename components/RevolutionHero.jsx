@@ -17,7 +17,7 @@ const RevolutionHero = () => {
       title: "Seasides 2026",
   subtitle: `${EVENT_DATE_LONG} • International Centre Goa`,
       description: "India's Most Loved Conference - Join the community for free talks, workshops, and training sessions",
-      backgroundImage: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+      backgroundImage: "linear-gradient(135deg, #FF8C42 0%, #FF6B35 20%, #F7931E 40%, #FFD23F 60%, #87CEEB 80%, #4682B4 100%)",
       animation: "fadeInUp",
       particles: true,
       showCountdown: true
@@ -28,9 +28,10 @@ const RevolutionHero = () => {
       title: "Expert Training",
       subtitle: "Master Advanced Cybersecurity Skills",
       description: "Intensive hands-on training sessions led by industry experts covering the latest security techniques and methodologies",
-      backgroundImage: "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
+      backgroundImage: "linear-gradient(135deg, #0F172A 0%, #1E293B 20%, #334155 40%, #00D4AA 60%, #00F5FF 80%, #38EF7D 100%)",
       animation: "slideInRight",
       particles: true,
+      theme: "cyber",
       icon: <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
     },
     {
@@ -39,9 +40,10 @@ const RevolutionHero = () => {
       title: "Hands-on Workshops",
       subtitle: "Learn by Doing",
       description: "Interactive workshops where you build, break, and secure systems using cutting-edge tools and techniques",
-      backgroundImage: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+      backgroundImage: "linear-gradient(135deg, #667EEA 0%, #764BA2 20%, #F093FB 40%, #F5576C 60%, #4FACFE 80%, #00F2FE 100%)",
       animation: "slideInLeft",
       particles: true,
+      theme: "workshop",
       icon: <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
     },
     {
@@ -50,9 +52,10 @@ const RevolutionHero = () => {
       title: "7 Specialized Villages",
       subtitle: "Choose Your Adventure",
       description: "Immerse yourself in specialized learning environments tailored to your interests and skill level",
-      backgroundImage: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
+      backgroundImage: "linear-gradient(135deg, #FF9A9E 0%, #FECFEF 20%, #FECFEF 40%, #FEE140 60%, #FA709A 80%, #C471F5 100%)",
       animation: "zoomIn",
       particles: true,
+      theme: "community",
       icon: <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>
     },
     {
@@ -61,9 +64,10 @@ const RevolutionHero = () => {
       title: "Beach Party & Networking",
       subtitle: "Connect • Celebrate • Create",
       description: "Epic beach parties, networking events, and cultural experiences that make Seasides legendary",
-      backgroundImage: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+      backgroundImage: "linear-gradient(135deg, #FF6B6B 0%, #FFD93D 20%, #6BCF7F 40%, #4D9DE0 60%, #F093FB 80%, #F5576C 100%)",
       animation: "bounceIn",
       particles: true,
+      theme: "beach",
       icon: <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
     }
   ];
@@ -76,7 +80,7 @@ const RevolutionHero = () => {
 
     let interval;
     const tick = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
-    const start = () => { interval = setInterval(tick, 6000); };
+    const start = () => { interval = setInterval(tick, 15000); };
     const stop = () => { if (interval) clearInterval(interval); };
 
     const handleVisibility = () => {
@@ -95,19 +99,19 @@ const RevolutionHero = () => {
   const goToSlide = (index) => {
     setCurrentSlide(index);
     setIsAutoPlay(false);
-    setTimeout(() => setIsAutoPlay(true), 10000);
+    setTimeout(() => setIsAutoPlay(true), 30000);
   };
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
     setIsAutoPlay(false);
-    setTimeout(() => setIsAutoPlay(true), 10000);
+    setTimeout(() => setIsAutoPlay(true), 30000);
   };
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
     setIsAutoPlay(false);
-    setTimeout(() => setIsAutoPlay(true), 10000);
+    setTimeout(() => setIsAutoPlay(true), 30000);
   };
 
   const currentSlideData = slides[currentSlide];
@@ -139,6 +143,66 @@ const RevolutionHero = () => {
   return (
     <>
       <style jsx>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap');
+        
+        .playfair-display {
+          font-family: 'Playfair Display', serif;
+        }
+        
+        .inter-font {
+          font-family: 'Inter', sans-serif;
+        }
+        
+        .wave-gradient {
+          background: linear-gradient(90deg, #87CEEB 0%, #4682B4 30%, #2E5CE6 60%, #1E3A8A 100%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-size: 200% 100%;
+          animation: waveShimmer 3s ease-in-out infinite;
+        }
+        
+        .curved-underline {
+          position: relative;
+        }
+        
+        .curved-underline::after {
+          content: '';
+          position: absolute;
+          bottom: -8px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 120px;
+          height: 4px;
+          background: linear-gradient(90deg, #87CEEB 0%, #4682B4 50%, #2E5CE6 100%);
+          border-radius: 2px;
+          animation: flowingWave 2s ease-in-out infinite;
+        }
+        
+        .text-shadow-sunset {
+          text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes waveShimmer {
+          0%, 100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+        }
+        
+        @keyframes flowingWave {
+          0%, 100% {
+            transform: translateX(-50%) scaleX(1);
+            opacity: 1;
+          }
+          50% {
+            transform: translateX(-50%) scaleX(1.1);
+            opacity: 0.8;
+          }
+        }
+        
         @keyframes fadeInUp {
           from { 
             opacity: 0; 
@@ -303,6 +367,91 @@ const RevolutionHero = () => {
           100% { transform: scale(2) rotate(360deg); opacity: 0; }
         }
         
+        /* Cybersecurity Training Theme Animations */
+        @keyframes digitalGlitch {
+          0%, 100% { transform: translateX(0) skew(0deg); filter: hue-rotate(0deg); }
+          20% { transform: translateX(-2px) skew(1deg); filter: hue-rotate(90deg); }
+          40% { transform: translateX(1px) skew(-1deg); filter: hue-rotate(180deg); }
+          60% { transform: translateX(-1px) skew(0.5deg); filter: hue-rotate(270deg); }
+          80% { transform: translateX(2px) skew(-0.5deg); filter: hue-rotate(360deg); }
+        }
+        
+        @keyframes matrixRain {
+          0% { transform: translateY(-100vh); opacity: 1; }
+          100% { transform: translateY(100vh); opacity: 0; }
+        }
+        
+        @keyframes cyberpulse {
+          0%, 100% { box-shadow: 0 0 5px #00D4AA, 0 0 10px #00D4AA, 0 0 15px #00D4AA; }
+          50% { box-shadow: 0 0 10px #00F5FF, 0 0 20px #00F5FF, 0 0 30px #00F5FF; }
+        }
+        
+        /* Workshop Theme Animations */
+        @keyframes toolSpin {
+          0% { transform: rotate(0deg) scale(1); }
+          25% { transform: rotate(90deg) scale(1.1); }
+          50% { transform: rotate(180deg) scale(1); }
+          75% { transform: rotate(270deg) scale(0.9); }
+          100% { transform: rotate(360deg) scale(1); }
+        }
+        
+        @keyframes sparkle {
+          0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+          50% { opacity: 1; transform: scale(1) rotate(180deg); }
+        }
+        
+        @keyframes buildingBlocks {
+          0% { transform: translateY(20px) rotateY(0deg); opacity: 0; }
+          50% { transform: translateY(-10px) rotateY(180deg); opacity: 0.7; }
+          100% { transform: translateY(0) rotateY(360deg); opacity: 1; }
+        }
+        
+        /* Community Village Theme Animations */
+        @keyframes communityPulse {
+          0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+          33% { transform: scale(1.1) rotate(120deg); opacity: 1; }
+          66% { transform: scale(0.9) rotate(240deg); opacity: 0.9; }
+        }
+        
+        @keyframes villageGlow {
+          0%, 100% { background-color: rgba(255, 154, 158, 0.3); }
+          25% { background-color: rgba(254, 207, 239, 0.3); }
+          50% { background-color: rgba(254, 225, 64, 0.3); }
+          75% { background-color: rgba(250, 112, 154, 0.3); }
+        }
+        
+        @keyframes pathFinding {
+          0% { stroke-dashoffset: 100; }
+          100% { stroke-dashoffset: 0; }
+        }
+        
+        /* Beach Party Theme Animations */
+        @keyframes beachWave {
+          0%, 100% { transform: translateX(0) rotate(0deg) scale(1); }
+          25% { transform: translateX(10px) rotate(5deg) scale(1.05); }
+          50% { transform: translateX(-5px) rotate(-3deg) scale(0.95); }
+          75% { transform: translateX(8px) rotate(2deg) scale(1.02); }
+        }
+        
+        @keyframes partyLights {
+          0%, 100% { background: linear-gradient(45deg, #FF6B6B, #FFD93D); }
+          20% { background: linear-gradient(45deg, #FFD93D, #6BCF7F); }
+          40% { background: linear-gradient(45deg, #6BCF7F, #4D9DE0); }
+          60% { background: linear-gradient(45deg, #4D9DE0, #F093FB); }
+          80% { background: linear-gradient(45deg, #F093FB, #FF6B6B); }
+        }
+        
+        @keyframes confetti {
+          0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+          100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+        
+        @keyframes fireworks {
+          0% { transform: scale(0) rotate(0deg); opacity: 1; }
+          50% { transform: scale(1) rotate(180deg); opacity: 0.8; }
+          100% { transform: scale(1.5) rotate(360deg); opacity: 0; }
+        }
+        
         .slide-content {
           animation: ${currentSlideData.animation} 1s ease-out;
           will-change: transform, opacity;
@@ -315,7 +464,7 @@ const RevolutionHero = () => {
         }
         
         .progress-bar {
-          animation: slideProgress 6s linear infinite;
+          animation: slideProgress 15s linear infinite;
           will-change: width;
         }
         
@@ -552,55 +701,248 @@ const RevolutionHero = () => {
           )}
         </div>
         
-        {/* Enhanced Wave Particles */}
+        {/* Theme-Specific Background Effects and Particles */}
         {currentSlideData.particles && (
           <div className="absolute inset-0">
-            {particles.map((p) => (
-              <div
-                key={p.id}
-                className={`
-                  float-particle absolute transition-all duration-500 wave-element
-                  ${isDark 
-                    ? 'opacity-40 shadow-lg shadow-cyan-400/30' 
-                    : 'opacity-30'
-                  }
-                `}
-                style={{
-                  left: `${p.left}%`,
-                  top: `${p.top}%`,
-                  animationDelay: `${p.delay}s`,
-                  animationDuration: `${p.duration}s`,
-                  width: p.id % 3 === 0 ? '4px' : p.id % 2 === 0 ? '6px' : '3px',
-                  height: p.id % 3 === 0 ? '4px' : p.id % 2 === 0 ? '6px' : '3px',
-                  borderRadius: p.id % 4 === 0 ? '50%' : '2px',
-                  background: p.id % 5 === 0 
-                    ? 'linear-gradient(45deg, rgba(34, 211, 238, 0.6), rgba(59, 130, 246, 0.4))'
-                    : p.id % 3 === 0
-                    ? 'linear-gradient(135deg, rgba(125, 211, 252, 0.5), rgba(186, 230, 253, 0.3))'
-                    : isDark 
-                    ? 'radial-gradient(circle, rgba(6, 182, 212, 0.7), rgba(14, 165, 233, 0.4))'
-                    : 'radial-gradient(circle, rgba(255, 255, 255, 0.6), rgba(186, 230, 253, 0.3))'
-                }}
-              />
-            ))}
             
-            {/* Additional wave-themed particles */}
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div
-                key={`wave-${i}`}
-                className="absolute wave-element"
-                style={{
-                  left: `${15 + i * 15}%`,
-                  top: `${20 + Math.sin(i) * 20}%`,
-                  width: `${3 + i}px`,
-                  height: '2px',
-                  background: 'linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.4), transparent)',
-                  borderRadius: '2px',
-                  animation: `waveFlow ${8 + i * 2}s ease-in-out infinite ${i * 0.5}s`,
-                  transform: `rotate(${i * 15}deg)`
-                }}
-              />
-            ))}
+            {/* Cybersecurity Training Theme Effects */}
+            {currentSlideData.theme === 'cyber' && (
+              <>
+                {/* Matrix Rain Effect */}
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <div
+                    key={`matrix-${i}`}
+                    className="absolute text-green-400 font-mono text-xs opacity-30"
+                    style={{
+                      left: `${10 + i * 12}%`,
+                      animation: `matrixRain ${5 + i}s linear infinite ${i * 0.5}s`
+                    }}
+                  >
+                    {['01', '10', '11', '00', '01'][i % 5]}
+                  </div>
+                ))}
+                
+                {/* Cyber Grid Overlay */}
+                <div 
+                  className="absolute inset-0 opacity-10"
+                  style={{
+                    backgroundImage: 'linear-gradient(#00D4AA 1px, transparent 1px), linear-gradient(90deg, #00D4AA 1px, transparent 1px)',
+                    backgroundSize: '30px 30px',
+                    animation: 'digitalGlitch 4s ease-in-out infinite'
+                  }}
+                />
+                
+                {/* Glowing Cyber Particles */}
+                {Array.from({ length: 6 }).map((_, i) => (
+                  <div
+                    key={`cyber-${i}`}
+                    className="absolute rounded-full"
+                    style={{
+                      left: `${20 + i * 15}%`,
+                      top: `${30 + Math.sin(i) * 30}%`,
+                      width: '6px',
+                      height: '6px',
+                      background: '#00F5FF',
+                      animation: `cyberpulse 2s ease-in-out infinite ${i * 0.3}s`
+                    }}
+                  />
+                ))}
+              </>
+            )}
+            
+            {/* Workshop Theme Effects */}
+            {currentSlideData.theme === 'workshop' && (
+              <>
+                {/* Floating Tools */}
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <div
+                    key={`tool-${i}`}
+                    className="absolute text-white/40"
+                    style={{
+                      left: `${15 + i * 18}%`,
+                      top: `${25 + i * 10}%`,
+                      animation: `toolSpin ${4 + i}s ease-in-out infinite ${i * 0.4}s`
+                    }}
+                  >
+                    {['🔧', '⚙️', '🔨', '⚡', '💡'][i]}
+                  </div>
+                ))}
+                
+                {/* Sparkle Effects */}
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <div
+                    key={`sparkle-${i}`}
+                    className="absolute w-2 h-2 bg-yellow-300 rounded-full"
+                    style={{
+                      left: `${Math.random() * 90}%`,
+                      top: `${Math.random() * 90}%`,
+                      animation: `sparkle 3s ease-in-out infinite ${i * 0.5}s`
+                    }}
+                  />
+                ))}
+                
+                {/* Building Blocks Animation */}
+                {Array.from({ length: 4 }).map((_, i) => (
+                  <div
+                    key={`block-${i}`}
+                    className="absolute w-4 h-4 bg-purple-400/30 rounded"
+                    style={{
+                      left: `${70 + i * 8}%`,
+                      top: `${60 - i * 10}%`,
+                      animation: `buildingBlocks 2s ease-in-out infinite ${i * 0.3}s`
+                    }}
+                  />
+                ))}
+              </>
+            )}
+            
+            {/* Community Village Theme Effects */}
+            {currentSlideData.theme === 'community' && (
+              <>
+                {/* Community Nodes */}
+                {Array.from({ length: 7 }).map((_, i) => (
+                  <div
+                    key={`node-${i}`}
+                    className="absolute rounded-full"
+                    style={{
+                      left: `${20 + (i * 60 / 7)}%`,
+                      top: `${30 + Math.sin(i * 0.8) * 25}%`,
+                      width: '12px',
+                      height: '12px',
+                      animation: `communityPulse ${3 + i * 0.5}s ease-in-out infinite`,
+                      animationDelay: `${i * 0.2}s`,
+                      background: '#FEE140'
+                    }}
+                  />
+                ))}
+                
+                {/* Village Glow Effect */}
+                <div 
+                  className="absolute inset-0 opacity-20 rounded-full blur-3xl"
+                  style={{
+                    width: '300px',
+                    height: '300px',
+                    left: '50%',
+                    top: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    animation: 'villageGlow 4s ease-in-out infinite'
+                  }}
+                />
+              </>
+            )}
+            
+            {/* Beach Party Theme Effects */}
+            {currentSlideData.theme === 'beach' && (
+              <>
+                {/* Confetti */}
+                {Array.from({ length: 12 }).map((_, i) => (
+                  <div
+                    key={`confetti-${i}`}
+                    className="absolute w-2 h-4 rounded"
+                    style={{
+                      left: `${Math.random() * 100}%`,
+                      top: '0%',
+                      background: ['#FF6B6B', '#FFD93D', '#6BCF7F', '#4D9DE0', '#F093FB'][i % 5],
+                      animation: `confetti ${3 + Math.random() * 2}s linear infinite ${i * 0.2}s`
+                    }}
+                  />
+                ))}
+                
+                {/* Party Lights */}
+                {Array.from({ length: 6 }).map((_, i) => (
+                  <div
+                    key={`light-${i}`}
+                    className="absolute w-8 h-8 rounded-full opacity-60"
+                    style={{
+                      left: `${15 + i * 15}%`,
+                      top: '10%',
+                      animation: `partyLights 2s ease-in-out infinite ${i * 0.3}s`
+                    }}
+                  />
+                ))}
+                
+                {/* Beach Wave Particles */}
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <div
+                    key={`beach-wave-${i}`}
+                    className="absolute text-cyan-300 text-2xl"
+                    style={{
+                      left: `${10 + i * 12}%`,
+                      top: `${60 + Math.sin(i) * 20}%`,
+                      animation: `beachWave ${4 + i * 0.5}s ease-in-out infinite ${i * 0.2}s`
+                    }}
+                  >
+                    🌊
+                  </div>
+                ))}
+                
+                {/* Fireworks */}
+                {Array.from({ length: 4 }).map((_, i) => (
+                  <div
+                    key={`firework-${i}`}
+                    className="absolute w-6 h-6 rounded-full"
+                    style={{
+                      left: `${20 + i * 20}%`,
+                      top: `${20 + i * 15}%`,
+                      background: `radial-gradient(circle, ${['#FF6B6B', '#FFD93D', '#6BCF7F', '#F093FB'][i]}, transparent)`,
+                      animation: `fireworks ${2 + i * 0.5}s ease-out infinite ${i * 0.8}s`
+                    }}
+                  />
+                ))}
+              </>
+            )}
+            
+            {/* Default Ocean Theme for Main Slide */}
+            {!currentSlideData.theme && (
+              <>
+                {particles.map((p) => (
+                  <div
+                    key={p.id}
+                    className={`
+                      float-particle absolute transition-all duration-500 wave-element
+                      ${isDark 
+                        ? 'opacity-40 shadow-lg shadow-cyan-400/30' 
+                        : 'opacity-30'
+                      }
+                    `}
+                    style={{
+                      left: `${p.left}%`,
+                      top: `${p.top}%`,
+                      animationDelay: `${p.delay}s`,
+                      animationDuration: `${p.duration}s`,
+                      width: p.id % 3 === 0 ? '4px' : p.id % 2 === 0 ? '6px' : '3px',
+                      height: p.id % 3 === 0 ? '4px' : p.id % 2 === 0 ? '6px' : '3px',
+                      borderRadius: p.id % 4 === 0 ? '50%' : '2px',
+                      background: p.id % 5 === 0 
+                        ? 'linear-gradient(45deg, rgba(34, 211, 238, 0.6), rgba(59, 130, 246, 0.4))'
+                        : p.id % 3 === 0
+                        ? 'linear-gradient(135deg, rgba(125, 211, 252, 0.5), rgba(186, 230, 253, 0.3))'
+                        : isDark 
+                        ? 'radial-gradient(circle, rgba(6, 182, 212, 0.7), rgba(14, 165, 233, 0.4))'
+                        : 'radial-gradient(circle, rgba(255, 255, 255, 0.6), rgba(186, 230, 253, 0.3))'
+                    }}
+                  />
+                ))}
+                
+                {/* Additional wave-themed particles */}
+                {Array.from({ length: 6 }).map((_, i) => (
+                  <div
+                    key={`wave-${i}`}
+                    className="absolute wave-element"
+                    style={{
+                      left: `${15 + i * 15}%`,
+                      top: `${20 + Math.sin(i) * 20}%`,
+                      width: `${3 + i}px`,
+                      height: '2px',
+                      background: 'linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.4), transparent)',
+                      borderRadius: '2px',
+                      animation: `waveFlow ${8 + i * 2}s ease-in-out infinite ${i * 0.5}s`,
+                      transform: `rotate(${i * 15}deg)`
+                    }}
+                  />
+                ))}
+              </>
+            )}
           </div>
         )}
 
@@ -617,6 +959,24 @@ const RevolutionHero = () => {
           </div>
         )}
 
+
+        {/* Auto-play Toggle Button */}
+        <button
+          onClick={() => setIsAutoPlay(!isAutoPlay)}
+          className="absolute top-4 right-4 z-20 bg-black/40 hover:bg-black/50 backdrop-blur-sm rounded-full p-3 transition-all duration-300 group ring-1 ring-white/40 shadow-lg"
+          aria-label={isAutoPlay ? "Pause slideshow" : "Play slideshow"}
+        >
+          {isAutoPlay ? (
+            <svg className="w-6 h-6 text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)] group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 9v6m4-6v6" />
+            </svg>
+          ) : (
+            <svg className="w-6 h-6 text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)] group-hover:scale-110 transition-transform" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          )}
+        </button>
 
         {/* Navigation Arrows */}
         <button
@@ -648,32 +1008,27 @@ const RevolutionHero = () => {
               {currentSlideData.type === 'main' && (
                 <>
 
-                  {/* Enhanced Title with Logo-style Effects */}
+                  {/* Enhanced Title with Sunset-Ocean Theme */}
                   <div className="relative">
-                    <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-6 leading-tight text-white whitespace-nowrap relative z-10">
+                    <h1 className="playfair-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-6 leading-tight text-white text-shadow-sunset relative z-10">
                       <span className="relative inline-block" style={{ animation: 'fadeInUp 1.2s ease-out 0.5s both' }}>
-                        Seasides 
-                        {/* Text shadow effect */}
-                        <span className="absolute inset-0 text-blue-300/30 blur-sm">Seasides</span>
+                        The Future of{' '}
                       </span>
-                      <span className="relative inline-block text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-teal-300 bg-clip-text ml-4" style={{ animation: 'zoomIn 1.2s ease-out 0.8s both' }}>
-                        2026
-                        {/* Glowing effect for year */}
-                        <span className="absolute inset-0 text-cyan-400/40 blur-md">2026</span>
+                      <span className="wave-gradient font-bold" style={{ animation: 'zoomIn 1.2s ease-out 0.8s both' }}>
+                        Seasides
                       </span>
                     </h1>
-                    
-                    {/* Decorative wave under title */}
-                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-64 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-70" 
-                         style={{ animation: 'waveFlow 3s ease-in-out infinite' }}>
-                    </div>
                   </div>
                   
-                  {/* Enhanced Subtitle */}
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-light mb-8 text-blue-100 relative" style={{ animation: 'slideInLeft 1.2s ease-out 1.2s both' }}>
+                  {/* Enhanced Subtitle with Curved Underline */}
+                  <div className="curved-underline" style={{ animation: 'slideInLeft 1.2s ease-out 1.2s both' }}>
+                    <h2 className="inter-font text-2xl md:text-3xl lg:text-4xl font-medium mb-8 text-orange-100 relative">
+                      India&apos;s Most Loved Conference
+                    </h2>
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-light mb-8 text-white/90 relative" style={{ animation: 'fadeInUp 1.2s ease-out 1.4s both' }}>
                     <span className="relative z-10">{currentSlideData.subtitle}</span>
-                    <div className="absolute inset-0 text-cyan-200/20 blur-sm">{currentSlideData.subtitle}</div>
-                  </h2>
+                  </h3>
                   
                   {/* Enhanced Description with Beach Theme */}
                   <div className="relative mb-8" style={{ animation: 'fadeInUp 1.2s ease-out 1.5s both' }}>
@@ -697,22 +1052,158 @@ const RevolutionHero = () => {
                 <>
                   {/* Animated Icon */}
                   <div className="mb-8">
-                    <div className="inline-block text-6xl md:text-8xl" style={{ animation: 'iconBounce 3s ease-in-out infinite' }}>
+                    <div 
+                      className={`
+                        inline-block text-6xl md:text-8xl
+                        ${currentSlideData.theme === 'cyber' ? 'drop-shadow-[0_0_10px_#00D4AA]' : ''}
+                        ${currentSlideData.theme === 'workshop' ? 'drop-shadow-[0_0_15px_#F093FB]' : ''}
+                        ${currentSlideData.theme === 'community' ? 'drop-shadow-[0_0_12px_#FEE140]' : ''}
+                        ${currentSlideData.theme === 'beach' ? 'drop-shadow-[0_0_20px_#FF6B6B]' : ''}
+                      `}
+                      style={{ 
+                        animation: currentSlideData.theme === 'cyber' 
+                          ? 'digitalGlitch 2s ease-in-out infinite'
+                          : currentSlideData.theme === 'workshop'
+                          ? 'toolSpin 4s ease-in-out infinite'
+                          : currentSlideData.theme === 'community'
+                          ? 'communityPulse 3s ease-in-out infinite'
+                          : currentSlideData.theme === 'beach'
+                          ? 'beachWave 3s ease-in-out infinite'
+                          : 'iconBounce 3s ease-in-out infinite'
+                      }}
+                    >
                       {currentSlideData.icon}
                     </div>
                   </div>
 
-                  <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-                    {currentSlideData.title}
+                  {/* Enhanced Theme-Specific Titles */}
+                  <h1 className={`
+                    text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight
+                    ${currentSlideData.theme === 'cyber' 
+                      ? 'playfair-display text-shadow-sunset' 
+                      : currentSlideData.theme === 'workshop'
+                      ? 'inter-font font-extrabold'
+                      : currentSlideData.theme === 'community'
+                      ? 'playfair-display'
+                      : currentSlideData.theme === 'beach'
+                      ? 'inter-font font-black'
+                      : ''
+                    }
+                  `}>
+                    {currentSlideData.theme === 'cyber' && (
+                      <>
+                        <span className="wave-gradient">Expert</span>
+                        <span className="text-white"> Training</span>
+                      </>
+                    )}
+                    {currentSlideData.theme === 'workshop' && (
+                      <>
+                        <span className="text-white">Hands-on </span>
+                        <span className="wave-gradient">Workshops</span>
+                      </>
+                    )}
+                    {currentSlideData.theme === 'community' && (
+                      <>
+                        <span className="wave-gradient">7 Specialized</span>
+                        <span className="text-white"> Villages</span>
+                      </>
+                    )}
+                    {currentSlideData.theme === 'beach' && (
+                      <>
+                        <span className="wave-gradient">Beach Party</span>
+                        <span className="text-white"> & Networking</span>
+                      </>
+                    )}
+                    {!currentSlideData.theme && currentSlideData.title}
                   </h1>
                   
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-light mb-8 opacity-90">
-                    {currentSlideData.subtitle}
-                  </h2>
+                  {/* Enhanced Theme-Specific Subtitles */}
+                  <div className="curved-underline mb-8">
+                    <h2 className={`
+                      text-2xl md:text-3xl lg:text-4xl font-medium
+                      ${currentSlideData.theme === 'cyber' 
+                        ? 'text-green-200 inter-font' 
+                        : currentSlideData.theme === 'workshop'
+                        ? 'text-purple-200 playfair-display'
+                        : currentSlideData.theme === 'community'
+                        ? 'text-yellow-200 inter-font'
+                        : currentSlideData.theme === 'beach'
+                        ? 'text-orange-200 playfair-display'
+                        : 'text-white/90'
+                      }
+                    `}>
+                      {currentSlideData.subtitle}
+                    </h2>
+                  </div>
                   
-                  <p className="text-lg md:text-xl lg:text-2xl mb-12 text-white/90 leading-relaxed max-w-3xl mx-auto">
-                    {currentSlideData.description}
-                  </p>
+                  {/* Enhanced Theme-Specific Descriptions */}
+                  <div className="relative mb-12">
+                    <p className={`
+                      text-lg md:text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto p-4 rounded-lg backdrop-blur-sm border relative z-10
+                      ${currentSlideData.theme === 'cyber' 
+                        ? 'bg-slate-900/30 border-green-400/20 text-green-100' 
+                        : currentSlideData.theme === 'workshop'
+                        ? 'bg-purple-900/30 border-purple-400/20 text-purple-100'
+                        : currentSlideData.theme === 'community'
+                        ? 'bg-yellow-900/30 border-yellow-400/20 text-yellow-100'
+                        : currentSlideData.theme === 'beach'
+                        ? 'bg-orange-900/30 border-orange-400/20 text-orange-100'
+                        : 'text-white/90 bg-white/5 border-white/10'
+                      }
+                    `}>
+                      {currentSlideData.theme === 'cyber' && (
+                        <span className="inline-block mr-2">🔐</span>
+                      )}
+                      {currentSlideData.theme === 'workshop' && (
+                        <span className="inline-block mr-2">🛠️</span>
+                      )}
+                      {currentSlideData.theme === 'community' && (
+                        <span className="inline-block mr-2">🏘️</span>
+                      )}
+                      {currentSlideData.theme === 'beach' && (
+                        <span className="inline-block mr-2">🎉</span>
+                      )}
+                      {currentSlideData.description}
+                      {currentSlideData.theme === 'cyber' && (
+                        <span className="inline-block ml-2">🛡️</span>
+                      )}
+                      {currentSlideData.theme === 'workshop' && (
+                        <span className="inline-block ml-2">⚙️</span>
+                      )}
+                      {currentSlideData.theme === 'community' && (
+                        <span className="inline-block ml-2">🌟</span>
+                      )}
+                      {currentSlideData.theme === 'beach' && (
+                        <span className="inline-block ml-2">🌊</span>
+                      )}
+                    </p>
+                    
+                    {/* Theme-specific decorative elements */}
+                    {currentSlideData.theme === 'cyber' && (
+                      <>
+                        <div className="absolute -top-4 -left-4 text-4xl text-green-400/30 font-mono" style={{ animation: 'digitalGlitch 3s ease-in-out infinite' }}>&#123;</div>
+                        <div className="absolute -bottom-4 -right-4 text-4xl text-green-400/30 font-mono" style={{ animation: 'digitalGlitch 3s ease-in-out infinite 1.5s' }}>&#125;</div>
+                      </>
+                    )}
+                    {currentSlideData.theme === 'workshop' && (
+                      <>
+                        <div className="absolute -top-4 -left-4 text-4xl text-purple-400/30" style={{ animation: 'toolSpin 4s ease-in-out infinite' }}>🔧</div>
+                        <div className="absolute -bottom-4 -right-4 text-4xl text-purple-400/30" style={{ animation: 'toolSpin 4s ease-in-out infinite 2s' }}>⚙️</div>
+                      </>
+                    )}
+                    {currentSlideData.theme === 'community' && (
+                      <>
+                        <div className="absolute -top-4 -left-4 text-4xl text-yellow-400/30" style={{ animation: 'communityPulse 3s ease-in-out infinite' }}>🏠</div>
+                        <div className="absolute -bottom-4 -right-4 text-4xl text-yellow-400/30" style={{ animation: 'communityPulse 3s ease-in-out infinite 1.5s' }}>👥</div>
+                      </>
+                    )}
+                    {currentSlideData.theme === 'beach' && (
+                      <>
+                        <div className="absolute -top-4 -left-4 text-4xl text-orange-400/30" style={{ animation: 'beachWave 3s ease-in-out infinite' }}>🏖️</div>
+                        <div className="absolute -bottom-4 -right-4 text-4xl text-orange-400/30" style={{ animation: 'fireworks 2s ease-out infinite 1s' }}>🎆</div>
+                      </>
+                    )}
+                  </div>
                 </>
               )}
 

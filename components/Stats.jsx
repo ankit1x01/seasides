@@ -1,90 +1,140 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
 
 const Stats = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [animatedStats, setAnimatedStats] = useState([0, 0, 0, 0]);
+  const [hoveredFeature, setHoveredFeature] = useState(null);
   const statsRef = useRef(null);
   const { isDark } = useTheme();
 
-  const finalStats = [15, 100, 3, 1000];
-  const labels = ['Villages', '% FREE Conference', 'Days of Learning', 'Expected Attendees'];
-  const icons = [
-    <svg key="villages" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>,
-    <svg key="security" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>,
-    <svg key="days" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4M9 21h6a2 2 0 002-2v-1a1 1 0 00-1-1H8a1 1 0 00-1 1v1a2 2 0 002 2z" /></svg>,
-    <svg key="attendees" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+  const features = [
+    {
+      id: 'villages',
+      title: 'Specialized Villages',
+      description: 'Choose your learning path from 7 specialized cybersecurity villages',
+      icon: '🏘️',
+      color: 'from-blue-500 to-cyan-600',
+      bgColor: 'bg-blue-500/10',
+      borderColor: 'border-blue-500/30'
+    },
+    {
+      id: 'free',
+      title: '100% Free Conference',
+      description: 'World-class cybersecurity education at absolutely no cost',
+      icon: '🎯',
+      color: 'from-green-500 to-emerald-600',
+      bgColor: 'bg-green-500/10',
+      borderColor: 'border-green-500/30'
+    },
+    {
+      id: 'hands-on',
+      title: 'Hands-on Learning',
+      description: 'Interactive workshops and practical training sessions',
+      icon: '🛠️',
+      color: 'from-purple-500 to-pink-600',
+      bgColor: 'bg-purple-500/10',
+      borderColor: 'border-purple-500/30'
+    },
+    {
+      id: 'networking',
+      title: 'Epic Networking',
+      description: 'Beach parties and connections with industry experts',
+      icon: '🌊',
+      color: 'from-orange-500 to-red-600',
+      bgColor: 'bg-orange-500/10',
+      borderColor: 'border-orange-500/30'
+    }
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
 
-    if (statsRef.current) {
-      observer.observe(statsRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (isVisible) {
-      finalStats.forEach((finalValue, index) => {
-        let currentValue = 0;
-        const increment = finalValue / 50;
-        const timer = setInterval(() => {
-          currentValue += increment;
-          if (currentValue >= finalValue) {
-            currentValue = finalValue;
-            clearInterval(timer);
-          }
-          setAnimatedStats(prev => {
-            const newStats = [...prev];
-            newStats[index] = Math.floor(currentValue);
-            return newStats;
-          });
-        }, 50);
-      });
-    }
-  }, [isVisible, finalStats]);
 
   return (
     <>
       <style jsx>{`
-        @keyframes float-up {
-          0% { transform: translateY(30px); opacity: 0; }
-          100% { transform: translateY(0); opacity: 1; }
+        @keyframes float-in {
+          0% { 
+            transform: translateY(50px) scale(0.8); 
+            opacity: 0; 
+          }
+          100% { 
+            transform: translateY(0) scale(1); 
+            opacity: 1; 
+          }
         }
         
-        @keyframes pulse-scale {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.05); }
+        @keyframes icon-bounce {
+          0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+          25% { transform: translateY(-10px) rotate(5deg) scale(1.1); }
+          50% { transform: translateY(-5px) rotate(-3deg) scale(1.05); }
+          75% { transform: translateY(-15px) rotate(2deg) scale(1.1); }
         }
         
-        @keyframes glow-pulse {
-          0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-          50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(147, 51, 234, 0.4); }
+        @keyframes glow-wave {
+          0%, 100% { 
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(147, 51, 234, 0.2); 
+          }
+          50% { 
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 80px rgba(147, 51, 234, 0.4); 
+          }
         }
         
-        .stat-card {
-          animation: float-up 0.8s ease-out;
+        @keyframes ripple-effect {
+          0% { 
+            transform: scale(0); 
+            opacity: 1; 
+          }
+          100% { 
+            transform: scale(4); 
+            opacity: 0; 
+          }
+        }
+        
+        @keyframes particle-float {
+          0%, 100% { 
+            transform: translateY(0) translateX(0) rotate(0deg); 
+          }
+          33% { 
+            transform: translateY(-20px) translateX(10px) rotate(120deg); 
+          }
+          66% { 
+            transform: translateY(-10px) translateX(-15px) rotate(240deg); 
+          }
+        }
+        
+        .feature-card {
+          animation: float-in 0.8s ease-out;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .feature-card:hover {
+          transform: translateY(-20px) scale(1.05);
+          animation: glow-wave 2s ease-in-out infinite;
+        }
+        
+        .feature-icon {
+          animation: icon-bounce 4s ease-in-out infinite;
           transition: all 0.3s ease;
         }
         
-        .stat-card:hover {
-          transform: translateY(-10px) scale(1.05);
-          animation: glow-pulse 2s ease-in-out infinite;
+        .feature-card:hover .feature-icon {
+          animation-duration: 1s;
         }
         
-        .number-animation {
-          animation: pulse-scale 2s ease-in-out infinite;
+        .ripple {
+          animation: ripple-effect 2s ease-out infinite;
+        }
+        
+        .floating-particle {
+          animation: particle-float 6s ease-in-out infinite;
+        }
+        
+        /* Interactive hover effects */
+        .feature-card:hover .feature-bg {
+          opacity: 0.2;
+        }
+        
+        .feature-card:hover .feature-border {
+          opacity: 0.8;
         }
       `}</style>
       
@@ -111,72 +161,146 @@ const Stats = () => {
                     ? 'text-blue-400 border-blue-400/30 bg-blue-400/10' 
                     : 'text-blue-600 border-blue-600/30 bg-blue-600/10'
                 }`}>
-                  CONFERENCE STATS
+                  WORLD-CLASS SECURITY EDUCATION
                 </span>
               </div>
 
               <h2 className={`text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6 ${
                 isDark ? 'text-white soft-glow' : 'text-gray-900'
               }`}>
-                By the{' '}
+                Experience{' '}
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Numbers
+                  Excellence
                 </span>
               </h2>
 
               <p className={`text-xl leading-relaxed max-w-3xl mx-auto ${
                 isDark ? 'text-gray-300' : 'text-gray-600'
               }`}>
-                Join India&apos;s premier FREE cybersecurity conference and be part of something extraordinary.
+                Experience cutting-edge cybersecurity training with industry experts, hands-on workshops, and networking opportunities that will advance your career.
               </p>
             </div>
 
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {animatedStats.map((stat, index) => (
+            {/* Interactive Features Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              {features.map((feature, index) => (
                 <div 
-                  key={index}
-                  className={`group relative overflow-hidden rounded-2xl p-8 backdrop-blur-sm text-center transition-all duration-300 ${
+                  key={feature.id}
+                  className={`feature-card group relative overflow-hidden rounded-3xl p-8 backdrop-blur-sm cursor-pointer ${
                     isDark 
                       ? 'bg-white/5 border border-white/10 hover:bg-white/10' 
                       : 'bg-white/80 border border-gray-200 shadow-xl hover:shadow-2xl'
                   }`}
                   style={{ animationDelay: `${index * 0.2}s` }}
+                  onMouseEnter={() => setHoveredFeature(feature.id)}
+                  onMouseLeave={() => setHoveredFeature(null)}
                 >
-                  {/* Icon */}
-                  <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-r ${
-                    ['from-blue-500 to-cyan-600', 'from-purple-500 to-pink-600', 'from-green-500 to-emerald-600', 'from-orange-500 to-red-600'][index]
-                  } flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 ${
-                    isDark ? 'shadow-lg shadow-blue-500/25' : 'shadow-xl shadow-blue-500/25'
-                  }`}>
-                    {icons[index]}
-                  </div>
-
-                  {/* Animated Number */}
-                  <div className="number-animation mb-4">
-                    <p className={`text-4xl lg:text-6xl font-extrabold leading-none ${
+                  {/* Background Gradient */}
+                  <div className={`feature-bg absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 transition-opacity duration-300`}></div>
+                  
+                  {/* Border Glow */}
+                  <div className={`feature-border absolute inset-0 rounded-3xl bg-gradient-to-br ${feature.color} opacity-0 transition-opacity duration-300 blur-sm`}></div>
+                  
+                  {/* Ripple Effect */}
+                  {hoveredFeature === feature.id && (
+                    <>
+                      {Array.from({ length: 3 }).map((_, i) => (
+                        <div
+                          key={i}
+                          className={`ripple absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r ${feature.color} opacity-20`}
+                          style={{ 
+                            animationDelay: `${i * 0.5}s`,
+                            width: '20px',
+                            height: '20px'
+                          }}
+                        />
+                      ))}
+                    </>
+                  )}
+                  
+                  {/* Floating Particles */}
+                  {Array.from({ length: 4 }).map((_, i) => (
+                    <div
+                      key={i}
+                      className={`floating-particle absolute w-2 h-2 rounded-full bg-gradient-to-r ${feature.color} opacity-30`}
+                      style={{
+                        left: `${20 + i * 20}%`,
+                        top: `${30 + Math.sin(i) * 20}%`,
+                        animationDelay: `${i * 1.5}s`
+                      }}
+                    />
+                  ))}
+                  
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Large Emoji Icon */}
+                    <div className="feature-icon text-7xl mb-6 text-center">
+                      {feature.icon}
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className={`text-2xl md:text-3xl font-bold mb-4 text-center ${
                       isDark ? 'text-white' : 'text-gray-900'
                     }`}>
-                      {stat}
-                      <span className={`text-2xl lg:text-3xl ${
-                        isDark ? 'text-gray-400' : 'text-gray-600'
-                      }`}>+</span>
+                      {feature.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className={`text-base md:text-lg leading-relaxed text-center ${
+                      isDark ? 'text-gray-300' : 'text-gray-600'
+                    }`}>
+                      {feature.description}
                     </p>
+                    
+                    {/* Interactive Badge */}
+                    <div className={`inline-block mt-6 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                      hoveredFeature === feature.id
+                        ? `${feature.bgColor} ${feature.borderColor} border text-white`
+                        : isDark
+                        ? 'bg-white/10 border-white/20 border text-gray-300'
+                        : 'bg-gray-100 border-gray-200 border text-gray-600'
+                    }`}>
+                      Interactive Feature
+                    </div>
                   </div>
-                  
-                  {/* Label */}
-                  <p className={`text-sm sm:text-base font-semibold ${
-                    isDark ? 'text-gray-300' : 'text-gray-600'
-                  }`}>
-                    {labels[index]}
-                  </p>
-
-                  {/* Gradient overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${
-                    ['from-blue-500 to-cyan-600', 'from-purple-500 to-pink-600', 'from-green-500 to-emerald-600', 'from-orange-500 to-red-600'][index]
-                  } opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
                 </div>
               ))}
+            </div>
+            
+            {/* Central Interactive Graphic */}
+            <div className="flex justify-center">
+              <div className={`relative w-80 h-80 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1 ${
+                isDark ? 'shadow-2xl shadow-blue-500/25' : 'shadow-2xl shadow-blue-500/25'
+              }`}>
+                <div className={`w-full h-full rounded-full flex items-center justify-center ${
+                  isDark ? 'bg-gray-900' : 'bg-white'
+                }`}>
+                  <div className="text-center">
+                    <div className="text-8xl mb-4">🏖️</div>
+                    <h3 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                      Seasides 2026
+                    </h3>
+                    <p className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                      Where Security Meets The Sea
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Orbiting Elements */}
+                {Array.from({ length: 6 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="absolute w-6 h-6 rounded-full bg-gradient-to-r from-blue-400 to-purple-400"
+                    style={{
+                      top: '50%',
+                      left: '50%',
+                      transformOrigin: `${Math.cos(i * Math.PI / 3) * 200}px ${Math.sin(i * Math.PI / 3) * 200}px`,
+                      animation: `particle-float ${8 + i}s ease-in-out infinite ${i * 0.5}s`,
+                      transform: `translate(-50%, -50%) rotate(${i * 60}deg) translateY(-200px)`
+                    }}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>

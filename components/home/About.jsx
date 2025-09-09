@@ -87,7 +87,7 @@ const About = () => {
                 <p className={`text-lg leading-relaxed ${
                   isDark ? 'text-gray-300' : 'text-gray-700'
                 }`}>
-                  Join us from <span className={`font-bold ${isDark ? 'text-cyan-400' : 'text-blue-600'}`}>February 20th to 22nd</span> for the <span className={`font-bold ${isDark ? 'text-purple-400' : 'text-purple-600'}`}>Seasides InfoSec Conference 2025</span>, where you&apos;ll gain valuable insights into cybersecurity. We&apos;re proud to offer top-notch courses and sessions for free, bringing a community-driven experience that mirrors major global events like <span className={`font-bold ${isDark ? 'text-pink-400' : 'text-pink-600'}`}>Blackhat</span> and <span className={`font-bold ${isDark ? 'text-green-400' : 'text-green-600'}`}>Defcon</span>—ensuring equal learning opportunities for all.
+                  Join us from <span className={`font-bold ${isDark ? 'text-cyan-400' : 'text-blue-600'}`}>February 19-21, 2026</span> for the <span className={`font-bold ${isDark ? 'text-purple-400' : 'text-purple-600'}`}>Seasides InfoSec Conference 2026</span>, where you&apos;ll gain valuable insights into cybersecurity. We&apos;re proud to offer top-notch courses and sessions for free, bringing a community-driven experience that mirrors major global events like <span className={`font-bold ${isDark ? 'text-pink-400' : 'text-pink-600'}`}>Blackhat</span> and <span className={`font-bold ${isDark ? 'text-green-400' : 'text-green-600'}`}>Defcon</span>—ensuring equal learning opportunities for all.
                 </p>
               </motion.div>
 
@@ -126,7 +126,7 @@ const About = () => {
               </motion.div>
             </motion.div>
 
-            {/* Right Column - Visual Element */}
+            {/* Right Column - Interactive Cybersecurity Network Visualization */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -134,62 +134,137 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="relative"
             >
-              <motion.div
-                whileHover={{ rotateY: 5, rotateX: 5, scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                className={`relative overflow-hidden rounded-2xl p-8 md:p-12 backdrop-blur-sm transform-gpu tilt ${
-                  isDark 
-                    ? 'bg-gradient-to-br from-gray-900/80 to-gray-800/80 border border-white/10' 
-                    : 'bg-gradient-to-br from-white/80 to-gray-50/80 border border-gray-200 shadow-2xl'
-                }`}
-              >
-                {/* Animated gradient backdrop */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 aurora-x"></div>
+              {/* Interactive Network Hub */}
+              <div className="relative h-96 flex items-center justify-center">
                 
-                {/* Content */}
-                <div className="relative space-y-6">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center ${
-                    isDark ? 'shadow-lg shadow-blue-500/25' : 'shadow-xl shadow-blue-500/25'
+                {/* Central Hub - Conference Core */}
+                <motion.div
+                  whileHover={{ scale: 1.1, rotateZ: 10 }}
+                  transition={{ duration: 0.3 }}
+                  className={`relative z-20 w-24 h-24 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center cursor-pointer ${
+                    isDark ? 'shadow-2xl shadow-blue-500/50' : 'shadow-2xl shadow-blue-500/30'
+                  }`}
+                >
+                  <div className={`w-20 h-20 rounded-full flex items-center justify-center ${
+                    isDark ? 'bg-gray-900' : 'bg-white'
                   }`}>
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
+                    <span className="text-2xl">🏖️</span>
                   </div>
                   
-                  <div>
-                    <h3 className={`text-2xl font-bold mb-3 ${
-                      isDark ? 'text-white' : 'text-gray-900'
-                    }`}>
-                      World-Class Security Education
-                    </h3>
-                    <p className={`text-base leading-relaxed ${
-                      isDark ? 'text-gray-300' : 'text-gray-600'
-                    }`}>
-                      Experience cutting-edge cybersecurity training with industry experts, hands-on workshops, and networking opportunities that will advance your career.
-                    </p>
-                  </div>
+                  {/* Pulsing Ring */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 animate-ping opacity-20"></div>
+                </motion.div>
 
-                  {/* Stats */}
-                  <div className="grid grid-cols-3 gap-4 pt-6">
-                    {[
-                      { number: '15+', label: 'Villages' },
-                      { number: '100%', label: 'Free' },
-                      { number: '3', label: 'Days' }
-                    ].map((stat) => (
-                      <div key={stat.label} className="text-center">
-                        <div className={`text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent`}>
-                          {stat.number}
-                        </div>
-                        <div className={`text-xs font-medium ${
-                          isDark ? 'text-gray-400' : 'text-gray-500'
-                        }`}>
-                          {stat.label}
-                        </div>
+                {/* Orbiting Learning Nodes */}
+                {[
+                  { icon: '🔐', label: 'Security', angle: 0, color: 'from-red-400 to-red-600' },
+                  { icon: '🛠️', label: 'Workshops', angle: 60, color: 'from-blue-400 to-blue-600' },
+                  { icon: '👥', label: 'Community', angle: 120, color: 'from-green-400 to-green-600' },
+                  { icon: '🎓', label: 'Learning', angle: 180, color: 'from-purple-400 to-purple-600' },
+                  { icon: '🌐', label: 'Network', angle: 240, color: 'from-cyan-400 to-cyan-600' },
+                  { icon: '⚡', label: 'Skills', angle: 300, color: 'from-orange-400 to-orange-600' }
+                ].map((node, index) => (
+                  <motion.div
+                    key={node.label}
+                    initial={{ scale: 0, rotate: node.angle }}
+                    whileInView={{ scale: 1, rotate: node.angle }}
+                    whileHover={{ scale: 1.2, rotate: node.angle + 15 }}
+                    viewport={{ once: true }}
+                    transition={{ 
+                      duration: 0.5, 
+                      delay: 0.5 + index * 0.1,
+                      type: "spring",
+                      stiffness: 200
+                    }}
+                    className="absolute cursor-pointer"
+                    style={{
+                      transform: `rotate(${node.angle}deg) translateX(140px) rotate(-${node.angle}deg)`,
+                      transformOrigin: 'center'
+                    }}
+                  >
+                    <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${node.color} flex items-center justify-center ${
+                      isDark ? 'shadow-lg shadow-blue-500/25' : 'shadow-lg shadow-gray-400/25'
+                    } hover:shadow-2xl transition-shadow duration-300`}>
+                      <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
+                        isDark ? 'bg-gray-800' : 'bg-white'
+                      }`}>
+                        <span className="text-lg">{node.icon}</span>
                       </div>
-                    ))}
+                    </div>
+                    
+                    {/* Connection Lines */}
+                    <div className={`absolute top-8 left-8 w-32 h-px bg-gradient-to-r ${node.color} opacity-30`}
+                         style={{
+                           transform: `rotate(${180 + node.angle}deg)`,
+                           transformOrigin: '0 0'
+                         }}>
+                    </div>
+                    
+                    {/* Node Label */}
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className={`absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 rounded-full text-xs font-medium ${
+                        isDark ? 'bg-gray-800 text-white border border-gray-700' : 'bg-white text-gray-900 border border-gray-200'
+                      } shadow-lg whitespace-nowrap`}
+                    >
+                      {node.label}
+                    </motion.div>
+                  </motion.div>
+                ))}
+
+                {/* Floating Data Particles */}
+                {Array.from({ length: 12 }).map((_, i) => (
+                  <motion.div
+                    key={`particle-${i}`}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    className="absolute w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 opacity-60"
+                    style={{
+                      left: `${20 + Math.cos(i * 30 * Math.PI / 180) * (100 + Math.sin(i * 15) * 20)}px`,
+                      top: `${20 + Math.sin(i * 30 * Math.PI / 180) * (100 + Math.cos(i * 15) * 20)}px`,
+                    }}
+                    animate={{
+                      x: [0, Math.cos(i * 20) * 10, 0],
+                      y: [0, Math.sin(i * 20) * 10, 0],
+                      opacity: [0.3, 0.8, 0.3]
+                    }}
+                    transition={{
+                      duration: 4 + i * 0.5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 1 + i * 0.1
+                    }}
+                  />
+                ))}
+
+                {/* Interactive Timeline */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 1.2 }}
+                  className="absolute -bottom-16 left-1/2 transform -translate-x-1/2"
+                >
+                  <div className={`flex items-center space-x-4 px-6 py-3 rounded-full backdrop-blur-sm ${
+                    isDark ? 'bg-gray-900/80 border border-gray-700' : 'bg-white/80 border border-gray-200'
+                  } shadow-xl`}>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 animate-pulse"></div>
+                      <span className={`text-sm font-medium ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                        Feb 19-21, 2026
+                      </span>
+                    </div>
+                    <div className={`w-px h-4 ${isDark ? 'bg-gray-600' : 'bg-gray-300'}`}></div>
+                    <div className="flex items-center space-x-2">
+                      <span className="text-sm">📍</span>
+                      <span className={`text-sm font-medium ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                        International Centre Goa
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </div>
             </motion.div>
           </div>
         </div>
