@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { useTheme } from '@/contexts/ThemeContext';
 
 const Sponsors = () => {
-  const [isVisible, setIsVisible] = useState(false);
   const [hoveredSponsor, setHoveredSponsor] = useState(null);
   const sponsorsRef = useRef(null);
   const { isDark } = useTheme();

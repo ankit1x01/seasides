@@ -275,7 +275,7 @@ const Hero = () => {
           {/* Marquee Highlights (non-CTA) */}
           <div className="relative w-full overflow-hidden mt-10" aria-label="Highlights ticker">
             <div className="whitespace-nowrap flex gap-8 will-change-transform md:animate-[marquee_24s_linear_infinite] hover:[animation-play-state:paused]">
-              {[...Array(2)].flatMap((_) => [
+              {[...Array(2)].flatMap(() => [
                 'Talks', 'Workshops', 'Villages', 'Trainings', 'CTFs', 'Networking', 'Live Demos'
               ]).map((word, idx) => (
                 <span key={idx} className="text-white/80 text-sm md:text-base">{word} •</span>

@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
-import { EVENT_DATE_LONG, EVENT_START_ISO } from '@/lib/eventConfig';
+import { EVENT_DATE_LONG } from '@/lib/eventConfig';
 
 const RevolutionHero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -134,7 +134,7 @@ const RevolutionHero = () => {
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [slides.length]);
+  }, [slides.length, nextSlide, prevSlide, goToSlide]);
 
   return (
     <>

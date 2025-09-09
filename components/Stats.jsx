@@ -1,12 +1,14 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
+import { useTheme } from '@/contexts/ThemeContext';
 
 const Stats = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [animatedStats, setAnimatedStats] = useState([0, 0, 0, 0]);
   const statsRef = useRef(null);
+  const { isDark } = useTheme();
 
-  const finalStats = [8, 100, 3, 1000];
+  const finalStats = [15, 100, 3, 1000];
   const labels = ['Villages', '% FREE Conference', 'Days of Learning', 'Expected Attendees'];
   const icons = [
     <svg key="villages" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>,
@@ -51,7 +53,7 @@ const Stats = () => {
         }, 50);
       });
     }
-  }, [isVisible]);
+  }, [isVisible, finalStats]);
 
   return (
     <>
@@ -86,90 +88,95 @@ const Stats = () => {
         }
       `}</style>
       
-      <section ref={statsRef} className="relative py-20 bg-black text-white overflow-hidden">
-        {/* Background Effects */}
+      <section ref={statsRef} className={`relative py-20 scroll-mt-24 overflow-hidden ${
+        isDark ? 'bg-gradient-to-br from-gray-900 via-black to-purple-900/20' : 'bg-gradient-to-br from-blue-50 via-white to-purple-50'
+      }`}>
+        {/* Animated background */}
         <div className="absolute inset-0">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-blue-500 rounded-full opacity-20 blur-2xl animate-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-purple-500 rounded-full opacity-20 blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-pink-500 rounded-full opacity-20 blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className={`absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 aurora-x ${
+            isDark ? 'opacity-60' : 'opacity-30'
+          }`}></div>
+          <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent aurora-y ${
+            isDark ? 'opacity-50' : 'opacity-25'
+          }`}></div>
         </div>
         
-        {/* Cyber Grid Background */}
-        <div 
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: '50px 50px'
-          }}
-        ></div>
-        
-        <div className="relative container mx-auto px-6 z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#00FF7F', fontWeight: 'bold', textShadow: '2px 2px 4px rgba(255,255,255,0.3)' }}>
-              Seasides 2026 by Numbers
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
-          </div>
-          
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
-            {animatedStats.map((stat, index) => (
-              <div 
-                key={index}
-                className={`stat-card relative group cursor-pointer`}
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div className="p-8 rounded-2xl shadow-2xl border-2 text-center relative overflow-hidden" style={{ 
-                  backgroundColor: '#000000',
-                  borderColor: ['#00FFFF', '#FF69B4', '#32CD32', '#FFD700'][index]
-                }}>
-                  {/* Floating Icon */}
-                  <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                    <div className="inline-block animate-bounce text-white" style={{ animationDelay: `${index * 0.1}s` }}>
-                      {icons[index]}
-                    </div>
+        <div className="relative container mx-auto px-6">
+          <div className="max-w-7xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-16">
+              <div className="inline-block mb-6">
+                <span className={`text-sm font-bold tracking-wider uppercase px-4 py-2 rounded-full border ${
+                  isDark 
+                    ? 'text-blue-400 border-blue-400/30 bg-blue-400/10' 
+                    : 'text-blue-600 border-blue-600/30 bg-blue-600/10'
+                }`}>
+                  CONFERENCE STATS
+                </span>
+              </div>
+
+              <h2 className={`text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6 ${
+                isDark ? 'text-white soft-glow' : 'text-gray-900'
+              }`}>
+                By the{' '}
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  Numbers
+                </span>
+              </h2>
+
+              <p className={`text-xl leading-relaxed max-w-3xl mx-auto ${
+                isDark ? 'text-gray-300' : 'text-gray-600'
+              }`}>
+                Join India&apos;s premier FREE cybersecurity conference and be part of something extraordinary.
+              </p>
+            </div>
+
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+              {animatedStats.map((stat, index) => (
+                <div 
+                  key={index}
+                  className={`group relative overflow-hidden rounded-2xl p-8 backdrop-blur-sm text-center transition-all duration-300 ${
+                    isDark 
+                      ? 'bg-white/5 border border-white/10 hover:bg-white/10' 
+                      : 'bg-white/80 border border-gray-200 shadow-xl hover:shadow-2xl'
+                  }`}
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  {/* Icon */}
+                  <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-r ${
+                    ['from-blue-500 to-cyan-600', 'from-purple-500 to-pink-600', 'from-green-500 to-emerald-600', 'from-orange-500 to-red-600'][index]
+                  } flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 ${
+                    isDark ? 'shadow-lg shadow-blue-500/25' : 'shadow-xl shadow-blue-500/25'
+                  }`}>
+                    {icons[index]}
                   </div>
-                  
+
                   {/* Animated Number */}
-                  <div className="number-animation">
-                    <p className="text-4xl lg:text-6xl font-bold leading-none mb-2" style={{
-                      color: ['#00FFFF', '#FF69B4', '#32CD32', '#FFD700'][index],
-                      fontWeight: 'bold',
-                      textShadow: '2px 2px 4px rgba(255,255,255,0.3)'
-                    }}>
-                      {stat}+
+                  <div className="number-animation mb-4">
+                    <p className={`text-4xl lg:text-6xl font-extrabold leading-none ${
+                      isDark ? 'text-white' : 'text-gray-900'
+                    }`}>
+                      {stat}
+                      <span className={`text-2xl lg:text-3xl ${
+                        isDark ? 'text-gray-400' : 'text-gray-600'
+                      }`}>+</span>
                     </p>
                   </div>
                   
                   {/* Label */}
-                  <p className="text-sm sm:text-base font-medium" style={{
-                    color: ['#87CEEB', '#DDA0DD', '#98FB98', '#F0E68C'][index],
-                    fontWeight: 'bold',
-                    textShadow: '1px 1px 2px rgba(0,0,0,0.8)'
-                  }}>
+                  <p className={`text-sm sm:text-base font-semibold ${
+                    isDark ? 'text-gray-300' : 'text-gray-600'
+                  }`}>
                     {labels[index]}
                   </p>
-                  
-                  {/* Hover Effect Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
-                  {/* Glowing Border Effect */}
-                  <div className="absolute inset-0 rounded-2xl border-2 border-white border-opacity-0 group-hover:border-opacity-50 transition-all duration-300"></div>
+
+                  {/* Gradient overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${
+                    ['from-blue-500 to-cyan-600', 'from-purple-500 to-pink-600', 'from-green-500 to-emerald-600', 'from-orange-500 to-red-600'][index]
+                  } opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
                 </div>
-              </div>
-            ))}
-          </div>
-          
-          {/* Bottom Decorative Element */}
-          <div className="text-center mt-16">
-            <div className="inline-flex items-center gap-3 text-lg hover:text-white transition-colors cursor-pointer">
-              <svg className="w-6 h-6 animate-bounce text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-              <span style={{ color: '#40E0D0', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
-                Join India&apos;s premier FREE cybersecurity conference
-              </span>
-              <svg className="w-6 h-6 animate-bounce text-purple-400" style={{ animationDelay: '0.5s' }} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+              ))}
             </div>
           </div>
         </div>

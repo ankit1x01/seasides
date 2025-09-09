@@ -1,9 +1,11 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { useTheme } from '@/contexts/ThemeContext';
 
 const SocialIntegration = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [, setHoveredSocial] = useState(null);
+  const { isDark } = useTheme();
 
   useEffect(() => {
     setIsVisible(true);
@@ -86,113 +88,105 @@ const SocialIntegration = () => {
   };
 
   return (
-    <div className="py-16 bg-black">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#00FF00', fontSize: '3rem', fontWeight: 'bold', textShadow: '2px 2px 4px rgba(255,255,255,0.3)' }}>
-            Stay Connected
-          </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: '#00FFFF', fontSize: '1.5rem', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(255,255,255,0.3)' }}>
-            Follow us on social media for real-time updates, exclusive content, and behind-the-scenes glimpses
-          </p>
-        </div>
+    <section className={`relative py-20 scroll-mt-24 overflow-hidden ${
+      isDark ? 'bg-gradient-to-br from-black via-gray-900 to-indigo-900/20' : 'bg-gradient-to-br from-indigo-50 via-white to-purple-50'
+    }`}>
+      {/* Animated background */}
+      <div className="absolute inset-0">
+        <div className={`absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 aurora-x ${
+          isDark ? 'opacity-50' : 'opacity-30'
+        }`}></div>
+        <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent aurora-y ${
+          isDark ? 'opacity-40' : 'opacity-20'
+        }`}></div>
+      </div>
 
-        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {socialLinks.map((social, index) => (
-            <div
-              key={index}
-              className={`group relative bg-gray-900 rounded-2xl p-6 border-2 border-cyan-400 cursor-pointer transition-all duration-300 hover:scale-105 hover:border-yellow-400 ${
-                isVisible ? 'animate-slide-up' : ''
-              }`}
-              style={{ animationDelay: `${index * 0.1}s`, backgroundColor: '#000000' }}
-              onMouseEnter={() => setHoveredSocial(index)}
-              onMouseLeave={() => setHoveredSocial(null)}
-              onClick={() => window.open(social.url, '_blank')}
-            >
-              {/* Icon */}
-              <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${social.color} flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110`}>
-                {getIcon(social.icon)}
-              </div>
-
-              {/* Platform Name */}
-              <h3 className="font-semibold text-lg mb-2 text-center" style={{ color: '#FFFF00', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)', fontSize: '1.3rem' }}>
-                {social.name}
-              </h3>
-
-              {/* Followers Count */}
-              <div className="text-center mb-3">
-                <span className="text-sm" style={{ color: '#00FF00', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)', fontSize: '1rem' }}>{social.followers} followers</span>
-              </div>
-
-              {/* Action Text */}
-              <p className="text-sm text-center group-hover:text-white transition-colors" style={{ color: '#00FFFF', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)', fontSize: '0.9rem' }}>
-                {social.action}
-              </p>
-
-              {/* Hover Effect */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${social.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`}></div>
-
-              {/* Live Indicator for Active Platforms */}
-              {index < 3 && (
-                <div className="absolute top-3 right-3">
-                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-
-        {/* Community Engagement */}
-        <div className="text-center mt-12">
-          <div className="rounded-2xl p-8 max-w-4xl mx-auto border-2 border-purple-400" style={{ backgroundColor: '#000000' }}>
-            <h3 className="text-2xl font-bold mb-6" style={{ color: '#FF69B4', fontSize: '2.5rem', fontWeight: 'bold', textShadow: '2px 2px 4px rgba(255,255,255,0.3)' }}>Join the Community</h3>
-            
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2v-6a2 2 0 012-2h2m2-4h4a2 2 0 014 2v4a2 2 0 01-4 2H9a2 2 0 01-4-2V6a2 2 0 014-2z" /></svg>
-                </div>
-                <h4 className="font-semibold mb-2" style={{ color: '#87CEEB', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)', fontSize: '1.2rem' }}>Discord Community</h4>
-                <p className="text-sm" style={{ color: '#98FB98', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Join our Discord server for real-time discussions, Q&A, and networking</p>
-                <button className="mt-3 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                  Coming Soon
-                </button>
-              </div>
-              
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2M7 4h10l1.485 4.456c.071.213.071.445 0 .659L17 14H7l-1.485-4.885a.995.995 0 010-.659L7 4zm6 14a1 1 0 100-2 1 1 0 000 2z" /></svg>
-                </div>
-                <h4 className="font-semibold mb-2" style={{ color: '#FFB6C1', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)', fontSize: '1.2rem' }}>Share Experience</h4>
-                <p className="text-sm" style={{ color: '#AFEEEE', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Tag us in your photos and posts using our official hashtag</p>
-                <div className="mt-3 bg-green-600 text-white px-4 py-2 rounded-lg inline-block">
-                  #Seasides2026
-                </div>
-              </div>
+      <div className="relative container mx-auto px-6">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="inline-block mb-6">
+              <span className={`text-sm font-bold tracking-wider uppercase px-4 py-2 rounded-full border ${
+                isDark 
+                  ? 'text-purple-400 border-purple-400/30 bg-purple-400/10' 
+                  : 'text-purple-600 border-purple-600/30 bg-purple-600/10'
+              }`}>
+                STAY CONNECTED
+              </span>
             </div>
 
-            {/* Community Stats */}
-            <div className="border-t border-white border-opacity-20 pt-6">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div>
-                  <div className="text-2xl font-bold" style={{ color: '#40E0D0', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(255,255,255,0.3)' }}>5.2K+</div>
-                  <div className="text-sm" style={{ color: '#98FB98', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Community Members</div>
+            <h2 className={`text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6 ${
+              isDark ? 'text-white soft-glow' : 'text-gray-900'
+            }`}>
+              Follow Our{' '}
+              <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent">
+                Journey
+              </span>
+            </h2>
+
+            <p className={`text-xl leading-relaxed max-w-3xl mx-auto ${
+              isDark ? 'text-gray-300' : 'text-gray-600'
+            }`}>
+              Stay updated with real-time updates, exclusive content, and behind-the-scenes glimpses of the conference.
+            </p>
+          </div>
+
+          {/* Social Cards */}
+          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {socialLinks.map((social, index) => (
+              <div
+                key={index}
+                className={`group relative overflow-hidden rounded-2xl p-6 backdrop-blur-sm cursor-pointer transition-all duration-300 hover:scale-105 ${
+                  isDark 
+                    ? 'bg-white/5 border border-white/10 hover:bg-white/10' 
+                    : 'bg-white/80 border border-gray-200 shadow-xl hover:shadow-2xl'
+                } ${isVisible ? 'animate-slide-up' : ''}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+                onMouseEnter={() => setHoveredSocial(index)}
+                onMouseLeave={() => setHoveredSocial(null)}
+                onClick={() => window.open(social.url, '_blank')}
+              >
+                {/* Icon */}
+                <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r ${social.color} flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110 ${
+                  isDark ? 'shadow-lg shadow-purple-500/25' : 'shadow-xl shadow-purple-500/25'
+                }`}>
+                  {getIcon(social.icon)}
                 </div>
-                <div>
-                  <div className="text-2xl font-bold" style={{ color: '#FFB6C1', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(255,255,255,0.3)' }}>12K+</div>
-                  <div className="text-sm" style={{ color: '#DDA0DD', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Social Followers</div>
+
+                {/* Platform Name */}
+                <h3 className={`font-bold text-lg mb-2 text-center ${
+                  isDark ? 'text-white' : 'text-gray-900'
+                }`}>
+                  {social.name}
+                </h3>
+
+                {/* Followers Count */}
+                <div className="text-center mb-3">
+                  <span className={`text-sm font-semibold ${
+                    isDark ? 'text-purple-400' : 'text-purple-600'
+                  }`}>
+                    {social.followers} followers
+                  </span>
                 </div>
-                <div>
-                  <div className="text-2xl font-bold" style={{ color: '#00FF7F', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(255,255,255,0.3)' }}>500+</div>
-                  <div className="text-sm" style={{ color: '#F0E68C', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Daily Discussions</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold" style={{ color: '#FFD700', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>24/7</div>
-                  <div className="text-sm" style={{ color: '#87CEEB', fontWeight: 'bold', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Community Support</div>
-                </div>
+
+                {/* Action Text */}
+                <p className={`text-sm text-center ${
+                  isDark ? 'text-gray-300' : 'text-gray-600'
+                }`}>
+                  {social.action}
+                </p>
+
+                {/* Gradient overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${social.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+
+                {/* Live Indicator for Active Platforms */}
+                {index < 3 && (
+                  <div className="absolute top-3 right-3">
+                    <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                  </div>
+                )}
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -212,7 +206,7 @@ const SocialIntegration = () => {
           animation: slide-up 0.6s ease-out forwards;
         }
       `}</style>
-    </div>
+    </section>
   );
 };
 

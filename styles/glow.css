@@ -1,0 +1,66 @@
+/* Aurora/Nebula gradient animations */
+@keyframes aurora-x {
+  0%, 100% { transform: translateX(0%); }
+  25% { transform: translateX(15%); }
+  50% { transform: translateX(-10%); }
+  75% { transform: translateX(5%); }
+}
+
+@keyframes aurora-y {
+  0%, 100% { transform: translateY(0%); }
+  33% { transform: translateY(-8%); }
+  66% { transform: translateY(12%); }
+}
+
+@keyframes soft-glow {
+  0%, 100% { 
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.4));
+    opacity: 0.8;
+  }
+  50% { 
+    filter: drop-shadow(0 0 40px rgba(147, 51, 234, 0.6));
+    opacity: 1;
+  }
+}
+
+@keyframes tilt {
+  0%, 100% { transform: perspective(1000px) rotateX(0deg) rotateY(0deg); }
+  33% { transform: perspective(1000px) rotateX(1deg) rotateY(-1deg); }
+  66% { transform: perspective(1000px) rotateX(-1deg) rotateY(1deg); }
+}
+
+/* Utility classes */
+.aurora-x {
+  animation: aurora-x 15s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.aurora-y {
+  animation: aurora-y 12s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.soft-glow {
+  animation: soft-glow 4s ease-in-out infinite;
+}
+
+.tilt {
+  animation: tilt 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .aurora-x,
+  .aurora-y,
+  .soft-glow,
+  .tilt {
+    animation: none;
+  }
+}
+
+/* Transform GPU optimization */
+.transform-gpu {
+  transform: translateZ(0);
+  will-change: transform;
+}

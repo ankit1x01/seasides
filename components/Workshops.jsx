@@ -2,9 +2,7 @@
 import { useState, useRef, useEffect } from 'react';
 
 const Workshops = () => {
-  const [isVisible, setIsVisible] = useState(false);
   const [selectedWorkshop, setSelectedWorkshop] = useState(null);
-  const [hoveredCard, setHoveredCard] = useState(null);
   const workshopsRef = useRef(null);
 
   const workshops = [

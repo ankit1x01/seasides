@@ -2,7 +2,6 @@
 import { useState, useRef, useEffect } from 'react';
 
 const Villages = () => {
-  const [isVisible, setIsVisible] = useState(false);
   const [hoveredVillage, setHoveredVillage] = useState(null);
   const villagesRef = useRef(null);
 

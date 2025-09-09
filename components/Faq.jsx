@@ -233,34 +233,6 @@ const Faq = () => {
               </div>
             ))}
           </div>
-          
-          {/* Bottom CTA */}
-          <div className="text-center mt-16">
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-8 text-white">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                Still have questions?
-              </h3>
-              <p className="text-lg text-blue-100 mb-6">
-                We&apos;re here to help! Reach out to us through our social channels or contact form.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <a 
-                  href="#contact" 
-                  className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full px-6 py-3 text-sm font-medium transition-all duration-300 hover:scale-105 flex items-center gap-2"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                  Contact Us
-                </a>
-                <a 
-                  href="#social" 
-                  className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full px-6 py-3 text-sm font-medium transition-all duration-300 hover:scale-105 flex items-center gap-2"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2v-6a2 2 0 012-2h2m2-4h4a2 2 0 014 2v4a2 2 0 01-4 2H9a2 2 0 01-4-2V6a2 2 0 014-2z" /></svg>
-                  Join Community
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
     </>

@@ -419,7 +419,6 @@ export default LoadingScreen;
 /* ---------- Wave component ---------- */
 const Wave = ({
   speed,
-  amplitude,
   opacity = 0.6,
   color,
   height = '60%',

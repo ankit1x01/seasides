@@ -1,9 +1,18 @@
 'use client';
-import Link from 'next/link';
+import React from 'react';
 import { useEffect, useState } from 'react';
 
 const sections = [
-  // { id: 'speakers', label: 'Speakers' }, // placeholder, section not present on home yet
+  { id: 'overview', label: 'Overview' },
+  { id: 'countdown', label: 'Countdown' },
+  { id: 'stats', label: 'Stats' },
+  { id: 'about', label: 'About' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'atmosphere', label: 'Atmosphere' },
+  { id: 'nostalgia', label: 'Gallery' },
+  { id: 'faq', label: 'FAQ' },
+  { id: 'social', label: 'Social' },
+  { id: 'contact', label: 'Contact' }
 ];
 
 export default function StickySubnav() {

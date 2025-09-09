@@ -7,7 +7,6 @@ import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [, setHoveredItem] = useState(null);
   const { isDark } = useTheme();
 
   return (
@@ -96,6 +95,19 @@ const Navbar = () => {
               </span>
             </Link>
 
+            <a href="/#reach-us">
+              <span className={`
+                font-medium cursor-pointer transition-all duration-300 hover:scale-105 relative group
+                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
+              `}>
+                Venue
+                <span className={`
+                  absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300
+                  ${isDark ? 'bg-cyan-400' : 'bg-blue-600'}
+                `}></span>
+              </span>
+            </a>
+
             {/* Theme Toggle */}
             <ThemeToggle />
 
@@ -156,6 +168,14 @@ const Navbar = () => {
                 Sponsors
               </span>
             </Link>
+            <a href="/#reach-us" onClick={() => setIsOpen(false)}>
+              <span className={`
+                block font-medium cursor-pointer transition-colors duration-300 py-2
+                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
+              `}>
+                Venue
+              </span>
+            </a>
             <div className="pt-2">
               <ThemeToggle />
             </div>

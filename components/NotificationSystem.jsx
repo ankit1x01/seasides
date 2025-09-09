@@ -20,7 +20,7 @@ const NotificationSystem = () => {
     }, 2000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [welcomeMessages]);
 
   const addNotification = (message, type = 'info') => {
     const id = Date.now();
