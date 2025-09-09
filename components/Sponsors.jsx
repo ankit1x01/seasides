@@ -236,7 +236,6 @@ const Sponsors = () => {
               <div className="inline-flex items-center gap-3 text-4xl mb-4">
                 <span className="animate-bounce">🤝</span>
                 <span className="animate-pulse">⚡</span>
-                <span className="animate-bounce" style={{ animationDelay: '0.5s' }}>🚀</span>
               </div>
               <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: '#FF0000 !important', fontSize: '3rem !important', fontWeight: 'bold !important', textShadow: '2px 2px 4px black !important' }}>
                 Partner with SEASIDES 2026

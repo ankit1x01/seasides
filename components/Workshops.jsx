@@ -276,7 +276,6 @@ const Workshops = () => {
               <div className="inline-flex items-center gap-3 text-4xl mb-4">
                 <span className="animate-bounce">🎯</span>
                 <span className="animate-pulse">⚡</span>
-                <span className="animate-bounce" style={{ animationDelay: '0.5s' }}>🚀</span>
               </div>
               <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
                 Level Up Your Cybersecurity Skills

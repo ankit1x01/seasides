@@ -281,7 +281,7 @@ const ComingSoon = () => {
           <FloatingElement delay={0.9}>
             <div className="glass rounded-3xl p-10 mb-12 transform hover:scale-102 transition-all duration-500">
               <h3 className="text-2xl font-semibold mb-8 text-white">
-                🚀 Launching In:
+                Launching In:
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 {[

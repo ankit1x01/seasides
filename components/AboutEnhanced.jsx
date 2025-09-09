@@ -37,7 +37,6 @@ const About = () => {
               </div>
               <div className="text-center">
                 <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🚀</span>
                 </div>
                 <h4 className="font-semibold text-lg mb-2">Hands-on Learning</h4>
                 <p style={{ color: '#dc2626' }}>Participate in workshops and villages for practical experience</p>

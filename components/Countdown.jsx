@@ -42,7 +42,7 @@ const Countdown = () => {
           <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${
             isDark ? 'text-white' : 'text-gray-900'
           }`}>
-            🚀 Event Countdown
+            Event Countdown
           </h2>
           <p className={`text-lg md:text-xl ${
             isDark ? 'text-white/80' : 'text-gray-600'

@@ -129,39 +129,8 @@ const Footer = () => {
                 India&apos;s premier cybersecurity conference bringing together experts, enthusiasts, and innovators 
                 to explore the future of digital security in the beautiful coastal setting of Goa.
               </p>
-              <div className={`flex items-center gap-2 text-sm ${
-                isDark ? 'text-cyan-300' : 'text-blue-600'
-              }`}>
-                <svg className="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span>IST: {currentTime}</span>
-              </div>
             </div>
 
-            {/* Quick Links */}
-            <div>
-              <h4 className={`text-lg font-semibold mb-4 ${
-                isDark ? 'text-white' : 'text-gray-900'
-              }`}>
-                Quick Links
-              </h4>
-              <ul className="space-y-3">
-                {quickLinks.map((link, index) => (
-                  <li key={index}>
-                    <a 
-                      href={link.href}
-                      className={`footer-link flex items-center gap-2 hover:text-cyan-400 transition-all duration-300 text-sm ${
-                        isDark ? 'text-white' : 'text-gray-700'
-                      }`}
-                    >
-                      <span className={`${isDark ? 'text-cyan-400' : 'text-blue-600'}`}>{link.icon}</span>
-                      {link.text}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
 
             {/* Event Info */}
             <div>
@@ -244,24 +213,9 @@ const Footer = () => {
                     Seasides Social Welfare Foundation
                   </span>
                 </p>
-                <p className={`text-xs ${
-                  isDark ? 'text-white' : 'text-gray-600'
-                }`}>
-                  All rights reserved. Built with 💙 for the cybersecurity community.
-                </p>
               </div>
             </div>
 
-            {/* Tech Credits */}
-            <div className="mt-6 text-center">
-              <div className={`inline-flex items-center gap-2 text-xs hover:text-cyan-400 transition-colors cursor-pointer ${
-                isDark ? 'text-white' : 'text-gray-600'
-              }`}>
-                <FaShieldAlt className="animate-pulse" />
-                <span>Securing the Digital Future</span>
-                <FaRocket className="animate-bounce" />
-              </div>
-            </div>
           </div>
         </div>
       </footer>

@@ -6,7 +6,7 @@ const NotificationSystem = () => {
 
   const welcomeMessages = [
     "🎉 Welcome to Seasides 2026!",
-    "🚀 Ready for an amazing cyber journey?",
+    "Ready for an amazing cyber journey?",
     "💡 Discover cutting-edge security insights!",
     "🤝 Connect with the community!",
     "⚡ Power up your security skills!"

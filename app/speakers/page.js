@@ -65,7 +65,7 @@ const SpeakersPage = () => {
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold text-lg text-green-600 mb-3">🚀 Emerging Technologies</h3>
+              <h3 className="font-semibold text-lg text-green-600 mb-3">Emerging Technologies</h3>
               <ul className="text-gray-600 space-y-2">
                 <li>• AI/ML Security</li>
                 <li>• Cloud Security</li>

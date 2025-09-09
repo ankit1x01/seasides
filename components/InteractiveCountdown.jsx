@@ -81,7 +81,7 @@ const InteractiveCountdown = () => {
         ) : (
           <>
             <h3 className="text-xl font-semibold mb-8 text-white text-center">
-              🚀 Conference Starts In:
+              Conference Starts In:
             </h3>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
