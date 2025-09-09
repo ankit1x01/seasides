@@ -41,7 +41,7 @@ const Faq = () => {
     },
     {
       question: 'Is food provided during the conference?',
-      answer: 'Yes! All meals during the conference days are included - breakfast, lunch, dinner, and refreshment breaks. We\'ll accommodate dietary restrictions, so please mention them during registration.',
+      answer: 'We aim to provide meals during the conference days — including lunch, tea/snacks and refreshment breaks. While we\'ll do our best to accommodate dietary preferences and restrictions, please note that we may not be able to support all requirements. In such cases, we encourage you to explore nearby eateries or order online through services like Swiggy or Zomato.',
       icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" /></svg>,
       color: 'from-pink-500 to-rose-500'
     },

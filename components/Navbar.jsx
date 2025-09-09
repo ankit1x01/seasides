@@ -99,16 +99,6 @@ const Navbar = () => {
             {/* Theme Toggle */}
             <ThemeToggle />
 
-            {/* CTA Button */}
-            <button className={`
-              px-6 py-2 rounded-full font-medium transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl
-              ${isDark 
-                ? 'bg-gradient-to-r from-cyan-500 to-purple-600 text-black cyber-btn' 
-                : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700'
-              }
-            `}>
-              Coming Soon
-            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -166,15 +156,6 @@ const Navbar = () => {
                 Sponsors
               </span>
             </Link>
-            <button className={`
-              px-6 py-2 rounded-full font-medium text-left transition-all duration-300
-              ${isDark 
-                ? 'bg-gradient-to-r from-cyan-500 to-purple-600 text-black' 
-                : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
-              }
-            `}>
-              Coming Soon
-            </button>
             <div className="pt-2">
               <ThemeToggle />
             </div>

@@ -3,10 +3,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const sections = [
-  { id: 'overview', label: 'Overview' },
   // { id: 'speakers', label: 'Speakers' }, // placeholder, section not present on home yet
-  { id: 'sponsors', label: 'Sponsors' },
-  { id: 'venue', label: 'Venue' },
 ];
 
 export default function StickySubnav() {

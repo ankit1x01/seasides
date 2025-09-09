@@ -56,13 +56,13 @@ const HeroSlider = () => {
   useEffect(() => {
     const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (isPaused || document.hidden || prefersReduced) return;
-    // Slower interval on mobile to reduce CPU usage
-    const interval = isLowPowerMode ? 15000 : 10000;
+    // 7 seconds per slide - comfortable reading time
+    const interval = 7000;
     const id = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, interval);
     return () => clearInterval(id);
-  }, [isPaused, slides.length, isLowPowerMode]);
+  }, [isPaused, slides.length]);
 
   useEffect(() => {
     const onVisibility = () => {
@@ -514,7 +514,7 @@ const HeroSlider = () => {
         <div className="mt-4 w-full bg-white/20 rounded-full h-1 overflow-hidden">
           <div
             key={currentSlide}
-            className={`bg-gradient-to-r from-cyan-400 to-blue-500 h-1 rounded-full ${isPaused ? '' : 'animate-[progress_10s_linear_1]'}`}
+            className={`bg-gradient-to-r from-cyan-400 to-blue-500 h-1 rounded-full ${isPaused ? '' : 'animate-[progress_7s_linear_1]'}`}
             style={{ width: '100%' }}
           />
         </div>

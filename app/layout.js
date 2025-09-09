@@ -1,7 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import LoadingScreen from "@/components/LoadingScreen";
-import CustomCursor from "@/components/CustomCursor";
 import WebVitals from "@/components/WebVitals";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 
@@ -122,11 +121,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased cursor-none`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
           <LoadingScreen />
-          <CustomCursor />
           <WebVitals />
           {children}
         </ThemeProvider>

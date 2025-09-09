@@ -5,19 +5,14 @@ import StickySubnav from "@/components/StickySubnav";
 
 // Critical components loaded immediately for LCP
 import RevolutionHero from "@/components/RevolutionHero";
+import Countdown from "@/components/Countdown";
 
 // Non-critical components lazy loaded with optimized loading states
 const Stats = dynamic(() => import("@/components/Stats"), {
   loading: () => <div className="h-64 bg-gradient-to-r from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-700 animate-pulse rounded-lg mx-6" />
 });
 
-const Sponsors = dynamic(() => import("@/components/Sponsors"), {
-  loading: () => <div className="h-80 bg-gradient-to-r from-white to-gray-100 dark:from-gray-900 dark:to-gray-800 animate-pulse rounded-lg mx-6" />
-});
 
-const Venue = dynamic(() => import("@/components/Venue"), {
-  loading: () => <div className="h-96 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 animate-pulse rounded-lg mx-6" />
-});
 
 const SocialIntegration = dynamic(() => import("@/components/SocialIntegration"), {
   loading: () => <div className="h-64 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900 dark:to-indigo-900 animate-pulse rounded-lg mx-6" />
@@ -36,10 +31,9 @@ export default function Home() {
     <main className="relative">
       <Navbar />
   <div id="overview" className="scroll-mt-24"><RevolutionHero /></div>
+  <div id="countdown" className="scroll-mt-24"><Countdown /></div>
   <StickySubnav />
   <div id="stats" className="scroll-mt-24"><Stats /></div>
-  <div id="venue" className="scroll-mt-24"><Venue /></div>
-  <div id="sponsors" className="scroll-mt-24"><Sponsors /></div>
   <div id="faq" className="scroll-mt-24"><Faq /></div>
   <div id="social" className="scroll-mt-24"><SocialIntegration /></div>
   <div id="contact" className="scroll-mt-24"><Contact /></div>

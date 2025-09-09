@@ -58,10 +58,6 @@ const Footer = () => {
           50% { transform: translateY(-5px); }
         }
         
-        @keyframes cyber-scan {
-          0% { left: -100%; }
-          100% { left: 100%; }
-        }
         
         .social-icon {
           transition: all 0.3s ease;
@@ -73,14 +69,6 @@ const Footer = () => {
           animation: float-footer 2s ease-in-out infinite;
         }
         
-        .scan-line {
-          position: absolute;
-          top: 0;
-          width: 2px;
-          height: 100%;
-          background: linear-gradient(to bottom, transparent, #00ffff, transparent);
-          animation: cyber-scan 3s linear infinite;
-        }
         
         .footer-link:hover {
           transform: translateX(5px);
@@ -112,8 +100,6 @@ const Footer = () => {
           }}
         ></div>
 
-        {/* Scanning Line */}
-        <div className="scan-line"></div>
 
         <div className="relative container mx-auto px-6 py-12 z-10">
           {/* Main Footer Content */}
