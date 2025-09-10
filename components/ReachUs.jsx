@@ -18,7 +18,7 @@ const ReachUs = () => {
     try {
       await navigator.clipboard.writeText(VENUE.addressEN);
       // You could add a toast notification here
-    } catch (err) {
+    } catch {
       // Fallback for older browsers
       const textArea = document.createElement('textarea');
       textArea.value = VENUE.addressEN;

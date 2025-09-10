@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
 import { EVENT_DATE_LONG } from '@/lib/eventConfig';
 
@@ -96,23 +96,23 @@ const RevolutionHero = () => {
     };
   }, [isAutoPlay, isHovered, slides.length]);
 
-  const goToSlide = (index) => {
+  const goToSlide = useCallback((index) => {
     setCurrentSlide(index);
     setIsAutoPlay(false);
     setTimeout(() => setIsAutoPlay(true), 30000);
-  };
+  }, []);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
     setIsAutoPlay(false);
     setTimeout(() => setIsAutoPlay(true), 30000);
-  };
+  }, [slides.length]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
     setIsAutoPlay(false);
     setTimeout(() => setIsAutoPlay(true), 30000);
-  };
+  }, [slides.length]);
 
   const currentSlideData = slides[currentSlide];
 
@@ -1039,8 +1039,8 @@ const RevolutionHero = () => {
                     </p>
                     
                     {/* Floating quote decoration */}
-                    <div className="absolute -top-4 -left-4 text-6xl text-cyan-400/30 font-serif" style={{ animation: 'float 6s ease-in-out infinite' }}>"</div>
-                    <div className="absolute -bottom-4 -right-4 text-6xl text-cyan-400/30 font-serif rotate-180" style={{ animation: 'float 6s ease-in-out infinite 3s' }}>"</div>
+                    <div className="absolute -top-4 -left-4 text-6xl text-cyan-400/30 font-serif" style={{ animation: 'float 6s ease-in-out infinite' }}>&ldquo;</div>
+                    <div className="absolute -bottom-4 -right-4 text-6xl text-cyan-400/30 font-serif rotate-180" style={{ animation: 'float 6s ease-in-out infinite 3s' }}>&rdquo;</div>
                   </div>
 
 

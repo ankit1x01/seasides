@@ -4,15 +4,15 @@ import { useState, useEffect } from 'react';
 const NotificationSystem = () => {
   const [notifications, setNotifications] = useState([]);
 
-  const welcomeMessages = [
-    "🎉 Welcome to Seasides 2026!",
-    "Ready for an amazing cyber journey?",
-    "💡 Discover cutting-edge security insights!",
-    "🤝 Connect with the community!",
-    "⚡ Power up your security skills!"
-  ];
-
   useEffect(() => {
+    const welcomeMessages = [
+      "🎉 Welcome to Seasides 2026!",
+      "Ready for an amazing cyber journey?",
+      "💡 Discover cutting-edge security insights!",
+      "🤝 Connect with the community!",
+      "⚡ Power up your security skills!"
+    ];
+    
     // Show welcome notification after 2 seconds
     const timer = setTimeout(() => {
       const randomMessage = welcomeMessages[Math.floor(Math.random() * welcomeMessages.length)];
@@ -20,7 +20,7 @@ const NotificationSystem = () => {
     }, 2000);
 
     return () => clearTimeout(timer);
-  }, [welcomeMessages]);
+  }, []);
 
   const addNotification = (message, type = 'info') => {
     const id = Date.now();

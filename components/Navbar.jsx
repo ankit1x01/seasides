@@ -95,7 +95,7 @@ const Navbar = () => {
               </span>
             </Link>
 
-            <a href="/#reach-us">
+            <Link href="/#reach-us">
               <span className={`
                 font-medium cursor-pointer transition-all duration-300 hover:scale-105 relative group
                 ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
@@ -106,7 +106,7 @@ const Navbar = () => {
                   ${isDark ? 'bg-cyan-400' : 'bg-blue-600'}
                 `}></span>
               </span>
-            </a>
+            </Link>
 
             {/* Theme Toggle */}
             <ThemeToggle />
@@ -168,14 +168,14 @@ const Navbar = () => {
                 Sponsors
               </span>
             </Link>
-            <a href="/#reach-us" onClick={() => setIsOpen(false)}>
+            <Link href="/#reach-us">
               <span className={`
                 block font-medium cursor-pointer transition-colors duration-300 py-2
                 ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
-              `}>
+              `} onClick={() => setIsOpen(false)}>
                 Venue
               </span>
-            </a>
+            </Link>
             <div className="pt-2">
               <ThemeToggle />
             </div>

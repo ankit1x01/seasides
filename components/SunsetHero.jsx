@@ -107,7 +107,7 @@ const SunsetHero = () => {
           {/* Subtitle with curved underline */}
           <div className="fade-in-up-delayed">
             <h2 className="inter-font text-2xl md:text-3xl lg:text-4xl font-medium text-orange-100 curved-underline soft-shadow mb-8">
-              India's Most Loved Conference
+              India&apos;s Most Loved Conference
             </h2>
           </div>
         </div>
