@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // Critical components loaded immediately for LCP
-import RevolutionHero from "@/components/RevolutionHero";
+import RevolutionHero from "@/components/home/Slider";
 import Countdown from "@/components/Countdown";
 
 // Non-critical components lazy loaded with optimized loading states

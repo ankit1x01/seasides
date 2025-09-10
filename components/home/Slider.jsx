@@ -750,52 +750,7 @@ const RevolutionHero = () => {
               </>
             )}
             
-            {/* Workshop Theme Effects */}
-            {currentSlideData.theme === 'workshop' && (
-              <>
-                {/* Floating Tools */}
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <div
-                    key={`tool-${i}`}
-                    className="absolute text-white/40"
-                    style={{
-                      left: `${15 + i * 18}%`,
-                      top: `${25 + i * 10}%`,
-                      animation: `toolSpin ${4 + i}s ease-in-out infinite ${i * 0.4}s`
-                    }}
-                  >
-                    {['🔧', '⚙️', '🔨', '⚡', '💡'][i]}
-                  </div>
-                ))}
-                
-                {/* Sparkle Effects */}
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <div
-                    key={`sparkle-${i}`}
-                    className="absolute w-2 h-2 bg-yellow-300 rounded-full"
-                    style={{
-                      left: `${Math.random() * 90}%`,
-                      top: `${Math.random() * 90}%`,
-                      animation: `sparkle 3s ease-in-out infinite ${i * 0.5}s`
-                    }}
-                  />
-                ))}
-                
-                {/* Building Blocks Animation */}
-                {Array.from({ length: 4 }).map((_, i) => (
-                  <div
-                    key={`block-${i}`}
-                    className="absolute w-4 h-4 bg-purple-400/30 rounded"
-                    style={{
-                      left: `${70 + i * 8}%`,
-                      top: `${60 - i * 10}%`,
-                      animation: `buildingBlocks 2s ease-in-out infinite ${i * 0.3}s`
-                    }}
-                  />
-                ))}
-              </>
-            )}
-            
+          
             {/* Community Village Theme Effects */}
             {currentSlideData.theme === 'community' && (
               <>
@@ -831,67 +786,7 @@ const RevolutionHero = () => {
               </>
             )}
             
-            {/* Beach Party Theme Effects */}
-            {currentSlideData.theme === 'beach' && (
-              <>
-                {/* Confetti */}
-                {Array.from({ length: 12 }).map((_, i) => (
-                  <div
-                    key={`confetti-${i}`}
-                    className="absolute w-2 h-4 rounded"
-                    style={{
-                      left: `${Math.random() * 100}%`,
-                      top: '0%',
-                      background: ['#FF6B6B', '#FFD93D', '#6BCF7F', '#4D9DE0', '#F093FB'][i % 5],
-                      animation: `confetti ${3 + Math.random() * 2}s linear infinite ${i * 0.2}s`
-                    }}
-                  />
-                ))}
-                
-                {/* Party Lights */}
-                {Array.from({ length: 6 }).map((_, i) => (
-                  <div
-                    key={`light-${i}`}
-                    className="absolute w-8 h-8 rounded-full opacity-60"
-                    style={{
-                      left: `${15 + i * 15}%`,
-                      top: '10%',
-                      animation: `partyLights 2s ease-in-out infinite ${i * 0.3}s`
-                    }}
-                  />
-                ))}
-                
-                {/* Beach Wave Particles */}
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <div
-                    key={`beach-wave-${i}`}
-                    className="absolute text-cyan-300 text-2xl"
-                    style={{
-                      left: `${10 + i * 12}%`,
-                      top: `${60 + Math.sin(i) * 20}%`,
-                      animation: `beachWave ${4 + i * 0.5}s ease-in-out infinite ${i * 0.2}s`
-                    }}
-                  >
-                    🌊
-                  </div>
-                ))}
-                
-                {/* Fireworks */}
-                {Array.from({ length: 4 }).map((_, i) => (
-                  <div
-                    key={`firework-${i}`}
-                    className="absolute w-6 h-6 rounded-full"
-                    style={{
-                      left: `${20 + i * 20}%`,
-                      top: `${20 + i * 15}%`,
-                      background: `radial-gradient(circle, ${['#FF6B6B', '#FFD93D', '#6BCF7F', '#F093FB'][i]}, transparent)`,
-                      animation: `fireworks ${2 + i * 0.5}s ease-out infinite ${i * 0.8}s`
-                    }}
-                  />
-                ))}
-              </>
-            )}
-            
+         
             {/* Default Ocean Theme for Main Slide */}
             {!currentSlideData.theme && (
               <>
@@ -1033,9 +928,9 @@ const RevolutionHero = () => {
                   {/* Enhanced Description with Beach Theme */}
                   <div className="relative mb-8" style={{ animation: 'fadeInUp 1.2s ease-out 1.5s both' }}>
                     <p className="text-lg md:text-xl lg:text-2xl opacity-90 leading-relaxed max-w-3xl mx-auto text-white relative z-10 p-4 rounded-lg backdrop-blur-sm bg-white/5 border border-white/10">
-                      <span className="inline-block mr-2">🏖️</span>
+                      
                       {currentSlideData.description}
-                      <span className="inline-block ml-2">🌊</span>
+                     
                     </p>
                     
                     {/* Floating quote decoration */}
@@ -1151,58 +1046,10 @@ const RevolutionHero = () => {
                         : 'text-white/90 bg-white/5 border-white/10'
                       }
                     `}>
-                      {currentSlideData.theme === 'cyber' && (
-                        <span className="inline-block mr-2">🔐</span>
-                      )}
-                      {currentSlideData.theme === 'workshop' && (
-                        <span className="inline-block mr-2">🛠️</span>
-                      )}
-                      {currentSlideData.theme === 'community' && (
-                        <span className="inline-block mr-2">🏘️</span>
-                      )}
-                      {currentSlideData.theme === 'beach' && (
-                        <span className="inline-block mr-2">🎉</span>
-                      )}
                       {currentSlideData.description}
-                      {currentSlideData.theme === 'cyber' && (
-                        <span className="inline-block ml-2">🛡️</span>
-                      )}
-                      {currentSlideData.theme === 'workshop' && (
-                        <span className="inline-block ml-2">⚙️</span>
-                      )}
-                      {currentSlideData.theme === 'community' && (
-                        <span className="inline-block ml-2">🌟</span>
-                      )}
-                      {currentSlideData.theme === 'beach' && (
-                        <span className="inline-block ml-2">🌊</span>
-                      )}
                     </p>
                     
-                    {/* Theme-specific decorative elements */}
-                    {currentSlideData.theme === 'cyber' && (
-                      <>
-                        <div className="absolute -top-4 -left-4 text-4xl text-green-400/30 font-mono" style={{ animation: 'digitalGlitch 3s ease-in-out infinite' }}>&#123;</div>
-                        <div className="absolute -bottom-4 -right-4 text-4xl text-green-400/30 font-mono" style={{ animation: 'digitalGlitch 3s ease-in-out infinite 1.5s' }}>&#125;</div>
-                      </>
-                    )}
-                    {currentSlideData.theme === 'workshop' && (
-                      <>
-                        <div className="absolute -top-4 -left-4 text-4xl text-purple-400/30" style={{ animation: 'toolSpin 4s ease-in-out infinite' }}>🔧</div>
-                        <div className="absolute -bottom-4 -right-4 text-4xl text-purple-400/30" style={{ animation: 'toolSpin 4s ease-in-out infinite 2s' }}>⚙️</div>
-                      </>
-                    )}
-                    {currentSlideData.theme === 'community' && (
-                      <>
-                        <div className="absolute -top-4 -left-4 text-4xl text-yellow-400/30" style={{ animation: 'communityPulse 3s ease-in-out infinite' }}>🏠</div>
-                        <div className="absolute -bottom-4 -right-4 text-4xl text-yellow-400/30" style={{ animation: 'communityPulse 3s ease-in-out infinite 1.5s' }}>👥</div>
-                      </>
-                    )}
-                    {currentSlideData.theme === 'beach' && (
-                      <>
-                        <div className="absolute -top-4 -left-4 text-4xl text-orange-400/30" style={{ animation: 'beachWave 3s ease-in-out infinite' }}>🏖️</div>
-                        <div className="absolute -bottom-4 -right-4 text-4xl text-orange-400/30" style={{ animation: 'fireworks 2s ease-out infinite 1s' }}>🎆</div>
-                      </>
-                    )}
+                  
                   </div>
                 </>
               )}
