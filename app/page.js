@@ -4,7 +4,6 @@ import Footer from "@/components/Footer";
 
 // Critical components loaded immediately for LCP
 import RevolutionHero from "@/components/home/Slider";
-import Countdown from "@/components/Countdown";
 
 // Non-critical components lazy loaded with optimized loading states
 const Stats = dynamic(() => import("@/components/Stats"), {
@@ -45,7 +44,6 @@ export default function Home() {
     <main className="relative">
       <Navbar />
       <div id="overview" className="scroll-mt-24"><RevolutionHero /></div>
-      <div id="countdown" className="scroll-mt-24"><Countdown /></div>
       <div id="stats" className="scroll-mt-24"><Stats /></div>
       
       {/* New enhanced homepage sections */}

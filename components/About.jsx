@@ -423,7 +423,7 @@ const About = () => {
                 ? 'text-cyan-400' 
                 : 'bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent'
             }`}>
-              About Seasides 2026
+              About Seasides
             </span>
           </div>
           <h2 className={`text-5xl md:text-6xl font-bold mb-6 ${
@@ -735,7 +735,7 @@ const About = () => {
             <p className={`text-lg ${
               isDark ? 'text-slate-300' : 'text-slate-600'
             }`}>
-              The passionate individuals making Seasides 2026 possible
+              The passionate individuals making Seasides possible
             </p>
             <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mt-4"></div>
           </div>

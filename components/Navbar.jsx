@@ -55,7 +55,20 @@ const Navbar = () => {
                 `}></span>
               </span>
             </Link>
-            
+
+            <Link href="/sponsors">
+              <span className={`
+                font-medium cursor-pointer transition-all duration-300 hover:scale-105 relative group
+                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
+              `}>
+                Sponsorship
+                <span className={`
+                  absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300
+                  ${isDark ? 'bg-cyan-400' : 'bg-blue-600'}
+                `}></span>
+              </span>
+            </Link>
+
             <Link href="/about">
               <span className={`
                 font-medium cursor-pointer transition-all duration-300 hover:scale-105 relative group
@@ -75,19 +88,6 @@ const Navbar = () => {
                 ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
               `}>
                 Gallery
-                <span className={`
-                  absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300
-                  ${isDark ? 'bg-cyan-400' : 'bg-blue-600'}
-                `}></span>
-              </span>
-            </Link>
-
-            <Link href="/sponsors">
-              <span className={`
-                font-medium cursor-pointer transition-all duration-300 hover:scale-105 relative group
-                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
-              `}>
-                Sponsors
                 <span className={`
                   absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300
                   ${isDark ? 'bg-cyan-400' : 'bg-blue-600'}
@@ -133,6 +133,14 @@ const Navbar = () => {
                 Home
               </span>
             </Link>
+            <Link href="/sponsors">
+              <span className={`
+                block font-medium cursor-pointer transition-colors duration-300 py-2
+                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
+              `}>
+                Sponsorship
+              </span>
+            </Link>
             <Link href="/about">
               <span className={`
                 block font-medium cursor-pointer transition-colors duration-300 py-2
@@ -147,14 +155,6 @@ const Navbar = () => {
                 ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
               `}>
                 Gallery
-              </span>
-            </Link>
-            <Link href="/sponsors">
-              <span className={`
-                block font-medium cursor-pointer transition-colors duration-300 py-2
-                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
-              `}>
-                Sponsors
               </span>
             </Link>
             <Link href="/#reach-us">

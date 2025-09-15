@@ -167,7 +167,7 @@ const Faq = () => {
             <p className={`text-lg max-w-2xl mx-auto ${
               isDark ? 'text-slate-300' : 'text-slate-600'
             }`}>
-              Everything you need to know about Seasides 2026
+              Everything you need to know about Seasides
             </p>
           </div>
           

@@ -46,7 +46,7 @@ const About = () => {
 
           <div className="text-center">
             <blockquote className="text-xl italic text-gray-700 mb-8">
-              &quot;Shift your perspective on Security - How do you adapt as a technology enthusiast, security engineer, or developer amidst industry changes? Discover insights from those leading the way&quot;
+              &quot;Be part of inclusive community - play CTFs, find mentors, Seek scholarship, make lifelong friends&quot;
             </blockquote>
             <Link href="/about">
               <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">

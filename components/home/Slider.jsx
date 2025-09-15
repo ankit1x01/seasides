@@ -16,7 +16,7 @@ const RevolutionHero = () => {
       type: "main",
       title: "Seasides 2026",
   subtitle: `${EVENT_DATE_LONG} • International Centre Goa`,
-      description: "India's Most Loved Conference - Join the community for free talks, workshops, and training sessions",
+      description: "India's Most Loved Conference - Join the event for free talks, workshops, and training sessions",
       backgroundImage: "linear-gradient(135deg, #FF8C42 0%, #FF6B35 20%, #F7931E 40%, #FFD23F 60%, #87CEEB 80%, #4682B4 100%)",
       animation: "fadeInUp",
       particles: true,
@@ -25,7 +25,7 @@ const RevolutionHero = () => {
     {
       id: 2,
       type: "training",
-      title: "Expert Training",
+      title: "Advance Training",
       subtitle: "Master Advanced Cybersecurity Skills",
       description: "Intensive hands-on training sessions led by industry experts covering the latest security techniques and methodologies",
       backgroundImage: "linear-gradient(135deg, #0F172A 0%, #1E293B 20%, #334155 40%, #00D4AA 60%, #00F5FF 80%, #38EF7D 100%)",
@@ -36,20 +36,20 @@ const RevolutionHero = () => {
     },
     {
       id: 3,
-      type: "workshops",
-      title: "Hands-on Workshops",
+      type: "training",
+      title: "Hands-on Training",
       subtitle: "Learn by Doing",
-      description: "Interactive workshops where you build, break, and secure systems using cutting-edge tools and techniques",
+      description: "Interactive training where you build, break, and secure systems using cutting-edge tools and techniques",
       backgroundImage: "linear-gradient(135deg, #667EEA 0%, #764BA2 20%, #F093FB 40%, #F5576C 60%, #4FACFE 80%, #00F2FE 100%)",
       animation: "slideInLeft",
       particles: true,
-      theme: "workshop",
+      theme: "training",
       icon: <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
     },
     {
       id: 4,
       type: "village",
-      title: "7 Specialized Villages",
+      title: "Specialized Villages",
       subtitle: "Choose Your Adventure",
       description: "Immerse yourself in specialized learning environments tailored to your interests and skill level",
       backgroundImage: "linear-gradient(135deg, #FF9A9E 0%, #FECFEF 20%, #FECFEF 40%, #FEE140 60%, #FA709A 80%, #C471F5 100%)",
@@ -386,7 +386,7 @@ const RevolutionHero = () => {
           50% { box-shadow: 0 0 10px #00F5FF, 0 0 20px #00F5FF, 0 0 30px #00F5FF; }
         }
         
-        /* Workshop Theme Animations */
+        /* Training Theme Animations */
         @keyframes toolSpin {
           0% { transform: rotate(0deg) scale(1); }
           25% { transform: rotate(90deg) scale(1.1); }
@@ -906,11 +906,8 @@ const RevolutionHero = () => {
                   {/* Enhanced Title with Sunset-Ocean Theme */}
                   <div className="relative">
                     <h1 className="playfair-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-6 leading-tight text-white text-shadow-sunset relative z-10">
-                      <span className="relative inline-block" style={{ animation: 'fadeInUp 1.2s ease-out 0.5s both' }}>
-                        The Future of{' '}
-                      </span>
                       <span className="wave-gradient font-bold" style={{ animation: 'zoomIn 1.2s ease-out 0.8s both' }}>
-                        Seasides
+                        Seasides 2026
                       </span>
                     </h1>
                   </div>
@@ -942,7 +939,7 @@ const RevolutionHero = () => {
                 </>
               )}
 
-              {/* Other slides (training, workshops, village, party) */}
+              {/* Other slides (training, training, village, party) */}
               {currentSlideData.type !== 'main' && (
                 <>
                   {/* Animated Icon */}
@@ -951,14 +948,14 @@ const RevolutionHero = () => {
                       className={`
                         inline-block text-6xl md:text-8xl
                         ${currentSlideData.theme === 'cyber' ? 'drop-shadow-[0_0_10px_#00D4AA]' : ''}
-                        ${currentSlideData.theme === 'workshop' ? 'drop-shadow-[0_0_15px_#F093FB]' : ''}
+                        ${currentSlideData.theme === 'training' ? 'drop-shadow-[0_0_15px_#F093FB]' : ''}
                         ${currentSlideData.theme === 'community' ? 'drop-shadow-[0_0_12px_#FEE140]' : ''}
                         ${currentSlideData.theme === 'beach' ? 'drop-shadow-[0_0_20px_#FF6B6B]' : ''}
                       `}
                       style={{ 
                         animation: currentSlideData.theme === 'cyber' 
                           ? 'digitalGlitch 2s ease-in-out infinite'
-                          : currentSlideData.theme === 'workshop'
+                          : currentSlideData.theme === 'training'
                           ? 'toolSpin 4s ease-in-out infinite'
                           : currentSlideData.theme === 'community'
                           ? 'communityPulse 3s ease-in-out infinite'
@@ -976,7 +973,7 @@ const RevolutionHero = () => {
                     text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight
                     ${currentSlideData.theme === 'cyber' 
                       ? 'playfair-display text-shadow-sunset' 
-                      : currentSlideData.theme === 'workshop'
+                      : currentSlideData.theme === 'training'
                       ? 'inter-font font-extrabold'
                       : currentSlideData.theme === 'community'
                       ? 'playfair-display'
@@ -987,19 +984,19 @@ const RevolutionHero = () => {
                   `}>
                     {currentSlideData.theme === 'cyber' && (
                       <>
-                        <span className="wave-gradient">Expert</span>
+                        <span className="wave-gradient">Advance</span>
                         <span className="text-white"> Training</span>
                       </>
                     )}
-                    {currentSlideData.theme === 'workshop' && (
+                    {currentSlideData.theme === 'training' && (
                       <>
                         <span className="text-white">Hands-on </span>
-                        <span className="wave-gradient">Workshops</span>
+                        <span className="wave-gradient">Training</span>
                       </>
                     )}
                     {currentSlideData.theme === 'community' && (
                       <>
-                        <span className="wave-gradient">7 Specialized</span>
+                        <span className="wave-gradient">Specialized</span>
                         <span className="text-white"> Villages</span>
                       </>
                     )}
@@ -1018,7 +1015,7 @@ const RevolutionHero = () => {
                       text-2xl md:text-3xl lg:text-4xl font-medium
                       ${currentSlideData.theme === 'cyber' 
                         ? 'text-green-200 inter-font' 
-                        : currentSlideData.theme === 'workshop'
+                        : currentSlideData.theme === 'training'
                         ? 'text-purple-200 playfair-display'
                         : currentSlideData.theme === 'community'
                         ? 'text-yellow-200 inter-font'
@@ -1037,7 +1034,7 @@ const RevolutionHero = () => {
                       text-lg md:text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto p-4 rounded-lg backdrop-blur-sm border relative z-10
                       ${currentSlideData.theme === 'cyber' 
                         ? 'bg-slate-900/30 border-green-400/20 text-green-100' 
-                        : currentSlideData.theme === 'workshop'
+                        : currentSlideData.theme === 'training'
                         ? 'bg-purple-900/30 border-purple-400/20 text-purple-100'
                         : currentSlideData.theme === 'community'
                         ? 'bg-yellow-900/30 border-yellow-400/20 text-yellow-100'

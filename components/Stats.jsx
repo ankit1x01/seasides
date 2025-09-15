@@ -281,7 +281,7 @@ const Stats = () => {
                       Seasides 2026
                     </h3>
                     <p className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                      Where Security Meets The Sea
+                      where Infosec meets the sea
                     </p>
                   </div>
                 </div>
