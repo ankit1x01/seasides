@@ -7,8 +7,6 @@ const sections = [
   { id: 'countdown', label: 'Countdown' },
   { id: 'stats', label: 'Stats' },
   { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'atmosphere', label: 'Atmosphere' },
   { id: 'nostalgia', label: 'Gallery' },
   { id: 'faq', label: 'FAQ' },
   { id: 'social', label: 'Social' },

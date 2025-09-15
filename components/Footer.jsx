@@ -79,9 +79,9 @@ const Footer = () => {
 
         <div className="relative container mx-auto px-6 py-16 z-10 max-w-7xl">
           {/* Main Footer Content */}
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 lg:gap-12 mb-12">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 mb-12">
             {/* Brand Section */}
-            <div className="md:col-span-2 lg:col-span-1">
+            <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-6">
                 <div className="relative">
                   <Image
@@ -99,86 +99,49 @@ const Footer = () => {
                   <div className="absolute inset-0 bg-cyan-400 opacity-20 rounded-full blur-lg"></div>
                 </div>
               </div>
-              <p className={`leading-relaxed mb-6 text-sm ${
+              <p className={`leading-relaxed mb-6 text-base ${
                 isDark ? 'text-gray-300' : 'text-gray-600'
               }`}>
-                India&apos;s premier cybersecurity conference bringing together experts, enthusiasts, and innovators 
+                India&apos;s premier cybersecurity conference bringing together experts, enthusiasts, and innovators
                 to explore the future of digital security in the beautiful coastal setting of Goa.
               </p>
             </div>
 
             {/* Event Info */}
-            <div className="flex flex-col">
-              <h4 className={`text-lg font-semibold mb-6 ${
+            <div className="flex flex-col lg:col-span-1">
+              <h4 className={`text-xl font-semibold mb-6 ${
                 isDark ? 'text-white' : 'text-gray-900'
               }`}>
                 Event Details
               </h4>
-              <div className={`space-y-4 text-sm ${
+              <div className={`space-y-4 text-base ${
                 isDark ? 'text-gray-300' : 'text-gray-600'
               }`}>
                 <div className="flex items-center gap-3">
-                  <svg className={`w-4 h-4 flex-shrink-0 ${isDark ? 'text-cyan-400' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={`w-5 h-5 flex-shrink-0 ${isDark ? 'text-cyan-400' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-6 0a1 1 0 110 2h6a1 1 0 110-2M9 9h6m-6 4h6m-6 4h6m-6 4h6" />
                   </svg>
                   <span>{EVENT_DATE_LONG}</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <svg className={`w-4 h-4 flex-shrink-0 ${isDark ? 'text-cyan-400' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={`w-5 h-5 flex-shrink-0 ${isDark ? 'text-cyan-400' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                   <span>International Centre Goa</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <svg className={`w-4 h-4 flex-shrink-0 ${isDark ? 'text-cyan-400' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={`w-5 h-5 flex-shrink-0 ${isDark ? 'text-cyan-400' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                   <span>Cybersecurity & Innovation</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <svg className={`w-4 h-4 flex-shrink-0 ${isDark ? 'text-cyan-400' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={`w-5 h-5 flex-shrink-0 ${isDark ? 'text-cyan-400' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                   <span>Goa, India</span>
                 </div>
-              </div>
-            </div>
-
-            {/* Quick Links */}
-            <div className="flex flex-col">
-              <h4 className={`text-lg font-semibold mb-6 ${
-                isDark ? 'text-white' : 'text-gray-900'
-              }`}>
-                Quick Links
-              </h4>
-              <div className={`space-y-4 text-sm ${
-                isDark ? 'text-gray-300' : 'text-gray-600'
-              }`}>
-                <a href="/about" className="flex items-center gap-3 hover:text-cyan-400 transition-colors duration-300">
-                  <svg className={`w-4 h-4 flex-shrink-0 ${isDark ? 'text-cyan-400' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span>About Seasides</span>
-                </a>
-                <a href="/sponsors" className="flex items-center gap-3 hover:text-cyan-400 transition-colors duration-300">
-                  <svg className={`w-4 h-4 flex-shrink-0 ${isDark ? 'text-cyan-400' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                  <span>Sponsorship</span>
-                </a>
-                <a href="/gallery" className="flex items-center gap-3 hover:text-cyan-400 transition-colors duration-300">
-                  <svg className={`w-4 h-4 flex-shrink-0 ${isDark ? 'text-cyan-400' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <span>Gallery</span>
-                </a>
-                <a href="#faq" className="flex items-center gap-3 hover:text-cyan-400 transition-colors duration-300">
-                  <svg className={`w-4 h-4 flex-shrink-0 ${isDark ? 'text-cyan-400' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span>FAQ</span>
-                </a>
               </div>
             </div>
           </div>

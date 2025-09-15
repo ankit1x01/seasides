@@ -15,13 +15,7 @@ const About = dynamic(() => import("@/components/home/About"), {
   loading: () => <div className="h-96 bg-gray-100 dark:bg-gray-900 animate-pulse rounded-lg mx-6" />
 });
 
-const Experience = dynamic(() => import("@/components/home/Experience"), {
-  loading: () => <div className="h-96 bg-gray-100 dark:bg-gray-900 animate-pulse rounded-lg mx-6" />
-});
 
-const Atmosphere = dynamic(() => import("@/components/home/Atmosphere"), {
-  loading: () => <div className="h-96 bg-gray-100 dark:bg-gray-900 animate-pulse rounded-lg mx-6" />
-});
 
 const NostalgiaGallery = dynamic(() => import("@/components/home/NostalgiaGallery"), {
   loading: () => <div className="h-96 bg-gray-100 dark:bg-gray-900 animate-pulse rounded-lg mx-6" />
@@ -45,8 +39,6 @@ export default function Home() {
       
       {/* New enhanced homepage sections */}
       <div id="about" className="scroll-mt-24"><About /></div>
-      <div id="experience" className="scroll-mt-24"><Experience /></div>
-      <div id="atmosphere" className="scroll-mt-24"><Atmosphere /></div>
       <div id="nostalgia" className="scroll-mt-24"><NostalgiaGallery /></div>
       
       {/* Existing sections */}
