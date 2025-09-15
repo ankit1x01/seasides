@@ -1,4 +1,4 @@
-# Seasides 2026 - Complete Content Sections
+# Seasides - Complete Content Sections
 
 ## How are we? - Our Story
 

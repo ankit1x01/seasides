@@ -76,7 +76,7 @@ const InteractiveCountdown = () => {
             <h3 className="text-3xl font-bold mb-4 text-white">
               🎉 Conference is Live! 🎉
             </h3>
-            <p className="text-white text-lg">Welcome to Seasides 2026!</p>
+            <p className="text-white text-lg">Welcome to Seasides!</p>
           </div>
         ) : (
           <>

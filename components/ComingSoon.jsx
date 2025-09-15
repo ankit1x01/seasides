@@ -256,7 +256,7 @@ const ComingSoon = () => {
           
           <div className="bounce-in mb-8">
             <h1 className="text-7xl font-bold leading-tight sm:text-8xl md:text-9xl mb-6 text-white">
-              Seasides 2026
+              Seasides
             </h1>
           </div>
           

@@ -1,4 +1,4 @@
-# Seasides 2026 Team Profiles
+# Seasides Team Profiles
 
 ## Co-Founders
 

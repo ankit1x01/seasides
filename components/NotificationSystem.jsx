@@ -6,7 +6,7 @@ const NotificationSystem = () => {
 
   useEffect(() => {
     const welcomeMessages = [
-      "🎉 Welcome to Seasides 2026!",
+      "🎉 Welcome to Seasides!",
       "Ready for an amazing cyber journey?",
       "💡 Discover cutting-edge security insights!",
       "🤝 Connect with the community!",

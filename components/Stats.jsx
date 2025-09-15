@@ -173,7 +173,7 @@ const Stats = () => {
                   <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"/>
                 </svg>
                 <div className="text-left">
-                  <div className="font-bold text-lg">Seasides 2026</div>
+                  <div className="font-bold text-lg">Seasides</div>
                   <div className="text-blue-100 text-sm">where Infosec meets the sea</div>
                 </div>
               </div>

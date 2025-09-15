@@ -29,7 +29,7 @@ const SpeakersPage = () => {
           <h1 className="text-4xl font-bold text-gray-800 mb-6">Our Visionary Speakers</h1>
           <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Meet the industry experts, researchers, and thought leaders who will be sharing their knowledge at Seasides 2026.
+            Meet the industry experts, researchers, and thought leaders who will be sharing their knowledge at Seasides.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ const SpeakersPage = () => {
         <div className="text-center bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-8">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">Call for Speakers</h2>
           <p className="text-gray-600 mb-6">
-            Are you a cybersecurity expert with insights to share? We&apos;re still accepting speaker proposals for Seasides 2026.
+            Are you a cybersecurity expert with insights to share? We&apos;re still accepting speaker proposals for Seasides.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">

@@ -1,8 +1,8 @@
-# 🌊 Seasides 2026 - Complete Content Documentation
+# 🌊 Seasides - Complete Content Documentation
 
 ## 📋 Content Overview
 
-This directory contains the **complete official content** for Seasides 2026, including detailed team profiles, social media links, and comprehensive section content.
+This directory contains the **complete official content** for Seasides, including detailed team profiles, social media links, and comprehensive section content.
 
 ## 📁 Latest Files (Use These) ⭐
 

@@ -1,4 +1,4 @@
-# Seasides 2026 Content Sections
+# Seasides Content Sections
 
 ## What's our Story?
 *Note: No specific content was provided for this section on the website. This could be expanded with the origin story of Seasides.*

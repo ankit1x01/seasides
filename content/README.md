@@ -1,6 +1,6 @@
-# Seasides 2026 Content Documentation
+# Seasides Content Documentation
 
-This directory contains all the official content for the Seasides 2026 website, sourced directly from the official seasides.net website.
+This directory contains all the official content for the Seasides website, sourced directly from the official seasides.net website.
 
 ## 📁 File Structure
 
@@ -67,4 +67,4 @@ September 8, 2025 - Content sourced directly from https://seasides.net/about-us/
 
 ---
 
-*This content reflects the official messaging and branding of Seasides 2026 Information Security Conference.*
+*This content reflects the official messaging and branding of Seasides Information Security Conference.*

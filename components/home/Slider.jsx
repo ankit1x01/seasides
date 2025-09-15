@@ -14,7 +14,7 @@ const RevolutionHero = () => {
     {
       id: 1,
       type: "main",
-      title: "Seasides 2026",
+      title: "Seasides",
   subtitle: `${EVENT_DATE_LONG} • International Centre Goa`,
       description: "India's Most Loved Conference - Join the event for free talks, workshops, and training sessions",
       backgroundImage: "linear-gradient(135deg, #FF8C42 0%, #FF6B35 20%, #F7931E 40%, #FFD23F 60%, #87CEEB 80%, #4682B4 100%)",
@@ -907,7 +907,7 @@ const RevolutionHero = () => {
                   <div className="relative">
                     <h1 className="playfair-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-6 leading-tight text-white text-shadow-sunset relative z-10">
                       <span className="wave-gradient font-bold" style={{ animation: 'zoomIn 1.2s ease-out 0.8s both' }}>
-                        Seasides 2026
+                        Seasides
                       </span>
                     </h1>
                   </div>

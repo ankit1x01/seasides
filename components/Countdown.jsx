@@ -82,7 +82,7 @@ const Countdown = () => {
             <p className={`text-xl md:text-2xl font-medium ${
               isDark ? 'text-blue-200' : 'text-gray-700'
             } max-w-2xl mx-auto leading-relaxed`}>
-              {isEventStarted ? 'Seasides 2026 is now live!' : 'Time until Seasides 2026'}
+              {isEventStarted ? 'Seasides is now live!' : 'Time until Seasides'}
             </p>
           </div>
 
@@ -107,7 +107,7 @@ const Countdown = () => {
                   <p className={`text-2xl md:text-3xl font-semibold ${
                     isDark ? 'text-green-300' : 'text-green-700'
                   }`}>
-                    Seasides 2026 has begun!
+                    Seasides has begun!
                   </p>
                 </div>
               ) : (

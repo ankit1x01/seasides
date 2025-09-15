@@ -280,7 +280,7 @@ const SponsorsPage = () => {
               Become a Sponsor
             </h2>
             <p className="text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Join us in making cybersecurity education accessible to all. Partner with Seasides 2026 and be part of something meaningful.
+              Join us in making cybersecurity education accessible to all. Partner with Seasides and be part of something meaningful.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-6">
               <button className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/30">

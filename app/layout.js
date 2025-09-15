@@ -21,8 +21,8 @@ const geistMono = Geist_Mono({
 export const metadata = {
   metadataBase: new URL('https://seasides2026.com'),
   title: {
-    default: "Seasides 2026 - India's Most Loved FREE Cybersecurity Conference",
-    template: "%s | Seasides 2026"
+    default: "Seasides - India's Most Loved FREE Cybersecurity Conference",
+    template: "%s | Seasides"
   },
   description: "Join India's premier FREE cybersecurity conference. 3 days of learning, workshops, networking & community at International Centre Goa. Feb 19-21, 2026.",
   keywords: ["cybersecurity conference", "free conference India", "cybersecurity workshops", "Goa tech event", "security training", "ethical hacking", "cybersecurity community", "tech conference 2026"],
@@ -37,15 +37,15 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://seasides2026.com',
-    title: "Seasides 2026 - India's Most Loved FREE Cybersecurity Conference",
+    title: "Seasides - India's Most Loved FREE Cybersecurity Conference",
     description: "Join India's premier FREE cybersecurity conference. 3 days of learning, workshops, networking & community at International Centre Goa. Feb 19-21, 2026.",
-    siteName: 'Seasides 2026',
+    siteName: 'Seasides',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Seasides 2026 Cybersecurity Conference',
+        alt: 'Seasides Cybersecurity Conference',
       },
     ],
   },
@@ -53,7 +53,7 @@ export const metadata = {
   // Twitter
   twitter: {
     card: 'summary_large_image',
-    title: "Seasides 2026 - India's Most Loved FREE Cybersecurity Conference",
+    title: "Seasides - India's Most Loved FREE Cybersecurity Conference",
     description: "Join India's premier FREE cybersecurity conference. 3 days of learning, workshops, networking & community.",
     images: ['/twitter-image.jpg'],
     creator: '@seasidesconf',
