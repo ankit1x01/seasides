@@ -12,7 +12,7 @@ const Stats = () => {
       id: 'villages',
       title: 'Specialized Villages',
       description: 'Choose your learning path from 7 specialized cybersecurity villages',
-      icon: '🏘️',
+      icon: 'villages',
       color: 'from-blue-500 to-cyan-600',
       bgColor: 'bg-blue-500/10',
       borderColor: 'border-blue-500/30'
@@ -21,7 +21,7 @@ const Stats = () => {
       id: 'free',
       title: '100% Free Conference',
       description: 'World-class cybersecurity education at absolutely no cost',
-      icon: '🎯',
+      icon: 'target',
       color: 'from-green-500 to-emerald-600',
       bgColor: 'bg-green-500/10',
       borderColor: 'border-green-500/30'
@@ -30,7 +30,7 @@ const Stats = () => {
       id: 'hands-on',
       title: 'Hands-on Learning',
       description: 'Interactive workshops and practical training sessions',
-      icon: '🛠️',
+      icon: 'tools',
       color: 'from-purple-500 to-pink-600',
       bgColor: 'bg-purple-500/10',
       borderColor: 'border-purple-500/30'
@@ -39,7 +39,7 @@ const Stats = () => {
       id: 'networking',
       title: 'Epic Networking',
       description: 'Beach parties and connections with industry experts',
-      icon: '🌊',
+      icon: 'network',
       color: 'from-orange-500 to-red-600',
       bgColor: 'bg-orange-500/10',
       borderColor: 'border-orange-500/30'
@@ -51,105 +51,19 @@ const Stats = () => {
   return (
     <>
       <style jsx>{`
-        @keyframes float-in {
-          0% { 
-            transform: translateY(50px) scale(0.8); 
-            opacity: 0; 
-          }
-          100% { 
-            transform: translateY(0) scale(1); 
-            opacity: 1; 
-          }
+        @keyframes fade-in {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
         }
-        
-        @keyframes icon-bounce {
-          0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
-          25% { transform: translateY(-10px) rotate(5deg) scale(1.1); }
-          50% { transform: translateY(-5px) rotate(-3deg) scale(1.05); }
-          75% { transform: translateY(-15px) rotate(2deg) scale(1.1); }
-        }
-        
-        @keyframes glow-wave {
-          0%, 100% { 
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(147, 51, 234, 0.2); 
-          }
-          50% { 
-            box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 80px rgba(147, 51, 234, 0.4); 
-          }
-        }
-        
-        @keyframes ripple-effect {
-          0% { 
-            transform: scale(0); 
-            opacity: 1; 
-          }
-          100% { 
-            transform: scale(4); 
-            opacity: 0; 
-          }
-        }
-        
-        @keyframes particle-float {
-          0%, 100% { 
-            transform: translateY(0) translateX(0) rotate(0deg); 
-          }
-          33% { 
-            transform: translateY(-20px) translateX(10px) rotate(120deg); 
-          }
-          66% { 
-            transform: translateY(-10px) translateX(-15px) rotate(240deg); 
-          }
-        }
-        
-        .feature-card {
-          animation: float-in 0.8s ease-out;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .feature-card:hover {
-          transform: translateY(-20px) scale(1.05);
-          animation: glow-wave 2s ease-in-out infinite;
-        }
-        
-        .feature-icon {
-          animation: icon-bounce 4s ease-in-out infinite;
-          transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover .feature-icon {
-          animation-duration: 1s;
-        }
-        
-        .ripple {
-          animation: ripple-effect 2s ease-out infinite;
-        }
-        
-        .floating-particle {
-          animation: particle-float 6s ease-in-out infinite;
-        }
-        
-        /* Interactive hover effects */
-        .feature-card:hover .feature-bg {
-          opacity: 0.2;
-        }
-        
-        .feature-card:hover .feature-border {
-          opacity: 0.8;
+
+        .fade-in {
+          animation: fade-in 0.6s ease-out;
         }
       `}</style>
       
       <section ref={statsRef} className={`relative py-20 scroll-mt-24 overflow-hidden ${
-        isDark ? 'bg-gradient-to-br from-gray-900 via-black to-purple-900/20' : 'bg-gradient-to-br from-blue-50 via-white to-purple-50'
+        isDark ? 'bg-gray-900' : 'bg-gray-50'
       }`}>
-        {/* Animated background */}
-        <div className="absolute inset-0">
-          <div className={`absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 aurora-x ${
-            isDark ? 'opacity-60' : 'opacity-30'
-          }`}></div>
-          <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent aurora-y ${
-            isDark ? 'opacity-50' : 'opacity-25'
-          }`}></div>
-        </div>
         
         <div className="relative container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
@@ -181,125 +95,87 @@ const Stats = () => {
               </p>
             </div>
 
-            {/* Interactive Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {/* Modern Feature List */}
+            <div className="space-y-8 mb-16">
               {features.map((feature, index) => (
-                <div 
+                <div
                   key={feature.id}
-                  className={`feature-card group relative overflow-hidden rounded-3xl p-8 backdrop-blur-sm cursor-pointer ${
-                    isDark 
-                      ? 'bg-white/5 border border-white/10 hover:bg-white/10' 
-                      : 'bg-white/80 border border-gray-200 shadow-xl hover:shadow-2xl'
+                  className={`group relative overflow-hidden rounded-2xl transition-all duration-300 ${
+                    isDark ? 'hover:bg-white/5' : 'hover:bg-gray-50'
                   }`}
                   style={{ animationDelay: `${index * 0.2}s` }}
                   onMouseEnter={() => setHoveredFeature(feature.id)}
                   onMouseLeave={() => setHoveredFeature(null)}
                 >
-                  {/* Background Gradient */}
-                  <div className={`feature-bg absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 transition-opacity duration-300`}></div>
-                  
-                  {/* Border Glow */}
-                  <div className={`feature-border absolute inset-0 rounded-3xl bg-gradient-to-br ${feature.color} opacity-0 transition-opacity duration-300 blur-sm`}></div>
-                  
-                  {/* Ripple Effect */}
-                  {hoveredFeature === feature.id && (
-                    <>
-                      {Array.from({ length: 3 }).map((_, i) => (
-                        <div
-                          key={i}
-                          className={`ripple absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r ${feature.color} opacity-20`}
-                          style={{ 
-                            animationDelay: `${i * 0.5}s`,
-                            width: '20px',
-                            height: '20px'
-                          }}
-                        />
-                      ))}
-                    </>
-                  )}
-                  
-                  {/* Floating Particles */}
-                  {Array.from({ length: 4 }).map((_, i) => (
-                    <div
-                      key={i}
-                      className={`floating-particle absolute w-2 h-2 rounded-full bg-gradient-to-r ${feature.color} opacity-30`}
-                      style={{
-                        left: `${20 + i * 20}%`,
-                        top: `${30 + Math.sin(i) * 20}%`,
-                        animationDelay: `${i * 1.5}s`
-                      }}
-                    />
-                  ))}
-                  
-                  {/* Content */}
-                  <div className="relative z-10">
-                    {/* Large Emoji Icon */}
-                    <div className="feature-icon text-7xl mb-6 text-center">
-                      {feature.icon}
+                  <div className="flex items-center p-6 md:p-8">
+                    {/* Icon */}
+                    <div className="flex-shrink-0 mr-6">
+                      <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${feature.color} flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                        {feature.icon === 'villages' && (
+                          <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"/>
+                          </svg>
+                        )}
+                        {feature.icon === 'target' && (
+                          <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+                            <circle cx="12" cy="12" r="5"/>
+                            <circle cx="12" cy="12" r="2"/>
+                          </svg>
+                        )}
+                        {feature.icon === 'tools' && (
+                          <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+                          </svg>
+                        )}
+                        {feature.icon === 'network' && (
+                          <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                            <circle cx="7" cy="7" r="2"/>
+                            <circle cx="17" cy="7" r="2"/>
+                            <circle cx="7" cy="17" r="2"/>
+                            <circle cx="17" cy="17" r="2"/>
+                          </svg>
+                        )}
+                      </div>
                     </div>
-                    
-                    {/* Title */}
-                    <h3 className={`text-2xl md:text-3xl font-bold mb-4 text-center ${
-                      isDark ? 'text-white' : 'text-gray-900'
-                    }`}>
-                      {feature.title}
-                    </h3>
-                    
-                    {/* Description */}
-                    <p className={`text-base md:text-lg leading-relaxed text-center ${
-                      isDark ? 'text-gray-300' : 'text-gray-600'
-                    }`}>
-                      {feature.description}
-                    </p>
-                    
-                    {/* Interactive Badge */}
-                    <div className={`inline-block mt-6 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                      hoveredFeature === feature.id
-                        ? `${feature.bgColor} ${feature.borderColor} border text-white`
-                        : isDark
-                        ? 'bg-white/10 border-white/20 border text-gray-300'
-                        : 'bg-gray-100 border-gray-200 border text-gray-600'
-                    }`}>
-                      Interactive Feature
+
+                    {/* Content */}
+                    <div className="flex-grow">
+                      <h3 className={`text-xl md:text-2xl font-bold mb-2 ${
+                        isDark ? 'text-white' : 'text-gray-900'
+                      }`}>
+                        {feature.title}
+                      </h3>
+                      <p className={`text-base leading-relaxed ${
+                        isDark ? 'text-gray-300' : 'text-gray-600'
+                      }`}>
+                        {feature.description}
+                      </p>
                     </div>
+
+                    {/* Hover Indicator */}
+                    <div className={`flex-shrink-0 ml-4 w-2 h-12 rounded-full bg-gradient-to-b ${feature.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
                   </div>
+
+                  {/* Bottom Border */}
+                  <div className={`h-px bg-gradient-to-r ${feature.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
                 </div>
               ))}
             </div>
-            
-            {/* Central Interactive Graphic */}
-            <div className="flex justify-center">
-              <div className={`relative w-80 h-80 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1 ${
-                isDark ? 'shadow-2xl shadow-blue-500/25' : 'shadow-2xl shadow-blue-500/25'
-              }`}>
-                <div className={`w-full h-full rounded-full flex items-center justify-center ${
-                  isDark ? 'bg-gray-900' : 'bg-white'
-                }`}>
-                  <div className="text-center">
-                    <div className="text-8xl mb-4">🏖️</div>
-                    <h3 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                      Seasides 2026
-                    </h3>
-                    <p className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                      where Infosec meets the sea
-                    </p>
-                  </div>
+
+            {/* Simple Call to Action */}
+            <div className="text-center">
+              <div className={`inline-flex items-center px-8 py-4 rounded-2xl ${
+                isDark ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-600 hover:bg-blue-700'
+              } text-white transition-colors duration-200`}>
+                <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"/>
+                </svg>
+                <div className="text-left">
+                  <div className="font-bold text-lg">Seasides 2026</div>
+                  <div className="text-blue-100 text-sm">where Infosec meets the sea</div>
                 </div>
-                
-                {/* Orbiting Elements */}
-                {Array.from({ length: 6 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="absolute w-6 h-6 rounded-full bg-gradient-to-r from-blue-400 to-purple-400"
-                    style={{
-                      top: '50%',
-                      left: '50%',
-                      transformOrigin: `${Math.cos(i * Math.PI / 3) * 200}px ${Math.sin(i * Math.PI / 3) * 200}px`,
-                      animation: `particle-float ${8 + i}s ease-in-out infinite ${i * 0.5}s`,
-                      transform: `translate(-50%, -50%) rotate(${i * 60}deg) translateY(-200px)`
-                    }}
-                  />
-                ))}
               </div>
             </div>
           </div>

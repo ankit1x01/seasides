@@ -13,17 +13,8 @@ const About = () => {
 
   return (
     <section id="about" className={`relative py-20 scroll-mt-24 overflow-hidden ${
-      isDark ? 'bg-black' : 'bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50'
+      isDark ? 'bg-black' : 'bg-white'
     }`}>
-      {/* Animated background */}
-      <div className="absolute inset-0">
-        <div className={`absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl aurora-x ${
-          isDark ? 'opacity-30' : 'opacity-20'
-        }`}></div>
-        <div className={`absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl aurora-y ${
-          isDark ? 'opacity-30' : 'opacity-20'
-        }`}></div>
-      </div>
 
       <div className="relative container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
@@ -91,13 +82,13 @@ const About = () => {
                 </p>
               </motion.div>
 
-              {/* Feature Chips */}
+              {/* Feature Tags */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="flex flex-wrap gap-4"
+                className="flex flex-wrap gap-3"
               >
                 {features.map((feature, index) => (
                   <motion.div
@@ -106,21 +97,13 @@ const About = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`group relative overflow-hidden rounded-2xl p-6 cursor-pointer ${
-                      isDark ? 'bg-white/5 border border-white/10' : 'bg-white border border-gray-200 shadow-lg'
+                    whileHover={{ scale: 1.05 }}
+                    className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                      isDark ? 'bg-gray-800 text-gray-300 hover:bg-gray-700' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                   >
-                    <div className={`absolute inset-0 bg-gradient-to-r ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                    <div className="relative">
-                      <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${feature.color} mb-3 group-hover:scale-110 transition-transform duration-300`}></div>
-                      <span className={`font-semibold text-sm ${
-                        isDark ? 'text-white' : 'text-gray-900'
-                      }`}>
-                        {feature.label}
-                      </span>
-                    </div>
+                    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${feature.color} mr-2`}></div>
+                    {feature.label}
                   </motion.div>
                 ))}
               </motion.div>
@@ -148,7 +131,9 @@ const About = () => {
                   <div className={`w-20 h-20 rounded-full flex items-center justify-center ${
                     isDark ? 'bg-gray-900' : 'bg-white'
                   }`}>
-                    <span className="text-2xl">🏖️</span>
+                    <svg className="w-10 h-10 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"/>
+                    </svg>
                   </div>
                   
                   {/* Pulsing Ring */}
@@ -157,12 +142,12 @@ const About = () => {
 
                 {/* Orbiting Learning Nodes */}
                 {[
-                  { icon: '🔐', label: 'Security', angle: 0, color: 'from-red-400 to-red-600' },
-                  { icon: '🛠️', label: 'Workshops', angle: 60, color: 'from-blue-400 to-blue-600' },
-                  { icon: '👥', label: 'Community', angle: 120, color: 'from-green-400 to-green-600' },
-                  { icon: '🎓', label: 'Learning', angle: 180, color: 'from-purple-400 to-purple-600' },
-                  { icon: '🌐', label: 'Network', angle: 240, color: 'from-cyan-400 to-cyan-600' },
-                  { icon: '⚡', label: 'Skills', angle: 300, color: 'from-orange-400 to-orange-600' }
+                  { icon: 'security', label: 'Security', angle: 0, color: 'from-red-400 to-red-600' },
+                  { icon: 'workshops', label: 'Workshops', angle: 60, color: 'from-blue-400 to-blue-600' },
+                  { icon: 'community', label: 'Community', angle: 120, color: 'from-green-400 to-green-600' },
+                  { icon: 'learning', label: 'Learning', angle: 180, color: 'from-purple-400 to-purple-600' },
+                  { icon: 'network', label: 'Network', angle: 240, color: 'from-cyan-400 to-cyan-600' },
+                  { icon: 'skills', label: 'Skills', angle: 300, color: 'from-orange-400 to-orange-600' }
                 ].map((node, index) => (
                   <motion.div
                     key={node.label}
@@ -188,7 +173,36 @@ const About = () => {
                       <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
                         isDark ? 'bg-gray-800' : 'bg-white'
                       }`}>
-                        <span className="text-lg">{node.icon}</span>
+                        {node.icon === 'security' && (
+                          <svg className="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V5l-9-4z"/>
+                          </svg>
+                        )}
+                        {node.icon === 'workshops' && (
+                          <svg className="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+                          </svg>
+                        )}
+                        {node.icon === 'community' && (
+                          <svg className="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A3.01 3.01 0 0 0 17.06 6H16.94c-.93 0-1.78.5-2.22 1.31L12 14h-2V9c0-.55-.45-1-1-1s-1 .45-1 1v6h2l2.54 7.63A3.01 3.01 0 0 0 15.44 24h.56c.93 0 1.78-.5 2.22-1.31L20 16v6h2z"/>
+                          </svg>
+                        )}
+                        {node.icon === 'learning' && (
+                          <svg className="w-6 h-6 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+                          </svg>
+                        )}
+                        {node.icon === 'network' && (
+                          <svg className="w-6 h-6 text-cyan-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                          </svg>
+                        )}
+                        {node.icon === 'skills' && (
+                          <svg className="w-6 h-6 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34c-.39-.39-1.02-.39-1.41 0L9 12.25 11.75 15l8.96-8.96c.39-.39.39-1.02 0-1.41z"/>
+                          </svg>
+                        )}
                       </div>
                     </div>
                     
@@ -257,7 +271,9 @@ const About = () => {
                     </div>
                     <div className={`w-px h-4 ${isDark ? 'bg-gray-600' : 'bg-gray-300'}`}></div>
                     <div className="flex items-center space-x-2">
-                      <span className="text-sm">📍</span>
+                      <svg className="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                      </svg>
                       <span className={`text-sm font-medium ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
                         International Centre Goa
                       </span>
