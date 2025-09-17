@@ -16,7 +16,7 @@ const RevolutionHero = () => {
       type: "main",
       title: "Seasides",
   subtitle: `${EVENT_DATE_LONG} • International Centre Goa`,
-      description: "India's Most Loved Conference - Join the event for free talks, workshops, and training sessions",
+      description: "India's Most Loved Conference - Join the event for free talks and training sessions",
       backgroundImage: "linear-gradient(135deg, #FF8C42 0%, #FF6B35 20%, #F7931E 40%, #FFD23F 60%, #87CEEB 80%, #4682B4 100%)",
       animation: "fadeInUp",
       particles: true,

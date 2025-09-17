@@ -21,7 +21,7 @@ const Registration = () => {
       description: 'Full access to all conference sessions, villages, and networking events',
       features: [
         'All conference sessions',
-        'Access to 7 specialized villages', 
+        'Access to specialized villages', 
         'Networking events',
         'Welcome kit & swag',
         'Conference app access',

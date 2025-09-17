@@ -256,7 +256,7 @@ Be part of something extraordinary!
                 <div className={`text-sm mt-1 ${
                   isDark ? 'text-blue-300' : 'text-blue-600'
                 }`}>
-Where InfoSec meets the sea
+where Infosec meets the sea
                 </div>
               </div>
 

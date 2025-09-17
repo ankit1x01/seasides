@@ -6,7 +6,7 @@ const About = () => {
   const { isDark } = useTheme();
 
   const features = [
-    { label: 'Free Courses', color: 'from-blue-500 to-cyan-500' },
+    { label: 'Free Training', color: 'from-blue-500 to-cyan-500' },
     { label: 'Community-driven', color: 'from-purple-500 to-pink-500' },
     { label: 'Hands-on Learning', color: 'from-green-500 to-emerald-500' }
   ];
@@ -78,7 +78,7 @@ const About = () => {
                 <p className={`text-lg leading-relaxed ${
                   isDark ? 'text-gray-300' : 'text-gray-700'
                 }`}>
-                  Join us from <span className={`font-bold ${isDark ? 'text-cyan-400' : 'text-blue-600'}`}>February 19-21, 2026</span> for the <span className={`font-bold ${isDark ? 'text-purple-400' : 'text-purple-600'}`}>Seasides InfoSec Conference 2026</span>, where you&apos;ll gain valuable insights into cybersecurity. We&apos;re proud to offer top-notch courses and sessions for free, bringing a community-driven experience that mirrors major global events like <span className={`font-bold ${isDark ? 'text-pink-400' : 'text-pink-600'}`}>Blackhat</span> and <span className={`font-bold ${isDark ? 'text-green-400' : 'text-green-600'}`}>Defcon</span>—ensuring equal learning opportunities for all.
+                  Join us from <span className={`font-bold ${isDark ? 'text-cyan-400' : 'text-blue-600'}`}>February 19-21, 2026</span> for the <span className={`font-bold ${isDark ? 'text-purple-400' : 'text-purple-600'}`}>Seasides InfoSec Conference 2026</span>, where you&apos;ll gain valuable insights into cybersecurity. We&apos;re proud to offer top-notch training sessions for free, bringing a community-driven experience that mirrors major global events like <span className={`font-bold ${isDark ? 'text-pink-400' : 'text-pink-600'}`}>Blackhat</span> and <span className={`font-bold ${isDark ? 'text-green-400' : 'text-green-600'}`}>Defcon</span>—ensuring equal learning opportunities for all.
                 </p>
               </motion.div>
 

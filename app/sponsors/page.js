@@ -283,10 +283,16 @@ const SponsorsPage = () => {
               Join us in making cybersecurity education accessible to all. Partner with Seasides and be part of something meaningful.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-6">
-              <button className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/30">
+              <button
+                onClick={() => window.open('mailto:sponsors@seasides.in?subject=Sponsorship Inquiry - Seasides 2026', '_blank')}
+                className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/30"
+              >
                 Contact Sponsorship Team
               </button>
-              <button className="px-8 py-3 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-400/30">
+              <button
+                onClick={() => window.open('/sponsors/sponsorship-info.pdf', '_blank')}
+                className="px-8 py-3 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-400/30"
+              >
                 Download Sponsorship Info
               </button>
             </div>
