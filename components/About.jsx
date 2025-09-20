@@ -783,7 +783,7 @@ const About = () => {
                       <p className={`text-xl font-medium italic ${
                         isDark ? 'text-sunset-orange' : 'text-deep-ocean'
                       }`}>
-                        "{sections[activeSection].quote}"
+                        &ldquo;{sections[activeSection].quote}&rdquo;
                       </p>
                     </div>
                   )}
@@ -885,7 +885,7 @@ const About = () => {
                       <blockquote className={`text-xl font-medium italic mb-4 ${
                         isDark ? 'text-sunny-yellow' : 'text-sunset-orange'
                       }`}>
-                        "{sections[activeSection].testimonial.text}"
+                        &ldquo;{sections[activeSection].testimonial.text}&rdquo;
                       </blockquote>
                       <cite className={`text-sm ${
                         isDark ? 'text-sunset-orange' : 'text-deep-ocean'

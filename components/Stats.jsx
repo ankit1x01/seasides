@@ -176,44 +176,6 @@ Join us for an unprecedented gathering of minds across coastal communities
           })}
         </div>
 
-        <div className="mt-20 text-center">
-          {/* Playful CTA Section */}
-          <div className="relative">
-            <div className={`inline-flex items-center space-x-4 rounded-full px-12 py-6 shadow-2xl border-2 transform hover:scale-105 transition-all duration-500 ${
-              isDark
-                ? 'bg-deep-ocean-blue/50 border-blue-500/30 hover:border-blue-400/50'
-                : 'bg-white border-blue-200 hover:border-blue-300'
-            } backdrop-blur-sm hover:shadow-blue-500/25`}>
-
-              {/* Animated Dots */}
-              <div className="flex space-x-1">
-                <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce"></div>
-                <div className="w-3 h-3 bg-cyan-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                <div className="w-3 h-3 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
-              </div>
-
-              <div className="text-center">
-                <div className={`text-xl font-bold text-sunset-orange ${
-                  isDark ? 'text-white' : 'text-gray-900'
-                }`}>
-Be part of something extraordinary!
-                </div>
-                <div className={`text-sm mt-1 ${
-                  isDark ? 'text-sunset-orange' : 'text-deep-ocean'
-                }`}>
-where Infosec meets the sea
-                </div>
-              </div>
-
-              <div className="flex space-x-1">
-                <div className="w-3 h-3 bg-purple-500 rounded-full animate-bounce" style={{ animationDelay: '0.6s' }}></div>
-                <div className="w-3 h-3 bg-pink-500 rounded-full animate-bounce" style={{ animationDelay: '0.8s' }}></div>
-                <div className="w-3 h-3 bg-orange-500 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
-              </div>
-            </div>
-
-          </div>
-        </div>
       </div>
     </section>
     </>
