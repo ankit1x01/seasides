@@ -24,16 +24,16 @@ const Stats = () => {
   const finalStats = [15, 100, 3, 1000];
   const labels = ['Villages', '% FREE Conference', 'Days of Learning', 'Expected Attendees'];
   const icons = [
-    <svg key="villages" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg key="villages" className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
     </svg>,
-    <svg key="security" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg key="security" className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
     </svg>,
-    <svg key="days" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg key="days" className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
     </svg>,
-    <svg key="attendees" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg key="attendees" className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
     </svg>
   ];
@@ -104,11 +104,6 @@ const Stats = () => {
             <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"/>
           </svg>
         </div>
-        <div className="absolute bottom-32 left-20 text-cyan-300/20 animate-float" style={{ animationDelay: '2s' }}>
-          <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
-          </svg>
-        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -156,7 +151,9 @@ Join us for an unprecedented gathering of minds across coastal communities
                   </div>
 
                   <div className="relative inline-block">
-                    <div className={`text-5xl md:text-6xl font-black font-mono ${cardColors[index].replace('bg-', 'text-')} group-hover:scale-110 transition-transform duration-500`}>
+                    <div className={`text-5xl md:text-6xl font-black font-mono group-hover:scale-110 transition-transform duration-500 ${
+                      isDark ? cardColors[index].replace('bg-', 'text-') : 'text-gray-900'
+                    }`}>
                       {animatedValues[index]}
                       {index === 1 && '%'}
                       {index === 3 && '+'}
