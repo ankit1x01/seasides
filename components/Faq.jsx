@@ -127,8 +127,8 @@ const Faq = () => {
       
       <section ref={faqRef} className={`relative py-20 overflow-hidden transition-colors duration-300 ${
         isDark 
-          ? 'bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white' 
-          : 'bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 text-slate-800'
+          ? 'bg-charcoal-gray text-white'
+          : 'bg-light-gray text-charcoal-gray'
       }`}>
         {/* Background Effects */}
         <div className="absolute inset-0">
@@ -152,18 +152,18 @@ const Faq = () => {
         <div className="relative container mx-auto px-6 z-10">
           <div className="text-center mb-16">
             <div className="inline-block mb-4">
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-medium text-lg">
+              <span className="text-deep-ocean font-medium text-lg">
                 Have Questions?
               </span>
             </div>
             <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${
               isDark 
-                ? 'bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent' 
-                : 'bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent'
+                ? 'text-white'
+                : 'text-charcoal-gray'
             }`}>
               Frequently Asked Questions
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-4"></div>
+            <div className="w-32 h-1 bg-sunset-orange mx-auto rounded-full mb-4"></div>
             <p className={`text-lg max-w-2xl mx-auto ${
               isDark ? 'text-slate-300' : 'text-slate-600'
             }`}>
@@ -202,7 +202,7 @@ const Faq = () => {
                       </span>
                     </div>
                     <div className={`transform transition-transform duration-300 ${open === index ? 'rotate-180' : ''}`}>
-                      <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                      <div className="w-8 h-8 bg-sunset-orange rounded-full flex items-center justify-center">
                         <span className="text-white font-bold text-lg">
                           {open === index ? '−' : '+'}
                         </span>
@@ -213,8 +213,8 @@ const Faq = () => {
                   {/* Hover effect overlay */}
                   <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
                     isDark 
-                      ? 'bg-gradient-to-r from-cyan-500/10 to-purple-500/10' 
-                      : 'bg-gradient-to-r from-blue-500/10 to-purple-500/10'
+                      ? 'bg-sunset-orange/10'
+                      : 'bg-sunset-orange/10'
                   }`}></div>
                 </button>
                 
@@ -222,10 +222,10 @@ const Faq = () => {
                   <div className="px-6 pb-6">
                     <div className={`w-full h-px mb-4 ${
                       isDark 
-                        ? 'bg-gradient-to-r from-slate-600 to-slate-700' 
-                        : 'bg-gradient-to-r from-blue-200 to-purple-200'
+                        ? 'bg-charcoal-gray/50'
+                        : 'bg-sunset-orange/20'
                     }`}></div>
-                    <div className={`bg-gradient-to-r ${faq.color} p-4 rounded-xl`}>
+                    <div className={`bg-deep-ocean p-4 rounded-xl`}>
                       <p className="text-white leading-relaxed text-base md:text-lg">{faq.answer}</p>
                     </div>
                   </div>

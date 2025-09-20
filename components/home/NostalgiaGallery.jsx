@@ -196,11 +196,11 @@ const NostalgiaGallery = () => {
 
   return (
     <section id="nostalgia" className={`relative py-20 scroll-mt-24 overflow-hidden ${
-      isDark ? 'bg-gradient-to-br from-gray-900 via-black to-indigo-900/20' : 'bg-gradient-to-br from-blue-50 via-white to-indigo-50'
+      isDark ? 'bg-charcoal-gray' : 'bg-light-gray'
     }`}>
       {/* Animated background */}
       <div className="absolute inset-0">
-        <div className={`absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 aurora-x ${
+        <div className={`absolute inset-0 bg-sunset-orange/10 aurora-x ${
           isDark ? 'opacity-50' : 'opacity-30'
         }`}></div>
       </div>
@@ -235,7 +235,7 @@ const NostalgiaGallery = () => {
               isDark ? 'text-white soft-glow' : 'text-gray-900'
             }`}>
               Relive the{' '}
-              <span className="bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              <span className="text-sunset-orange">
                 Magic
               </span>
             </h2>
@@ -264,8 +264,8 @@ const NostalgiaGallery = () => {
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                   selectedFilter === filter.id
                     ? isDark
-                      ? 'bg-gradient-to-r from-pink-600 to-purple-600 text-white shadow-lg'
-                      : 'bg-gradient-to-r from-pink-600 to-purple-600 text-white shadow-lg'
+                      ? 'bg-sunset-orange text-white shadow-lg'
+                      : 'bg-sunset-orange text-white shadow-lg'
                     : isDark
                       ? 'bg-white/10 text-gray-300 hover:bg-white/20 border border-white/20'
                       : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 shadow-sm'
@@ -321,7 +321,7 @@ const NostalgiaGallery = () => {
                       />
                       
                       {/* Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                           <h3 className="font-bold text-lg mb-2">{item.title}</h3>
                           <p className="text-sm text-gray-200 mb-2">{item.description}</p>
@@ -356,8 +356,8 @@ const NostalgiaGallery = () => {
               whileTap={{ scale: 0.95 }}
               className={`inline-flex items-center px-8 py-4 rounded-full font-bold transition-all duration-300 ${
                 isDark
-                  ? 'bg-gradient-to-r from-pink-600 to-purple-600 text-white hover:from-pink-700 hover:to-purple-700 shadow-lg hover:shadow-pink-500/25'
-                  : 'bg-gradient-to-r from-pink-600 to-purple-600 text-white hover:from-pink-700 hover:to-purple-700 shadow-lg hover:shadow-pink-500/25'
+                  ? 'bg-sunset-orange text-white hover:bg-sunset-orange/80 shadow-lg hover:shadow-sunset-orange/25'
+                  : 'bg-sunset-orange text-white hover:bg-sunset-orange/80 shadow-lg hover:shadow-sunset-orange/25'
               }`}
             >
               <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">

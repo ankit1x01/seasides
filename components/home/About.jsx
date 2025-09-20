@@ -6,9 +6,9 @@ const About = () => {
   const { isDark } = useTheme();
 
   const features = [
-    { label: 'Free Training', color: 'from-blue-500 to-cyan-500' },
-    { label: 'Community-driven', color: 'from-purple-500 to-pink-500' },
-    { label: 'Hands-on Learning', color: 'from-green-500 to-emerald-500' }
+    { label: 'Free Training', color: 'bg-deep-ocean-blue' },
+    { label: 'Community-driven', color: 'bg-sunset-orange' },
+    { label: 'Hands-on Learning', color: 'bg-sunny-yellow' }
   ];
 
   return (
@@ -55,7 +55,7 @@ const About = () => {
                   isDark ? 'text-white soft-glow' : 'text-gray-900'
                 }`}>
                   About The{' '}
-                  <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  <span className="text-sunset-orange">
                     Conference
                   </span>
                 </h2>
@@ -102,7 +102,7 @@ const About = () => {
                       isDark ? 'bg-gray-800 text-gray-300 hover:bg-gray-700' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                   >
-                    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${feature.color} mr-2`}></div>
+                    <div className={`w-2 h-2 rounded-full ${feature.color} mr-2`}></div>
                     {feature.label}
                   </motion.div>
                 ))}
@@ -122,8 +122,8 @@ const About = () => {
                   whileTap={{ scale: 0.95 }}
                   className={`inline-flex items-center px-8 py-4 rounded-full font-bold transition-all duration-300 ${
                     isDark
-                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-blue-500/25'
-                      : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-blue-500/25'
+                      ? 'bg-fiery-citrus text-white shadow-lg hover:shadow-blue-500/25'
+                      : 'bg-fiery-citrus text-white shadow-lg hover:shadow-blue-500/25'
                   }`}
                 >
                   <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -149,7 +149,7 @@ const About = () => {
                 <motion.div
                   whileHover={{ scale: 1.1, rotateZ: 10 }}
                   transition={{ duration: 0.3 }}
-                  className={`relative z-20 w-24 h-24 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center cursor-pointer ${
+                  className={`relative z-20 w-24 h-24 rounded-full bg-sunset-orange flex items-center justify-center cursor-pointer ${
                     isDark ? 'shadow-2xl shadow-blue-500/50' : 'shadow-2xl shadow-blue-500/30'
                   }`}
                 >
@@ -162,17 +162,17 @@ const About = () => {
                   </div>
                   
                   {/* Pulsing Ring */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 animate-ping opacity-20"></div>
+                  <div className="absolute inset-0 rounded-full bg-sunset-orange animate-ping opacity-20"></div>
                 </motion.div>
 
                 {/* Orbiting Learning Nodes */}
                 {[
-                  { icon: 'security', label: 'Security', angle: 0, color: 'from-red-400 to-red-600' },
-                  { icon: 'workshops', label: 'Workshops', angle: 60, color: 'from-blue-400 to-blue-600' },
-                  { icon: 'community', label: 'Community', angle: 120, color: 'from-green-400 to-green-600' },
-                  { icon: 'learning', label: 'Learning', angle: 180, color: 'from-purple-400 to-purple-600' },
-                  { icon: 'network', label: 'Network', angle: 240, color: 'from-cyan-400 to-cyan-600' },
-                  { icon: 'skills', label: 'Skills', angle: 300, color: 'from-orange-400 to-orange-600' }
+                  { icon: 'security', label: 'Security', angle: 0, color: 'bg-deep-ocean-blue' },
+                  { icon: 'workshops', label: 'Workshops', angle: 60, color: 'bg-sunset-orange' },
+                  { icon: 'community', label: 'Community', angle: 120, color: 'bg-sunny-yellow' },
+                  { icon: 'learning', label: 'Learning', angle: 180, color: 'bg-deep-ocean-blue' },
+                  { icon: 'network', label: 'Network', angle: 240, color: 'bg-sunset-orange' },
+                  { icon: 'skills', label: 'Skills', angle: 300, color: 'bg-sunny-yellow' }
                 ].map((node, index) => (
                   <motion.div
                     key={node.label}
@@ -192,7 +192,7 @@ const About = () => {
                       transformOrigin: 'center'
                     }}
                   >
-                    <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${node.color} flex items-center justify-center ${
+                    <div className={`w-16 h-16 rounded-full ${node.color} flex items-center justify-center ${
                       isDark ? 'shadow-lg shadow-blue-500/25' : 'shadow-lg shadow-gray-400/25'
                     } hover:shadow-2xl transition-shadow duration-300`}>
                       <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
@@ -232,7 +232,7 @@ const About = () => {
                     </div>
                     
                     {/* Connection Lines */}
-                    <div className={`absolute top-8 left-8 w-32 h-px bg-gradient-to-r ${node.color} opacity-30`}
+                    <div className={`absolute top-8 left-8 w-32 h-px ${node.color} opacity-30`}
                          style={{
                            transform: `rotate(${180 + node.angle}deg)`,
                            transformOrigin: '0 0'
@@ -258,7 +258,7 @@ const About = () => {
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    className="absolute w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 opacity-60"
+                    className="absolute w-2 h-2 rounded-full bg-sunset-orange opacity-60"
                     style={{
                       left: `${20 + Math.cos(i * 30 * Math.PI / 180) * (100 + Math.sin(i * 15) * 20)}px`,
                       top: `${20 + Math.sin(i * 30 * Math.PI / 180) * (100 + Math.cos(i * 15) * 20)}px`,
@@ -289,7 +289,7 @@ const About = () => {
                     isDark ? 'bg-gray-900/80 border border-gray-700' : 'bg-white/80 border border-gray-200'
                   } shadow-xl`}>
                     <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 animate-pulse"></div>
+                      <div className="w-3 h-3 rounded-full bg-sunset-orange animate-pulse"></div>
                       <span className={`text-sm font-medium ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         Feb 19-21, 2026
                       </span>

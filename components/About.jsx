@@ -29,47 +29,155 @@ const About = () => {
 
   const sections = {
     story: {
-      title: "How are we?",
+      title: "Born from Necessity",
       subtitle: "What's our Story ?",
-      content: "Seasides Information Security Conference is a leading conference dedicated to empowering students and professionals in the field of information security and ethical hacking.\n\nOur conference is designed to provide high-quality educational experiences and hands-on training at no cost, ensuring that everyone, regardless of their financial background, has the opportunity to enhance their skills and knowledge in cybersecurity."
+      icon: "origin",
+      content: "In 2019, a group of passionate cybersecurity enthusiasts recognized a critical gap in the industry – quality security education was becoming a privilege, not a right. Too many brilliant minds were being left behind due to financial barriers.",
+      fullStory: "Seasides emerged from the null security community in India, inspired by a simple yet revolutionary idea: what if world-class cybersecurity education was completely free? What if anyone, regardless of their background or financial situation, could access the same high-quality training that was previously available only to the privileged few?",
+      highlights: [
+        { stat: "2019", label: "Founded", description: "Born from the null security community" },
+        { stat: "100%", label: "Free Education", description: "No barriers, just learning" },
+        { stat: "5000+", label: "Students Impacted", description: "Across India and beyond" }
+      ],
+      quote: "We believe that cybersecurity knowledge should be a fundamental right, not a luxury."
     },
     mission: {
-      title: "Democratizing Cybersecurity",
-      subtitle: "What's our Mission ?", 
-      content: "Our mission is to democratize access to top-tier cybersecurity education by offering free workshops and training sessions led by industry experts along with fun and parties.\n\nWe strive to create an inclusive environment where students and aspiring professionals can learn, collaborate, and grow together, equipping them with the tools they need to succeed in the rapidly evolving cybersecurity landscape.\n\nJoin us for three days of insightful keynote speeches, technical sessions, hands-on workshops, and networking opportunities, as we address the most critical challenges in cybersecurity today."
+      title: "Democratizing Digital Defense",
+      subtitle: "What's our Mission ?",
+      icon: "mission", 
+      content: "Our mission transcends traditional conference boundaries. We're building a movement that transforms how cybersecurity education is delivered, consumed, and scaled across communities.",
+      vision: "To create a world where anyone with passion and curiosity can become a cybersecurity expert, regardless of their socioeconomic background.",
+      pillars: [
+        {
+          title: "Free Quality Education",
+          description: "World-class workshops and training sessions led by industry pioneers",
+          icon: "education"
+        },
+        {
+          title: "Community First",
+          description: "Building lasting connections between students, professionals, and mentors",
+          icon: "community"
+        },
+        {
+          title: "Hands-on Learning",
+          description: "Practical, real-world skills that matter in today's threat landscape",
+          icon: "practice"
+        },
+        {
+          title: "Industry Connection",
+          description: "Bridging the gap between academia and the professional world",
+          icon: "bridge"
+        }
+      ],
+      impact: "Three days of transformation: keynotes, technical deep-dives, hands-on labs, career guidance, and yes – legendary networking parties that forge lifelong professional relationships."
     },
     achievements: {
-      title: "Empowering the Future",
+      title: "Redefining Success",
       subtitle: "What we Achieved ?",
-      content: "Since our inception, Seasides's commitment to providing free, high-quality education has made a significant impact on the cybersecurity community, particularly among students.\n\nHere's a look at the key achievements from past conferences:",
+      icon: "achievements",
+      content: "Success isn't measured in revenue – it's measured in lives changed, careers launched, and communities strengthened.",
       keyAchievements: [
-        "Record-breaking Attendance",
-        "Cutting-edge Workshops and Training", 
-        "Advancing Cybersecurity Education",
-        "Scholarships and Awards",
-        "Community Building and Networking"
+        {
+          title: "5000+ Lives Transformed",
+          description: "Students and professionals whose careers were accelerated through our programs",
+          metric: "5000+",
+          icon: "people"
+        },
+        {
+          title: "Zero-Cost Education Model",
+          description: "Proving that quality doesn't require a premium price tag",
+          metric: "₹0",
+          icon: "free"
+        },
+        {
+          title: "50+ Industry Experts",
+          description: "Top-tier speakers and trainers who believe in our mission",
+          metric: "50+",
+          icon: "experts"
+        },
+        {
+          title: "15+ Fortune 500 Partners",
+          description: "Leading companies supporting our vision of accessible education",
+          metric: "15+",
+          icon: "partners"
+        },
+        {
+          title: "100+ Job Placements",
+          description: "Direct career opportunities created through our network",
+          metric: "100+",
+          icon: "jobs"
+        }
       ],
-      conclusion: "We take pride in fostering a supportive environment where talent can flourish and where attendees leave inspired and equipped to tackle the challenges of the cybersecurity field."
+      testimonial: {
+        text: "Seasides didn't just teach me cybersecurity – it gave me a career, a community, and a purpose.",
+        author: "Former Student, Now Security Architect at Microsoft"
+      }
     },
     attend: {
-      title: "Join the Cyber Revolution",
+      title: "Your Cyber Journey Awaits",
       subtitle: "Who should Attend ?",
-      description: "Whether you're a professional or just starting your journey in cybersecurity, this conference is designed for everyone passionate about protecting the digital world.",
+      icon: "audience",
+      description: "Whether you're defending your first network or leading enterprise security, Seasides is designed for every stage of your cybersecurity journey.",
       targetAudience: [
-        "IT & Cybersecurity Professionals",
-        "Government officials & policy makers",
-        "Business leaders & entrepreneurs", 
-        "Students & researchers interested in cybersecurity"
+        {
+          title: "Students & New Graduates",
+          description: "Launch your career with hands-on training from industry legends",
+          benefits: ["Free certification paths", "Direct mentorship", "Job placement assistance"],
+          icon: "student"
+        },
+        {
+          title: "Cybersecurity Professionals", 
+          description: "Stay ahead of emerging threats and advance your expertise",
+          benefits: ["Advanced threat hunting", "Zero-day research insights", "C-suite networking"],
+          icon: "professional"
+        },
+        {
+          title: "Business Leaders & CTOs",
+          description: "Understand the strategic implications of cybersecurity",
+          benefits: ["Risk management strategies", "Compliance frameworks", "Executive briefings"],
+          icon: "executive"
+        },
+        {
+          title: "Government & Policy Makers",
+          description: "Shape the future of national cybersecurity policy",
+          benefits: ["Policy workshops", "Threat landscape briefings", "International cooperation"],
+          icon: "government"
+        }
       ],
-      eventHighlights: [
-        { title: "Free Workshops", description: "Hands-on sessions by top experts." },
-        { title: "Networking", description: "Connect with peers and mentors." },
-        { title: "Career Growth", description: "Discover opportunities and insights." },
-        { title: "Community", description: "Join a collaborative learning space." },
-        { title: "Trends & Threats", description: "Stay updated on latest cyber issues." },
-        { title: "After Party", description: "Relax, network, and celebrate!" }
+      experienceHighlights: [
+        { 
+          title: "Capture The Flag (CTF)", 
+          description: "Real-world hacking challenges with cash prizes",
+          intensity: "High",
+          color: "red"
+        },
+        { 
+          title: "Zero-Day Showcase", 
+          description: "Exclusive reveals of cutting-edge research",
+          intensity: "Elite",
+          color: "purple" 
+        },
+        { 
+          title: "Career Lab", 
+          description: "Resume reviews, mock interviews, job matching",
+          intensity: "Practical",
+          color: "green"
+        },
+        { 
+          title: "Hardware Hacking Village", 
+          description: "Break things, learn how they break, fix them",
+          intensity: "Hands-on",
+          color: "blue"
+        },
+        { 
+          title: "Networking Gala", 
+          description: "Epic parties that build lasting professional bonds",
+          intensity: "Legendary",
+          color: "gold"
+        }
       ],
-      partyNote: "Guilty as charged—we throw epic parties! 😉"
+      callToAction: "Ready to level up your cybersecurity game? Join 2000+ professionals for India's most impactful security conference.",
+      partyNote: "Fair warning: Our networking parties are so good, they're practically mandatory. 🎉"
     }
   };
 
@@ -154,7 +262,7 @@ const About = () => {
     },
     {
       "name": "Kartheek Lade",
-      "image": "Karteek.webp",
+      "image": "Karteek.jpeg",
       "role": "Security Researcher",
       "fullDescription": "Kartheek Lade is a passionate security researcher with a strong focus on enhancing the security landscape of the Internet of Vehicles (IoV). He actively contributes to the Seasides community and serves as a technical committee member of the ASRG Vulnerability Management team, focusing on fortifying vehicle and embedded security. Kartheek is also a regular speaker and trainer at renowned international security conferences, including Seasides, DEFCON Car Hacking Village, BlackHat Arsenal, Secure Our Streets (SOS), C0c0n, and NullCon. Whether it's breaking down security barriers or sparking insightful discussions, he's always up for the challenge. 😉",
       "expertise": ["Internet of Vehicles (IoV)", "Vehicle Security", "Embedded Security", "Vulnerability Management"],
@@ -273,7 +381,7 @@ const About = () => {
                     <span className="text-lg font-medium text-blue-500 ml-2">&quot;{member.nickname}&quot;</span>
                   )}
                 </h2>
-                <p className={`text-lg ${isDark ? 'text-cyan-400' : 'text-blue-600'}`}>
+                <p className={`text-lg ${isDark ? 'text-deep-ocean' : 'text-blue-600'}`}>
                   {member.role}
                 </p>
                 {member.experience && (
@@ -399,11 +507,7 @@ const About = () => {
   return (
     <section 
       ref={sectionRef}
-      className={`py-20 relative overflow-hidden transition-colors duration-300 ${
-        isDark 
-          ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900' 
-          : 'bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50'
-      }`}
+      className="py-20 relative overflow-hidden transition-colors duration-300 bg-light-gray"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -418,29 +522,25 @@ const About = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="inline-block mb-4">
-            <span className={`font-medium text-lg ${
-              isDark 
-                ? 'text-cyan-400' 
-                : 'bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent'
-            }`}>
+            <span className="font-medium text-lg text-deep-ocean">
               About Seasides
             </span>
           </div>
           <h2 className={`text-5xl md:text-6xl font-bold mb-6 ${
-            isDark 
-              ? 'text-white' 
-              : 'bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent'
+            isDark
+              ? 'text-white'
+              : 'text-deep-ocean'
           }`}>
             India&apos;s Premier FREE
             <span className={`block ${
-              isDark 
-                ? 'text-cyan-400' 
-                : 'bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent'
+              isDark
+                ? 'text-sunset-orange'
+                : 'text-sunset-orange'
             }`}>
               Cybersecurity Conference
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-sunset-orange mx-auto rounded-full"></div>
         </div>
 
         {/* Section Navigation */}
@@ -459,8 +559,8 @@ const About = () => {
                   className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
                     activeSection === key
                       ? isDark
-                        ? 'bg-cyan-500 text-black shadow-lg shadow-cyan-500/25'
-                        : 'bg-blue-500 text-white shadow-lg shadow-blue-500/25'
+                        ? 'bg-sunset-orange text-black shadow-lg shadow-sunset-orange/25'
+                        : 'bg-deep-ocean text-white shadow-lg shadow-deep-ocean-blue/25'
                       : isDark
                         ? 'text-slate-300 hover:text-white hover:bg-slate-700/50'
                         : 'text-slate-600 hover:text-slate-800 hover:bg-white/50'
@@ -484,8 +584,8 @@ const About = () => {
                   className={`px-4 py-2.5 rounded-xl font-medium whitespace-nowrap transition-all duration-300 ${
                     activeSection === key
                       ? isDark
-                        ? 'bg-cyan-500 text-black shadow-lg shadow-cyan-500/25'
-                        : 'bg-blue-500 text-white shadow-lg shadow-blue-500/25'
+                        ? 'bg-sunset-orange text-black shadow-lg shadow-sunset-orange/25'
+                        : 'bg-deep-ocean text-white shadow-lg shadow-deep-ocean-blue/25'
                       : isDark
                         ? 'text-slate-300 hover:text-white hover:bg-slate-700/50'
                         : 'text-slate-600 hover:text-slate-800 hover:bg-white/50'
@@ -510,104 +610,103 @@ const About = () => {
             <div className="text-center space-y-6">
               <h3 className={`text-3xl md:text-4xl font-bold ${
                 isDark 
-                  ? 'text-cyan-400' 
-                  : 'bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent'
+                  ? 'text-deep-ocean' 
+                  : 'text-deep-ocean'
               }`}>
                 {sections[activeSection].title}
               </h3>
               
-              <div className="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto"></div>
+              <div className="w-16 h-0.5 bg-sunset-orange mx-auto"></div>
               
               {/* Modern Section Graphics */}
               <div className="mb-8 flex justify-center relative">
                 {activeSection === 'story' && (
                   <div className="relative group">
-                    {/* Modern gradient orb */}
-                    <div className={`w-40 h-40 rounded-full relative overflow-hidden ${
-                      isDark ? 'bg-gradient-to-br from-cyan-400/20 via-blue-500/10 to-purple-600/20' : 'bg-gradient-to-br from-blue-200/60 via-indigo-200/40 to-purple-200/60'
+                    <div className={`w-48 h-48 rounded-3xl relative overflow-hidden ${
+                      isDark ? 'bg-deep-ocean/20' : 'bg-deep-ocean/10'
                     }`} style={{ animation: 'modernFloat 6s ease-in-out infinite' }}>
-                      {/* Animated background */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                      {/* Premium shimmer effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-2000"></div>
                       
-                      {/* Central icon */}
+                      {/* Central icon with modern design */}
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <div className={`w-16 h-16 rounded-xl ${isDark ? 'bg-cyan-500/30' : 'bg-blue-500/30'} flex items-center justify-center backdrop-blur-sm`}>
-                          <svg className={`w-8 h-8 ${isDark ? 'text-cyan-300' : 'text-blue-700'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        <div className={`w-20 h-20 rounded-2xl ${isDark ? 'bg-deep-ocean/40' : 'bg-deep-ocean/40'} flex items-center justify-center backdrop-blur-sm border ${isDark ? 'border-deep-ocean/30' : 'border-deep-ocean/30'}`}>
+                          <svg className={`w-10 h-10 ${isDark ? 'text-deep-ocean' : 'text-deep-ocean'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                           </svg>
                         </div>
                       </div>
                       
-                      {/* Floating particles */}
-                      <div className="absolute top-4 left-8 w-2 h-2 bg-cyan-400 rounded-full opacity-60" style={{ animation: 'particleFloat 4s ease-in-out infinite' }}></div>
-                      <div className="absolute bottom-6 right-6 w-1.5 h-1.5 bg-blue-500 rounded-full opacity-70" style={{ animation: 'particleFloat 3s ease-in-out infinite 0.5s' }}></div>
-                      <div className="absolute top-12 right-4 w-1 h-1 bg-purple-400 rounded-full opacity-80" style={{ animation: 'particleFloat 5s ease-in-out infinite 1s' }}></div>
+                      {/* Floating origin particles */}
+                      <div className="absolute top-6 left-10 w-3 h-3 bg-sunset-orange rounded-full opacity-60" style={{ animation: 'particleFloat 4s ease-in-out infinite' }}></div>
+                      <div className="absolute bottom-8 right-8 w-2 h-2 bg-deep-ocean rounded-full opacity-70" style={{ animation: 'particleFloat 3s ease-in-out infinite 0.5s' }}></div>
+                      <div className="absolute top-16 right-6 w-1.5 h-1.5 bg-sunny-yellow rounded-full opacity-80" style={{ animation: 'particleFloat 5s ease-in-out infinite 1s' }}></div>
                     </div>
                   </div>
                 )}
                 
                 {activeSection === 'mission' && (
                   <div className="relative group">
-                    <div className={`w-40 h-40 rounded-full relative overflow-hidden ${
-                      isDark ? 'bg-gradient-to-br from-purple-500/20 via-pink-500/10 to-red-500/20' : 'bg-gradient-to-br from-purple-200/60 via-pink-200/40 to-red-200/60'
+                    <div className={`w-48 h-48 rounded-3xl relative overflow-hidden ${
+                      isDark ? 'bg-sunset-orange/20' : 'bg-sunset-orange/10'
                     }`} style={{ animation: 'modernFloat 6s ease-in-out infinite 1s' }}>
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-2000"></div>
                       
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <div className={`w-16 h-16 rounded-xl ${isDark ? 'bg-purple-500/30' : 'bg-purple-500/30'} flex items-center justify-center backdrop-blur-sm`}>
-                          <svg className={`w-8 h-8 ${isDark ? 'text-purple-300' : 'text-purple-700'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        <div className={`w-20 h-20 rounded-2xl ${isDark ? 'bg-sunset-orange/40' : 'bg-sunset-orange/40'} flex items-center justify-center backdrop-blur-sm border ${isDark ? 'border-sunset-orange/30' : 'border-sunset-orange/30'}`}>
+                          <svg className={`w-10 h-10 ${isDark ? 'text-sunset-orange' : 'text-sunset-orange'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                           </svg>
                         </div>
                       </div>
                       
-                      <div className="absolute top-3 left-6 w-2 h-2 bg-purple-400 rounded-full opacity-60" style={{ animation: 'particleFloat 3.5s ease-in-out infinite 0.8s' }}></div>
-                      <div className="absolute bottom-8 right-8 w-1.5 h-1.5 bg-pink-500 rounded-full opacity-70" style={{ animation: 'particleFloat 4.5s ease-in-out infinite 0.3s' }}></div>
-                      <div className="absolute top-16 right-3 w-1 h-1 bg-red-400 rounded-full opacity-80" style={{ animation: 'particleFloat 4s ease-in-out infinite 1.2s' }}></div>
+                      <div className="absolute top-4 left-8 w-3 h-3 bg-sunset-orange rounded-full opacity-60" style={{ animation: 'particleFloat 3.5s ease-in-out infinite 0.8s' }}></div>
+                      <div className="absolute bottom-10 right-10 w-2 h-2 bg-sunny-yellow rounded-full opacity-70" style={{ animation: 'particleFloat 4.5s ease-in-out infinite 0.3s' }}></div>
+                      <div className="absolute top-20 right-4 w-1.5 h-1.5 bg-deep-ocean rounded-full opacity-80" style={{ animation: 'particleFloat 4s ease-in-out infinite 1.2s' }}></div>
                     </div>
                   </div>
                 )}
                 
                 {activeSection === 'achievements' && (
                   <div className="relative group">
-                    <div className={`w-40 h-40 rounded-full relative overflow-hidden ${
-                      isDark ? 'bg-gradient-to-br from-yellow-500/20 via-orange-500/10 to-red-500/20' : 'bg-gradient-to-br from-yellow-200/60 via-orange-200/40 to-red-200/60'
+                    <div className={`w-48 h-48 rounded-3xl relative overflow-hidden ${
+                      isDark ? 'bg-sunny-yellow/20' : 'bg-sunny-yellow/10'
                     }`} style={{ animation: 'modernFloat 6s ease-in-out infinite 2s' }}>
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-2000"></div>
                       
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <div className={`w-16 h-16 rounded-xl ${isDark ? 'bg-yellow-500/30' : 'bg-yellow-500/30'} flex items-center justify-center backdrop-blur-sm`}>
-                          <svg className={`w-8 h-8 ${isDark ? 'text-yellow-300' : 'text-yellow-700'}`} fill="currentColor" viewBox="0 0 24 24">
+                        <div className={`w-20 h-20 rounded-2xl ${isDark ? 'bg-sunny-yellow/40' : 'bg-sunny-yellow/40'} flex items-center justify-center backdrop-blur-sm border ${isDark ? 'border-sunny-yellow/30' : 'border-sunny-yellow/30'}`}>
+                          <svg className={`w-10 h-10 ${isDark ? 'text-sunny-yellow' : 'text-sunny-yellow'}`} fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                           </svg>
                         </div>
                       </div>
                       
-                      <div className="absolute top-5 left-4 w-2 h-2 bg-yellow-400 rounded-full opacity-60" style={{ animation: 'particleFloat 3s ease-in-out infinite 0.4s' }}></div>
-                      <div className="absolute bottom-4 right-5 w-1.5 h-1.5 bg-orange-500 rounded-full opacity-70" style={{ animation: 'particleFloat 4s ease-in-out infinite 0.9s' }}></div>
-                      <div className="absolute top-14 right-6 w-1 h-1 bg-red-400 rounded-full opacity-80" style={{ animation: 'particleFloat 3.5s ease-in-out infinite 0.6s' }}></div>
+                      <div className="absolute top-7 left-6 w-3 h-3 bg-sunny-yellow rounded-full opacity-60" style={{ animation: 'particleFloat 3s ease-in-out infinite 0.4s' }}></div>
+                      <div className="absolute bottom-6 right-7 w-2 h-2 bg-sunset-orange rounded-full opacity-70" style={{ animation: 'particleFloat 4s ease-in-out infinite 0.9s' }}></div>
+                      <div className="absolute top-18 right-8 w-1.5 h-1.5 bg-deep-ocean rounded-full opacity-80" style={{ animation: 'particleFloat 3.5s ease-in-out infinite 0.6s' }}></div>
                     </div>
                   </div>
                 )}
                 
                 {activeSection === 'attend' && (
                   <div className="relative group">
-                    <div className={`w-40 h-40 rounded-full relative overflow-hidden ${
-                      isDark ? 'bg-gradient-to-br from-green-500/20 via-teal-500/10 to-blue-500/20' : 'bg-gradient-to-br from-green-200/60 via-teal-200/40 to-blue-200/60'
+                    <div className={`w-48 h-48 rounded-3xl relative overflow-hidden ${
+                      isDark ? 'bg-deep-ocean/20' : 'bg-deep-ocean/10'
                     }`} style={{ animation: 'modernFloat 6s ease-in-out infinite 0.5s' }}>
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-2000"></div>
                       
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <div className={`w-16 h-16 rounded-xl ${isDark ? 'bg-green-500/30' : 'bg-green-500/30'} flex items-center justify-center backdrop-blur-sm`}>
-                          <svg className={`w-8 h-8 ${isDark ? 'text-green-300' : 'text-green-700'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className={`w-20 h-20 rounded-2xl ${isDark ? 'bg-deep-ocean/40' : 'bg-deep-ocean/40'} flex items-center justify-center backdrop-blur-sm border ${isDark ? 'border-deep-ocean/30' : 'border-deep-ocean/30'}`}>
+                          <svg className={`w-10 h-10 ${isDark ? 'text-deep-ocean' : 'text-deep-ocean'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                           </svg>
                         </div>
                       </div>
                       
-                      <div className="absolute top-6 left-5 w-2 h-2 bg-green-400 rounded-full opacity-60" style={{ animation: 'particleFloat 4.2s ease-in-out infinite 0.2s' }}></div>
-                      <div className="absolute bottom-5 right-4 w-1.5 h-1.5 bg-teal-500 rounded-full opacity-70" style={{ animation: 'particleFloat 3.8s ease-in-out infinite 0.7s' }}></div>
-                      <div className="absolute top-10 right-7 w-1 h-1 bg-blue-400 rounded-full opacity-80" style={{ animation: 'particleFloat 4.5s ease-in-out infinite 1.1s' }}></div>
+                      <div className="absolute top-8 left-7 w-3 h-3 bg-sunset-orange rounded-full opacity-60" style={{ animation: 'particleFloat 4.2s ease-in-out infinite 0.2s' }}></div>
+                      <div className="absolute bottom-7 right-6 w-2 h-2 bg-sunny-yellow rounded-full opacity-70" style={{ animation: 'particleFloat 3.8s ease-in-out infinite 0.7s' }}></div>
+                      <div className="absolute top-12 right-9 w-1.5 h-1.5 bg-deep-ocean rounded-full opacity-80" style={{ animation: 'particleFloat 4.5s ease-in-out infinite 1.1s' }}></div>
                     </div>
                   </div>
                 )}
@@ -616,99 +715,317 @@ const About = () => {
               <div className={`text-lg md:text-xl leading-relaxed ${
                 isDark ? 'text-slate-200' : 'text-slate-700'
               }`}>
-                {(sections[activeSection].content || sections[activeSection].description || '').split('\n\n').map((paragraph, index) => (
-                  <p key={index} className={index > 0 ? 'mt-4' : ''}>
-                    {paragraph}
+                <p className="mb-6">
+                  {sections[activeSection].content}
+                </p>
+                {sections[activeSection].fullStory && (
+                  <p className="mb-6 italic">
+                    {sections[activeSection].fullStory}
                   </p>
-                ))}
+                )}
+                {sections[activeSection].vision && (
+                  <div className={`p-6 rounded-xl border-l-4 mb-6 ${
+                    isDark 
+                      ? 'bg-slate-700/30 border-cyan-400 text-cyan-100' 
+                      : 'bg-blue-50 border-blue-400 text-blue-800'
+                  }`}>
+                    <h4 className="font-semibold mb-2">Our Vision</h4>
+                    <p>{sections[activeSection].vision}</p>
+                  </div>
+                )}
+                {sections[activeSection].impact && (
+                  <p className="mb-6">
+                    {sections[activeSection].impact}
+                  </p>
+                )}
+                {sections[activeSection].description && (
+                  <p className="mb-6">
+                    {sections[activeSection].description}
+                  </p>
+                )}
               </div>
 
-              {/* Achievements List */}
-              {activeSection === 'achievements' && sections[activeSection].keyAchievements && (
+              {/* Story Highlights */}
+              {activeSection === 'story' && sections[activeSection].highlights && (
                 <div className="mt-8">
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {sections[activeSection].keyAchievements.map((achievement, index) => (
-                      <div key={index} className={`p-4 rounded-xl border ${
+                  <div className="grid md:grid-cols-3 gap-6">
+                    {sections[activeSection].highlights.map((highlight, index) => (
+                      <div key={index} className={`text-center p-6 rounded-2xl border-2 relative overflow-hidden ${
                         isDark 
-                          ? 'bg-slate-700/50 border-slate-600 text-slate-200' 
-                          : 'bg-blue-50/50 border-blue-200 text-blue-800'
-                      }`}>
-                        <div className="flex items-center gap-3">
-                          <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
-                            isDark ? 'bg-cyan-500 text-black' : 'bg-blue-500 text-white'
-                          }`}>
-                            {index + 1}
-                          </div>
-                          <span className="font-medium">{achievement}</span>
+                          ? 'bg-slate-700/30 border-cyan-500/20 hover:border-cyan-400/40' 
+                          : 'bg-white/70 border-blue-200 hover:border-blue-300'
+                      } transition-all duration-300 group hover:scale-105`}>
+                        <div className="absolute inset-0 shimmer-effect bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12"></div>
+                        <div className={`text-4xl font-bold mb-2 ${
+                          isDark ? 'text-sunset-orange' : 'text-deep-ocean'
+                        }`}>
+                          {highlight.stat}
                         </div>
+                        <h5 className={`font-semibold mb-2 ${
+                          isDark ? 'text-white' : 'text-slate-800'
+                        }`}>
+                          {highlight.label}
+                        </h5>
+                        <p className={`text-sm ${
+                          isDark ? 'text-slate-300' : 'text-slate-600'
+                        }`}>
+                          {highlight.description}
+                        </p>
                       </div>
                     ))}
                   </div>
-                  {sections[activeSection].conclusion && (
-                    <p className={`mt-6 text-lg italic ${
-                      isDark ? 'text-slate-300' : 'text-slate-600'
+                  {sections[activeSection].quote && (
+                    <div className={`mt-8 p-6 rounded-2xl text-center ${
+                      isDark
+                        ? 'bg-deep-ocean/30 border border-deep-ocean/30'
+                        : 'bg-deep-ocean/10 border border-deep-ocean/20'
                     }`}>
-                      {sections[activeSection].conclusion}
-                    </p>
+                      <p className={`text-xl font-medium italic ${
+                        isDark ? 'text-sunset-orange' : 'text-deep-ocean'
+                      }`}>
+                        "{sections[activeSection].quote}"
+                      </p>
+                    </div>
                   )}
                 </div>
               )}
 
-              {/* Event Highlights */}
-              {activeSection === 'attend' && (
+              {/* Mission Pillars */}
+              {activeSection === 'mission' && sections[activeSection].pillars && (
+                <div className="mt-8">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {sections[activeSection].pillars.map((pillar, index) => (
+                      <div key={index} className={`p-6 rounded-2xl border ${
+                        isDark
+                          ? 'bg-slate-700/30 border-sunset-orange/20 hover:border-sunset-orange/40'
+                          : 'bg-white/70 border-sunset-orange/20 hover:border-sunset-orange/30'
+                      } transition-all duration-300 group hover:scale-102`}>
+                        <div className="flex items-start gap-4">
+                          <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
+                            isDark ? 'bg-sunset-orange/30' : 'bg-sunset-orange/10'
+                          }`}>
+                            {pillar.icon === 'education' && (
+                              <svg className={`w-6 h-6 ${isDark ? 'text-sunset-orange' : 'text-sunset-orange'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                              </svg>
+                            )}
+                            {pillar.icon === 'community' && (
+                              <svg className={`w-6 h-6 ${isDark ? 'text-sunset-orange' : 'text-sunset-orange'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                              </svg>
+                            )}
+                            {pillar.icon === 'practice' && (
+                              <svg className={`w-6 h-6 ${isDark ? 'text-sunset-orange' : 'text-sunset-orange'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                              </svg>
+                            )}
+                            {pillar.icon === 'bridge' && (
+                              <svg className={`w-6 h-6 ${isDark ? 'text-sunset-orange' : 'text-sunset-orange'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                              </svg>
+                            )}
+                          </div>
+                          <div>
+                            <h5 className={`font-semibold mb-2 ${
+                              isDark ? 'text-white' : 'text-slate-800'
+                            }`}>
+                              {pillar.title}
+                            </h5>
+                            <p className={`text-sm ${
+                              isDark ? 'text-slate-300' : 'text-slate-600'
+                            }`}>
+                              {pillar.description}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Enhanced Achievements List */}
+              {activeSection === 'achievements' && sections[activeSection].keyAchievements && (
                 <div className="mt-8 space-y-8">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {sections[activeSection].keyAchievements.map((achievement, index) => (
+                      <div key={index} className={`relative p-6 rounded-2xl border-2 group hover:scale-105 transition-all duration-300 ${
+                        isDark
+                          ? 'bg-slate-700/30 border-sunny-yellow/20 hover:border-sunny-yellow/40'
+                          : 'bg-white/70 border-sunny-yellow/30 hover:border-sunny-yellow/40'
+                      }`}>
+                        <div className="text-center">
+                          <div className={`text-3xl font-bold mb-2 metric-animate ${
+                            isDark ? 'text-sunny-yellow' : 'text-sunset-orange'
+                          }`}>
+                            {achievement.metric}
+                          </div>
+                          <h5 className={`font-semibold mb-3 ${
+                            isDark ? 'text-white' : 'text-slate-800'
+                          }`}>
+                            {achievement.title}
+                          </h5>
+                          <p className={`text-sm ${
+                            isDark ? 'text-slate-300' : 'text-slate-600'
+                          }`}>
+                            {achievement.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {sections[activeSection].testimonial && (
+                    <div className={`p-8 rounded-2xl text-center ${
+                      isDark
+                        ? 'bg-sunny-yellow/30 border border-sunny-yellow/30'
+                        : 'bg-sunny-yellow/10 border border-sunny-yellow/20'
+                    }`}>
+                      <blockquote className={`text-xl font-medium italic mb-4 ${
+                        isDark ? 'text-sunny-yellow' : 'text-sunset-orange'
+                      }`}>
+                        "{sections[activeSection].testimonial.text}"
+                      </blockquote>
+                      <cite className={`text-sm ${
+                        isDark ? 'text-sunset-orange' : 'text-deep-ocean'
+                      }`}>
+                        — {sections[activeSection].testimonial.author}
+                      </cite>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Enhanced Audience & Experience */}
+              {activeSection === 'attend' && (
+                <div className="mt-8 space-y-12">
+                  {/* Target Audience Cards */}
                   <div>
-                    <h4 className={`text-xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-slate-800'}`}>
-                      Who Should Attend?
+                    <h4 className={`text-2xl font-bold mb-6 text-center ${isDark ? 'text-white' : 'text-slate-800'}`}>
+                      Who Should Join This Revolution?
                     </h4>
-                    <div className="grid md:grid-cols-2 gap-3">
+                    <div className="grid md:grid-cols-2 gap-6">
                       {sections[activeSection].targetAudience.map((audience, index) => (
-                        <div key={index} className={`flex items-center gap-3 p-3 rounded-lg ${
-                          isDark ? 'bg-slate-700/30' : 'bg-white/50'
-                        }`}>
-                          <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span>{audience}</span>
+                        <div key={index} className={`p-6 rounded-2xl border-2 ${
+                          isDark 
+                            ? 'bg-slate-700/30 border-green-500/20 hover:border-green-400/40' 
+                            : 'bg-white/70 border-green-200 hover:border-green-300'
+                        } transition-all duration-300 group hover:scale-102`}>
+                          <div className="flex items-start gap-4 mb-4">
+                            <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
+                              isDark ? 'bg-green-500/30' : 'bg-green-100'
+                            }`}>
+                              <svg className={`w-6 h-6 ${isDark ? 'text-green-300' : 'text-green-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                              </svg>
+                            </div>
+                            <div>
+                              <h5 className={`font-bold text-lg mb-2 ${
+                                isDark ? 'text-white' : 'text-slate-800'
+                              }`}>
+                                {audience.title}
+                              </h5>
+                              <p className={`text-sm mb-3 ${
+                                isDark ? 'text-slate-300' : 'text-slate-600'
+                              }`}>
+                                {audience.description}
+                              </p>
+                            </div>
+                          </div>
+                          <div className="space-y-2">
+                            {audience.benefits.map((benefit, benefitIndex) => (
+                              <div key={benefitIndex} className="flex items-center gap-2">
+                                <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span className={`text-sm ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
+                                  {benefit}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
                         </div>
                       ))}
                     </div>
                   </div>
 
+                  {/* Experience Highlights */}
                   <div>
-                    <h4 className={`text-xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-slate-800'}`}>
-                      Event Highlights
+                    <h4 className={`text-2xl font-bold mb-6 text-center ${isDark ? 'text-white' : 'text-slate-800'}`}>
+                      What Awaits You
                     </h4>
-                    <div className="grid md:grid-cols-3 gap-4">
-                      {sections[activeSection].eventHighlights.map((highlight, index) => (
-                        <div key={index} className={`p-4 rounded-xl border text-center ${
-                          isDark 
-                            ? 'bg-slate-700/30 border-slate-600' 
-                            : 'bg-white/70 border-blue-200'
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {sections[activeSection].experienceHighlights.map((experience, index) => (
+                        <div key={index} className={`p-5 rounded-xl border text-center group hover:scale-105 transition-all duration-300 ${
+                          experience.color === 'red' 
+                            ? isDark ? 'bg-red-900/20 border-red-500/30 hover:border-red-400/50' : 'bg-red-50 border-red-200 hover:border-red-300'
+                          : experience.color === 'purple'
+                            ? isDark ? 'bg-purple-900/20 border-purple-500/30 hover:border-purple-400/50' : 'bg-purple-50 border-purple-200 hover:border-purple-300'
+                          : experience.color === 'green'
+                            ? isDark ? 'bg-green-900/20 border-green-500/30 hover:border-green-400/50' : 'bg-green-50 border-green-200 hover:border-green-300'
+                          : experience.color === 'blue'
+                            ? isDark ? 'bg-blue-900/20 border-blue-500/30 hover:border-blue-400/50' : 'bg-blue-50 border-blue-200 hover:border-blue-300'
+                          : isDark ? 'bg-yellow-900/20 border-yellow-500/30 hover:border-yellow-400/50' : 'bg-yellow-50 border-yellow-200 hover:border-yellow-300'
                         }`}>
-                          <h5 className={`font-semibold mb-2 ${
-                            isDark ? 'text-cyan-400' : 'text-blue-600'
+                          <div className={`inline-block px-2 py-1 rounded-full text-xs font-medium mb-3 ${
+                            experience.color === 'red' 
+                              ? isDark ? 'bg-red-500/30 text-red-300' : 'bg-red-500 text-white'
+                            : experience.color === 'purple'
+                              ? isDark ? 'bg-purple-500/30 text-purple-300' : 'bg-purple-500 text-white'
+                            : experience.color === 'green'
+                              ? isDark ? 'bg-green-500/30 text-green-300' : 'bg-green-500 text-white'
+                            : experience.color === 'blue'
+                              ? isDark ? 'bg-blue-500/30 text-blue-300' : 'bg-blue-500 text-white'
+                            : isDark ? 'bg-yellow-500/30 text-yellow-300' : 'bg-yellow-500 text-white'
                           }`}>
-                            {highlight.title}
+                            {experience.intensity}
+                          </div>
+                          <h5 className={`font-bold mb-2 ${
+                            isDark ? 'text-white' : 'text-slate-800'
+                          }`}>
+                            {experience.title}
                           </h5>
                           <p className={`text-sm ${
                             isDark ? 'text-slate-300' : 'text-slate-600'
                           }`}>
-                            {highlight.description}
+                            {experience.description}
                           </p>
                         </div>
                       ))}
                     </div>
                   </div>
 
+                  {/* Call to Action */}
+                  {sections[activeSection].callToAction && (
+                    <div className={`p-8 rounded-2xl text-center ${
+                      isDark
+                        ? 'bg-deep-ocean/30 border-2 border-deep-ocean/30'
+                        : 'bg-deep-ocean/10 border-2 border-deep-ocean/30'
+                    }`}>
+                      <p className={`text-xl font-semibold mb-4 ${
+                        isDark ? 'text-sunset-orange' : 'text-deep-ocean'
+                      }`}>
+                        {sections[activeSection].callToAction}
+                      </p>
+                      <button className={`px-8 py-3 rounded-xl font-medium transition-all duration-300 pulse-button ${
+                        isDark
+                          ? 'bg-sunset-orange hover:bg-sunset-orange/80 text-white'
+                          : 'bg-deep-ocean hover:bg-deep-ocean/80 text-white'
+                      } hover:scale-105 shadow-lg hover:shadow-xl`}>
+                        Join the Revolution →
+                      </button>
+                    </div>
+                  )}
+
                   {sections[activeSection].partyNote && (
                     <div className={`p-6 rounded-2xl text-center ${
-                      isDark 
-                        ? 'bg-gradient-to-r from-purple-900/50 to-pink-900/50 border border-purple-700/50' 
-                        : 'bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200'
+                      isDark
+                        ? 'bg-sunset-orange/30 border border-sunset-orange/30'
+                        : 'bg-sunset-orange/10 border border-sunset-orange/20'
                     }`}>
                       <p className={`text-xl font-medium ${
-                        isDark ? 'text-purple-300' : 'text-purple-700'
+                        isDark ? 'text-sunset-orange' : 'text-deep-ocean'
                       }`}>
                         {sections[activeSection].partyNote}
                       </p>
@@ -728,7 +1045,7 @@ const About = () => {
             <h3 className={`text-4xl md:text-5xl font-bold mb-4 ${
               isDark 
                 ? 'text-white' 
-                : 'bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent'
+                : 'text-charcoal-gray'
             }`}>
               Meet Our Team
             </h3>
@@ -737,11 +1054,10 @@ const About = () => {
             }`}>
               The passionate individuals making Seasides possible
             </p>
-            <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mt-4"></div>
+            <div className="w-16 h-1 bg-sunset-orange mx-auto rounded-full mt-4"></div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
-            {teamMembers.map((member, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">{teamMembers.map((member, index) => (
               <div 
                 key={index}
                 onClick={() => setSelectedMember(member)}
@@ -749,7 +1065,7 @@ const About = () => {
                   isDark 
                     ? 'hover:bg-slate-800/50' 
                     : 'hover:bg-white/50'
-                } p-4 rounded-2xl backdrop-blur-sm ${
+                } p-6 rounded-2xl backdrop-blur-sm ${
                   member.nickname === 'Sardaar Khan' ? 'sardaar-card' : 
                   member.nickname === 'Munna Bhaiya' ? 'munna-card' : ''
                 }`}
@@ -762,62 +1078,46 @@ const About = () => {
                 {member.nickname === 'Sardaar Khan' && (
                   <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
                     {/* Golden gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 via-orange-400/5 to-red-500/10 rounded-2xl"></div>
-                    {/* Floating golden particles */}
-                    <div className="absolute top-2 right-2 w-2 h-2 bg-yellow-400 rounded-full opacity-70" style={{ animation: 'royalFloat 4s ease-in-out infinite' }}></div>
-                    <div className="absolute bottom-3 left-3 w-1.5 h-1.5 bg-orange-500 rounded-full opacity-60" style={{ animation: 'royalFloat 3s ease-in-out infinite 0.5s' }}></div>
-                    <div className="absolute top-4 left-4 w-1 h-1 bg-red-400 rounded-full opacity-80" style={{ animation: 'royalFloat 5s ease-in-out infinite 1s' }}></div>
+                    <div className="absolute inset-0 bg-sunset-orange/10 rounded-2xl"></div>
                   </div>
                 )}
 
                 {member.nickname === 'Munna Bhaiya' && (
                   <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
                     {/* Red gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-pink-400/5 to-purple-500/10 rounded-2xl"></div>
-                    {/* Floating boss particles */}
-                    <div className="absolute top-3 right-3 w-2 h-2 bg-red-400 rounded-full opacity-70" style={{ animation: 'bossFloat 3.5s ease-in-out infinite' }}></div>
-                    <div className="absolute bottom-2 left-2 w-1.5 h-1.5 bg-pink-500 rounded-full opacity-60" style={{ animation: 'bossFloat 4s ease-in-out infinite 0.7s' }}></div>
-                    <div className="absolute top-5 left-5 w-1 h-1 bg-purple-400 rounded-full opacity-80" style={{ animation: 'bossFloat 4.5s ease-in-out infinite 1.2s' }}></div>
+                    <div className="absolute inset-0 bg-sunset-orange/10 rounded-2xl"></div>
                   </div>
                 )}
 
                 {member.name === 'Abhinav Khanna' && (
                   <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
                     {/* Security blue gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-cyan-400/5 to-indigo-500/10 rounded-2xl"></div>
-                    <div className="absolute top-2 right-4 w-2 h-2 bg-blue-400 rounded-full opacity-70" style={{ animation: 'securityPulse 3s ease-in-out infinite' }}></div>
-                    <div className="absolute bottom-4 left-2 w-1.5 h-1.5 bg-cyan-500 rounded-full opacity-60" style={{ animation: 'securityPulse 4s ease-in-out infinite 0.8s' }}></div>
+                    <div className="absolute inset-0 bg-deep-ocean/10 rounded-2xl"></div>
                   </div>
                 )}
 
                 {member.name === 'Seedon Adlin D\'souza' && (
                   <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
                     {/* Hardware green gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-emerald-400/5 to-teal-500/10 rounded-2xl"></div>
-                    <div className="absolute top-3 right-2 w-2 h-2 bg-green-400 rounded-full opacity-70" style={{ animation: 'hardwareGlow 3.5s ease-in-out infinite' }}></div>
-                    <div className="absolute bottom-2 left-4 w-1.5 h-1.5 bg-emerald-500 rounded-full opacity-60" style={{ animation: 'hardwareGlow 4s ease-in-out infinite 0.6s' }}></div>
+                    <div className="absolute inset-0 bg-sunny-yellow/10 rounded-2xl"></div>
                   </div>
                 )}
 
                 {member.name === 'Kartheek Lade' && (
                   <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
                     {/* IoV purple gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-violet-400/5 to-indigo-500/10 rounded-2xl"></div>
-                    <div className="absolute top-4 right-3 w-2 h-2 bg-purple-400 rounded-full opacity-70" style={{ animation: 'iovSpark 3s ease-in-out infinite' }}></div>
-                    <div className="absolute bottom-3 left-3 w-1.5 h-1.5 bg-violet-500 rounded-full opacity-60" style={{ animation: 'iovSpark 3.8s ease-in-out infinite 0.9s' }}></div>
+                    <div className="absolute inset-0 bg-sunset-orange/10 rounded-2xl"></div>
                   </div>
                 )}
 
                 {(member.role === 'Core Team Member' && !member.nickname && !['Abhinav Khanna', 'Seedon Adlin D\'souza', 'Kartheek Lade'].includes(member.name)) && (
                   <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
                     {/* Team gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-slate-500/5 via-gray-400/3 to-zinc-500/5 rounded-2xl"></div>
-                    <div className="absolute top-2 right-2 w-1.5 h-1.5 bg-slate-400 rounded-full opacity-50" style={{ animation: 'teamGlow 4s ease-in-out infinite' }}></div>
-                    <div className="absolute bottom-3 left-3 w-1 h-1 bg-gray-500 rounded-full opacity-60" style={{ animation: 'teamGlow 3.5s ease-in-out infinite 0.7s' }}></div>
+                    <div className="absolute inset-0 bg-charcoal-gray/5 rounded-2xl"></div>
                   </div>
                 )}
 
-                <div className={`relative mb-4 mx-auto w-24 h-24 overflow-hidden rounded-full ring-4 transition-all duration-300 ${
+                <div className={`relative mb-6 mx-auto w-32 h-32 overflow-hidden rounded-full ring-4 transition-all duration-300 ${
                   member.nickname === 'Sardaar Khan' 
                     ? 'ring-yellow-500/30 group-hover:ring-yellow-500/70' 
                     : member.nickname === 'Munna Bhaiya' 
@@ -830,28 +1130,28 @@ const About = () => {
                       alt={member.name}
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-300"
-                      sizes="96px"
+                      sizes="128px"
                     />
                   ) : (
-                    <div className={`w-full h-full flex items-center justify-center text-2xl font-bold ${
+                    <div className={`w-full h-full flex items-center justify-center text-3xl font-bold ${
                       isDark ? 'bg-slate-700 text-slate-300' : 'bg-gray-200 text-gray-600'
                     }`}>
                       {member.name.split(' ').map(n => n[0]).join('')}
                     </div>
                   )}
                 </div>
-                <h4 className={`font-semibold text-sm mb-1 transition-colors duration-300 ${
+                <h4 className={`font-semibold text-base mb-2 transition-colors duration-300 ${
                   member.nickname === 'Sardaar Khan' 
                     ? isDark ? 'text-yellow-300 group-hover:text-yellow-200' : 'text-yellow-600 group-hover:text-yellow-700'
                     : member.nickname === 'Munna Bhaiya' 
                     ? isDark ? 'text-red-300 group-hover:text-red-200' : 'text-red-600 group-hover:text-red-700'
                     : isDark 
-                    ? 'text-white group-hover:text-cyan-400' 
+                    ? 'text-white group-hover:text-deep-ocean' 
                     : 'text-slate-800 group-hover:text-blue-600'
                 }`}>
                   {member.name}
                   {member.nickname && (
-                    <span className={`block text-xs font-normal ${
+                    <span className={`block text-sm font-normal ${
                       member.nickname === 'Sardaar Khan' 
                         ? 'text-yellow-500' 
                         : member.nickname === 'Munna Bhaiya' 
@@ -862,7 +1162,7 @@ const About = () => {
                     </span>
                   )}
                 </h4>
-                <p className={`text-xs transition-colors duration-300 ${
+                <p className={`text-sm transition-colors duration-300 ${
                   isDark 
                     ? 'text-slate-400 group-hover:text-slate-300' 
                     : 'text-slate-500 group-hover:text-slate-700'
@@ -890,92 +1190,139 @@ const About = () => {
           }
         }
         
-        /* Modern section graphics animations */
+        /* Enhanced modern section graphics animations */
         @keyframes modernFloat {
           0%, 100% {
             transform: translateY(0px) scale(1) rotate(0deg);
           }
           50% {
-            transform: translateY(-10px) scale(1.02) rotate(2deg);
+            transform: translateY(-15px) scale(1.05) rotate(3deg);
           }
         }
         
         @keyframes particleFloat {
           0%, 100% {
             transform: translateY(0px) translateX(0px) scale(1);
-            opacity: 0.6;
+            opacity: 0.4;
           }
           50% {
-            transform: translateY(-15px) translateX(5px) scale(1.2);
+            transform: translateY(-20px) translateX(8px) scale(1.5);
+            opacity: 1;
+          }
+        }
+        
+        /* Premium shimmer effect */
+        @keyframes shimmer {
+          0% {
+            transform: translateX(-100%) skewX(-15deg);
+          }
+          100% {
+            transform: translateX(200%) skewX(-15deg);
+          }
+        }
+        
+        /* Hover scale animations */
+        .hover\\:scale-102:hover {
+          transform: scale(1.02);
+        }
+        
+        /* Premium gradient animations */
+        @keyframes gradientShift {
+          0%, 100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+        }
+        
+        /* Enhanced card hover effects */
+        .group:hover .shimmer-effect {
+          animation: shimmer 2s ease-in-out infinite;
+        }
+        
+        /* Story highlights animation */
+        @keyframes statPulse {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: scale(1.05);
             opacity: 0.9;
           }
         }
         
-        /* Modern team member animations */
-        @keyframes royalFloat {
-          0%, 100% {
-            transform: translateY(0px) translateX(0px) scale(1);
-            opacity: 0.7;
+        /* Metrics animation */
+        .metric-animate {
+          animation: statPulse 2s ease-in-out infinite;
+        }
+        
+        /* Enhanced team member animations */
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+        
+        /* Interactive button effects */
+        @keyframes buttonPulse {
+          0% {
+            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+          }
+          70% {
+            box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+          }
+          100% {
+            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+          }
+        }
+        
+        .pulse-button:hover {
+          animation: buttonPulse 2s infinite;
+        }
+        
+        /* Smooth transitions for all interactive elements */
+        * {
+          transition-property: transform, opacity, box-shadow, background-color, border-color;
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Enhanced scrollbar for mobile navigation */
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        
+        /* Custom focus states for accessibility */
+        .custom-focus:focus {
+          outline: 2px solid rgba(59, 130, 246, 0.5);
+          outline-offset: 2px;
+        }
+        
+        /* Premium loading states */
+        @keyframes skeleton {
+          0% {
+            opacity: 1;
           }
           50% {
-            transform: translateY(-8px) translateX(3px) scale(1.1);
+            opacity: 0.4;
+          }
+          100% {
             opacity: 1;
           }
         }
         
-        @keyframes bossFloat {
-          0%, 100% {
-            transform: translateY(0px) translateX(0px) scale(1);
-            opacity: 0.7;
-          }
-          50% {
-            transform: translateY(-6px) translateX(-2px) scale(1.15);
-            opacity: 1;
-          }
-        }
-        
-        @keyframes securityPulse {
-          0%, 100% {
-            transform: scale(1);
-            opacity: 0.7;
-          }
-          50% {
-            transform: scale(1.3);
-            opacity: 1;
-          }
-        }
-        
-        @keyframes hardwareGlow {
-          0%, 100% {
-            transform: scale(1) rotate(0deg);
-            opacity: 0.7;
-          }
-          50% {
-            transform: scale(1.2) rotate(5deg);
-            opacity: 1;
-          }
-        }
-        
-        @keyframes iovSpark {
-          0%, 100% {
-            transform: translateY(0px) scale(1);
-            opacity: 0.7;
-          }
-          50% {
-            transform: translateY(-5px) scale(1.25);
-            opacity: 1;
-          }
-        }
-        
-        @keyframes teamGlow {
-          0%, 100% {
-            transform: scale(1);
-            opacity: 0.5;
-          }
-          50% {
-            transform: scale(1.1);
-            opacity: 0.8;
-          }
+        .skeleton-loader {
+          animation: skeleton 2s ease-in-out infinite;
         }
       `}</style>
     </section>

@@ -89,7 +89,7 @@ const Stats = () => {
     <>
       <style jsx>{floatAnimation}</style>
       <section id="stats-section" className={`py-20 relative overflow-hidden ${
-        isDark ? 'bg-gradient-to-br from-gray-900 via-blue-900/20 to-cyan-900/20' : 'bg-gradient-to-br from-blue-50 via-white to-cyan-50'
+        isDark ? 'bg-charcoal-gray' : 'bg-light-gray'
       }`}>
       {/* Floating Elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -99,7 +99,7 @@ const Stats = () => {
         <div className="absolute top-1/3 right-1/3 w-16 h-16 bg-pink-500/10 rounded-full blur-xl animate-bounce" style={{ animationDelay: '0.5s' }} />
 
         {/* Floating Icons */}
-        <div className="absolute top-32 right-10 text-blue-300/20 animate-float">
+        <div className="absolute top-32 right-10 text-sunset-orange/20 animate-float">
           <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"/>
           </svg>
@@ -119,10 +119,10 @@ const Stats = () => {
           }`}>
             Conference at a{' '}
             <span className="relative inline-block">
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-pulse">
+              <span className="text-sunset-orange animate-pulse">
                 Glance
               </span>
-              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full transform scale-x-0 animate-[scaleX_2s_ease-in-out_infinite]" />
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-sunset-orange rounded-full transform scale-x-0 animate-[scaleX_2s_ease-in-out_infinite]" />
             </span>
           </h2>
           <p className={`text-xl max-w-3xl mx-auto ${
@@ -132,100 +132,45 @@ Join us for an unprecedented gathering of minds across coastal communities
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {finalStats.map((stat, index) => {
             const cardColors = [
-              'from-blue-500 to-cyan-500',
-              'from-green-500 to-emerald-500',
-              'from-purple-500 to-pink-500',
-              'from-orange-500 to-red-500'
-            ];
-            const glowColors = [
-              'shadow-blue-500/25',
-              'shadow-green-500/25',
-              'shadow-purple-500/25',
-              'shadow-orange-500/25'
-            ];
-            const bgPatterns = [
-              'bg-gradient-to-br from-blue-500/5 to-cyan-500/5',
-              'bg-gradient-to-br from-green-500/5 to-emerald-500/5',
-              'bg-gradient-to-br from-purple-500/5 to-pink-500/5',
-              'bg-gradient-to-br from-orange-500/5 to-red-500/5'
+              'bg-deep-ocean-blue',
+              'bg-sunset-orange',
+              'bg-sunny-yellow',
+              'bg-deep-ocean-blue'
             ];
 
             return (
               <div
                 key={index}
-                className={`group relative rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-4 hover:rotate-1 border-2 ${
-                  isDark
-                    ? 'bg-gray-800/60 border-gray-600 hover:bg-gray-800/80 backdrop-blur-sm'
-                    : 'bg-white/80 border-gray-200 hover:bg-white backdrop-blur-sm'
-                } ${glowColors[index]} hover:shadow-2xl`}
+                className="group text-center"
                 style={{
                   animation: `float 6s ease-in-out infinite`,
                   animationDelay: `${index * 0.5}s`
                 }}
               >
-                {/* Sparkle Effects */}
-                <div className="absolute inset-0 pointer-events-none">
-                  <div className="absolute top-4 left-4 w-1 h-1 bg-yellow-400 rounded-full animate-ping opacity-0 group-hover:opacity-100" style={{ animationDelay: '0.2s' }} />
-                  <div className="absolute top-8 right-8 w-1 h-1 bg-pink-400 rounded-full animate-ping opacity-0 group-hover:opacity-100" style={{ animationDelay: '0.8s' }} />
-                  <div className="absolute bottom-6 left-6 w-1 h-1 bg-cyan-400 rounded-full animate-ping opacity-0 group-hover:opacity-100" style={{ animationDelay: '1.2s' }} />
-                </div>
+                <div className="flex flex-col items-center space-y-4">
+                  <div className={`p-4 ${cardColors[index]} rounded-2xl text-white transform group-hover:scale-110 transition-all duration-500`}>
+                    {icons[index]}
+                  </div>
 
-                <div className={`absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${bgPatterns[index]}`} />
-
-                <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className={`p-4 bg-gradient-to-br ${cardColors[index]} rounded-2xl text-white transform group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg`}>
-                      {icons[index]}
-                      <div className="absolute inset-0 bg-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="relative inline-block">
+                    <div className={`text-5xl md:text-6xl font-black font-mono ${cardColors[index].replace('bg-', 'text-')} group-hover:scale-110 transition-transform duration-500`}>
+                      {animatedValues[index]}
+                      {index === 1 && '%'}
+                      {index === 3 && '+'}
                     </div>
-                    <div className={`w-16 h-2 bg-gradient-to-r ${cardColors[index]} rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 shadow-sm`} />
                   </div>
 
-                  <div className="text-center mb-4">
-                    <div className="relative inline-block">
-                      <div className={`text-5xl md:text-6xl font-black mb-3 font-mono bg-gradient-to-r ${cardColors[index]} bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-500`}>
-                        {animatedValues[index]}
-                        {index === 1 && '%'}
-                        {index === 3 && '+'}
-                      </div>
-                    </div>
-
-                    <p className={`text-lg font-bold transition-all duration-300 group-hover:scale-105 ${
-                      isDark
-                        ? 'text-gray-300 group-hover:text-white'
-                        : 'text-gray-700 group-hover:text-gray-900'
-                    }`}>
-                      {labels[index]}
-                    </p>
-                  </div>
-
-                  {/* Animated Progress Ring */}
-                  <div className="relative h-3 mb-4">
-                    <div className={`absolute inset-0 rounded-full ${isDark ? 'bg-gray-700' : 'bg-gray-200'}`} />
-                    <div
-                      className={`absolute inset-0 rounded-full bg-gradient-to-r ${cardColors[index]} transform origin-left transition-all duration-1000 ease-out shadow-sm`}
-                      style={{
-                        transform: isVisible ? 'scaleX(1)' : 'scaleX(0)',
-                        transitionDelay: `${index * 300}ms`
-                      }}
-                    />
-                    <div className={`absolute inset-0 rounded-full bg-gradient-to-r ${cardColors[index]} opacity-30 animate-pulse`} />
-                  </div>
-
-                  {/* Interactive Elements */}
-                  <div className="flex justify-center space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${cardColors[index]} animate-bounce`} />
-                    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${cardColors[index]} animate-bounce`} style={{ animationDelay: '0.1s' }} />
-                    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${cardColors[index]} animate-bounce`} style={{ animationDelay: '0.2s' }} />
-                  </div>
+                  <p className={`text-lg font-bold transition-all duration-300 ${
+                    isDark
+                      ? 'text-gray-300 group-hover:text-white'
+                      : 'text-gray-700 group-hover:text-gray-900'
+                  }`}>
+                    {labels[index]}
+                  </p>
                 </div>
-
-                {/* Decorative Elements */}
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-0 group-hover:opacity-100 transform group-hover:rotate-45 transition-all duration-500" />
-                <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full opacity-0 group-hover:opacity-100 transform group-hover:-rotate-45 transition-all duration-700" />
               </div>
             );
           })}
@@ -236,8 +181,8 @@ Join us for an unprecedented gathering of minds across coastal communities
           <div className="relative">
             <div className={`inline-flex items-center space-x-4 rounded-full px-12 py-6 shadow-2xl border-2 transform hover:scale-105 transition-all duration-500 ${
               isDark
-                ? 'bg-gradient-to-r from-gray-800/80 to-blue-900/50 border-blue-500/30 hover:border-blue-400/50'
-                : 'bg-gradient-to-r from-white to-blue-50 border-blue-200 hover:border-blue-300'
+                ? 'bg-deep-ocean-blue/50 border-blue-500/30 hover:border-blue-400/50'
+                : 'bg-white border-blue-200 hover:border-blue-300'
             } backdrop-blur-sm hover:shadow-blue-500/25`}>
 
               {/* Animated Dots */}
@@ -248,13 +193,13 @@ Join us for an unprecedented gathering of minds across coastal communities
               </div>
 
               <div className="text-center">
-                <div className={`text-xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent ${
+                <div className={`text-xl font-bold text-sunset-orange ${
                   isDark ? 'text-white' : 'text-gray-900'
                 }`}>
 Be part of something extraordinary!
                 </div>
                 <div className={`text-sm mt-1 ${
-                  isDark ? 'text-blue-300' : 'text-blue-600'
+                  isDark ? 'text-sunset-orange' : 'text-deep-ocean'
                 }`}>
 where Infosec meets the sea
                 </div>

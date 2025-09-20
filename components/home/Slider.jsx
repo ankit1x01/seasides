@@ -522,19 +522,13 @@ const RevolutionHero = () => {
         }
       `}</style>
 
-      <section ref={heroRef} className={`
-        relative min-h-screen overflow-hidden transition-all duration-500
-        ${isDark 
-          ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-black' 
-          : 'hero-bg'
-        }
-      `}
+      <section ref={heroRef} className="relative min-h-screen overflow-hidden transition-all duration-500 bg-tropical-sunset"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         role="region" aria-roledescription="carousel" aria-label="Seasides highlights"
       >
         {/* Background Elements */}
-  <div className={`absolute inset-0 transition-opacity duration-700 ${isDark ? 'bg-black/60' : 'bg-black/40'}`}></div>
+        <div className="absolute inset-0 transition-opacity duration-700 bg-black/30"></div>
 
         {/* Logo-inspired elements - Sun and Palm Trees (only on main slide) */}
         {currentSlideData.type === 'main' && (
@@ -905,7 +899,7 @@ const RevolutionHero = () => {
 
                   {/* Enhanced Title with Sunset-Ocean Theme */}
                   <div className="relative">
-                    <h1 className="playfair-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-6 leading-tight text-white text-shadow-sunset relative z-10">
+                    <h1 className="playfair-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-6 leading-tight text-white text-seasides-shadow relative z-10">
                       <span className="wave-gradient font-bold" style={{ animation: 'zoomIn 1.2s ease-out 0.8s both' }}>
                         Seasides
                       </span>
@@ -914,17 +908,17 @@ const RevolutionHero = () => {
                   
                   {/* Enhanced Subtitle with Curved Underline */}
                   <div className="curved-underline" style={{ animation: 'slideInLeft 1.2s ease-out 1.2s both' }}>
-                    <h2 className="inter-font text-2xl md:text-3xl lg:text-4xl font-medium mb-8 text-orange-100 relative">
+                    <h2 className="inter-font text-2xl md:text-3xl lg:text-4xl font-medium mb-8 text-white text-seasides-shadow relative">
                       India&apos;s Most Loved Conference
                     </h2>
                   </div>
-                  <h3 className="text-xl md:text-2xl font-light mb-8 text-white/90 relative" style={{ animation: 'fadeInUp 1.2s ease-out 1.4s both' }}>
+                  <h3 className="text-xl md:text-2xl font-light mb-8 text-white text-seasides-shadow relative" style={{ animation: 'fadeInUp 1.2s ease-out 1.4s both' }}>
                     <span className="relative z-10">{currentSlideData.subtitle}</span>
                   </h3>
                   
                   {/* Enhanced Description with Beach Theme */}
                   <div className="relative mb-8" style={{ animation: 'fadeInUp 1.2s ease-out 1.5s both' }}>
-                    <p className="text-lg md:text-xl lg:text-2xl opacity-90 leading-relaxed max-w-3xl mx-auto text-white relative z-10 p-4 rounded-lg backdrop-blur-sm bg-white/5 border border-white/10">
+                    <p className="text-lg md:text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto text-white text-seasides-shadow relative z-10 p-4 rounded-lg backdrop-blur-sm bg-white/10 border border-white/20">
                       
                       {currentSlideData.description}
                      

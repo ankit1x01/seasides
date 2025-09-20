@@ -34,8 +34,8 @@ const ReachUs = () => {
       id="reach-us" 
       className={`relative py-20 overflow-hidden ${
         isDark 
-          ? 'bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900' 
-          : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'
+          ? 'bg-charcoal-gray'
+          : 'bg-light-gray'
       }`}
     >
       {/* Background Effects */}
@@ -60,7 +60,7 @@ const ReachUs = () => {
         }}
       ></div>
 
-      <div className="relative container mx-auto px-6 z-10">
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -70,15 +70,15 @@ const ReachUs = () => {
           className="text-center mb-16"
         >
           <div className="inline-block mb-6">
-            <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r ${
-              isDark 
-                ? 'from-white via-blue-200 to-purple-200 text-transparent bg-clip-text' 
-                : 'from-gray-900 via-blue-600 to-purple-600 text-transparent bg-clip-text'
+            <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold ${
+              isDark
+                ? 'text-white'
+                : 'text-charcoal-gray'
             } drop-shadow-lg`}>
               Reach Us
             </h2>
-            <div className={`w-32 h-1 mx-auto mt-4 rounded-full bg-gradient-to-r ${
-              isDark ? 'from-blue-400 to-purple-400' : 'from-blue-500 to-purple-500'
+            <div className={`w-32 h-1 mx-auto mt-4 rounded-full ${
+              isDark ? 'bg-sunset-orange' : 'bg-sunset-orange'
             }`}></div>
           </div>
           <p className={`text-xl md:text-2xl font-medium ${
@@ -89,7 +89,7 @@ const ReachUs = () => {
         </motion.div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
           
           {/* Venue Details - Left Side */}
           <motion.div
@@ -97,26 +97,26 @@ const ReachUs = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className={`backdrop-blur-xl rounded-3xl p-8 ${
+            className={`backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 ${
               isDark 
                 ? 'bg-black/20 border border-white/10' 
                 : 'bg-white/30 border border-blue-200/50'
             } shadow-2xl`}
           >
             {/* Venue Icon & Name */}
-            <div className="flex items-center gap-4 mb-8">
-              <div className={`p-4 rounded-2xl ${
+            <div className="flex items-center gap-3 sm:gap-4 mb-6 md:mb-8">
+              <div className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl ${
                 isDark 
-                  ? 'bg-gradient-to-br from-blue-500 to-purple-500' 
-                  : 'bg-gradient-to-br from-blue-600 to-purple-600'
+                  ? 'bg-deep-ocean'
+                  : 'bg-deep-ocean'
               } shadow-lg`}>
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
               <div>
-                <h3 className={`text-2xl font-bold ${
+                <h3 className={`text-lg sm:text-xl md:text-2xl font-bold ${
                   isDark ? 'text-white' : 'text-gray-900'
                 }`}>
                   {VENUE.name}
@@ -130,13 +130,13 @@ const ReachUs = () => {
             </div>
 
             {/* Address */}
-            <div className="mb-8">
-              <h4 className={`text-lg font-semibold mb-4 ${
+            <div className="mb-6 md:mb-8">
+              <h4 className={`text-base sm:text-lg font-semibold mb-3 sm:mb-4 ${
                 isDark ? 'text-white' : 'text-gray-900'
               }`}>
                 📍 Address
               </h4>
-              <div className={`p-4 rounded-xl ${
+              <div className={`p-3 sm:p-4 rounded-lg sm:rounded-xl ${
                 isDark ? 'bg-white/5' : 'bg-white/50'
               } border border-white/20`}>
                 <p className={`${
@@ -155,13 +155,13 @@ const ReachUs = () => {
             </div>
 
             {/* Timing */}
-            <div className="mb-8">
-              <h4 className={`text-lg font-semibold mb-4 ${
+            <div className="mb-6 md:mb-8">
+              <h4 className={`text-base sm:text-lg font-semibold mb-3 sm:mb-4 ${
                 isDark ? 'text-white' : 'text-gray-900'
               }`}>
                 🕘 Conference Hours
               </h4>
-              <div className={`p-4 rounded-xl ${
+              <div className={`p-3 sm:p-4 rounded-lg sm:rounded-xl ${
                 isDark ? 'bg-white/5' : 'bg-white/50'
               } border border-white/20`}>
                 <p className={`text-lg font-medium ${
@@ -178,13 +178,13 @@ const ReachUs = () => {
             </div>
 
             {/* Key Distances */}
-            <div className="mb-8">
-              <h4 className={`text-lg font-semibold mb-4 ${
+            <div className="mb-6 md:mb-8">
+              <h4 className={`text-base sm:text-lg font-semibold mb-3 sm:mb-4 ${
                 isDark ? 'text-white' : 'text-gray-900'
               }`}>
                 🚗 Key Distances
               </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 gap-2 sm:gap-3">
                 {VENUE.distances.slice(0, 6).map((distance, index) => (
                   <div key={index} 
                        className={`p-3 rounded-lg ${
@@ -213,7 +213,7 @@ const ReachUs = () => {
                 } transition-colors`}>
                   Show more distances
                 </summary>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
+                <div className="grid grid-cols-1 gap-2 sm:gap-3 mt-3">
                   {VENUE.distances.slice(6).map((distance, index) => (
                     <div key={index + 6} 
                          className={`p-3 rounded-lg ${
@@ -240,10 +240,10 @@ const ReachUs = () => {
             {/* Get Directions Button */}
             <button
               onClick={handleGetDirections}
-              className={`w-full px-6 py-4 rounded-xl font-semibold transition-all duration-300 ${
+              className={`w-full px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl text-sm sm:text-base font-semibold transition-all duration-300 ${
                 isDark 
-                  ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-400 hover:to-purple-400' 
-                  : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-500 hover:to-purple-500'
+                  ? 'bg-deep-ocean text-white hover:bg-deep-ocean/80'
+                  : 'bg-deep-ocean text-white hover:bg-deep-ocean/80'
               } transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-3`}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -261,18 +261,18 @@ const ReachUs = () => {
             viewport={{ once: true }}
             className="h-full"
           >
-            <div className={`backdrop-blur-xl rounded-3xl overflow-hidden ${
+            <div className={`backdrop-blur-xl rounded-2xl md:rounded-3xl overflow-hidden ${
               isDark 
                 ? 'bg-black/20 border border-white/10' 
                 : 'bg-white/30 border border-blue-200/50'
-            } shadow-2xl h-full min-h-[500px] lg:min-h-[600px]`}>
+            } shadow-2xl h-full min-h-[300px] sm:min-h-[400px] lg:min-h-[600px]`}>
               
               {/* Map Header */}
-              <div className="p-6 border-b border-white/10">
-                <h4 className={`text-xl font-bold ${
+              <div className="p-4 sm:p-6 border-b border-white/10">
+                <h4 className={`text-lg sm:text-xl font-bold ${
                   isDark ? 'text-white' : 'text-gray-900'
                 } flex items-center gap-3`}>
-                  <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m0 0L9 7" />
                   </svg>
                   Location Map
@@ -285,7 +285,7 @@ const ReachUs = () => {
               </div>
 
               {/* Map Container */}
-              <div className="relative h-full aspect-video lg:aspect-auto">
+              <div className="relative h-full aspect-video sm:aspect-auto">
                 {!mapLoaded && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className={`text-center ${
@@ -305,7 +305,7 @@ const ReachUs = () => {
                   title="International Centre Goa Location Map"
                   aria-label={`Map showing location of ${VENUE.name} at ${VENUE.addressEN}`}
                   onLoad={() => setMapLoaded(true)}
-                  style={{ border: 0, minHeight: '400px' }}
+                  style={{ border: 0, minHeight: '250px' }}
                 ></iframe>
               </div>
             </div>
@@ -318,17 +318,17 @@ const ReachUs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="mt-8 sm:mt-12 lg:mt-16 text-center"
         >
-          <div className={`inline-flex items-center gap-4 px-8 py-4 rounded-2xl ${
+          <div className={`inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-4 px-4 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl ${
             isDark 
-              ? 'bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30' 
-              : 'bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200'
+              ? 'bg-deep-ocean/20 border border-deep-ocean/30'
+              : 'bg-deep-ocean/10 border border-deep-ocean/20'
           }`}>
-            <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <p className={`${
+            <p className={`text-sm sm:text-base text-center sm:text-left ${
               isDark ? 'text-blue-200' : 'text-blue-700'
             } font-medium`}>
               Free parking available • Wheelchair accessible • Public transport friendly

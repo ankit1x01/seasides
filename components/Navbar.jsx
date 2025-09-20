@@ -40,13 +40,11 @@ const Navbar = () => {
   }
 
   return (
-    <nav className={`
-      backdrop-blur-md shadow-lg border-b sticky top-0 z-50 transition-all duration-300
-      ${isDark 
-        ? 'bg-slate-900/95 border-slate-700 navbar-dark' 
-        : 'bg-white/95 border-gray-100'
-      }
-    `}>
+    <nav className={`backdrop-blur-md shadow-lg border-b sticky top-0 z-50 transition-all duration-300 ${
+      isDark
+        ? 'bg-modern-sleek border-gray-600'
+        : 'bg-white/95 border-deep-ocean-blue/20'
+    }`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo and Countdown */}
@@ -74,10 +72,10 @@ const Navbar = () => {
 
             {/* Countdown Timer */}
             {Object.keys(timeLeft).length > 0 && (
-              <div className={`hidden md:flex items-center gap-3 px-4 py-2 rounded-full border ${
+              <div className={`hidden md:flex items-center gap-3 px-4 py-2 rounded-full border backdrop-blur-sm ${
                 isDark
-                  ? 'bg-gradient-to-r from-blue-900/50 to-purple-900/50 border-blue-500/30 text-blue-300'
-                  : 'bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200 text-blue-700'
+                  ? 'bg-black/20 border-white/30 text-white'
+                  : 'bg-deep-ocean-blue/10 border-deep-ocean-blue/30 text-deep-ocean'
               }`}>
                 <div className="flex items-center gap-1">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -99,54 +97,54 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link href="/">
-              <span className={`
-                font-medium cursor-pointer transition-all duration-300 hover:scale-105 relative group
-                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
-              `}>
+              <span className={`font-medium cursor-pointer transition-all duration-300 hover:scale-105 relative group ${
+                isDark
+                  ? 'text-white hover:text-sunny-yellow'
+                  : 'text-gray-800 hover:text-sunset-orange'
+              }`}>
                 Home
-                <span className={`
-                  absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300
-                  ${isDark ? 'bg-cyan-400' : 'bg-blue-600'}
-                `}></span>
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
+                  isDark ? 'bg-sunny-yellow' : 'bg-sunset-orange'
+                }`}></span>
               </span>
             </Link>
 
             <Link href="/sponsors">
-              <span className={`
-                font-medium cursor-pointer transition-all duration-300 hover:scale-105 relative group
-                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
-              `}>
+              <span className={`font-medium cursor-pointer transition-all duration-300 hover:scale-105 relative group ${
+                isDark
+                  ? 'text-white hover:text-sunny-yellow'
+                  : 'text-gray-800 hover:text-sunset-orange'
+              }`}>
                 Sponsorship
-                <span className={`
-                  absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300
-                  ${isDark ? 'bg-cyan-400' : 'bg-blue-600'}
-                `}></span>
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
+                  isDark ? 'bg-sunny-yellow' : 'bg-sunset-orange'
+                }`}></span>
               </span>
             </Link>
 
             <Link href="/about">
-              <span className={`
-                font-medium cursor-pointer transition-all duration-300 hover:scale-105 relative group
-                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
-              `}>
+              <span className={`font-medium cursor-pointer transition-all duration-300 hover:scale-105 relative group ${
+                isDark
+                  ? 'text-white hover:text-sunny-yellow'
+                  : 'text-gray-800 hover:text-sunset-orange'
+              }`}>
                 About
-                <span className={`
-                  absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300
-                  ${isDark ? 'bg-cyan-400' : 'bg-blue-600'}
-                `}></span>
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
+                  isDark ? 'bg-sunny-yellow' : 'bg-sunset-orange'
+                }`}></span>
               </span>
             </Link>
 
             <Link href="/gallery">
-              <span className={`
-                font-medium cursor-pointer transition-all duration-300 hover:scale-105 relative group
-                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
-              `}>
+              <span className={`font-medium cursor-pointer transition-all duration-300 hover:scale-105 relative group ${
+                isDark
+                  ? 'text-white hover:text-sunny-yellow'
+                  : 'text-gray-800 hover:text-sunset-orange'
+              }`}>
                 Gallery
-                <span className={`
-                  absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300
-                  ${isDark ? 'bg-cyan-400' : 'bg-blue-600'}
-                `}></span>
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
+                  isDark ? 'bg-sunny-yellow' : 'bg-sunset-orange'
+                }`}></span>
               </span>
             </Link>
 
@@ -161,13 +159,11 @@ const Navbar = () => {
           <div className="flex md:hidden">
             <button 
               onClick={() => setIsOpen(!isOpen)} 
-              className={`
-                focus:outline-none transition-colors duration-300
-                ${isDark 
-                  ? 'text-slate-300 hover:text-cyan-400' 
-                  : 'text-gray-800 hover:text-blue-600'
-                }
-              `} 
+              className={`focus:outline-none transition-colors duration-300 ${
+                isDark
+                  ? 'text-white hover:text-sunny-yellow'
+                  : 'text-gray-800 hover:text-sunset-orange'
+              }`} 
               aria-label="toggle menu"
             >
               <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
@@ -181,10 +177,10 @@ const Navbar = () => {
         <div className={`${isOpen ? 'block' : 'hidden'} md:hidden mt-4 pb-4`}>
           {/* Mobile Countdown */}
           {Object.keys(timeLeft).length > 0 && (
-            <div className={`mb-4 p-3 rounded-lg border ${
+            <div className={`mb-4 p-3 rounded-lg border backdrop-blur-sm ${
               isDark
-                ? 'bg-gradient-to-r from-blue-900/30 to-purple-900/30 border-blue-500/30 text-blue-300'
-                : 'bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200 text-blue-700'
+                ? 'bg-black/20 border-white/30 text-white'
+                : 'bg-deep-ocean-blue/10 border-deep-ocean-blue/30 text-deep-ocean'
             }`}>
               <div className="flex items-center justify-center gap-2">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -204,41 +200,45 @@ const Navbar = () => {
 
           <div className="flex flex-col space-y-3">
             <Link href="/">
-              <span className={`
-                block font-medium cursor-pointer transition-colors duration-300 py-2
-                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
-              `}>
+              <span className={`block font-medium cursor-pointer transition-colors duration-300 py-2 ${
+                isDark
+                  ? 'text-white hover:text-sunny-yellow'
+                  : 'text-gray-800 hover:text-sunset-orange'
+              }`}>
                 Home
               </span>
             </Link>
             <Link href="/sponsors">
-              <span className={`
-                block font-medium cursor-pointer transition-colors duration-300 py-2
-                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
-              `}>
+              <span className={`block font-medium cursor-pointer transition-colors duration-300 py-2 ${
+                isDark
+                  ? 'text-white hover:text-sunny-yellow'
+                  : 'text-gray-800 hover:text-sunset-orange'
+              }`}>
                 Sponsorship
               </span>
             </Link>
             <Link href="/about">
-              <span className={`
-                block font-medium cursor-pointer transition-colors duration-300 py-2
-                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
-              `}>
+              <span className={`block font-medium cursor-pointer transition-colors duration-300 py-2 ${
+                isDark
+                  ? 'text-white hover:text-sunny-yellow'
+                  : 'text-gray-800 hover:text-sunset-orange'
+              }`}>
                 About
               </span>
             </Link>
             <Link href="/gallery">
-              <span className={`
-                block font-medium cursor-pointer transition-colors duration-300 py-2
-                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
-              `}>
+              <span className={`block font-medium cursor-pointer transition-colors duration-300 py-2 ${
+                isDark
+                  ? 'text-white hover:text-sunny-yellow'
+                  : 'text-gray-800 hover:text-sunset-orange'
+              }`}>
                 Gallery
               </span>
             </Link>
             <Link href="/#reach-us">
               <span className={`
                 block font-medium cursor-pointer transition-colors duration-300 py-2
-                ${isDark ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-700 hover:text-blue-600'}
+                ${isDark ? 'text-slate-300 hover:text-sunny-yellow' : 'text-gray-700 hover:text-sunset-orange'}
               `} onClick={() => setIsOpen(false)}>
                 Venue
               </span>

@@ -15,26 +15,144 @@
   animation: spin-slow 3s linear infinite;
 }
 
+/* Seasides Utility Classes */
+.bg-tropical-sunset {
+  background: var(--tropical-sunset);
+}
+
+.bg-deep-ocean-depth {
+  background: var(--deep-ocean-depth);
+}
+
+.bg-fiery-citrus {
+  background: var(--fiery-citrus);
+}
+
+.bg-modern-sleek {
+  background: var(--modern-sleek);
+}
+
+/* Brand Color Classes */
+.bg-deep-ocean {
+  background-color: var(--deep-ocean-blue);
+}
+
+.bg-sunset-orange {
+  background-color: var(--sunset-orange);
+}
+
+.bg-sunny-yellow {
+  background-color: var(--sunny-yellow);
+}
+
+.bg-charcoal-gray {
+  background-color: var(--charcoal-gray);
+}
+
+.bg-light-gray {
+  background-color: var(--light-gray);
+}
+
+.text-deep-ocean {
+  color: var(--deep-ocean-blue);
+}
+
+.text-sunset-orange {
+  color: var(--sunset-orange);
+}
+
+.text-sunny-yellow {
+  color: var(--sunny-yellow);
+}
+
+.text-seasides-shadow {
+  text-shadow: var(--text-shadow);
+}
+
+.btn-primary {
+  background: var(--sunset-orange);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--button-shadow);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--deep-ocean-blue);
+  border: 1px solid var(--deep-ocean-blue);
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--deep-ocean-blue);
+  color: var(--white);
+}
+
+.card-seasides {
+  background: var(--white);
+  box-shadow: var(--card-shadow);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card-seasides:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(13, 71, 161, 0.2);
+}
+
 :root {
+  /* Seasides Color Palette */
+  --deep-ocean-blue: #0d47a1;
+  --sunset-orange: #ff8f00;
+  --sunny-yellow: #ffea00;
+  --light-gray: #f5f5f5;
+  --charcoal-gray: #333333;
+  --white: #ffffff;
+
   /* Base surface and text */
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f5f5;
+  --foreground: #333333;
 
   /* Brand tokens */
-  --brand-primary: #60a5fa; /* sky-400 */
-  --brand-accent:  #a78bfa; /* indigo-300/purple-400 mix */
-  --brand-danger:  #f472b6; /* pink-400 */
+  --brand-primary: #0d47a1;
+  --brand-secondary: #ff8f00;
+  --brand-accent: #ffea00;
+
+  /* Brand Color Gradients */
+  --tropical-sunset: linear-gradient(135deg, #0d47a1, #ff8f00, #ffea00);
+  --deep-ocean-depth: #0d47a1;
+  --fiery-citrus: linear-gradient(-45deg, #ffea00, #ff8f00);
+  --modern-sleek: linear-gradient(to right, #0d47a1, #333333);
 
   /* Light theme surfaces */
   --surface: #ffffff;
-  --surface-alt: #f8fafc;
-  --border: rgba(255,255,255,0.15);
-  --border-strong: rgba(255,255,255,0.25);
+  --surface-alt: #f5f5f5;
+  --border: rgba(13, 71, 161, 0.15);
+  --border-strong: rgba(13, 71, 161, 0.25);
 
   /* Typography */
-  --text-primary: #1f2937;
-  --text-secondary: #4b5563;
-  --text-muted: #6b7280;
+  --text-primary: #333333;
+  --text-secondary: #0d47a1;
+  --text-muted: #666666;
+  --text-light: #f5f5f5;
+
+  /* Effects */
+  --text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  --card-shadow: 0 4px 20px rgba(13, 71, 161, 0.15);
+  --button-shadow: 0 4px 15px rgba(255, 143, 0, 0.3);
 }
 
 /* Dark theme - Professional cybersec colors */
@@ -251,19 +369,28 @@ button[class*="bg-gradient"] {
   display: none;  /* Chrome, Safari and Opera */
 }
 
-/* Dark theme gradients maintaining vibrant accents */
+/* Dark theme gradients with brand colors */
 .dark .hero-bg-dark {
-  background: linear-gradient(135deg, #0a0a0b 0%, #1a1a1b 50%, #0f0f10 100%);
+  background: var(--charcoal-gray);
 }
 
 .dark .cyber-gradient {
-  background: linear-gradient(135deg, var(--cyber-blue) 0%, var(--cyber-purple) 100%);
+  background: var(--deep-ocean-blue);
 }
 
 .dark .glass-morphism-dark {
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
+}
+
+/* Global theme-aware body backgrounds */
+.light body {
+  background-color: #ffffff !important;
+}
+
+.dark body {
+  background-color: #111827 !important;
 }
 
 /* Navbar dark theme */

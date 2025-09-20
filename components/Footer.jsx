@@ -12,11 +12,11 @@ const Footer = () => {
 
 
   const socialIcons = [
-    { Icon: FaLinkedin, href: "https://www.linkedin.com/company/seasides/", color: "hover:text-blue-400", glow: "hover:drop-shadow-[0_0_10px_#3b82f6]" },
-    { Icon: FaTwitter, href: "https://x.com/seasides_conf/", color: "hover:text-cyan-400", glow: "hover:drop-shadow-[0_0_10px_#06b6d4]" },
-    { Icon: FaInstagram, href: "https://www.instagram.com/seasides_conf/", color: "hover:text-pink-400", glow: "hover:drop-shadow-[0_0_10px_#ec4899]" },
-    { Icon: FaFacebook, href: "https://www.facebook.com/seasidesconference", color: "hover:text-blue-500", glow: "hover:drop-shadow-[0_0_10px_#3b82f6]" },
-    { Icon: FaYoutube, href: "https://www.youtube.com/@seasidesgoa", color: "hover:text-red-400", glow: "hover:drop-shadow-[0_0_10px_#ef4444]" }
+    { Icon: FaLinkedin, href: "https://www.linkedin.com/company/seasides/", color: "hover:text-sunny-yellow", glow: "hover:drop-shadow-[0_0_10px_#3b82f6]" },
+    { Icon: FaTwitter, href: "https://x.com/seasides_conf/", color: "hover:text-sunny-yellow", glow: "hover:drop-shadow-[0_0_10px_#06b6d4]" },
+    { Icon: FaInstagram, href: "https://www.instagram.com/seasides_conf/", color: "hover:text-sunny-yellow", glow: "hover:drop-shadow-[0_0_10px_#ec4899]" },
+    { Icon: FaFacebook, href: "https://www.facebook.com/seasidesconference", color: "hover:text-sunny-yellow", glow: "hover:drop-shadow-[0_0_10px_#3b82f6]" },
+    { Icon: FaYoutube, href: "https://www.youtube.com/@seasidesgoa", color: "hover:text-sunny-yellow", glow: "hover:drop-shadow-[0_0_10px_#ef4444]" }
   ];
 
 
@@ -53,10 +53,10 @@ const Footer = () => {
       `}</style>
       
       <footer className={`relative overflow-hidden transition-colors duration-300 ${
-        isDark 
-          ? 'bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white' 
-          : 'bg-gradient-to-br from-gray-100 via-blue-100 to-indigo-100 text-gray-900'
-      }`} style={{color: isDark ? 'white' : 'inherit'}}>
+        isDark
+          ? 'bg-deep-ocean-depth text-white'
+          : 'bg-white text-gray-900'
+      }`}>
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-32 h-32 bg-blue-500 rounded-full opacity-10 blur-2xl animate-pulse"></div>
@@ -185,7 +185,7 @@ const Footer = () => {
                     >
                       <Icon size={20} />
                       {hoveredIcon === index && (
-                        <div className="absolute -inset-2 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-20 rounded-full animate-ping"></div>
+                        <div className="absolute -inset-2 bg-sunset-orange opacity-20 rounded-full animate-ping"></div>
                       )}
                     </a>
                   ))}
