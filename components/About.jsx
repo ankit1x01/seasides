@@ -350,6 +350,87 @@ const About = () => {
         "twitter": "https://twitter.com/Debuhkzr",
         "linkedin": "https://www.linkedin.com/in/devendrakumarsinha/"
       }
+    },
+    {
+      "name": "Rahul Kumar",
+      "image": null,
+      "role": "Core Team Member",
+      "socialMedia": {
+        "twitter": "",
+        "linkedin": ""
+      }
+    },
+    {
+      "name": "Anurag Mishra",
+      "image": "Anurag_Mishra.jpeg",
+      "role": "Core Team Member",
+      "socialMedia": {
+        "twitter": "",
+        "linkedin": ""
+      }
+    },
+    {
+      "name": "Shivam Goyal",
+      "image": null,
+      "role": "Core Team Member",
+      "socialMedia": {
+        "twitter": "",
+        "linkedin": ""
+      }
+    },
+    {
+      "name": "Pulkit Talwar",
+      "image": null,
+      "role": "Core Team Member",
+      "socialMedia": {
+        "twitter": "",
+        "linkedin": ""
+      }
+    },
+    {
+      "name": "Hare Krishna Rai",
+      "image": null,
+      "role": "Core Team Member",
+      "socialMedia": {
+        "twitter": "",
+        "linkedin": ""
+      }
+    },
+    {
+      "name": "Vedant Jain",
+      "image": null,
+      "role": "Core Team Member",
+      "socialMedia": {
+        "twitter": "",
+        "linkedin": ""
+      }
+    },
+    {
+      "name": "Gaurav Joshi",
+      "image": null,
+      "role": "Core Team Member",
+      "socialMedia": {
+        "twitter": "",
+        "linkedin": ""
+      }
+    },
+    {
+      "name": "Fazalu Rahman",
+      "image": "Fazalu_Rahman.jpeg",
+      "role": "Core Team Member",
+      "socialMedia": {
+        "twitter": "",
+        "linkedin": ""
+      }
+    },
+    {
+      "name": "Arif",
+      "image": "Arif.jpeg",
+      "role": "Core Team Member",
+      "socialMedia": {
+        "twitter": "",
+        "linkedin": ""
+      }
     }
   ];
 

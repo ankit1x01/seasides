@@ -139,7 +139,11 @@ Join us for an unprecedented gathering of minds across coastal communities
             return (
               <div
                 key={index}
-                className="group text-center"
+                className={`group text-center p-6 rounded-2xl transition-all duration-300 hover:scale-105 ${
+                  isDark
+                    ? 'bg-gray-800/50 hover:bg-gray-800/70'
+                    : 'bg-white/80 hover:bg-white backdrop-blur-sm shadow-lg hover:shadow-xl'
+                }`}
                 style={{
                   animation: `float 6s ease-in-out infinite`,
                   animationDelay: `${index * 0.5}s`
