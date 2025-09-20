@@ -353,7 +353,7 @@ const About = () => {
     },
     {
       "name": "Rahul Kumar",
-      "image": null,
+      "image": "Rahul_Kumar.jpeg",
       "role": "Core Team Member",
       "socialMedia": {
         "twitter": "",
@@ -371,7 +371,7 @@ const About = () => {
     },
     {
       "name": "Shivam Goyal",
-      "image": null,
+      "image": "Shivam_Goyal.jpeg",
       "role": "Core Team Member",
       "socialMedia": {
         "twitter": "",
@@ -380,7 +380,7 @@ const About = () => {
     },
     {
       "name": "Pulkit Talwar",
-      "image": null,
+      "image": "Pulkit_Talwar.jpeg",
       "role": "Core Team Member",
       "socialMedia": {
         "twitter": "",
@@ -389,7 +389,7 @@ const About = () => {
     },
     {
       "name": "Hare Krishna Rai",
-      "image": null,
+      "image": "Hare_Krishna_Rai.jpeg",
       "role": "Core Team Member",
       "socialMedia": {
         "twitter": "",
@@ -398,7 +398,7 @@ const About = () => {
     },
     {
       "name": "Vedant Jain",
-      "image": null,
+      "image": "Vedant_Jain.jpeg",
       "role": "Core Team Member",
       "socialMedia": {
         "twitter": "",
@@ -407,7 +407,7 @@ const About = () => {
     },
     {
       "name": "Gaurav Joshi",
-      "image": null,
+      "image": "Gaurav_Joshi.jpeg",
       "role": "Core Team Member",
       "socialMedia": {
         "twitter": "",
